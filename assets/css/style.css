@@ -23,3 +23,11 @@ footer {
 .col {
     border: 1px solid black;
 }
+
+#story-text.chapter-intro {
+    background-color: gray
+}
+
+#story-text.chapter-1 {
+    background-color: black;
+}
