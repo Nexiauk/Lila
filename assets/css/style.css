@@ -1,3 +1,25 @@
+
+/* Google Font Import */
+
+/* variables for website colours 
+root: {
+}
+*/
+
+/* Global styles */
+
+header {
+    border: solid 1px black;
+}
+
+footer {
+    border: 1px solid black;
+}
+
+.navbar {
+    background-color: aliceblue;
+}
+
 .col {
     border: 1px solid black;
 }
