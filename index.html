@@ -21,47 +21,54 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
     <!-- Main content container -->
     <div class="container" id="main-container">
         <!-- Chapter title -->
         <div class="row">
-            <div class="col" id="title">Title goes here</div>
+            <div class="col text-center" id="title">Title goes here</div>
         </div>
-        <!-- Character image and story text -->
+        <!-- Character and story images -->
         <div class="row">
             <div class="col" id="lila-img"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image"></div>
-            <div class="col" id="chapter-image"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image"></div>
+            <div class="col" id="chapter-image"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image">
+            </div>
         </div>
-        <!-- Puzzle area -->
-        <div class="row">
-            <div class="col col-12" id="story-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium,
+        <div class="row mt-4">
+            <!-- Story text -->
+            <div class="col col-12 mb-4" id="story-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio,
+                beatae omnis? Hic facere deleniti maxime voluptates qui ipsam aspernatur. Quis ab delectus mollitia qui
+                libero id animi laboriosam quas ipsam!</div>
+            <!-- Puzzle area -->
+            <div class="col col-12 text-center" id="puzzle-answer">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Accusantium,
                 saepe tempore odio tempora ex aspernatur laudantium. Accusamus officiis possimus libero porro
                 doloribus! Labore, excepturi. Fugit natus hic ipsa distinctio deserunt!</div>
-                <div class="col col-12" id="puzzle-area">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium,
-                    saepe tempore odio tempora ex aspernatur laudantium. Accusamus officiis possimus libero porro
-                    doloribus! Labore, excepturi. Fugit natus hic ipsa distinctio deserunt!</div>
+            <div class="col col-12 text-center" id="puzzle-question">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Accusantium,
+                saepe tempore odio tempora ex aspernatur laudantium. Accusamus officiis possimus libero porro
+                doloribus! Labore, excepturi. Fugit natus hic ipsa distinctio deserunt!</div>
         </div>
     </div>
     <!-- Footer with mt-auto added to push to the bottom -->

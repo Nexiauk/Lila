@@ -29,5 +29,31 @@ footer {
 }
 
 #story-text.chapter-1 {
-    background-color: black;
+    background-color: pink;
+}
+
+#title {
+    font-weight: bold;
+}
+
+.slot {
+    height: 50px;
+    width: 50px;
+    border: 1px solid red;
+    display: inline-block;
+    margin: 0.8rem;
+}
+
+.tile {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    display: inline-block;
+    margin: 0.8rem;
+    padding: 0.8rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    align-items: center;
+
 }
