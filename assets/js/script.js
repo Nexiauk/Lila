@@ -38,19 +38,25 @@ function puzzle1() {
     puzzleQuestion.innerHTML = " ";
     puzzleAnswer.innerHTML = " ";
 
-    word.split("").forEach(() => {
+    word.split("").forEach((letter, index) => {
         let slot = document.createElement("div");
         slot.classList.add("slot");
+        slot.dataset.index = index;
         puzzleAnswer.appendChild(slot);
-        // slot.addEventListener("click", clickedSlot);
+        // slot.addEventListener("click", clickedSlot(slot, index));
     });
 
-    shuffled.forEach((letter) => {
+    shuffled.forEach((letter, index) => {
         let tile = document.createElement("div");
         tile.classList.add("tile");
         tile.textContent = letter;
-        tile.setAttribute("data-letter", letter);
+        tile.id = `tile-${index}`;
+        tile.dataset.letter = letter;
         puzzleQuestion.appendChild(tile);
         // tile.addEventListener("click", clickedTile);
     });
+}
+
+function clickedTile() {
+
 }
