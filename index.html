@@ -44,23 +44,25 @@
         </nav>
     </header>
     <!-- Main content container -->
-    <div class="container" id="main-container">
+    <div class="container-sm" id="main-container">
         <!-- Chapter title -->
         <div class="row">
             <div class="col text-center" id="title">Title goes here</div>
         </div>
         <!-- Character and story images -->
-        <div class="row">
-            <div class="col" id="lila-img"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image"></div>
-            <div class="col" id="chapter-image"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image">
+        <section class="row" id="image-area">
+            <div class="col-12 col-md-3" id="lila-img"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image"></div>
+            <div class="col-12 col-md-6" id="chapter-image"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image">
             </div>
-        </div>
-        <div class="row mt-4">
+        </section>
+        <section class="row mt-4" id="story-area">
             <!-- Story text -->
             <div class="col col-12 mb-4" id="story-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio,
                 beatae omnis? Hic facere deleniti maxime voluptates qui ipsam aspernatur. Quis ab delectus mollitia qui
                 libero id animi laboriosam quas ipsam!</div>
+                </section>
             <!-- Puzzle area -->
+             <section class="row" id="puzzle-area">
             <div class="col col-12 text-center" id="puzzle-answer">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Accusantium,
                 saepe tempore odio tempora ex aspernatur laudantium. Accusamus officiis possimus libero porro
@@ -69,7 +71,7 @@
                 Accusantium,
                 saepe tempore odio tempora ex aspernatur laudantium. Accusamus officiis possimus libero porro
                 doloribus! Labore, excepturi. Fugit natus hic ipsa distinctio deserunt!</div>
-        </div>
+        </section>
     </div>
     <!-- Footer with mt-auto added to push to the bottom -->
     <footer class="mt-auto">

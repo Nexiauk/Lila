@@ -36,12 +36,25 @@ footer {
     font-weight: bold;
 }
 
+#puzzle-area {
+    display: flex;
+    flex-direction: column;
+}
+
+#puzzle-question {
+    height: 250px;
+}
+
+#puzzle-answer {
+    height: 250px;
+}
+
 .slot {
     height: 50px;
     width: 50px;
     border: 1px solid red;
     display: inline-block;
-    margin: 0.8rem;
+    margin: 5rem 0.8rem;
 }
 
 .tile {
@@ -49,7 +62,7 @@ footer {
     width: 50px;
     background-color: blue;
     display: inline-block;
-    margin: 0.8rem;
+    margin: 5rem 0.8rem;
     padding: 0.8rem;
     font-weight: bold;
     color: white;
