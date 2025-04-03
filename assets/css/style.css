@@ -28,13 +28,15 @@ footer {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 3px 3px grey;
-    transition: transform .2s;
+    transition: transform 1s ease;
     background-color: white;
+    visibility: visible;
 }
 
 #lila-sad:hover {
     transform:scale(0.9);
     background-color: blue;
+    box-shadow: 0 0 20px #0ebac5;
 }
 
 #chapter-img { 
@@ -72,6 +74,19 @@ footer {
     height: 250px;
 }
 
+#get-puzzle {
+    color: red;
+    margin-bottom: 10px;
+    
+}
+
+#get-puzzle:hover {
+    transform:scale(1.2);
+    background-color: blue;
+    box-shadow: 0 0 8px #0ebac5;
+    transition: transform 1s ease;
+}
+
 .slot {
     height: 50px;
     width: 50px;
@@ -98,6 +113,7 @@ footer {
 @media screen and (min-width:320px) {
     #lila-sad {
         width: 40%;
+        visibility: hidden;
         
     }
 
@@ -110,5 +126,6 @@ footer {
 @media screen and (min-width:768px) {
     #lila-sad {
         width: 100%;
+        visibility: visible;
     }
 }
