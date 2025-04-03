@@ -31,7 +31,18 @@ setTimeout(() => {
 // 
 function puzzle1() {
     const word = "GOODNIGHT";
-    let shuffled = word.split("").sort();
+    const letterArray = word.split("");
+
+    function shuffle (arr) {
+        for (let i=arr.length-1; i>0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+    shuffle(letterArray);
+    console.log(letterArray);
+
     const puzzleQuestion = document.getElementById("puzzle-question");
     const puzzleAnswer = document.getElementById("puzzle-answer");
 
@@ -46,7 +57,7 @@ function puzzle1() {
         // slot.addEventListener("click", clickedSlot(slot, index));
     });
 
-    shuffled.forEach((letter, index) => {
+    letterArray.forEach((letter, index) => {
         let tile = document.createElement("div");
         tile.classList.add("tile");
         tile.textContent = letter;
@@ -55,8 +66,4 @@ function puzzle1() {
         puzzleQuestion.appendChild(tile);
         // tile.addEventListener("click", clickedTile);
     });
-}
-
-function clickedTile() {
-
 }
