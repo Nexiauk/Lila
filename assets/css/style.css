@@ -8,10 +8,6 @@ root: {
 
 /* Global styles */
 
-body {
-    display: flex;
-}
-
 header {
     border: solid 1px black;
 }
@@ -24,24 +20,31 @@ footer {
     background-color: aliceblue;
 }
 
-.col {
-    border: 1px solid black;
-}
-
-#image-area .col {
-    border: 1px solid blue;
-}
 
 #lila-sad {
-    width: 100%;
-    height: auto;
-    padding-left: 0;
+    width: 98%;
+    height: 100%;
+    padding-left: 0px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px grey;
+    transition: transform .2s;
+    background-color: white;
+}
+
+#lila-sad:hover {
+    transform:scale(0.9);
+    background-color: blue;
 }
 
 #chapter-img { 
-    width: 100%;
-    height: auto;
+    width: 98%;
+    height: 100%;
     padding-right: 0;
+    margin-left: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px grey;
 }
 
 #story-text.chapter-intro {
