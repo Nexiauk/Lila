@@ -28,7 +28,6 @@ setTimeout(() => {
     }
 }, 0);
 
-// 
 function puzzle1() {
     const word = "GOODNIGHT";
     const letterArray = word.split("");
@@ -52,7 +51,7 @@ function puzzle1() {
     word.split("").forEach((letter, index) => {
         let slot = document.createElement("div");
         slot.classList.add("slot");
-        slot.dataset.index = index;
+        slot.dataset.index=index;
         puzzleAnswer.appendChild(slot);
         // slot.addEventListener("click", clickedSlot(slot, index));
     });
@@ -61,9 +60,16 @@ function puzzle1() {
         let tile = document.createElement("div");
         tile.classList.add("tile");
         tile.textContent = letter;
-        tile.id = `tile-${index}`;
-        tile.dataset.letter = letter;
+        tile.dataset.index = index;
         puzzleQuestion.appendChild(tile);
-        // tile.addEventListener("click", clickedTile);
+        tile.addEventListener("click", () => clickedTile (letter, tile, index));
     });
+
+    function clickedTile(letter, tile, index) {
+        let availableSlot = document.querySelector(".slot:empty")
+        if (availableSlot) {
+            availableSlot.textContent = letter;
+        tile.style.visibility = "hidden";
+        }
+    }
 }

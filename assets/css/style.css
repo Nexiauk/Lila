@@ -68,10 +68,16 @@ footer {
 
 #puzzle-question {
     height: 250px;
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: center;
 }
 
 #puzzle-answer {
     height: 250px;
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: center;
 }
 
 #get-puzzle {
@@ -92,7 +98,9 @@ footer {
     width: 50px;
     border: 1px solid red;
     display: inline-block;
-    margin: 5rem 0.8rem;
+    margin: 5px;
+    padding: 0.8rem;
+    box-sizing: border-box;
 }
 
 .tile {
@@ -100,12 +108,12 @@ footer {
     width: 50px;
     background-color: blue;
     display: inline-block;
-    margin: 5rem 0.8rem;
+    margin: 5px;
     padding: 0.8rem;
     font-weight: bold;
     color: white;
-    text-align: center;
-    align-items: center;
+    box-sizing: border-box;
+
 
 }
 
