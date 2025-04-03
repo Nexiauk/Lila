@@ -8,6 +8,10 @@ root: {
 
 /* Global styles */
 
+body {
+    display: flex;
+}
+
 header {
     border: solid 1px black;
 }
@@ -22,6 +26,22 @@ footer {
 
 .col {
     border: 1px solid black;
+}
+
+#image-area .col {
+    border: 1px solid blue;
+}
+
+#lila-sad {
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+}
+
+#chapter-img { 
+    width: 100%;
+    height: auto;
+    padding-right: 0;
 }
 
 #story-text.chapter-intro {
@@ -69,4 +89,23 @@ footer {
     text-align: center;
     align-items: center;
 
+}
+
+/* Responsive media queries for phones 320px and above */
+@media screen and (min-width:320px) {
+    #lila-sad {
+        width: 40%;
+        
+    }
+
+    #image-area .col {
+        text-align: center;
+    }
+}
+
+/* Responsive media queries for tablets 768px and above */
+@media screen and (min-width:768px) {
+    #lila-sad {
+        width: 100%;
+    }
 }
