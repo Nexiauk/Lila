@@ -1,4 +1,4 @@
-
+// Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html
 const story = {
     currentChapter: "intro",
     intro: {
@@ -28,6 +28,7 @@ setTimeout(() => {
     }
 }, 0);
 
+// Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
 function puzzle1() {
     const word = "GOODNIGHT";
     const letterArray = word.split("");
