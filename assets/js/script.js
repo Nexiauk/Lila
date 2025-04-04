@@ -130,17 +130,20 @@ function checkCompletion(word) {
     }
 }
 
-const button = document.getElementById("reset-button");
-button.addEventListener("click", () => {
-    const puzzleQuestion = document.getElementById("puzzle-question");
-    const puzzleAnswer = document.getElementById("puzzle-answer");
-    puzzleQuestion.innerHTML = "";
-    puzzleAnswer.innerHTML = "";
-    initialisePuzzle();
-});
+function resetButton() {
+    const button = document.getElementById("reset-button");
+    button.addEventListener("click", () => resetPuzzle());
+}
 
+function resetPuzzle() {
+        const puzzleQuestion = document.getElementById("puzzle-question");
+        const puzzleAnswer = document.getElementById("puzzle-answer");
+        puzzleQuestion.innerHTML = "";
+        puzzleAnswer.innerHTML = "";
+        initialisePuzzle();
+    };
 
-
+resetButton();
 
 
 
