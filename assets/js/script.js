@@ -22,14 +22,14 @@ document.getElementById("story-text").classList.add(`chapter-${story.currentChap
 setTimeout(() => {
     const puzzleButton = document.getElementById("get-puzzle");
     if (puzzleButton) {
-        puzzleButton.addEventListener("click", puzzle1);
+        puzzleButton.addEventListener("click", initialisePuzzle);
     } else {
         console.error("Button not found!")
     }
 }, 0);
 
 // Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
-function puzzle1() {
+function initialisePuzzle() {
     checkButton = document.getElementById("buttons");
     buttons.style.visibility = "visible";
     getPuzzle = document.getElementById("get-puzzle");
@@ -88,7 +88,6 @@ function puzzle1() {
             availableSlot.textContent = letter.letter;
             tile.style.visibility = "hidden";
         }
-        checkCompletion();
     }
 
     /*Function to clear a letter from a slot and make its correlating tile visible again.
@@ -105,17 +104,37 @@ function puzzle1() {
             matchingTile.style.visibility = "visible";
         }
     }
-
-    function checkCompletion () {
-        const slots = document.querySelectorAll(".slot");
-        const allFilled = Array.from(slots).every(slot => slot.textContent !=="");
-        return;
-
-        if(allFilled) {
-            userAnswer = slots.join;
-            if (userAnswer = word) {
-                alert("Yay");
-            }
-        }
-    }
+    checkCompletion(word);
 }
+
+    function checkCompletion(word) {
+        const button = document.getElementById("check");
+        button.addEventListener("click", () => {
+            const slots = document.querySelectorAll(".slot");
+            const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
+            if (!allFilled) {
+                alert("Not done");
+            } else {
+                let userAnswer = "";
+                slots.forEach(slot => {
+                    userAnswer +=slot.textContent;
+                })
+                if (userAnswer == word) {
+                    alert("Yay");
+                } else {
+                    alert("wrong");
+                }
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+            
+            
