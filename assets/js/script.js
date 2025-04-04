@@ -54,8 +54,8 @@ function initialisePuzzle() {
     // Clear the puzzle areas of any existing content.
     const puzzleQuestion = document.getElementById("puzzle-question");
     const puzzleAnswer = document.getElementById("puzzle-answer");
-    puzzleQuestion.innerHTML = " ";
-    puzzleAnswer.innerHTML = " ";
+    puzzleQuestion.innerHTML = "";
+    puzzleAnswer.innerHTML = "";
 
     // splits the puzzle word into an array of letters and creates a new slot for each one in the puzzleAnswer div
     word.split("").forEach((letter) => {
@@ -107,26 +107,35 @@ function initialisePuzzle() {
     checkCompletion(word);
 }
 
-    function checkCompletion(word) {
-        const button = document.getElementById("check");
-        button.addEventListener("click", () => {
-            const slots = document.querySelectorAll(".slot");
-            const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
-            if (!allFilled) {
-                alert("Not done");
+function checkCompletion(word) {
+    const button = document.getElementById("check");
+    button.addEventListener("click", () => {
+        const slots = document.querySelectorAll(".slot");
+        const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
+        if (!allFilled) {
+            alert("Not done");
+        } else {
+            let userAnswer = "";
+            slots.forEach(slot => {
+                userAnswer += slot.textContent;
+            })
+            if (userAnswer == word) {
+                alert("Yay");
             } else {
-                let userAnswer = "";
-                slots.forEach(slot => {
-                    userAnswer +=slot.textContent;
-                })
-                if (userAnswer == word) {
-                    alert("Yay");
-                } else {
-                    alert("wrong");
-                }
+                alert("wrong");
             }
-        });
-    }
+        }
+    });
+}
+
+const button = document.getElementById("reset-button");
+button.addEventListener("click", () => {
+    const puzzleQuestion = document.getElementById("puzzle-question");
+    const puzzleAnswer = document.getElementById("puzzle-answer");
+    puzzleQuestion.innerHTML = "";
+    puzzleAnswer.innerHTML = "";
+    initialisePuzzle();
+})
 
 
 
@@ -136,5 +145,5 @@ function initialisePuzzle() {
 
 
 
-            
-            
+
+
