@@ -75,10 +75,18 @@ footer {
     justify-content: center;
 }
 
+#buttons {
+    visibility: hidden;
+}
+
 #get-puzzle {
     color: red;
     margin-bottom: 10px;
-    
+    visibility: visible;
+}
+
+#check {
+    padding-top: 0;
 }
 
 #get-puzzle:hover {
