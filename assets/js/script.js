@@ -31,7 +31,7 @@ setTimeout(() => {
 // Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
 function initialisePuzzle() {
     checkButton = document.getElementById("buttons");
-    buttons.style.visibility = "visible";
+    checkButton.style.visibility = "visible";
     getPuzzle = document.getElementById("get-puzzle");
     getPuzzle.style.visibility = "hidden";
     const word = "GOODNIGHT";
@@ -109,23 +109,25 @@ function initialisePuzzle() {
 
 function checkCompletion(word) {
     const button = document.getElementById("check");
-    button.addEventListener("click", () => {
+    button.addEventListener("click", () => checkAnswer());
+
+    function checkAnswer() {
         const slots = document.querySelectorAll(".slot");
         const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
         if (!allFilled) {
-            alert("Not done");
+            console.log("not done");
         } else {
             let userAnswer = "";
             slots.forEach(slot => {
                 userAnswer += slot.textContent;
             })
             if (userAnswer == word) {
-                alert("Yay");
+                console.log("yay");
             } else {
-                alert("wrong");
+                console.log("wrong");
             }
         }
-    });
+    }
 }
 
 const button = document.getElementById("reset-button");
@@ -135,7 +137,7 @@ button.addEventListener("click", () => {
     puzzleQuestion.innerHTML = "";
     puzzleAnswer.innerHTML = "";
     initialisePuzzle();
-})
+});
 
 
 
