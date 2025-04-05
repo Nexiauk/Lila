@@ -5,7 +5,7 @@ const story = {
         title: "Introduction",
         storyText: `<p>Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
 The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...</p>
-<center><button id="get-puzzle">Puzzle</button></center>`
+<center><a href="#puzzle-answer" class="btn btn-secondary" id="get-puzzle">Puzzle</a></center>`
     },
 
     1: {
@@ -28,9 +28,11 @@ setTimeout(() => {
     }
 }, 0);
 
+const wordList = ["Goodnight", "test"]
+
 // Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
 function initialisePuzzle() {
-    const word = "GOODNIGHT";
+    const word = wordList[0].toUpperCase();
     const checkArea = document.getElementById("buttons");
     const getPuzzle = document.getElementById("get-puzzle");
     const resetButton = document.getElementById("reset-button");

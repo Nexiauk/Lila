@@ -80,7 +80,8 @@ footer {
 }
 
 #get-puzzle {
-    color: red;
+    border: 1px solid black;
+    color: blue;
     margin-bottom: 10px;
     visibility: visible;
 }
@@ -91,7 +92,7 @@ footer {
 
 #get-puzzle:hover {
     transform:scale(1.2);
-    background-color: blue;
+    background-color:white;
     box-shadow: 0 0 8px #0ebac5;
     transition: transform 1s ease;
 }
