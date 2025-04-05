@@ -30,15 +30,17 @@ setTimeout(() => {
 
 // Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
 function initialisePuzzle() {
-    const checkArea = document.getElementById("buttons");
-    checkArea.style.visibility = "visible";
-    const getPuzzle = document.getElementById("get-puzzle");
-    getPuzzle.style.visibility = "hidden";
     const word = "GOODNIGHT";
-    const checkButton = document.getElementById("check");
-    checkButton.addEventListener("click", () => checkAnswer(word));
+    const checkArea = document.getElementById("buttons");
+    const getPuzzle = document.getElementById("get-puzzle");
     const resetButton = document.getElementById("reset-button");
-    resetButton.addEventListener("click", () => resetPuzzle());
+    const checkButton = document.getElementById("check");
+
+    getPuzzle.style.visibility = "hidden";
+    checkArea.style.visibility = "visible";
+
+    checkButton.addEventListener("click", () => checkAnswer(word));
+    resetButton.addEventListener("click", resetPuzzle);
 
     // First function splits the word into an array of letters and then maps an id to each letter that matches the array indexes.
     const letterArray = word.split("").map((letter, index) => ({
@@ -111,32 +113,48 @@ function initialisePuzzle() {
     }
 }
 
+/*Function to check the user's answer against the original word passed into the initialisegame function. 
+Differnt messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
 function checkAnswer(word) {
     const slots = document.querySelectorAll(".slot");
+    let userAnswer = "";
+
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
+
     if (!allFilled) {
-        console.log("not done");
+        // If not all slots are filled, alert the user and exit the function
+        alert("Please fill all the slots!");
+        return;
+    }
+
+    slots.forEach(slot => {
+        userAnswer += slot.textContent;
+    });
+
+    if (userAnswer == word) {
+        alert("yay");
     } else {
-        let userAnswer = "";
-        slots.forEach(slot => {
-            userAnswer += slot.textContent;
-        })
-        if (userAnswer == word) {
-            console.log("yay");
-        } else {
-            console.log("wrong");
-        }
+        alert("wrong");
     }
 }
 
+// function to reset the tiles and the slots to the  initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places.
 
 function resetPuzzle() {
-    const puzzleQuestion = document.getElementById("puzzle-question");
-    const puzzleAnswer = document.getElementById("puzzle-answer");
-    puzzleQuestion.innerHTML = "";
-    puzzleAnswer.innerHTML = "";
-    initialisePuzzle();
+const slots = document.querySelectorAll(".slot");
+const tiles = document.querySelectorAll(".tile");
+
+slots.forEach(slot => {
+    slot.textContent = "";
+    slot.removeAttribute("data-id");
+});
+
+tiles.forEach(tile => {
+    tile.style.visibility = "visible";
+});
 };
+
+
 
 
 
