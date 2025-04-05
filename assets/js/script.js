@@ -137,7 +137,7 @@ function checkAnswer(word) {
     if (userAnswer == word) {
         alert("You did it!");
     } else {
-        alert("That;s not correct, try again!");
+        alert("That's not correct, try again!");
     }
 }
 
