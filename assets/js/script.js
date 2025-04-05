@@ -48,7 +48,8 @@ function initialisePuzzle() {
         id: index,
     }));
 
-    // Function to reverse iterate through the letter array and swap elements i and j. Fisher-Yates shuffle model.
+    /*Function to reverse iterate through the letter array and swap elements i and j. Fisher-Yates shuffle model.
+    This function is used to shuffle the letterarray created by splitting the original word*/
     function shuffle(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
@@ -58,13 +59,15 @@ function initialisePuzzle() {
     }
     shuffle(letterArray);
 
-    // Clear the puzzle areas of any existing content.
+    // Clear the puzzle areas of any existing content to ensure a blank canvas for this puzzle.
     const puzzleQuestion = document.getElementById("puzzle-question");
     const puzzleAnswer = document.getElementById("puzzle-answer");
     puzzleQuestion.innerHTML = "";
     puzzleAnswer.innerHTML = "";
 
-    // splits the puzzle word into an array of letters and creates a new slot for each one in the puzzleAnswer div
+    /*splits the puzzle word into an array of letters and creates a new slot for each one in the puzzleAnswer div.
+    Adds the slot class for styling into boxes.
+    eventlistener calls the clickedslot function*/
     word.split("").forEach((letter) => {
         let slot = document.createElement("div");
         slot.classList.add("slot");
@@ -73,7 +76,9 @@ function initialisePuzzle() {
     });
 
     /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. 
+
     Populates with each letter in the shuffled order. 
+    Adds the tile class for styling into tiles.
     Ensures that each tile has an id and content matching the letterArray and then runs the clickedTile function.
     */
     letterArray.forEach((letter) => {
@@ -114,44 +119,41 @@ function initialisePuzzle() {
 }
 
 /*Function to check the user's answer against the original word passed into the initialisegame function. 
-Differnt messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
+Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
 function checkAnswer(word) {
     const slots = document.querySelectorAll(".slot");
-    let userAnswer = "";
-
+// check if all slots are filled
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
-
+// If not all slots are filled, alert the user and exit the function
     if (!allFilled) {
-        // If not all slots are filled, alert the user and exit the function
         alert("Please fill all the slots!");
         return;
     }
-
+    // If all slots are filled
+    let userAnswer = "";
     slots.forEach(slot => {
         userAnswer += slot.textContent;
     });
-
     if (userAnswer == word) {
-        alert("yay");
+        alert("You did it!");
     } else {
-        alert("wrong");
+        alert("That;s not correct, try again!");
     }
 }
 
-// function to reset the tiles and the slots to the  initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places.
-
+// function to reset the tiles and the slots to the initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places.
 function resetPuzzle() {
-const slots = document.querySelectorAll(".slot");
-const tiles = document.querySelectorAll(".tile");
+    const slots = document.querySelectorAll(".slot");
+    const tiles = document.querySelectorAll(".tile");
 
-slots.forEach(slot => {
-    slot.textContent = "";
-    slot.removeAttribute("data-id");
-});
+    slots.forEach(slot => {
+        slot.textContent = "";
+        slot.removeAttribute("data-id");
+    });
 
-tiles.forEach(tile => {
-    tile.style.visibility = "visible";
-});
+    tiles.forEach(tile => {
+        tile.style.visibility = "visible";
+    });
 };
 
 
