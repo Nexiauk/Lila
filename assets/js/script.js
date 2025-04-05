@@ -30,11 +30,16 @@ setTimeout(() => {
 
 // Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
 function initialisePuzzle() {
-    checkButton = document.getElementById("buttons");
-    checkButton.style.visibility = "visible";
-    getPuzzle = document.getElementById("get-puzzle");
+    const checkArea = document.getElementById("buttons");
+    checkArea.style.visibility = "visible";
+    const getPuzzle = document.getElementById("get-puzzle");
     getPuzzle.style.visibility = "hidden";
     const word = "GOODNIGHT";
+    const checkButton = document.getElementById("check");
+    checkButton.addEventListener("click", () => checkAnswer(word));
+    const resetButton = document.getElementById("reset-button");
+    resetButton.addEventListener("click", () => resetPuzzle());
+
     // First function splits the word into an array of letters and then maps an id to each letter that matches the array indexes.
     const letterArray = word.split("").map((letter, index) => ({
         letter: letter,
@@ -104,46 +109,34 @@ function initialisePuzzle() {
             matchingTile.style.visibility = "visible";
         }
     }
-    checkCompletion(word);
 }
 
-function checkCompletion(word) {
-    const button = document.getElementById("check");
-    button.addEventListener("click", () => checkAnswer());
-
-    function checkAnswer() {
-        const slots = document.querySelectorAll(".slot");
-        const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
-        if (!allFilled) {
-            console.log("not done");
+function checkAnswer(word) {
+    const slots = document.querySelectorAll(".slot");
+    const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
+    if (!allFilled) {
+        console.log("not done");
+    } else {
+        let userAnswer = "";
+        slots.forEach(slot => {
+            userAnswer += slot.textContent;
+        })
+        if (userAnswer == word) {
+            console.log("yay");
         } else {
-            let userAnswer = "";
-            slots.forEach(slot => {
-                userAnswer += slot.textContent;
-            })
-            if (userAnswer == word) {
-                console.log("yay");
-            } else {
-                console.log("wrong");
-            }
+            console.log("wrong");
         }
     }
 }
 
-function resetButton() {
-    const button = document.getElementById("reset-button");
-    button.addEventListener("click", () => resetPuzzle());
-}
 
 function resetPuzzle() {
-        const puzzleQuestion = document.getElementById("puzzle-question");
-        const puzzleAnswer = document.getElementById("puzzle-answer");
-        puzzleQuestion.innerHTML = "";
-        puzzleAnswer.innerHTML = "";
-        initialisePuzzle();
-    };
-
-resetButton();
+    const puzzleQuestion = document.getElementById("puzzle-question");
+    const puzzleAnswer = document.getElementById("puzzle-answer");
+    puzzleQuestion.innerHTML = "";
+    puzzleAnswer.innerHTML = "";
+    initialisePuzzle();
+};
 
 
 
