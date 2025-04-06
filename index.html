@@ -45,22 +45,19 @@
     </header>
     <!-- Main content container -->
     <div class="container-sm" id="main-container">
-        <!-- Chapter title -->
+        <!-- Chapter title that is pulled through dynamically from a Javascript object -->
         <div class="row mb-4">
             <div class="col text-center" id="title">Title goes here</div>
         </div>
-        <!-- Character and story images -->
+        <!-- Story images that is dynamically puleld through from a Javascript object -->
         <section class="row gx-0" id="image-area">
-            <!-- <div class=" col col-12 col-md-4 gx-0"><img class="img-fluid" src="./assets/images/lila.png" alt="Placeholder Image" id="lila-sad"></div> -->
-            <div class=" col col-12 gx-0"><img class="img-fluid" src="./assets/images/lila-bedroom-bw.jpg" alt="Placeholder Image" id="chapter-img">
+            <div class=" col col-12 col-lg-6 gx-0" id="story-image"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image">
             </div>
-        </section>
-        <section class="row mt-4 gx-0" id="story-area">
-            <!-- Story text -->
-            <div class="col col-12 mb-4" id="story-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio,
+            <!-- Story text that is dynamically pulled through from a Javascript object-->
+            <div class="col col-12 col-lg-6" id="story-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio,
                 beatae omnis? Hic facere deleniti maxime voluptates qui ipsam aspernatur. Quis ab delectus mollitia qui
-                libero id animi laboriosam quas ipsam!</div>
-                </section>
+                libero id animi laboriosam quas ipsam!</p></div>
+            </section>
             <!-- Puzzle area -->
              <section class="row" id="puzzle-area">
             <div class="col col-12 text-center" id="puzzle-answer"></div>

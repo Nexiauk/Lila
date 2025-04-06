@@ -21,26 +21,8 @@ footer {
 }
 
 
-#lila-sad {
-    width: 98%;
-    height: 100%;
-    padding-left: 0px;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 3px 3px grey;
-    transition: transform 1s ease;
-    background-color: white;
-    visibility: visible;
-}
-
-#lila-sad:hover {
-    transform:scale(0.9);
-    background-color: blue;
-    box-shadow: 0 0 20px #0ebac5;
-}
-
-#chapter-img { 
-    width: 98%;
+#lila-void-spin { 
+    width: 100%;
     height: 100%;
     padding-right: 0;
     margin-left: 8px;
@@ -86,8 +68,19 @@ footer {
     visibility: visible;
 }
 
-#check {
+#check,
+#reset-button {
     padding-top: 0;
+}
+
+#check:hover {
+    background-color: green;
+    color: white;
+}
+
+#reset-button:hover {
+    background-color: red;
+    color: white;
 }
 
 #get-puzzle:hover {
@@ -141,7 +134,8 @@ footer {
     .tile:hover,
     .slot:hover {
         transform:scale(1.1);
-        transition: transform 1s ease;
+        /* transition: transform 1s ease; */
+        border: 1px solid green;
     }
 
     #puzzle-question,
