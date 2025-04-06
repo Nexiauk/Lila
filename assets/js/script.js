@@ -1,11 +1,16 @@
 // Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html
 const story = {
     currentChapter: "intro",
+    welcome: {
+        title: "Lila's Lost Words",
+        storyImage:"",
+        storyText: "Welcome",
+    },
     intro: {
         title: "Introduction",
-        storyImage: `<img class="img-fluid" src="./assets/images/lila-spin-800.gif" width="100%" height="auto" alt="Placeholder Image" id="chapter-img">`,
-        storyText: `<p>Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
-The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...</p>
+        storyImage: `<img class="img-fluid" src="./assets/images/lila-sleepy.avif" alt="Placeholder Image" id="story-image">`,
+        storyText: `Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
+The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...
 <center><a href="#puzzle-answer" class="btn btn-secondary" id="get-puzzle">Puzzle</a></center>`
     },
 
@@ -17,7 +22,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
 
 document.getElementById("title").innerText = story[story.currentChapter].title;
 document.getElementById("story-text").innerHTML = story[story.currentChapter].storyText;
-document.getElementById("story-image").innerHTML = story[story.currentChapter].storyImage;
+document.getElementById("image-div").innerHTML = story[story.currentChapter].storyImage;
 document.getElementById("story-text").classList.add(`chapter-${story.currentChapter}`);
 
 // Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content.

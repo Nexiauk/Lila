@@ -50,16 +50,16 @@
             <div class="col text-center" id="title">Title goes here</div>
         </div>
         <!-- Story images that is dynamically puleld through from a Javascript object -->
-        <section class="row gx-0" id="image-area">
-            <div class=" col col-12 col-lg-6 gx-0" id="story-image"><img src="https://picsum.photos/Width/Height" alt="Placeholder Image">
+        <section class="row gx-0 justify-content-around" id="image-area">
+            <div class="col col-12 col-lg-6" id="image-div">
             </div>
             <!-- Story text that is dynamically pulled through from a Javascript object-->
-            <div class="col col-12 col-lg-6" id="story-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio,
+            <div class="col col-12 col-lg-6"><p id="story-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio,
                 beatae omnis? Hic facere deleniti maxime voluptates qui ipsam aspernatur. Quis ab delectus mollitia qui
                 libero id animi laboriosam quas ipsam!</p></div>
             </section>
             <!-- Puzzle area -->
-             <section class="row" id="puzzle-area">
+             <section class="row mt-5" id="puzzle-area">
             <div class="col col-12 text-center" id="puzzle-answer"></div>
             <div class="col col-12 text-center" id="puzzle-question"></div>
                 <div class="col col-12 text-center mb-4" id="buttons"><button id="check">Check Answer</button> <button id="reset-button">Reset</button></div>
