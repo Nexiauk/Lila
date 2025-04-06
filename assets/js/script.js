@@ -1,9 +1,9 @@
 // Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html
 const story = {
-    currentChapter: "intro",
+    currentChapter: "welcome",
     welcome: {
         title: "Lila's Lost Words",
-        storyImage:"",
+        storyImage:"./assets/images/lila-sleepy.avif",
         storyText: "Welcome",
     },
     intro: {
@@ -22,7 +22,11 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
 
 document.getElementById("title").innerText = story[story.currentChapter].title;
 document.getElementById("story-text").innerHTML = story[story.currentChapter].storyText;
-document.getElementById("image-div").innerHTML = story[story.currentChapter].storyImage;
+// document.getElementById("image-div").innerHTML = story[story.currentChapter].storyImage;
+
+const storyImage = document.getElementById("story-image");
+storyImage.src = story[story.currentChapter].storyImage;
+
 document.getElementById("story-text").classList.add(`chapter-${story.currentChapter}`);
 
 // Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content.
