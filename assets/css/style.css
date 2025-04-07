@@ -26,6 +26,11 @@ footer {
     box-shadow: 3px 3px grey;
 }
 
+#story-image {
+    height:auto;
+    width: 100%;
+}
+
 
 #story-text {
     border: 1px solid black;

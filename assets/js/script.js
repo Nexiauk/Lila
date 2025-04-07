@@ -1,39 +1,46 @@
-// Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html
-const story = {
-    currentChapter: "welcome",
-    welcome: {
+// Story array with objects to insert chapter titles, text and images dynamically into index.html div elements
+const story = [
+    {
         title: "Lila's Lost Words",
-        storyImage:"./assets/images/lila-sleepy.avif",
+        storyImage: "./assets/images/lila-spin.avif",
         storyText: "Welcome",
     },
-    intro: {
+    {
         title: "Introduction",
-        storyImage: `<img class="img-fluid" src="./assets/images/lila-sleepy.avif" alt="Placeholder Image" id="story-image">`,
+        storyImage: "./assets/images/lila-sleepy.avif",
         storyText: `Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
-The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...
-<center><a href="#puzzle-answer" class="btn btn-secondary" id="get-puzzle">Puzzle</a></center>`
+The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...`
     },
 
-    1: {
+    {
         title: "Chapter 1: The Void",
+        storyImage: "./assets/images/lila-spin.avif",
         storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `
-    }
-}
 
-document.getElementById("title").innerText = story[story.currentChapter].title;
-document.getElementById("story-text").innerHTML = story[story.currentChapter].storyText;
-// document.getElementById("image-div").innerHTML = story[story.currentChapter].storyImage;
+    },
+];
+
+let currentChapterIndex = 0;
+
+function loadChapter() {
+const currentChapter = story[currentChapterIndex];
+
+document.getElementById("title").innerText = currentChapter.title;
+document.getElementById("story-text").innerHTML = currentChapter.storyText;
 
 const storyImage = document.getElementById("story-image");
-storyImage.src = story[story.currentChapter].storyImage;
+storyImage.src = currentChapter.storyImage;
 
 document.getElementById("story-text").classList.add(`chapter-${story.currentChapter}`);
+};
+
+loadChapter();
 
 // Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content.
 setTimeout(() => {
     const puzzleButton = document.getElementById("get-puzzle");
     if (puzzleButton) {
-        puzzleButton.addEventListener("click", initialisePuzzle);
+        puzzleButton.addEventListener("click", nextChapter);
     } else {
         console.error("Button not found!")
     }
@@ -135,9 +142,9 @@ function initialisePuzzle() {
 Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
 function checkAnswer(word) {
     const slots = document.querySelectorAll(".slot");
-// check if all slots are filled
+    // check if all slots are filled
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
-// If not all slots are filled, alert the user and exit the function
+    // If not all slots are filled, alert the user and exit the function
     if (!allFilled) {
         alert("Please fill all the slots!");
         return;
@@ -170,10 +177,13 @@ function resetPuzzle() {
     });
 };
 
-// function nextChapter() {
-//     wordList = wordList.shift();
-//     storycurrentChapter = "1";
-// }
+function nextChapter() {
+    if (currentChapterIndex < story.length -1) {
+        currentChapterIndex++;
+        loadChapter();
+    } else { console.log(currentChapterIndex);
+    }
+}
 
 
 
