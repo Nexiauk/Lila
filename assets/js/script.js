@@ -18,20 +18,24 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `
 
     },
+
+    {
+        title: "Chapter 2: TheForest",
+        storyImage: "./assets/images/lila-forest.avif",
+        storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `
+
+    },
 ];
 
 let currentChapterIndex = 0;
 
 function loadChapter() {
 const currentChapter = story[currentChapterIndex];
-
 document.getElementById("title").innerText = currentChapter.title;
 document.getElementById("story-text").innerHTML = currentChapter.storyText;
-
 const storyImage = document.getElementById("story-image");
 storyImage.src = currentChapter.storyImage;
-
-document.getElementById("story-text").classList.add(`chapter-${story.currentChapter}`);
+document.getElementById("story-text").classList.add(`chapter-${currentChapterIndex}`);
 };
 
 loadChapter();
@@ -47,6 +51,7 @@ setTimeout(() => {
 }, 0);
 
 const wordList = ["Goodnight", "test"]
+let currentWordIndex = 0;
 
 // Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
 function initialisePuzzle() {
@@ -183,6 +188,7 @@ function nextChapter() {
         loadChapter();
     } else { console.log(currentChapterIndex);
     }
+    currentWordIndex++;
 }
 
 
