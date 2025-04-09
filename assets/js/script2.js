@@ -193,6 +193,11 @@ function checkAnswer(word) {
     });
     if (userAnswer == word) {
         alert("You did it!");
+
+        slots.forEach(slot => {
+        slot.style.backgroundColor = "rgb(0, 128, 0)";
+        slot.style.color = "rgb(255,255,255)";
+    });
     } else {
         alert("That's not correct, try again!");
     }
