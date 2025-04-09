@@ -74,6 +74,7 @@ footer {
     color: blue;
     margin-bottom: 10px;
     visibility: hidden;
+    display: none;
 }
 
 #check,

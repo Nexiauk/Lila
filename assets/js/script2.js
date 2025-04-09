@@ -34,7 +34,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         title: "The Forest",
         storyImage: "./assets/images/lila-forest.avif",
         storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `,
-        word: "EMPTINESS",
+        word: "LONELY",
         hint: ""
     },
     forestFull: {
@@ -59,7 +59,8 @@ function startGame() {
     Object.defineProperty(story, "currentChapter", {
         value: "intro",
     });
-startButton.style.visibility = "hidden";
+startButton.style.display = "none";
+getPuzzle.style.display = "inline-block";
 getPuzzle.style.visibility = "visible";
     loadChapter();
 };
