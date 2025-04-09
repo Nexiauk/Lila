@@ -47,23 +47,27 @@
     <div class="container-sm" id="main-container">
         <!-- Chapter title that is pulled through dynamically from a Javascript object -->
         <div class="row mb-4">
-            <div class="col text-center" id="title">Title goes here</div>
+            <div class="col text-center" id="title">Lila's Lost Words</div>
         </div>
         <!-- Story images that is dynamically puleld through from a Javascript object -->
         <section class="row gx-0 justify-content-around" id="image-area">
-            <div class="col col-12 col-lg-6" id="image-div"><img class="img-fluid" alt="Placeholder Image" id="story-image" width="700px" height="547px">
+            <div class="col col-12 col-lg-6" id="image-div"><img class="img-fluid" alt="Placeholder Image"
+                    id="story-image" width="700px" height="547px">
             </div>
             <!-- Story text that is dynamically pulled through from a Javascript object-->
-            <div class="col col-12 col-lg-6"><p id="story-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio,
-                beatae omnis? Hic facere deleniti maxime voluptates qui ipsam aspernatur. Quis ab delectus mollitia qui
-                libero id animi laboriosam quas ipsam!</p><div class="text-center"><a href="#puzzle-answer" class="btn btn-secondary" id="get-puzzle">Continue</a></div></div>
-            </section>
-            <!-- Puzzle area -->
-             <section class="row mt-5" id="puzzle-area">
-            <div class="col col-12 text-center" id="puzzle-answer"></div>
-            <div class="col col-12 text-center" id="puzzle-question"></div>
-                <div class="col col-12 text-center mb-4" id="buttons"><button id="check">Check Answer</button> <button id="reset-button">Reset</button></div>
-        </section>
+            <div class="col col-12 col-lg-6">
+                <p id="story-text"></p>
+                <div class="text-center"><button id="get-puzzle">Get Puzzle</button><button id="start-game">Start Game</button></div>
+            </div>
+    </div>
+    </section>
+    <!-- Puzzle area -->
+    <section class="row mt-5" id="puzzle-area">
+        <div class="col col-12 text-center" id="puzzle-answer"></div>
+        <div class="col col-12 text-center" id="puzzle-question"></div>
+        <div class="col col-12 text-center mb-4" id="buttons"><button id="check">Check Answer</button> <button
+                id="reset-button">Reset</button></div>
+    </section>
     </div>
     <!-- Footer with mt-auto added to push to the bottom -->
     <footer class="mt-auto">
@@ -76,9 +80,10 @@
         </div>
     </footer>
     <!-- Bootstrap JS -->
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

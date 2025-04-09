@@ -39,11 +39,11 @@ footer {
     padding: 25px 25px 5px 25px;
 }
 
-#story-text.chapter-0 {
+#story-text.chapter-intro {
     background-color: gray
 }
 
-#story-text.chapter-1 {
+#story-text.chapter-void {
     background-color: pink;
 }
 
@@ -73,7 +73,7 @@ footer {
     border: 1px solid black;
     color: blue;
     margin-bottom: 10px;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #check,
