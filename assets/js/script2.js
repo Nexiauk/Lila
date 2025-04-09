@@ -67,7 +67,7 @@ getPuzzle.style.visibility = "visible";
 
 // Function to grab all the content needed to load a new chapter from the story object
 function loadChapter() {
-
+window.location.href = "#main-container";
     document.getElementById("title").innerText = story[story.currentChapter].title;
     document.getElementById("story-text").innerHTML = story[story.currentChapter].storyText;
     document.getElementById("story-text").classList.add(`chapter-${story.currentChapter}`);
@@ -193,14 +193,17 @@ function checkAnswer(word) {
     });
     if (userAnswer == word) {
         alert("You did it!");
-
         slots.forEach(slot => {
         slot.style.backgroundColor = "rgb(0, 128, 0)";
         slot.style.color = "rgb(255,255,255)";
     });
     } else {
         alert("That's not correct, try again!");
-    }
+        slots.forEach(slot => {
+            slot.style.backgroundColor = "rgb(255, 0, 0)";
+            slot.style.color = "rgb(255,255,255)";
+    });
+}
 }
 
 // function to reset the tiles and the slots to the initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places.
@@ -211,6 +214,7 @@ function resetPuzzle() {
     slots.forEach(slot => {
         slot.textContent = "";
         slot.removeAttribute("data-id");
+        slot.style.backgroundColor = "rgb(255, 255, 255)";
     });
 
     tiles.forEach(tile => {
