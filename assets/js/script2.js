@@ -231,6 +231,7 @@ function checkAnswer(word) {
         slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(255, 0, 0)";
             slot.style.color = "rgb(255,255,255)";
+            slot.removeEventListener("click", clickedSlotHandler);
         });
     }
 }
