@@ -66,15 +66,15 @@ function startGame() {
     Object.defineProperty(story, "currentChapter", {
         value: "intro",
     });
-startButton.style.display = "none";
-getPuzzle.style.display = "inline-block";
-getPuzzle.style.visibility = "visible";
+    startButton.style.display = "none";
+    getPuzzle.style.display = "inline-block";
+    getPuzzle.style.visibility = "visible";
     loadChapter();
 };
 
 // Function to grab all the content needed to load a new chapter from the story object's current chapter
 function loadChapter() {
-window.location.href = "#main-container";
+    window.location.href = "#main-container";
     storyTitle.innerText = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
@@ -130,7 +130,7 @@ function initialisePuzzle() {
         let slot = document.createElement("div");
         slot.classList.add("slot");
         puzzleAnswer.appendChild(slot);
-        slot.addEventListener("click", () => clickedSlot(slot));
+        slot.addEventListener("click", () => clickedSlotHandler);
     });
 
     /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. 
@@ -159,20 +159,24 @@ function initialisePuzzle() {
             tile.style.visibility = "hidden";
         }
     }
+}
+// Named handler function for event listener on clicked slots, so that the event listener can be properly removed at the check answer stage
+function clickedSlotHandler(event) {
+    clickedSlot(event.currentTarget);
+}
 
-    /*Function to clear a letter from a slot and make its correlating tile visible again.
-    If there's no current id assigned to a slot because a tile's data hasn't been passed to it, then the function will end.
-    If there is an id, then this function will clear the textcontent from the clicked slot and remove the data-id attribute.
-    The queryselector then finds the tile with with an id that matches the slot's id and makes it visible again.*/
-    function clickedSlot(slot) {
-        const id = slot.dataset.id;
-        if (!id) return;
-        slot.textContent = "";
-        slot.removeAttribute("data-id");
-        const matchingTile = document.querySelector(`.tile[data-id='${id}']`);
-        if (matchingTile) {
-            matchingTile.style.visibility = "visible";
-        }
+/*Function to clear a letter from a slot and make its correlating tile visible again.
+If there's no current id assigned to a slot because a tile's data hasn't been passed to it, then the function will end.
+If there is an id, then this function will clear the textcontent from the clicked slot and remove the data-id attribute.
+The queryselector then finds the tile with with an id that matches the slot's id and makes it visible again.*/
+function clickedSlot(slot) {
+    const id = slot.dataset.id;
+    if (!id) return;
+    slot.textContent = "";
+    slot.removeAttribute("data-id");
+    const matchingTile = document.querySelector(`.tile[data-id='${id}']`);
+    if (matchingTile) {
+        matchingTile.style.visibility = "visible";
     }
 }
 
@@ -194,18 +198,22 @@ function checkAnswer(word) {
     });
     if (userAnswer == word) {
         slots.forEach(slot => {
-        slot.style.backgroundColor = "rgb(0, 128, 0)";
-        slot.style.color = "rgb(255,255,255)";
+            slot.style.backgroundColor = "rgb(0, 128, 0)";
+            slot.style.color = "rgb(255,255,255)";
+            slot.removeEventListener("click", clickedSlotHandler)
+        });
         storyImage.src = story[story.currentChapter].storyImage2;
+        resetButton.style.visibility = "hidden";
+        checkButton.style.visibility = "hidden";
         confetti();
-    });
+
     } else {
         alert("That's not correct, try again!");
         slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(255, 0, 0)";
             slot.style.color = "rgb(255,255,255)";
-    });
-}
+        });
+    }
 }
 
 // function to reset the tiles and the slots to the initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places.
