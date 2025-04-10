@@ -74,10 +74,12 @@ const storyImage = document.getElementById("story-image");
 const storyTitle = document.getElementById("title");
 const storyText = document.getElementById("story-text");
 const storyOuterCol = document.getElementById("text-col");
+const puzzleArea = document.getElementById("puzzle-area");
 const puzzleQuestion = document.getElementById("puzzle-question");
 const puzzleAnswer = document.getElementById("puzzle-answer");
 const choice1 = document.getElementById("choice-1");
 const choice2 = document.getElementById("choice-2");
+const checkArea = document.getElementById("buttons");
 
 startButton.addEventListener("click", startGame);
 loadChapter();
@@ -119,7 +121,6 @@ setTimeout(() => {
 // Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
 function initialisePuzzle() {
     const word = story[story.currentChapter].word;
-    const checkArea = document.getElementById("buttons");
     getPuzzle.style.visibility = "hidden";
     checkArea.style.visibility = "visible";
     checkButton.style.display = "inline-block";
