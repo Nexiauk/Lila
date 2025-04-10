@@ -6,12 +6,12 @@ const story = {
         storyImage: "./assets/images/lila-sleepy.avif",
         storyText: `Welcome!<br>Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The loss has been so intense that she has lost her ability to speak.<br>
             Travel with Lila and help her to find the words she needs to express how she's feeling...`,
-
     },
 
     intro: {
         title: "Introduction",
         storyImage: "./assets/images/lila-sleepy.avif",
+        storyImage2: "./assets/images/lila-spin.avif",
         storyText: `Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
 The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...`,
         choice1: "Go to sleep",
@@ -46,12 +46,19 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
     },
 };
 
+// Global variables
 const getPuzzle = document.getElementById("get-puzzle");
 const resetButton = document.getElementById("reset-button");
 const checkButton = document.getElementById("check");
 const startButton = document.getElementById("start-game");
-startButton.addEventListener("click", startGame);
+const storyImage = document.getElementById("story-image");
+const storyTitle = document.getElementById("title");
+const storyText = document.getElementById("story-text");
+const storyOuterCol = document.getElementById("text-col");
+const puzzleQuestion = document.getElementById("puzzle-question");
+const puzzleAnswer = document.getElementById("puzzle-answer");
 
+startButton.addEventListener("click", startGame);
 loadChapter();
 
 
@@ -65,13 +72,12 @@ getPuzzle.style.visibility = "visible";
     loadChapter();
 };
 
-// Function to grab all the content needed to load a new chapter from the story object
+// Function to grab all the content needed to load a new chapter from the story object's current chapter
 function loadChapter() {
 window.location.href = "#main-container";
-    document.getElementById("title").innerText = story[story.currentChapter].title;
-    document.getElementById("story-text").innerHTML = story[story.currentChapter].storyText;
-    document.getElementById("story-text").classList.add(`chapter-${story.currentChapter}`);
-    const storyImage = document.getElementById("story-image");
+    storyTitle.innerText = story[story.currentChapter].title;
+    storyText.innerHTML = story[story.currentChapter].storyText;
+    storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.src = story[story.currentChapter].storyImage;
 }
 
@@ -91,11 +97,8 @@ setTimeout(() => {
 function initialisePuzzle() {
     const word = story[story.currentChapter].word;
     const checkArea = document.getElementById("buttons");
-
-
     getPuzzle.style.visibility = "hidden";
     checkArea.style.visibility = "visible";
-
     checkButton.addEventListener("click", () => checkAnswer(word));
     resetButton.addEventListener("click", resetPuzzle);
 
@@ -117,8 +120,6 @@ function initialisePuzzle() {
     shuffle(letterArray);
 
     // Clear the puzzle areas of any existing content to ensure a blank canvas for this puzzle.
-    const puzzleQuestion = document.getElementById("puzzle-question");
-    const puzzleAnswer = document.getElementById("puzzle-answer");
     puzzleQuestion.innerHTML = "";
     puzzleAnswer.innerHTML = "";
 
@@ -192,10 +193,11 @@ function checkAnswer(word) {
         userAnswer += slot.textContent;
     });
     if (userAnswer == word) {
-        alert("You did it!");
         slots.forEach(slot => {
         slot.style.backgroundColor = "rgb(0, 128, 0)";
         slot.style.color = "rgb(255,255,255)";
+        storyImage.src = story[story.currentChapter].storyImage2;
+        confetti();
     });
     } else {
         alert("That's not correct, try again!");
@@ -210,11 +212,11 @@ function checkAnswer(word) {
 function resetPuzzle() {
     const slots = document.querySelectorAll(".slot");
     const tiles = document.querySelectorAll(".tile");
-
     slots.forEach(slot => {
         slot.textContent = "";
         slot.removeAttribute("data-id");
         slot.style.backgroundColor = "rgb(255, 255, 255)";
+        slot.style.color = "rgb(0,0,0)";
     });
 
     tiles.forEach(tile => {

@@ -31,19 +31,21 @@ footer {
     width: 100%;
 }
 
-
-#story-text {
+#text-col {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 3px 3px grey;
+}
+
+#story-text {
     padding: 25px 25px 5px 25px;
 }
 
-#story-text.chapter-intro {
-    background-color: gray
+#text-col.chapter-intro {
+    background-color: gray;
 }
 
-#story-text.chapter-void {
+#text-col.chapter-void {
     background-color: pink;
 }
 
