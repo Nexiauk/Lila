@@ -76,6 +76,8 @@ const storyText = document.getElementById("story-text");
 const storyOuterCol = document.getElementById("text-col");
 const puzzleQuestion = document.getElementById("puzzle-question");
 const puzzleAnswer = document.getElementById("puzzle-answer");
+const choice1 = document.getElementById("choice-1");
+const choice2 = document.getElementById("choice-2");
 
 startButton.addEventListener("click", startGame);
 loadChapter();
@@ -93,11 +95,13 @@ function startGame() {
 
 // Function to grab all the content needed to load a new chapter from the story object's current chapter
 function loadChapter() {
-    window.location.href = "#main-container";
+    // window.location.href = "#main-container";
     storyTitle.innerText = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.src = story[story.currentChapter].storyImage;
+    choice1.style.display = "none";
+    choice2.style.display = "none";
 }
 
 
@@ -118,6 +122,8 @@ function initialisePuzzle() {
     const checkArea = document.getElementById("buttons");
     getPuzzle.style.visibility = "hidden";
     checkArea.style.visibility = "visible";
+    checkButton.style.display = "inline-block";
+    resetButton.style.display = "inline-block";
     checkButton.addEventListener("click", () => checkAnswer(word));
     resetButton.addEventListener("click", resetPuzzle);
 
@@ -222,9 +228,10 @@ function checkAnswer(word) {
             slot.removeEventListener("click", clickedSlotHandler)
         });
         storyImage.src = story[story.currentChapter].storyImage2;
-        resetButton.style.visibility = "hidden";
-        checkButton.style.visibility = "hidden";
+        resetButton.style.display= "none";
+        checkButton.style.display = "none";
         confetti();
+       setTimeout(choices, 3000);
 
     } else {
         alert("That's not correct, try again!");
@@ -251,3 +258,8 @@ function resetPuzzle() {
         tile.style.visibility = "visible";
     });
 };
+
+function choices() {
+    choice1.style.display = "inline-block";
+    choice2.style.display = "inline-block";
+}

@@ -52,12 +52,13 @@
         <!-- Story images that is dynamically pulled through from a Javascript object -->
         <section class="row gx-0 justify-content-around" id="image-area">
             <div class="col col-12 col-lg-6" id="image-div"><img class="img-fluid" alt="Placeholder Image"
-                    id="story-image" width="700px" height="547px">
+                    id="story-image" width="700px" height="547px" src="https://picsum.photos/Width/Height">
             </div>
             <!-- Story text that is dynamically pulled through from a Javascript object-->
             <div class="col col-12 col-lg-6" id="text-col">
-                <p id="story-text"></p>
-                <div class="text-center"><a href="#puzzle-answer" class = "btn" id="get-puzzle">Get Puzzle</a><button id="start-game">Start Game</button></div>
+                <p id="story-text">Test Text Here</p>
+                <div class="text-center"><a href="#puzzle-answer" class="btn" id="get-puzzle">Get Puzzle</a><button
+                        id="start-game">Start Game</button></div>
             </div>
     </div>
     </section>
@@ -66,7 +67,8 @@
         <div class="col col-12 text-center" id="puzzle-answer"></div>
         <div class="col col-12 text-center" id="puzzle-question"></div>
         <div class="col col-12 text-center mb-4" id="buttons"><button id="check">Check Answer</button> <button
-                id="reset-button">Reset</button></div>
+                id="choice-1">Choice 1</button> <button id="reset-button">Reset</button> <button
+                id="choice-2">Choice 2</button></div>
     </section>
     </div>
     <!-- Footer with mt-auto added to push to the bottom -->
@@ -79,13 +81,14 @@
             </div>
         </div>
     </footer>
-    <!-- Bootstrap JS -->
+    <!-- custom JS -->
     <script src="./assets/js/script2.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <!-- Canvas confetti -->
-        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <!-- Canvas confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </body>
 
 </html>
