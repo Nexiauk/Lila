@@ -23,27 +23,46 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
     void: {
         title: "The Void",
         storyImage: "./assets/images/lila-spin.avif",
+        storyImage2: "",
         storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `,
         choice1: "Go to sleep",
         choice2: "",
-        word: "DARKNESS",
+        word: "DESPAIR",
         hint: ""
     },
 
-    forestEmpty: {
+    forest: {
         title: "The Forest",
         storyImage: "./assets/images/lila-forest.avif",
+        storyImage2: "",
         storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `,
-        word: "LONELY",
+        choice1: "",
+        choice2: "",
+        word: "ACCEPTANCE",
         hint: ""
     },
-    forestFull: {
-        title: "The Forest",
-        storyImage: "./assets/images/lila-forest.avif",
-        storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `,
-        choice1: "Go to sleep",
+
+    lake: {
+        title: "The Lake",
+        storyImage: "",
+        storyImage2: "",
+        storyText: `Insert story text here about the lake`,
+        choice1: "",
         choice2: "",
+        word: "LONGING",
+        hint: ""
     },
+
+    library: {
+        title: "The Library",
+        storyImage: "",
+        storyImage2: "",
+        storyText: `Insert story text here about the lake`,
+        choice1: "",
+        choice2: "",
+        word: "TEMPEST",
+        hint: ""
+    }
 };
 
 // Global variables
@@ -130,7 +149,7 @@ function initialisePuzzle() {
         let slot = document.createElement("div");
         slot.classList.add("slot");
         puzzleAnswer.appendChild(slot);
-        slot.addEventListener("click", () => clickedSlotHandler);
+        slot.addEventListener("click", clickedSlotHandler);
     });
 
     /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. 
