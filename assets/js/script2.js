@@ -262,4 +262,19 @@ function resetPuzzle() {
 function choices() {
     choice1.style.display = "inline-block";
     choice2.style.display = "inline-block";
-}
+    puzzleQuestion.innerHTML = "";
+    puzzleAnswer.innerHTML = "";
+
+    if (story.currentChapter == "intro") {
+        Object.defineProperty(story, "currentChapter", {
+            value: "void",
+        });
+
+        const choice1ClickHandler = () =>  {
+            loadChapter();
+            choice1.removeEventListener("click", choice1ClickHandler);
+        };
+        choice1.addEventListener("click", choice1ClickHandler)
+        };
+
+    };
