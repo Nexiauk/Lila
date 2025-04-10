@@ -86,9 +86,7 @@ loadChapter();
 
 
 function startGame() {
-    Object.defineProperty(story, "currentChapter", {
-        value: "intro",
-    });
+    story.currentChapter = "intro";
     startButton.style.display = "none";
     getPuzzle.style.display = "inline-block";
     getPuzzle.style.visibility = "visible";
@@ -229,10 +227,10 @@ function checkAnswer(word) {
             slot.removeEventListener("click", clickedSlotHandler)
         });
         storyImage.src = story[story.currentChapter].storyImage2;
-        resetButton.style.display= "none";
+        resetButton.style.display = "none";
         checkButton.style.display = "none";
         confetti();
-       setTimeout(choices, 3000);
+        setTimeout(choices, 3000);
 
     } else {
         alert("That's not correct, try again!");
@@ -267,15 +265,22 @@ function choices() {
     puzzleAnswer.innerHTML = "";
 
     if (story.currentChapter == "intro") {
-        Object.defineProperty(story, "currentChapter", {
-            value: "void",
-        });
-
-        const choice1ClickHandler = () =>  {
+       choice1.textContent= "Go to Sleep";
+       choice2.textContent = "Stay Awake";
+        const choice1ClickHandler = () => {
+            story.currentChapter = "void";
             loadChapter();
+            getPuzzle.style.visibility = "visible";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
-        choice1.addEventListener("click", choice1ClickHandler)
-        };
-
+        const choice2ClickHandler = () => {
+            story.currentChapter = "";
+            loadChapter();
+            getPuzzle.style.visibility = "visible";
+            choice2.removeEventListener("click", choice2ClickHandler);
+        }
+        choice1.addEventListener("click", choice1ClickHandler);
+        choice1.addEventListener("click", choice1ClickHandler);
     };
+
+};
