@@ -109,6 +109,7 @@ const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
 const checkArea = document.getElementById("buttons");
 let ending = false;
+let ending1 = false;
 let introVisited = false;
 let voidVisited = false;
 let forestVisited = false;
@@ -310,12 +311,16 @@ function choices() {
 
 
     if (story.currentChapter == "intro") {
+        introVisited = true;
+
         const choice1ClickHandler = () => {
             story.currentChapter = "void";
             loadChapter();
             getPuzzle.style.visibility = "visible";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
+
+
         const choice2ClickHandler = () => {
             story.currentChapter = "ending1";
             loadChapter();
@@ -324,10 +329,15 @@ function choices() {
         };
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
+
     };
 
+
+
     if (story.currentChapter == "void") {
+        voidVisited = true;
         choice3.style.display = "inline-block";
+
         const choice1ClickHandler = () => {
             story.currentChapter = "forest";
             loadChapter();
@@ -339,7 +349,8 @@ function choices() {
             loadChapter();
             getPuzzle.style.visibility = "visible";
             choice2.removeEventListener("click", choice2ClickHandler);
-        }
+
+        };
         const choice3ClickHandler = () => {
             story.currentChapter = "library";
             loadChapter();
@@ -350,7 +361,11 @@ function choices() {
         choice2.addEventListener("click", choice2ClickHandler);
         choice3.addEventListener("click", choice3ClickHandler);
     };
+
+
     if (story.currentChapter == "forest") {
+        forestVisited = true;
+
         const choice1ClickHandler = () => {
             story.currentChapter = "lake";
             loadChapter();
@@ -366,7 +381,9 @@ function choices() {
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
     };
+
     if (story.currentChapter == "library") {
+        libraryVisited = true;
         const choice1ClickHandler = () => {
             story.currentChapter = "forest";
             loadChapter();
@@ -383,6 +400,7 @@ function choices() {
         choice2.addEventListener("click", choice2ClickHandler);
     };
     if (story.currentChapter == "lake") {
+        lakeVisited = true;
         const choice1ClickHandler = () => {
             story.currentChapter = "forest";
             loadChapter();
