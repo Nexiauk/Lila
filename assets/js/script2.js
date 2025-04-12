@@ -331,18 +331,65 @@ function choices() {
         const choice2ClickHandler = () => {
             story.currentChapter = "lake";
             loadChapter();
-            getPuzzle.style.visibility = "hidden";
+            getPuzzle.style.visibility = "visible";
             choice2.removeEventListener("click", choice2ClickHandler);
         }
         const choice3ClickHandler = () => {
-            story.currentChapter = "lake";
+            story.currentChapter = "library";
             loadChapter();
-            getPuzzle.style.visibility = "hidden";
+            getPuzzle.style.visibility = "visible";
             choice3.removeEventListener("click", choice3ClickHandler);
         };
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
-        choice2.addEventListener("click", choice3ClickHandler);
+        choice3.addEventListener("click", choice3ClickHandler);
     };
-
+    if (story.currentChapter == "forest") {
+        const choice1ClickHandler = () => {
+            story.currentChapter = "lake";
+            loadChapter();
+            getPuzzle.style.visibility = "visible";
+            choice1.removeEventListener("click", choice1ClickHandler);
+        };
+        const choice2ClickHandler = () => {
+            story.currentChapter = "library";
+            loadChapter();
+            getPuzzle.style.visibility = "visible";
+            choice2.removeEventListener("click", choice2ClickHandler);
+        };
+        choice1.addEventListener("click", choice1ClickHandler);
+        choice2.addEventListener("click", choice2ClickHandler);
+    };
+    if (story.currentChapter == "library") {
+        const choice1ClickHandler = () => {
+            story.currentChapter = "forest";
+            loadChapter();
+            getPuzzle.style.visibility = "visible";
+            choice1.removeEventListener("click", choice1ClickHandler);
+        };
+        const choice2ClickHandler = () => {
+            story.currentChapter = "lake";
+            loadChapter();
+            getPuzzle.style.visibility = "visible";
+            choice2.removeEventListener("click", choice2ClickHandler);
+        };
+        choice1.addEventListener("click", choice1ClickHandler);
+        choice2.addEventListener("click", choice2ClickHandler);
+    };
+    if (story.currentChapter == "lake") {
+        const choice1ClickHandler = () => {
+            story.currentChapter = "forest";
+            loadChapter();
+            getPuzzle.style.visibility = "visible";
+            choice1.removeEventListener("click", choice1ClickHandler);
+        };
+        const choice2ClickHandler = () => {
+            story.currentChapter = "library";
+            loadChapter();
+            getPuzzle.style.visibility = "visible";
+            choice2.removeEventListener("click", choice2ClickHandler);
+        };
+        choice1.addEventListener("click", choice1ClickHandler);
+        choice2.addEventListener("click", choice2ClickHandler);
+    };
 };
