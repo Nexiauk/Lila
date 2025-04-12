@@ -136,6 +136,10 @@ footer {
         margin-left: 0px;
     }
 
+    #word-inventory {
+        display: none;
+    }
+
     .tile,
     .slot {
         height: 25px;
@@ -161,6 +165,10 @@ footer {
     #puzzle-question,
     #puzzle-answer {
         height: 100px;
+    }
+
+    #word-inventory {
+        display: block;
     }
 
     .tile,
