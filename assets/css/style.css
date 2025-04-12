@@ -31,7 +31,9 @@ footer {
     width: 100%;
 }
 
-#text-col {
+#text-col,
+#story-image,
+#word-inventory {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 3px 3px grey;
@@ -51,6 +53,10 @@ footer {
 
 #title {
     font-weight: bold;
+}
+
+#collected-words {
+    list-style: none;
 }
 
 #puzzle-question {

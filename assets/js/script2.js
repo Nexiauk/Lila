@@ -2,7 +2,7 @@
 const story = {
     currentChapter: "welcome",
     welcome: {
-        title: "Welcome",
+        title: `<h1>Welcome</h1>`,
         storyImage: "./assets/images/lila-sleepy.avif",
         storyText: `Welcome!<br>Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The loss has been so intense that she has lost her ability to speak.<br>
             Travel with Lila and help her to find the words she needs to express how she's feeling...`
@@ -109,6 +109,7 @@ const choice1 = document.getElementById("choice-1");
 const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
 const checkArea = document.getElementById("buttons");
+const collectedWords = document.getElementById("collected-words");
 let forestVisited = false;
 let lakeVisited = false;
 let libraryVisited = false;
@@ -130,7 +131,7 @@ function startGame() {
 // Function to grab all the content needed to load a new chapter from the story object's current chapter
 function loadChapter() {
     // window.location.href = "#main-container";
-    storyTitle.innerText = story[story.currentChapter].title;
+    storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.src = story[story.currentChapter].storyImage;
@@ -268,6 +269,9 @@ function checkAnswer() {
         storyText.innerHTML = story[story.currentChapter].storyText2;
         resetButton.style.display = "none";
         checkButton.style.display = "none";
+        const newListItem = document.createElement("li");
+        newListItem.textContent = word;
+        collectedWords.appendChild(newListItem);
         confetti();
         setTimeout(choices, 3000);
 

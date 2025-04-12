@@ -50,18 +50,31 @@
             <div class="col text-center" id="title">Lila's Lost Words</div>
         </div>
         <!-- Story images that is dynamically pulled through from a Javascript object -->
-        <section class="row gx-0 justify-content-around" id="image-area">
+        <section class="row gx-0 justify-content-around" id="story-area">
             <div class="col col-12 col-lg-6" id="image-div"><img class="img-fluid" alt="Placeholder Image"
                     id="story-image" width="700px" height="547px" src="https://picsum.photos/Width/Height">
             </div>
             <!-- Story text that is dynamically pulled through from a Javascript object-->
-            <div class="col col-12 col-lg-6" id="text-col">
+            <div class="col col-12 col-lg-4" id="text-col">
                 <p id="story-text">Test Text Here</p>
-                <div class="text-center"><button id="choice-1">Choice 1</button> 
-                <button id="choice-2" >Choice 2</button> <button id="choice-3" >Choice 3</button></div>
+                <div class="text-center"><button id="choice-1">Choice 1</button>
+                    <button id="choice-2">Choice 2</button> <button id="choice-3">Choice 3</button>
+                </div>
                 <div class="text-center"><a href="#puzzle-answer" class="btn" id="get-puzzle">Get Puzzle</a><button
                         id="start-game">Start Game</button></div>
             </div>
+            <div class="col col-sm-12 col-lg-2 text-center" id="word-inventory">
+
+                <div class="col col-sm-12 col-lg-2 text-center">
+                    <h2 class="display-6">Words</h2>
+                    <ul id="collected-words">
+                    </ul>
+                </div>
+                <div class="col col-sm-12 col-lg-6 text-center"><h2 class="display-6">Scores</h2></div>
+
+
+            </div>
+
     </div>
     </section>
     <!-- Puzzle area -->
@@ -69,9 +82,9 @@
         <div class="col col-12 text-center" id="puzzle-answer"></div>
         <div class="col col-12 text-center" id="puzzle-question"></div>
         <div class="col col-12 text-center mb-4" id="buttons">
-            <button id="check">Check Answer</button> 
-            <button id="reset-button">Reset</button> 
-</div>
+            <button id="check">Check Answer</button>
+            <button id="reset-button">Reset</button>
+        </div>
     </section>
     </div>
     <!-- Footer with mt-auto added to push to the bottom -->
