@@ -307,15 +307,12 @@ function choices() {
     choice3.textContent = story[story.currentChapter].choice3;
 
     if (forestVisited && lakeVisited && libraryVisited) {
-        const choice1ClickHandler = () => {
-            story.currentChapter = "ending2";
-            loadChapter();
-            getPuzzle.style.visibility = "hidden";
-            choice1.removeEventListener("click", choice1ClickHandler);
-        };
-        choice1.addEventListener("click", choice1ClickHandler);
+        story.currentChapter = "ending2";
+        loadChapter();
+        getPuzzle.style.visibility = "hidden";
         return;
     };
+
 
     if (story.currentChapter == "intro") {
         const choice1ClickHandler = () => {
@@ -343,12 +340,14 @@ function choices() {
 
         const choice1ClickHandler = () => {
             story.currentChapter = "forest";
+            forestVisited = true;
             loadChapter();
             getPuzzle.style.visibility = "visible";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
         const choice2ClickHandler = () => {
             story.currentChapter = "lake";
+            lakeVisitedVisited = true;
             loadChapter();
             getPuzzle.style.visibility = "visible";
             choice2.removeEventListener("click", choice2ClickHandler);
@@ -356,6 +355,7 @@ function choices() {
         };
         const choice3ClickHandler = () => {
             story.currentChapter = "library";
+            libraryVisited = true;
             loadChapter();
             getPuzzle.style.visibility = "visible";
             choice3.removeEventListener("click", choice3ClickHandler);
@@ -367,12 +367,12 @@ function choices() {
 
 
     if (story.currentChapter == "forest") {
-        forestVisited = true;
         console.log("The forest has been visited")
 
         if (libraryVisited == false) {
             const choice1ClickHandler = () => {
                 story.currentChapter = "library";
+                libraryVisited = true;
                 loadChapter();
                 getPuzzle.style.visibility = "visible";
                 choice1.removeEventListener("click", choice1ClickHandler);
@@ -385,6 +385,7 @@ function choices() {
         if (lakeVisited == false) {
             const choice2ClickHandler = () => {
                 story.currentChapter = "lake";
+                lakeVisited = true;
                 loadChapter();
                 getPuzzle.style.visibility = "visible";
                 choice1.removeEventListener("click", choice2ClickHandler);
@@ -396,12 +397,12 @@ function choices() {
     };
 
     if (story.currentChapter == "library") {
-        libraryVisited = true;
         console.log("The library has been visited")
 
         if (forestVisited == false) {
             const choice1ClickHandler = () => {
                 story.currentChapter = "forest";
+                forestVisited = true;
                 loadChapter();
                 getPuzzle.style.visibility = "visible";
                 choice1.removeEventListener("click", choice1ClickHandler);
@@ -414,6 +415,7 @@ function choices() {
         if (lakeVisited == false) {
             const choice2ClickHandler = () => {
                 story.currentChapter = "lake";
+                lakeVisited = true;
                 loadChapter();
                 getPuzzle.style.visibility = "visible";
                 choice2.removeEventListener("click", choice2ClickHandler);
@@ -426,12 +428,12 @@ function choices() {
     };
 
     if (story.currentChapter == "lake") {
-        lakeVisited = true;
         console.log("The lake has been visited")
 
         if (forestVisited == false) {
             const choice1ClickHandler = () => {
                 story.currentChapter = "forest";
+                forestVisited = true;
                 loadChapter();
                 getPuzzle.style.visibility = "visible";
                 choice1.removeEventListener("click", choice1ClickHandler);
@@ -444,6 +446,7 @@ function choices() {
         if (libraryVisited == false) {
             const choice2ClickHandler = () => {
                 story.currentChapter = "library";
+                libraryVisited = true;
                 loadChapter();
                 getPuzzle.style.visibility = "visible";
                 choice2.removeEventListener("click", choice2ClickHandler);
