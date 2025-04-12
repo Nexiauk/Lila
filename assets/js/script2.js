@@ -15,7 +15,7 @@ const story = {
         storyText: `Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
 The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...`,
         choice1: "Go to sleep",
-        choice2: "",
+        choice2: "Stay Awake",
         word: "SADNESS",
         hint: ""
     },
@@ -65,7 +65,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
     },
 
     ending1: {
-        title: "Gme Over",
+        title: "Game Over",
         storyImage: "",
         storyImage2: "",
         storyText: `Short ending if you choose not to go to sleep`,
@@ -287,22 +287,22 @@ function choices() {
     puzzleAnswer.innerHTML = "";
 
     if (story.currentChapter == "intro") {
-       choice1.textContent= "Go to Sleep";
-       choice2.textContent = "Stay Awake";
+       choice1.textContent= story[story.currentChapter].choice1;
+       choice2.textContent = story[story.currentChapter].choice2;
         const choice1ClickHandler = () => {
             story.currentChapter = "void";
             loadChapter();
             getPuzzle.style.visibility = "visible";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
-        // const choice2ClickHandler = () => {
-        //     story.currentChapter = "";
-        //     loadChapter();
-        //     getPuzzle.style.visibility = "visible";
-        //     choice2.removeEventListener("click", choice2ClickHandler);
-        // }
+        const choice2ClickHandler = () => {
+            story.currentChapter = "ending1";
+            loadChapter();
+            getPuzzle.style.visibility = "hidden";
+            choice2.removeEventListener("click", choice2ClickHandler);
+        }
         choice1.addEventListener("click", choice1ClickHandler);
-        // choice2.addEventListener("click", choice2ClickHandler);
+        choice2.addEventListener("click", choice2ClickHandler);
     };
 
 };
