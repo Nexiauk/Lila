@@ -5,7 +5,7 @@ const story = {
         title: "Welcome",
         storyImage: "./assets/images/lila-sleepy.avif",
         storyText: `Welcome!<br>Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The loss has been so intense that she has lost her ability to speak.<br>
-            Travel with Lila and help her to find the words she needs to express how she's feeling...`,
+            Travel with Lila and help her to find the words she needs to express how she's feeling...`
     },
 
     intro: {
@@ -80,12 +80,13 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         word: "TEMPEST",
         hint: ""
     },
+
     ending2: {
         title: "Congratulations!!",
         storyImage: "",
         storyImage2: "",
         storyText: `Game completion ending`,
-        choice1: "",
+        choice1: "Wake Up",
         choice2: "",
         word: "TEMPEST",
         hint: ""
@@ -108,10 +109,6 @@ const choice1 = document.getElementById("choice-1");
 const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
 const checkArea = document.getElementById("buttons");
-let ending = false;
-let ending1 = false;
-let introVisited = false;
-let voidVisited = false;
 let forestVisited = false;
 let lakeVisited = false;
 let libraryVisited = false;
@@ -309,17 +306,24 @@ function choices() {
     choice2.textContent = story[story.currentChapter].choice2;
     choice3.textContent = story[story.currentChapter].choice3;
 
+    if (forestVisited && lakeVisited && libraryVisited) {
+        const choice1ClickHandler = () => {
+            story.currentChapter = "ending2";
+            loadChapter();
+            getPuzzle.style.visibility = "hidden";
+            choice1.removeEventListener("click", choice1ClickHandler);
+        };
+        choice1.addEventListener("click", choice1ClickHandler);
+        return;
+    };
 
     if (story.currentChapter == "intro") {
-        introVisited = true;
-
         const choice1ClickHandler = () => {
             story.currentChapter = "void";
             loadChapter();
             getPuzzle.style.visibility = "visible";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
-
 
         const choice2ClickHandler = () => {
             story.currentChapter = "ending1";
@@ -335,7 +339,6 @@ function choices() {
 
 
     if (story.currentChapter == "void") {
-        voidVisited = true;
         choice3.style.display = "inline-block";
 
         const choice1ClickHandler = () => {
@@ -365,55 +368,90 @@ function choices() {
 
     if (story.currentChapter == "forest") {
         forestVisited = true;
+        console.log("The forest has been visited")
 
-        const choice1ClickHandler = () => {
-            story.currentChapter = "lake";
-            loadChapter();
-            getPuzzle.style.visibility = "visible";
-            choice1.removeEventListener("click", choice1ClickHandler);
+        if (libraryVisited == false) {
+            const choice1ClickHandler = () => {
+                story.currentChapter = "library";
+                loadChapter();
+                getPuzzle.style.visibility = "visible";
+                choice1.removeEventListener("click", choice1ClickHandler);
+            };
+            choice1.addEventListener("click", choice1ClickHandler);
+        } else {
+            choice1.style.display = "none";
         };
-        const choice2ClickHandler = () => {
-            story.currentChapter = "library";
-            loadChapter();
-            getPuzzle.style.visibility = "visible";
-            choice2.removeEventListener("click", choice2ClickHandler);
-        };
-        choice1.addEventListener("click", choice1ClickHandler);
-        choice2.addEventListener("click", choice2ClickHandler);
+
+        if (lakeVisited == false) {
+            const choice2ClickHandler = () => {
+                story.currentChapter = "lake";
+                loadChapter();
+                getPuzzle.style.visibility = "visible";
+                choice1.removeEventListener("click", choice2ClickHandler);
+            };
+            choice2.addEventListener("click", choice2ClickHandler);
+        } else {
+            choice2.style.display = "none";
+        }
     };
 
     if (story.currentChapter == "library") {
         libraryVisited = true;
-        const choice1ClickHandler = () => {
-            story.currentChapter = "forest";
-            loadChapter();
-            getPuzzle.style.visibility = "visible";
-            choice1.removeEventListener("click", choice1ClickHandler);
+        console.log("The library has been visited")
+
+        if (forestVisited == false) {
+            const choice1ClickHandler = () => {
+                story.currentChapter = "forest";
+                loadChapter();
+                getPuzzle.style.visibility = "visible";
+                choice1.removeEventListener("click", choice1ClickHandler);
+            };
+            choice1.addEventListener("click", choice1ClickHandler);
+        } else {
+            choice1.style.display = "none";
         };
-        const choice2ClickHandler = () => {
-            story.currentChapter = "lake";
-            loadChapter();
-            getPuzzle.style.visibility = "visible";
-            choice2.removeEventListener("click", choice2ClickHandler);
+
+        if (lakeVisited == false) {
+            const choice2ClickHandler = () => {
+                story.currentChapter = "lake";
+                loadChapter();
+                getPuzzle.style.visibility = "visible";
+                choice2.removeEventListener("click", choice2ClickHandler);
+            };
+            choice2.addEventListener("click", choice2ClickHandler);
+        } else {
+            choice2.style.display = "none";
+
         };
-        choice1.addEventListener("click", choice1ClickHandler);
-        choice2.addEventListener("click", choice2ClickHandler);
     };
+
     if (story.currentChapter == "lake") {
         lakeVisited = true;
-        const choice1ClickHandler = () => {
-            story.currentChapter = "forest";
-            loadChapter();
-            getPuzzle.style.visibility = "visible";
-            choice1.removeEventListener("click", choice1ClickHandler);
+        console.log("The lake has been visited")
+
+        if (forestVisited == false) {
+            const choice1ClickHandler = () => {
+                story.currentChapter = "forest";
+                loadChapter();
+                getPuzzle.style.visibility = "visible";
+                choice1.removeEventListener("click", choice1ClickHandler);
+            };
+            choice1.addEventListener("click", choice1ClickHandler);
+        } else {
+            choice1.style.display = "none";
         };
-        const choice2ClickHandler = () => {
-            story.currentChapter = "library";
-            loadChapter();
-            getPuzzle.style.visibility = "visible";
-            choice2.removeEventListener("click", choice2ClickHandler);
+
+        if (libraryVisited == false) {
+            const choice2ClickHandler = () => {
+                story.currentChapter = "library";
+                loadChapter();
+                getPuzzle.style.visibility = "visible";
+                choice2.removeEventListener("click", choice2ClickHandler);
+            };
+            choice2.addEventListener("click", choice2ClickHandler);
+        } else {
+            choice2.style.display = "none";
         };
-        choice1.addEventListener("click", choice1ClickHandler);
-        choice2.addEventListener("click", choice2ClickHandler);
+
     };
 };
