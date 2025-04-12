@@ -230,6 +230,7 @@ function clickedSlot(slot) {
 /*Function to check the user's answer against the original word passed into the initialisegame function. 
 Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
 function checkAnswer() {
+    const mainSection = document.getElementById("main-container");
     const slots = document.querySelectorAll(".slot");
     // check if all slots are filled
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
@@ -244,6 +245,7 @@ function checkAnswer() {
         userAnswer += slot.textContent;
     });
     if (userAnswer == word) {
+        mainSection.scrollIntoView({ behavior: "smooth" });
         slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(0, 128, 0)";
             slot.style.color = "rgb(255,255,255)";
