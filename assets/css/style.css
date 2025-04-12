@@ -34,15 +34,18 @@ footer {
 
 #text-col,
 #story-image,
-#word-inventory {
+#word-inventory,
+#title-col {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 3px 3px grey;
 }
 
+
 #story-text {
     padding: 25px 25px 5px 25px;
 }
+
 
 #text-col.chapter-intro {
     background-color: gray;
