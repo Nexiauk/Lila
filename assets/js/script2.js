@@ -11,7 +11,7 @@ const story = {
     intro: {
         title: "Introduction",
         storyImage: "./assets/images/lila-sleepy.avif",
-        storyImage2: "./assets/images/lila-spin.avif",
+        storyImage2: "./assets/images/lila-forest.avif",
         storyText: `Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
 The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...`,
         choice1: "Go to sleep",
@@ -25,8 +25,9 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyImage: "./assets/images/lila-spin.avif",
         storyImage2: "",
         storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `,
-        choice1: "Go to sleep",
-        choice2: "",
+        choice1: "Visit the Forest",
+        choice2: "Visit the Lake",
+        choice3: "Visit the Library",
         word: "DESPAIR",
         hint: ""
     },
@@ -35,9 +36,9 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         title: "The Forest",
         storyImage: "./assets/images/lila-forest.avif",
         storyImage2: "",
-        storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `,
-        choice1: "",
-        choice2: "",
+        storyText: `This should load the forest story text. `,
+        choice1: "Visit the Library",
+        choice2: "Visit the Lake",
         word: "ACCEPTANCE",
         hint: ""
     },
@@ -47,8 +48,8 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyImage: "",
         storyImage2: "",
         storyText: `Insert story text here about the lake`,
-        choice1: "",
-        choice2: "",
+        choice1: "Visit the Forest",
+        choice2: "Visit the Library",
         word: "LONGING",
         hint: ""
     },
@@ -58,8 +59,8 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyImage: "",
         storyImage2: "",
         storyText: `Insert story text here about the library`,
-        choice1: "",
-        choice2: "",
+        choice1: "Visit the Forest",
+        choice2: "Visit the Lake",
         word: "TEMPEST",
         hint: ""
     },
@@ -100,10 +101,12 @@ const puzzleQuestion = document.getElementById("puzzle-question");
 const puzzleAnswer = document.getElementById("puzzle-answer");
 const choice1 = document.getElementById("choice-1");
 const choice2 = document.getElementById("choice-2");
+const choice3 = document.getElementById("choice-3");
 const checkArea = document.getElementById("buttons");
 
-startButton.addEventListener("click", startGame);
 let word = "";
+
+startButton.addEventListener("click", startGame);
 loadChapter();
 
 
@@ -124,6 +127,7 @@ function loadChapter() {
     storyImage.src = story[story.currentChapter].storyImage;
     choice1.style.display = "none";
     choice2.style.display = "none";
+    choice3.style.display = "none";
 }
 
 
@@ -287,10 +291,12 @@ function choices() {
     choice2.style.display = "inline-block";
     puzzleQuestion.innerHTML = "";
     puzzleAnswer.innerHTML = "";
+    choice1.textContent= story[story.currentChapter].choice1;
+    choice2.textContent = story[story.currentChapter].choice2;
+    choice3.textContent = story[story.currentChapter].choice3;
+
 
     if (story.currentChapter == "intro") {
-       choice1.textContent= story[story.currentChapter].choice1;
-       choice2.textContent = story[story.currentChapter].choice2;
         const choice1ClickHandler = () => {
             story.currentChapter = "void";
             loadChapter();
@@ -305,6 +311,31 @@ function choices() {
         }
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
+
     };
+
+    if (story.currentChapter == "void") {
+         const choice1ClickHandler = () => {
+             story.currentChapter = "forest";
+             loadChapter();
+             getPuzzle.style.visibility = "visible";
+             choice1.removeEventListener("click", choice1ClickHandler);
+         };
+         const choice2ClickHandler = () => {
+             story.currentChapter = "lake";
+             loadChapter();
+             getPuzzle.style.visibility = "hidden";
+             choice2.removeEventListener("click", choice2ClickHandler);
+         }
+         const choice3ClickHandler = () => {
+            story.currentChapter = "lake";
+            loadChapter();
+            getPuzzle.style.visibility = "hidden";
+            choice3.removeEventListener("click", choice3ClickHandler);
+        }
+         choice1.addEventListener("click", choice1ClickHandler);
+         choice2.addEventListener("click", choice2ClickHandler);
+         choice2.addEventListener("click", choice3ClickHandler);
+     };
 
 };
