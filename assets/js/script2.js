@@ -14,6 +14,7 @@ const story = {
         storyImage2: "./assets/images/lila-forest.avif",
         storyText: `Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
 The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...`,
+        storyText2: `Once the letters are arranged to form the word sadness, Lila smiles a little at being able to recognise the emotion she's currently feeling. She snuggles down under the covers and slowly drifts off to sleep...`,
         choice1: "Go to sleep",
         choice2: "Stay Awake",
         word: "SADNESS",
@@ -25,6 +26,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyImage: "./assets/images/lila-spin.avif",
         storyImage2: "",
         storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `,
+        storyText2: `Post-puzzle text for the void`,
         choice1: "Visit the Forest",
         choice2: "Visit the Lake",
         choice3: "Visit the Library",
@@ -37,6 +39,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyImage: "./assets/images/lila-forest.avif",
         storyImage2: "",
         storyText: `This should load the forest story text. `,
+        storyText2: `Post-puzzle text for the forest`,
         choice1: "Visit the Library",
         choice2: "Visit the Lake",
         word: "ACCEPTANCE",
@@ -48,6 +51,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyImage: "",
         storyImage2: "",
         storyText: `Insert story text here about the lake`,
+        storyText2: `Post-puzzle text for the lake`,
         choice1: "Visit the Forest",
         choice2: "Visit the Library",
         word: "LONGING",
@@ -59,6 +63,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyImage: "",
         storyImage2: "",
         storyText: `Insert story text here about the library`,
+        storyText2: `Post-puzzle text for the library`,
         choice1: "Visit the Forest",
         choice2: "Visit the Lake",
         word: "TEMPEST",
@@ -256,6 +261,7 @@ function checkAnswer() {
             slot.removeEventListener("click", clickedSlotHandler);
         });
         storyImage.src = story[story.currentChapter].storyImage2;
+        storyText.innerHTML = story[story.currentChapter].storyText2;
         resetButton.style.display = "none";
         checkButton.style.display = "none";
         confetti();
@@ -289,9 +295,10 @@ function resetPuzzle() {
 function choices() {
     choice1.style.display = "inline-block";
     choice2.style.display = "inline-block";
+    choice3.style.display = "none";
     puzzleQuestion.innerHTML = "";
     puzzleAnswer.innerHTML = "";
-    choice1.textContent= story[story.currentChapter].choice1;
+    choice1.textContent = story[story.currentChapter].choice1;
     choice2.textContent = story[story.currentChapter].choice2;
     choice3.textContent = story[story.currentChapter].choice3;
 
@@ -308,34 +315,34 @@ function choices() {
             loadChapter();
             getPuzzle.style.visibility = "hidden";
             choice2.removeEventListener("click", choice2ClickHandler);
-        }
+        };
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
-
     };
 
     if (story.currentChapter == "void") {
-         const choice1ClickHandler = () => {
-             story.currentChapter = "forest";
-             loadChapter();
-             getPuzzle.style.visibility = "visible";
-             choice1.removeEventListener("click", choice1ClickHandler);
-         };
-         const choice2ClickHandler = () => {
-             story.currentChapter = "lake";
-             loadChapter();
-             getPuzzle.style.visibility = "hidden";
-             choice2.removeEventListener("click", choice2ClickHandler);
-         }
-         const choice3ClickHandler = () => {
+        choice3.style.display = "inline-block";
+        const choice1ClickHandler = () => {
+            story.currentChapter = "forest";
+            loadChapter();
+            getPuzzle.style.visibility = "visible";
+            choice1.removeEventListener("click", choice1ClickHandler);
+        };
+        const choice2ClickHandler = () => {
+            story.currentChapter = "lake";
+            loadChapter();
+            getPuzzle.style.visibility = "hidden";
+            choice2.removeEventListener("click", choice2ClickHandler);
+        }
+        const choice3ClickHandler = () => {
             story.currentChapter = "lake";
             loadChapter();
             getPuzzle.style.visibility = "hidden";
             choice3.removeEventListener("click", choice3ClickHandler);
-        }
-         choice1.addEventListener("click", choice1ClickHandler);
-         choice2.addEventListener("click", choice2ClickHandler);
-         choice2.addEventListener("click", choice3ClickHandler);
-     };
+        };
+        choice1.addEventListener("click", choice1ClickHandler);
+        choice2.addEventListener("click", choice2ClickHandler);
+        choice2.addEventListener("click", choice3ClickHandler);
+    };
 
 };
