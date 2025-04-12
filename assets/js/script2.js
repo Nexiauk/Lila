@@ -110,6 +110,7 @@ const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
 const checkArea = document.getElementById("buttons");
 const collectedWords = document.getElementById("collected-words");
+let checkScore = 0;
 let forestVisited = false;
 let lakeVisited = false;
 let libraryVisited = false;
@@ -155,6 +156,7 @@ setTimeout(() => {
 // Initialise puzzle function loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word.
 function initialisePuzzle() {
     word = story[story.currentChapter].word;
+    checkScore = 0;
     getPuzzle.style.visibility = "hidden";
     checkArea.style.visibility = "visible";
     checkButton.style.display = "inline-block";
@@ -244,6 +246,8 @@ function clickedSlot(slot) {
 /*Function to check the user's answer against the original word passed into the initialisegame function. 
 Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
 function checkAnswer() {
+    checkScore = checkScore + 1;
+    console.log(checkScore);
     const mainSection = document.getElementById("main-container");
     const slots = document.querySelectorAll(".slot");
     // check if all slots are filled
@@ -272,6 +276,9 @@ function checkAnswer() {
         const newListItem = document.createElement("li");
         newListItem.textContent = word;
         collectedWords.appendChild(newListItem);
+        const wordScore = document.createElement("li");
+        wordScore.textContent = "Attempts:" + checkScore;
+        collectedWords.appendChild(wordScore);
         confetti();
         setTimeout(choices, 3000);
 
