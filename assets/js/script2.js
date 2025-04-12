@@ -57,7 +57,28 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         title: "The Library",
         storyImage: "",
         storyImage2: "",
-        storyText: `Insert story text here about the lake`,
+        storyText: `Insert story text here about the library`,
+        choice1: "",
+        choice2: "",
+        word: "TEMPEST",
+        hint: ""
+    },
+
+    ending1: {
+        title: "Gme Over",
+        storyImage: "",
+        storyImage2: "",
+        storyText: `Short ending if you choose not to go to sleep`,
+        choice1: "",
+        choice2: "",
+        word: "TEMPEST",
+        hint: ""
+    },
+    ending2: {
+        title: "Congratulations!!",
+        storyImage: "",
+        storyImage2: "",
+        storyText: `Game completion ending`,
         choice1: "",
         choice2: "",
         word: "TEMPEST",
@@ -119,13 +140,12 @@ setTimeout(() => {
 
 // Initialise puzzle function loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word.
 function initialisePuzzle() {
-    slotList = [];
     word = story[story.currentChapter].word;
     getPuzzle.style.visibility = "hidden";
     checkArea.style.visibility = "visible";
     checkButton.style.display = "inline-block";
     resetButton.style.display = "inline-block";
-    checkButton.addEventListener("click", () => checkAnswer(word));
+    checkButton.addEventListener("click", checkAnswer);
     resetButton.addEventListener("click", resetPuzzle);
 
     // First function splits the word into an array of letters and then maps an id to each letter that matches the array indexes.
@@ -156,7 +176,6 @@ function initialisePuzzle() {
         let slot = document.createElement("div");
         slot.classList.add("slot");
         puzzleAnswer.appendChild(slot);
-        slotList.push(slot);
         slot.addEventListener("click", clickedSlotHandler);
     });
 
@@ -201,6 +220,7 @@ function clickedSlot(slot) {
     if (!id) return;
     slot.textContent = "";
     slot.removeAttribute("data-id");
+    slot.style.backgroundColor = "white";
     const matchingTile = document.querySelector(`.tile[data-id='${id}']`);
     if (matchingTile) {
         matchingTile.style.visibility = "visible";
@@ -224,9 +244,10 @@ function checkAnswer() {
         userAnswer += slot.textContent;
     });
     if (userAnswer == word) {
-        slotList.forEach(slot => {
+        slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(0, 128, 0)";
             slot.style.color = "rgb(255,255,255)";
+            slot.removeEventListener("click", clickedSlotHandler);
         });
         storyImage.src = story[story.currentChapter].storyImage2;
         resetButton.style.display = "none";
