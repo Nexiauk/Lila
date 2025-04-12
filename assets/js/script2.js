@@ -82,6 +82,7 @@ const choice2 = document.getElementById("choice-2");
 const checkArea = document.getElementById("buttons");
 
 startButton.addEventListener("click", startGame);
+let word = "";
 loadChapter();
 
 
@@ -116,9 +117,10 @@ setTimeout(() => {
 }, 0);
 
 
-// Puzzle1 tied to chapter 1. scrambles a word and creates tiles and empty slots.
+// Initialise puzzle function loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word.
 function initialisePuzzle() {
-    const word = story[story.currentChapter].word;
+    slotList = [];
+    word = story[story.currentChapter].word;
     getPuzzle.style.visibility = "hidden";
     checkArea.style.visibility = "visible";
     checkButton.style.display = "inline-block";
@@ -154,6 +156,7 @@ function initialisePuzzle() {
         let slot = document.createElement("div");
         slot.classList.add("slot");
         puzzleAnswer.appendChild(slot);
+        slotList.push(slot);
         slot.addEventListener("click", clickedSlotHandler);
     });
 
@@ -206,7 +209,7 @@ function clickedSlot(slot) {
 
 /*Function to check the user's answer against the original word passed into the initialisegame function. 
 Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
-function checkAnswer(word) {
+function checkAnswer() {
     const slots = document.querySelectorAll(".slot");
     // check if all slots are filled
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
@@ -221,10 +224,9 @@ function checkAnswer(word) {
         userAnswer += slot.textContent;
     });
     if (userAnswer == word) {
-        slots.forEach(slot => {
+        slotList.forEach(slot => {
             slot.style.backgroundColor = "rgb(0, 128, 0)";
             slot.style.color = "rgb(255,255,255)";
-            slot.removeEventListener("click", clickedSlotHandler)
         });
         storyImage.src = story[story.currentChapter].storyImage2;
         resetButton.style.display = "none";
@@ -237,10 +239,9 @@ function checkAnswer(word) {
         slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(255, 0, 0)";
             slot.style.color = "rgb(255,255,255)";
-            slot.removeEventListener("click", clickedSlotHandler);
         });
-    }
-}
+    };
+};
 
 // function to reset the tiles and the slots to the initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places.
 function resetPuzzle() {
@@ -273,14 +274,14 @@ function choices() {
             getPuzzle.style.visibility = "visible";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
-        const choice2ClickHandler = () => {
-            story.currentChapter = "";
-            loadChapter();
-            getPuzzle.style.visibility = "visible";
-            choice2.removeEventListener("click", choice2ClickHandler);
-        }
+        // const choice2ClickHandler = () => {
+        //     story.currentChapter = "";
+        //     loadChapter();
+        //     getPuzzle.style.visibility = "visible";
+        //     choice2.removeEventListener("click", choice2ClickHandler);
+        // }
         choice1.addEventListener("click", choice1ClickHandler);
-        choice1.addEventListener("click", choice1ClickHandler);
+        // choice2.addEventListener("click", choice2ClickHandler);
     };
 
 };
