@@ -129,8 +129,17 @@ footer {
     color: white;
 }
 
+#word-inventory p {
+    font-weight: bold;
+}
+
 #collected-words {
     padding-left: 0;
+    font-size: 0.8rem;
+}
+
+#collected-words li:nth-child(even) {
+    padding-bottom: 20px;
 }
 
 /* Responsive media queries for phones 320px and above */
