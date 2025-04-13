@@ -3,15 +3,15 @@ const story = {
     currentChapter: "welcome",
     welcome: {
         title: `Welcome`,
-        storyImage: "./assets/images/lila-sleepy.avif",
+        storyImage: "./assets/images/title-screen.avif",
         storyText: `Welcome!<br>Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The loss has been so intense that she has lost her ability to speak.<br>
             Travel with Lila and help her to find the words she needs to express how she's feeling...`
     },
 
     intro: {
         title: "Introduction",
-        storyImage: "./assets/images/lila-sleepy.avif",
-        storyImage2: "./assets/images/lila-forest.avif",
+        storyImage: "./assets/images/bedroom-gloomy.avif",
+        storyImage2: "./assets/images/bedroom-sleep.avif",
         storyText: `Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
 The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...`,
         storyText2: `Once the letters are arranged to form the word sadness, Lila smiles a little at being able to recognise the emotion she's currently feeling. She snuggles down under the covers and slowly drifts off to sleep...`,
@@ -23,8 +23,8 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
 
     void: {
         title: "The Void",
-        storyImage: "./assets/images/lila-spin.avif",
-        storyImage2: "",
+        storyImage: "./assets/images/vortex-gloomy.avif",
+        storyImage2: "./assets/images/vortex-lovely.avif",
         storyText: `Lila falls into troubled sleep, her dreams dark and twisted. She cries in her dreams, not realising she cries in her bed, too. `,
         storyText2: `Post-puzzle text for the void`,
         choice1: "Visit the Forest",
@@ -36,8 +36,8 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
 
     forest: {
         title: "The Forest",
-        storyImage: "./assets/images/lila-forest.avif",
-        storyImage2: "",
+        storyImage: "./assets/images/forest-gloomy.avif",
+        storyImage2: "./assets/images/forest-lovely.avif",
         storyText: `This should load the forest story text. `,
         storyText2: `Post-puzzle text for the forest`,
         choice1: "Visit the Library",
@@ -48,8 +48,8 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
 
     lake: {
         title: "The Lake",
-        storyImage: "",
-        storyImage2: "",
+        storyImage: "./assets/images/lake-gloomy.avif",
+        storyImage2: "./assets/images/lake-lovely.avif",
         storyText: `Insert story text here about the lake`,
         storyText2: `Post-puzzle text for the lake`,
         choice1: "Visit the Forest",
@@ -60,8 +60,8 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
 
     library: {
         title: "The Library",
-        storyImage: "",
-        storyImage2: "",
+        storyImage: "./assets/images/library-gloomy.avif",
+        storyImage2: "./assets/images/library-lovely.avif",
         storyText: `Insert story text here about the library`,
         storyText2: `Post-puzzle text for the library`,
         choice1: "Visit the Forest",
@@ -83,7 +83,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
 
     ending2: {
         title: "Congratulations!!",
-        storyImage: "",
+        storyImage: "./assets/images/bedroom-ending.avif",
         storyImage2: "",
         storyText: `Game completion ending`,
         choice1: "Wake Up",
