@@ -17,7 +17,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyText2: `Once the letters are arranged to form the word sadness, Lila smiles a little at being able to recognise the emotion she's currently feeling. She snuggles down under the covers and slowly drifts off to sleep...`,
         choice1: "Go to sleep",
         choice2: "Stay Awake",
-        word: "SADNESS",
+        word: "SORROW",
         hint: ""
     },
 
@@ -30,7 +30,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         choice1: "Visit the Forest",
         choice2: "Visit the Lake",
         choice3: "Visit the Library",
-        word: "DESPAIR",
+        word: "DENIAL",
         hint: ""
     },
 
@@ -42,7 +42,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyText2: `Post-puzzle text for the forest`,
         choice1: "Visit the Library",
         choice2: "Visit the Lake",
-        word: "ACCEPTANCE",
+        word: "SURRENDER",
         hint: ""
     },
 
@@ -66,7 +66,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyText2: `Post-puzzle text for the library`,
         choice1: "Visit the Forest",
         choice2: "Visit the Lake",
-        word: "TEMPEST",
+        word: "FURIOUS",
         hint: ""
     },
 
@@ -86,7 +86,7 @@ The door clicks softly shut and Lila stares at the magnetic board on the wall ab
         storyImage: "./assets/images/bedroom-ending.avif",
         storyImage2: "",
         storyText: `Game completion ending`,
-        choice1: "Wake Up",
+        choice1: "",
         choice2: "",
         word: "TEMPEST",
         hint: ""
@@ -131,7 +131,6 @@ function startGame() {
 
 // Function to grab all the content needed to load a new chapter from the story object's current chapter
 function loadChapter() {
-    // window.location.href = "#main-container";
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
