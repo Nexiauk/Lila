@@ -112,6 +112,7 @@ const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
 const checkArea = document.getElementById("buttons");
 const collectedWords = document.getElementById("collected-words");
+const mainSection = document.getElementById("main-container");
 let checkScore = 0;
 let forestVisited = false;
 let lakeVisited = false;
@@ -156,6 +157,7 @@ setTimeout(() => {
 
 // Initialise puzzle function loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word.
 function initialisePuzzle() {
+    puzzleArea.scrollIntoView({ behavior: "smooth" });
     word = story[story.currentChapter].word;
     checkScore = 0;
     getPuzzle.style.visibility = "hidden";
@@ -249,7 +251,6 @@ Different messages are returned depending on whether all slots have been filled,
 function checkAnswer() {
     checkScore = checkScore + 1;
     console.log(checkScore);
-    const mainSection = document.getElementById("main-container");
     const slots = document.querySelectorAll(".slot");
     // check if all slots are filled
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
