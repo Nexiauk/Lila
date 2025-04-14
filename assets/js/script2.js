@@ -242,20 +242,22 @@ function clickedSlot(slot) {
 /*Function to check the user's answer against the original word passed into the initialisegame function. 
 Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
 function checkAnswer() {
+    // Everytime check answer button is clicked, it adds 1 to the checkScore variable, which populates into the words list as a number of attempts.
     checkScore = checkScore + 1;
     const slots = document.querySelectorAll(".slot");
-    // check if all slots are filled
+    // arrow function checks if any slots are empty
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
     // If not all slots are filled, alert the user and exit the function
     if (!allFilled) {
         alert("Please fill all the slots!");
         return;
     }
-    // If all slots are filled
+    // If all slots are filled, the slots are passed into the userAnswer variable in order to form the word the user has spelt with the tiles. This is then compared to the original word passed into the game.
     let userAnswer = "";
     slots.forEach(slot => {
         userAnswer += slot.textContent;
     });
+    // Slot colours are changed to a positive green colour and the eventlistener is removed to prevent users removing them from the slots. Auto scrolls back to the main content container.
     if (userAnswer == word) {
         mainSection.scrollIntoView({ behavior: "smooth" });
         slots.forEach(slot => {
@@ -263,6 +265,7 @@ function checkAnswer() {
             slot.style.color = "rgb(255,255,255)";
             slot.removeEventListener("click", clickedSlotHandler);
         });
+        /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
         storyImage.src = story[story.currentChapter].storyImage2;
         storyText.innerHTML = story[story.currentChapter].storyText2;
         resetButton.style.display = "none";
@@ -275,7 +278,7 @@ function checkAnswer() {
         collectedWords.appendChild(wordScore);
         confetti();
         setTimeout(choices, 3000);
-
+// Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
     } else {
         alert("That's not correct, try again!");
         resetPuzzle();
@@ -298,6 +301,7 @@ function resetPuzzle() {
     });
 };
 
+/*Function automatically runs and displays the choices buttons in the story in the text-col area that contains the storytext. Clears the puzzle area of all current content and populates the choice buttons with the preset text for each choice in the current chapter. */
 function choices() {
     choice1.style.display = "inline-block";
     choice2.style.display = "inline-block";
@@ -308,6 +312,7 @@ function choices() {
     choice2.textContent = story[story.currentChapter].choice2;
     choice3.textContent = story[story.currentChapter].choice3;
 
+    /*Once all areas are visited, the ending will automatically load*/
     if (forestVisited && lakeVisited && libraryVisited) {
         story.currentChapter = "ending2";
         loadChapter();
@@ -315,7 +320,7 @@ function choices() {
         return;
     };
 
-
+/*Adds event listeners to each choice button, that when clicked, will automatically load the specified chapter from the story object. Choices are given depending on what the current chapter is. -Visited variables are set for each area that isn't narratively linear so that once an area has been visited, it won't appear again as a option*/
     if (story.currentChapter == "intro") {
         const choice1ClickHandler = () => {
             story.currentChapter = "void";
