@@ -115,13 +115,13 @@ let checkScore = 0;
 let forestVisited = false;
 let lakeVisited = false;
 let libraryVisited = false;
-
 let word = "";
-
 startButton.addEventListener("click", startGame);
+
+// Immediately loads the first chapter from the story object, which is set to 'welcome' by default
 loadChapter();
 
-
+/*This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
 function startGame() {
     story.currentChapter = "intro";
     startButton.style.display = "none";
@@ -130,7 +130,7 @@ function startGame() {
     loadChapter();
 };
 
-// Function to grab all the content needed to load a new chapter from the story object's current chapter
+/* Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src that goes with it. Content is dynamically fed through to the specified elemtn IDs in Index.html. storyOuterCol adds a class to the outer text column so that the column background colours can be changed depending on the chapter loaded. The choice buttons are set to not appear here and to not take up any space while they're not needed. */ 
 function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
@@ -142,7 +142,7 @@ function loadChapter() {
 }
 
 
-// Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content.
+/* Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content. This was added to solve an issue whereby clicking on the getPuzzle button didn't do anything. The timeout gives the DOM time to fully load. */
 setTimeout(() => {
     const puzzleButton = document.getElementById("get-puzzle");
     if (puzzleButton) {
@@ -153,7 +153,7 @@ setTimeout(() => {
 }, 0);
 
 
-// Initialise puzzle function loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word.
+/* Initialise puzzle function loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word. It has functionality to automatically scrolldown to the puzzle area so a user doesn't have to use their mouse or keyboard keys. The getPuzzle button is hidden and the check and reset buttons are set to appear, with event listeners added to them that connect to further functions. */
 function initialisePuzzle() {
     puzzleArea.scrollIntoView({ behavior: "smooth" });
     word = story[story.currentChapter].word;
@@ -165,7 +165,7 @@ function initialisePuzzle() {
     checkButton.addEventListener("click", checkAnswer);
     resetButton.addEventListener("click", resetPuzzle);
 
-    // First function splits the word into an array of letters and then maps an id to each letter that matches the array indexes.
+    // Arrow function splits the word into an array of letters and then maps an id to each letter that matches the array indexes.
     const letterArray = word.split("").map((letter, index) => ({
         letter: letter,
         id: index,
@@ -182,7 +182,7 @@ function initialisePuzzle() {
     }
     shuffle(letterArray);
 
-    // Clear the puzzle areas of any existing content to ensure a blank canvas for this puzzle.
+    // Clears the puzzle areas of any existing content to ensure a blank canvas for the current word puzzle.
     puzzleQuestion.innerHTML = "";
     puzzleAnswer.innerHTML = "";
 
@@ -193,14 +193,13 @@ function initialisePuzzle() {
         let slot = document.createElement("div");
         slot.classList.add("slot");
         puzzleAnswer.appendChild(slot);
-        slot.addEventListener("click", clickedSlotHandler);
+        slot.addEventListener("click", clickedSlot);
     });
 
     /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. 
-
     Populates with each letter in the shuffled order. 
     Adds the tile class for styling into tiles.
-    Ensures that each tile has an id and content matching the letterArray and then runs the clickedTile function.
+    Ensures that each tile has an id and content matching the letterArray and then runs the clickedTile function, passing through the letter and the tile.
     */
     letterArray.forEach((letter) => {
         let tile = document.createElement("div");
@@ -222,10 +221,6 @@ function initialisePuzzle() {
             tile.style.visibility = "hidden";
         }
     }
-}
-// Named handler function for event listener on clicked slots, so that the event listener can be properly removed at the check answer stage
-function clickedSlotHandler(event) {
-    clickedSlot(event.currentTarget);
 }
 
 /*Function to clear a letter from a slot and make its correlating tile visible again.
