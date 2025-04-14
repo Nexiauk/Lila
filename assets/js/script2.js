@@ -26,9 +26,7 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
         storyImage: "./assets/images/vortex-gloomy.avif",
         storyImage2: "./assets/images/vortex-lovely.avif",
         storyText: `Lila falls into troubled dreams, spinning slowly into a darkness that tries to swallow her whole. The gloom swirls around her in a cloud, trying to get into her eyes, nose, and mouth. She <span class="highlight">shakes her head</span> and closes her eyes, buttons up her mouth, <span class="highlight">refuses</span> to let it in. Lila <span class="highlight">turns from</span> the darkness and all it represents, from the loss that she is feeling, but the more she <span class="highlight">ignores</span> it the deeper it swallows her. She doesn't understand what she's feeling or how to make it stop. Letters coalesce in the void and she grabs them, tries to put them in an order that makes sense...`,
-        storyText2: `Denial. <br><br>Lila has been trying to push away the truth in the hopes her loss will become untrue. That it was all some bad dream she could wake up from, if only she knew how. Where did they go? Will she see them again? As she thinks about these important questions, the void slows down and flashes through with bright, vibrant colours. Despite herself, Lila smiles at the rainbows -  the same rainbows they would look at together out the living room window when the sun began to shine on a rainy day. 
-
-Wherever they have gone - are there rainbows?`,
+        storyText2: `Denial. Lila has been trying to push away the truth in the hopes her loss will become untrue. That it was all some bad dream she could wake up from, if only she knew how. Where did they go? Will she see them again? As she thinks about these important questions, the void slows down and flashes through with bright, vibrant colours. Despite herself, Lila smiles at the rainbows -  the same rainbows they would look at together out the living room window when the sun began to shine on a rainy day.`,
         choice1: "Visit the Forest",
         choice2: "Visit the Lake",
         choice3: "Visit the Library",
@@ -278,17 +276,13 @@ function checkAnswer() {
         newListItem.textContent = word;
         collectedWords.appendChild(newListItem);
         const wordScore = document.createElement("li");
-        wordScore.textContent = "Attempts:" + checkScore;
+        wordScore.textContent = "Attempts: " + checkScore;
         collectedWords.appendChild(wordScore);
         confetti();
         setTimeout(choices, 3000);
 
     } else {
         alert("That's not correct, try again!");
-        slots.forEach(slot => {
-            slot.style.backgroundColor = "rgb(255, 0, 0)";
-            slot.style.color = "rgb(255,255,255)";
-        });
         resetPuzzle();
     };
 };
