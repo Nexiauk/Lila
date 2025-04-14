@@ -12,8 +12,7 @@ const story = {
         title: "Introduction",
         storyImage: "./assets/images/bedroom-gloomy.avif",
         storyImage2: "./assets/images/bedroom-sleep.avif",
-        storyText: `Lila sits on her bed looking at the floor, a curtain of dark hair covering her face. Her soft plushies watch her from their shelves with sad eyes and downturned mouths. Lila doesn't move, not even when her mum pops her head around the doorway and and says "Goodnight, sweetheart"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The words won't come out.
-The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She picks up the letters from the bedspread and starts to build a word...`,
+        storyText: `Lila sits on her bed in the <span class="highlight">dark</span>, a curtain of hair covering her face. Her soft plushies watch her with <span class="highlight">sad</span> eyes and <span class="highlight">dejected</span> expressions. Lila doesn't move, not even when her mum pops her head around the doorway and whispers, "Goodnight"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She doesn't know how to voice what she's feeling, but maybe she could spell it out so that the <span class="highlight">ache</span> in her heart will let her sleep.`,
         storyText2: `Once the letters are arranged to form the word sadness, Lila smiles a little at being able to recognise the emotion she's currently feeling. She snuggles down under the covers and slowly drifts off to sleep...`,
         choice1: "Go to sleep",
         choice2: "Stay Awake",

@@ -46,6 +46,11 @@ footer {
     padding: 25px 25px 5px 25px;
 }
 
+.highlight {
+    font-weight: bold;
+    color: white;
+}
+
 
 #text-col.chapter-intro {
     background-color: gray;
