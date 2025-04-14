@@ -250,7 +250,6 @@ function clickedSlot(slot) {
 Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
 function checkAnswer() {
     checkScore = checkScore + 1;
-    console.log(checkScore);
     const slots = document.querySelectorAll(".slot");
     // check if all slots are filled
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
@@ -290,6 +289,7 @@ function checkAnswer() {
             slot.style.backgroundColor = "rgb(255, 0, 0)";
             slot.style.color = "rgb(255,255,255)";
         });
+        resetPuzzle();
     };
 };
 
