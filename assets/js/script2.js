@@ -193,7 +193,7 @@ function initialisePuzzle() {
         let slot = document.createElement("div");
         slot.classList.add("slot");
         puzzleAnswer.appendChild(slot);
-        slot.addEventListener("click", clickedSlot);
+        slot.addEventListener("click", () => clickedSlot(slot));
     });
 
     /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. 
