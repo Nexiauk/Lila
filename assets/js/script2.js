@@ -263,7 +263,7 @@ function checkAnswer() {
         slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(0, 128, 0)";
             slot.style.color = "rgb(255,255,255)";
-            slot.removeEventListener("click", clickedSlotHandler);
+            slot.removeEventListener("click", clickedSlot);
         });
         /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
         storyImage.src = story[story.currentChapter].storyImage2;
@@ -354,7 +354,7 @@ function choices() {
         };
         const choice2ClickHandler = () => {
             story.currentChapter = "lake";
-            lakeVisitedVisited = true;
+            lakeVisited = true;
             loadChapter();
             getPuzzle.style.visibility = "visible";
             choice2.removeEventListener("click", choice2ClickHandler);
