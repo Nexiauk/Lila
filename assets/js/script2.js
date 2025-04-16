@@ -193,8 +193,10 @@ function initialisePuzzle() {
         let slot = document.createElement("div");
         slot.classList.add("slot");
         puzzleAnswer.appendChild(slot);
-        slot.addEventListener("click", () => clickedSlot(slot));
+        slot.addEventListener("click", clickedSlotHandler);
     });
+
+
 
     /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. 
     Populates with each letter in the shuffled order. 
@@ -222,6 +224,11 @@ function initialisePuzzle() {
         }
     }
 }
+
+    // Named handler function for event listener on clicked slots, so that the event listener can be properly removed at the check answer stage
+    function clickedSlotHandler(event) {
+        clickedSlot(event.currentTarget);
+    }
 
 /*Function to clear a letter from a slot and make its correlating tile visible again.
 If there's no current id assigned to a slot because a tile's data hasn't been passed to it, then the function will end.
@@ -263,7 +270,7 @@ function checkAnswer() {
         slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(0, 128, 0)";
             slot.style.color = "rgb(255,255,255)";
-            slot.removeEventListener("click", clickedSlot);
+            slot.removeEventListener("click", clickedSlotHandler);
         });
         /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
         storyImage.src = story[story.currentChapter].storyImage2;

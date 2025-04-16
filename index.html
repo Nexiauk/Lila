@@ -47,7 +47,9 @@
     <div class="container-sm" id="main-container">
         <!-- Chapter title that is pulled through dynamically from a Javascript object -->
         <div class="row mb-1 gx-0">
-            <div class="col col-12 text-center mt-2" id="title-col"><h1 id="title">Lila's Lost Words</h1></div>
+            <div class="col col-12 text-center mt-2" id="title-col">
+                <h1 id="title">Lila's Lost Words</h1>
+            </div>
         </div>
         <!-- Story images that is dynamically pulled through from a Javascript object -->
         <section class="row gx-0 justify-content-between" id="story-area">
@@ -60,26 +62,28 @@
                 <div class="text-center"><button id="choice-1">Choice 1</button>
                     <button id="choice-2">Choice 2</button> <button id="choice-3">Choice 3</button>
                 </div>
-                <div class="text-center"><button id="get-puzzle">Get Puzzle</button><button
-                        id="start-game">Start Game</button></div>
+                <div class="text-center"><button id="get-puzzle">Get Puzzle</button><button id="start-game">Start
+                        Game</button></div>
             </div>
+            <!-- Word inventory -->
             <div class="col col-sm-12 col-md-3 col-lg-1 mt-2 text-center" id="word-inventory">
-                    <p>Words</p>
-                    <ul id="collected-words">
-                    </ul>
+                <p>Words</p>
+                <ul id="collected-words">
+                </ul>
             </div>
 
+
+        </section>
+        <!-- Puzzle area -->
+        <section class="row mt-4" id="puzzle-area">
+            <div class="col col-12 text-center" id="puzzle-answer"></div>
+            <div class="col col-12 text-center" id="puzzle-question"></div>
+            <div class="col col-12 text-center mb-4" id="buttons">
+                <button id="check">Check Answer</button>
+                <button id="reset-button">Reset</button>
+            </div>
+        </section>
     </div>
-    </section>
-    <!-- Puzzle area -->
-    <section class="row mt-4" id="puzzle-area">
-        <div class="col col-12 text-center" id="puzzle-answer"></div>
-        <div class="col col-12 text-center" id="puzzle-question"></div>
-        <div class="col col-12 text-center mb-4" id="buttons">
-            <button id="check">Check Answer</button>
-            <button id="reset-button">Reset</button>
-        </div>
-    </section>
     </div>
     <!-- Footer with mt-auto added to push to the bottom -->
     <footer class="mt-auto">
