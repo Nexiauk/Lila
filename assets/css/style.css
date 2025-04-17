@@ -20,12 +20,6 @@ footer {
     background-color: aliceblue;
 }
 
-#image-div {
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 3px 3px grey;
-}
-
 #story-image {
     height:auto;
     width: 100%;
@@ -40,7 +34,6 @@ footer {
     border-radius: 5px;
     box-shadow: 3px 3px grey;
 }
-
 
 #story-text {
     padding: 25px 25px 5px 25px;
@@ -62,12 +55,8 @@ footer {
 
 #title {
     font-weight: bold;
+    text-align: center;
 }
-
-#collected-words {
-    list-style: none;
-}
-
 #puzzle-question {
     height: 100px;
     display: flex;
@@ -141,10 +130,11 @@ footer {
 #collected-words {
     padding-left: 0;
     font-size: 0.8rem;
+    list-style: none;
 }
 
 #collected-words li:nth-child(even) {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 /* Responsive media queries for phones 320px and above */
