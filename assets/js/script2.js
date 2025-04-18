@@ -132,6 +132,11 @@ function startGame() {
 function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
+    storyOuterCol.classList.forEach(cls => {
+        if (cls.startsWith("chapter-")) {
+            storyOuterCol.classList.remove(cls);
+        }
+    });
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.src = story[story.currentChapter].storyImage;
     choice1.style.display = "none";
