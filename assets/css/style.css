@@ -122,7 +122,7 @@ header .navbar {
 }
 
 #story-image.chapter-forest {
-    box-shadow:83px 8px var(--forest-colour);
+    box-shadow:8px 8px var(--forest-colour);
 }
 
 #story-image.chapter-library {
@@ -131,6 +131,10 @@ header .navbar {
 
 #story-image.chapter-lake {
     box-shadow: 8px 8px var(--lake-colour);
+}
+
+#story-image.chapter-ending2 {
+    box-shadow: 8px 8px black;;
 }
 
 /* Chapter specific colours and styling for the text and slots */
@@ -163,7 +167,7 @@ header .navbar {
     background-color: var(--lake-colour);
 }
 
-#text-col.ending2 {
+#text-col.chapter-ending2 {
     background-color: var(--ending-colour);
     color: var(--ending-text);
 }
