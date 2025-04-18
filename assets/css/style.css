@@ -18,6 +18,7 @@
 
 body {
     color: white;
+    background-color: #FBF7F0;
     background-image: url(../images/paper.jpg);
     background-repeat:no-repeat;
     background-size: cover;
@@ -34,7 +35,7 @@ footer {
 
 /* Navbar styling */
 header .navbar {
-    border: solid 1px black;
+    border: solid 1px white;
     background-color: var(--main-colour);
 }
 
@@ -57,11 +58,10 @@ header .navbar {
 }
 
 #text-col,
-#word-inventory,
-#title-col {
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 3px 3px black;
+#word-inventory {
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 8px 8px black;
 }
 
 #title-col,
@@ -87,36 +87,32 @@ header .navbar {
 /* Colour styling for around the image and text column elements */
 
 #story-image {
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid white;
+    border-radius: 8px 8px;
 }
 
 #story-image.chapter-welcome {
-    box-shadow: 3px 3px var(--main-colour);
+    box-shadow: 8px 8px var(--main-colour);
 }
 
 #story-image.chapter-intro {
-    box-shadow: 3px 3px var(--intro-colour);
+    box-shadow: 8px 8px var(--intro-colour);
 }
 
 #story-image.chapter-void {
-    box-shadow: 3px 3px var(--void-colour);
-}
-
-#story-image.chapter-void {
-    box-shadow: 3px 3px var(--void-colour);
+    box-shadow: 8px 8px var(--void-colour);
 }
 
 #story-image.chapter-forest {
-    box-shadow: 3px 3px var(--forest-colour);
+    box-shadow:83px 8px var(--forest-colour);
 }
 
 #story-image.chapter-library {
-    box-shadow: 3px 3px var(--library-colour);
+    box-shadow: 8px 8px var(--library-colour);
 }
 
 #story-image.chapter-lake {
-    box-shadow: 3px 3px var(--lake-colour);
+    box-shadow: 8px 8px var(--lake-colour);
 }
 
 #text-col.chapter-welcome {
@@ -128,7 +124,6 @@ header .navbar {
 
 #text-col.chapter-void {
     background-color:var(--void-colour);
-    box-shadow: 3px 3px var(--void-colour);
 }
 
 #text-col.chapter-forest {
