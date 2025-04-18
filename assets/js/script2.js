@@ -38,8 +38,8 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
         title: "The Forest",
         storyImage: "./assets/images/forest-gloomy.avif",
         storyImage2: "./assets/images/forest-lovely.avif",
-        storyText: `This should load the forest story text. `,
-        storyText2: `Post-puzzle text for the forest`,
+        storyText: `The forest is dark, oppressive, stifling. Lila feels trapped in a web she can't get out of. She can't <span class="highlight">accept</span> what has happened - she doesn't want to. She can't <span class="highlight">admit</span> to herself that they have gone, that they are forever gone, that she doesn't feel <span class="highlight">okay</span> and that things will never be the same again. The forest used to be a place she loved to walk with them, underneath the whispering canopy of leaves. They would tell her to <span class="highlight">go ahead</span> and explore the tranquil forest paths, to look for small animals. They would  encourage her to <span class="highlight">release</span> her animal friends back into the wild, where they can run free.Lila wants to feel free. She just needs to... she must... she doesn't know what the word is.The web around her starts to form the letters of a word... `,
+        storyText2: `Surrender. Lila must give in, not give up. She needs to accept her loss, but she doesn't need to forget. She needs to remember the good things, the happy memories, the light and colour that lives in the world. She needs to remember how to be free of the darkness. The shadows lift from the trees, revealing the riotous colour of their blossoms and leaves, which drift and fall around her like springtime snow. Dappled light drenches Lila, reminding her that warmth still exists after the cold dark, as the trees lend her their strength and show her how to bend, not break. The animal friends she released into the forest have joined her, are with her, like <em>they</em> will always be with her. `,
         choice1: "Visit the Library",
         choice2: "Visit the Lake",
         word: "SURRENDER",
@@ -50,8 +50,8 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
         title: "The Lake",
         storyImage: "./assets/images/lake-gloomy.avif",
         storyImage2: "./assets/images/lake-lovely.avif",
-        storyText: `Insert story text here about the lake`,
-        storyText2: `Post-puzzle text for the lake`,
+        storyText: `Lila drops into the murky waters of a dreary lake. Icy rain falls from the cloudy sky and she shivers, teeth chattering as the grey water drenches through to her skin. The lake seems familiar, but she can't quite place it - everything seems wrong in the dense fog. She <span class="highlight">wishes</span> the mist would clear; she <span class="highlight">yearns</span> to see the sky and the stars. She remembers rowing out on a lake with them, <span class="highlight">hoping</span> to see constellations in the midnight skies. A shooting star had carried her <span class="highlight">heart's desire</span> into the universe, while she wrapped up in warm blankets and drank hot chocolate with them in the swaying, bobbing little boat. Lila's chest fills with an emotion she can't express and as she looks up at the sky, the struggling light of distant stars begin to form the letters of a word...`,
+        storyText2: `Longing. Lila longs to be held in their arms again, safe and loved. She wishes they would come home and sit in the little boat with her, telling her stories about the constellations and what they mean. Lila aches for them to be here, instead of there. Lila climbs into the boat with her wishes, which she sends out into the universe like so many shooting stars and the sky fills with them, twinkling so bright and so beautiful that her eyes shine with wonder. Their light is so brilliant that the mist clears, and the lake  glitters with reflected stardust. The moon comes out from behind the clouds and looks down like a kindly, benevolent face bestowing its warm glow on Lila.`,
         choice1: "Visit the Forest",
         choice2: "Visit the Library",
         word: "LONGING",
@@ -62,8 +62,10 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
         title: "The Library",
         storyImage: "./assets/images/library-gloomy.avif",
         storyImage2: "./assets/images/library-lovely.avif",
-        storyText: `Insert story text here about the library`,
-        storyText2: `Post-puzzle text for the library`,
+        storyText: `Lila enters the library in a furious <span class="highlight">storm</span> of emotion. She feels wild with it, as though thunder crashes in her chest and lightning strikes through her heart. The <span class="highlight">raging</span> tempest <span class="highlight">ignites</span> the books around her into flames, as though <span class="highlight">lashing out</span> at the unfairness of it all. Pages flutter through the air, torn out in rebellion and she stomps as loudly as she can, kicking and breaking and doing everything she's not meant to do in a library. She can't use her words, and she may have lost her voice, but Lila tries to express herself through action as she <span class="highlight">destroys</span> the very same place that had been their sanctum. She doesn't want to be quiet now, she wants to be heard. Scraps of paper fall from the torn pages to the floor, spelling out the emotion that she's feeling so she can quell it with the waters of understanding...`,
+        storyText2: `Furious.
+
+Lila is furious at the unfairness of it all. She doesn't want to go to the library alone. She doesn't want to be alone full stop. She doesn't want to be without them. The storm dies down as she thinks about the long afternoons they'd spent browsing the shelves, reading quietly in big comfy chairs, simply enjoying stillness and togetherness. She is reminded of the joy she finds in reading books, all because of <em>them</em>.  She finds peace in the quiet library, it is her safe space, her hideaway, full of magic and stories. The fires morph into a beautiful sunset and the books drift round her like fireflies, filling Lila with an untold joy at the gift she has been given. The gift <em>they</em> gave to her.`,
         choice1: "Visit the Forest",
         choice2: "Visit the Lake",
         word: "FURIOUS",
@@ -84,12 +86,8 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
     ending2: {
         title: "Congratulations!!",
         storyImage: "./assets/images/bedroom-ending.avif",
-        storyImage2: "",
-        storyText: `Game completion ending`,
-        choice1: "",
-        choice2: "",
-        word: "TEMPEST",
-        hint: ""
+        storyText: `Lila wakes up to a room, and a world, that feels different to the one that existed before she slept.The darkness and the loss hasn't gone away, will probably never go away, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through. It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never fully leave her, they will always be with her in memories and in dreams. It has disappeared enough to allow Lila to smile again.`,
+
     }
 };
 

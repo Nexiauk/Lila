@@ -75,6 +75,10 @@ footer {
     visibility: hidden;
 }
 
+#start-game {
+    margin-bottom: 10px;
+}
+
 #get-puzzle {
     border: 1px solid black;
     color: blue;
