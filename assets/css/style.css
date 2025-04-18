@@ -4,7 +4,6 @@
 /* variables for website colours  */
 :root {
 --main-colour: #420f2a;
---welcome-colour: #420f2a;
 --intro-colour: #1b1f2e;
 --void-colour: #642133;
 --lake-colour: #19406a;
@@ -16,6 +15,11 @@
 }
 
 /* Global styles */
+
+body {
+    color: white;
+}
+
 header {
     border: solid 1px black;
 }
@@ -34,14 +38,18 @@ footer {
     width: 100%;
 }
 
-
 #text-col,
-#story-image,
 #word-inventory,
 #title-col {
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 3px 3px grey;
+    box-shadow: 3px 3px black;
+}
+
+#title-col,
+#word-inventory {
+    background-color: var(--main-colour);
+    box-shadow: 3px 3px black;
 }
 
 #story-text {
@@ -50,16 +58,52 @@ footer {
 
 .highlight {
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
+#story-image {
+    border: 1px solid black;
+    border-radius: 5px;
+}
 
+#story-image.chapter-welcome {
+    box-shadow: 3px 3px var(--main-colour);
+}
+
+#story-image.chapter-intro {
+    box-shadow: 3px 3px var(--intro-colour);
+}
+
+#story-image.chapter-void {
+    box-shadow: 3px 3px var(--void-colour);
+}
+
+#story-image.chapter-void {
+    box-shadow: 3px 3px var(--void-colour);
+}
+
+#story-image.chapter-forest {
+    box-shadow: 3px 3px var(--forest-colour);
+}
+
+#story-image.chapter-library {
+    box-shadow: 3px 3px var(--library-colour);
+}
+
+#story-image.chapter-lake {
+    box-shadow: 3px 3px var(--lake-colour);
+}
+
+#text-col.chapter-welcome {
+    background-color: var(--main-colour);
+}
 #text-col.chapter-intro {
     background-color: var(--intro-colour);
 }
 
 #text-col.chapter-void {
     background-color:var(--void-colour);
+    box-shadow: 3px 3px var(--void-colour);
 }
 
 #text-col.chapter-forest {

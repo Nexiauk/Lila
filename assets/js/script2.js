@@ -137,7 +137,14 @@ function loadChapter() {
             storyOuterCol.classList.remove(cls);
         }
     });
+
+    storyImage.classList.forEach(cls => {
+        if (cls.startsWith("chapter-")) {
+            storyImage.classList.remove(cls);
+        }
+    });
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
+    storyImage.classList.add(`chapter-${story.currentChapter}`);
     storyImage.src = story[story.currentChapter].storyImage;
     choice1.style.display = "none";
     choice2.style.display = "none";
