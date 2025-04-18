@@ -4,7 +4,7 @@ const story = {
     welcome: {
         title: `Welcome`,
         storyImage: "./assets/images/title-screen.avif",
-        storyText: `Welcome!<br>Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The loss has been so intense that she has lost her ability to speak.<br>
+        storyText: `Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The loss has been so intense that she has lost her ability to speak.<br>
             Travel with Lila and help her to find the words she needs to express how she's feeling...`
     },
 
