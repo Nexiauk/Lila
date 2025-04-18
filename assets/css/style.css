@@ -45,6 +45,24 @@ header .navbar {
     color: white;
 }
 
+.navbar-toggler,
+.navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+}
+
+
+
+#game-title {
+    margin-bottom: 0;
+}
+
+.nav-link {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
 #story-image {
     height:auto;
     width: 100%;
@@ -249,6 +267,10 @@ header .navbar {
 /* Responsive media queries for phones 320px and above */
 @media screen and (min-width:320px) {
 
+    .navbar-brand {
+        justify-content: center;
+    }
+    
     #chapter-img {
         margin-left: 0px;
     }
