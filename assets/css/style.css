@@ -271,8 +271,10 @@ header .navbar {
         justify-content: center;
     }
     
-    #chapter-img {
-        margin-left: 0px;
+    #story-image,
+    #word-inventory,
+    #text-col {
+        margin-bottom: 10px;
     }
 
     #word-inventory {

@@ -256,7 +256,6 @@ function clickedSlot(slot) {
     if (!id) return;
     slot.textContent = "";
     slot.removeAttribute("data-id");
-    slot.style.backgroundColor = "white";
     const matchingTile = document.querySelector(`.tile[data-id='${id}']`);
     if (matchingTile) {
         matchingTile.style.visibility = "visible";
