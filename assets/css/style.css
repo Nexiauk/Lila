@@ -115,26 +115,33 @@ header .navbar {
     box-shadow: 8px 8px var(--lake-colour);
 }
 
+/* Chapter specific colours and styling for the text and slots */
+
 #text-col.chapter-welcome {
     background-color: var(--main-colour);
 }
-#text-col.chapter-intro {
+#text-col.chapter-intro,
+.slot.chapter-intro {
     background-color: var(--intro-colour);
 }
 
-#text-col.chapter-void {
+#text-col.chapter-void,
+.slot.chapter-void {
     background-color:var(--void-colour);
 }
 
-#text-col.chapter-forest {
+#text-col.chapter-forest,
+.slot.chapter-forest {
     background-color: var(--forest-colour);
 }
 
-#text-col.chapter-library {
+#text-col.chapter-library,
+.slot.chapter-library {
     background-color: var(--library-colour);
 }
 
-#text-col.chapter-lake {
+#text-col.chapter-lake,
+.slot.chapter-lake {
     background-color: var(--lake-colour);
 }
 
@@ -169,12 +176,11 @@ header .navbar {
 
 .slot {
     border: 1px solid black;
-    color: black;
+    color: white;;
 }
 .tile {
     border: 1px solid black;
-    background-color: blue;
-    color: white;
+    color: black;
 }
 
 /* Button styling */

@@ -204,6 +204,12 @@ function initialisePuzzle() {
         let slot = document.createElement("div");
         slot.classList.add("slot");
         puzzleAnswer.appendChild(slot);
+        slot.classList.forEach(cls => {
+            if (cls.startsWith("chapter-")) {
+                slot.classList.remove(cls);
+            }
+        });
+        slot.classList.add(`chapter-${story.currentChapter}`);
         slot.addEventListener("click", clickedSlotHandler);
     });
 
@@ -293,7 +299,7 @@ function checkAnswer() {
         collectedWords.appendChild(newListItem);
         const wordScore = document.createElement("li");
         wordScore.textContent = "Attempts: " + checkScore;
-        collectedWords.appendChild(wordScore);
+        collectedWords.appendChild(wordScore);        
         confetti();
         setTimeout(choices, 3000);
 // Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
@@ -310,8 +316,6 @@ function resetPuzzle() {
     slots.forEach(slot => {
         slot.textContent = "";
         slot.removeAttribute("data-id");
-        slot.style.backgroundColor = "rgb(255, 255, 255)";
-        slot.style.color = "rgb(0,0,0)";
     });
 
     tiles.forEach(tile => {
