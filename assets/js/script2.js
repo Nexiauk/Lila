@@ -12,7 +12,7 @@ const story = {
         title: "Introduction",
         storyImage: "./assets/images/bedroom-gloomy.avif",
         storyImage2: "./assets/images/bedroom-sleep.avif",
-        storyText: `Lila sits on her bed in the <span class="highlight">dark</span>, a curtain of hair covering her face. Her soft plushies watch her with <span class="highlight">sad</span> eyes and <span class="highlight">dejected</span> expressions. Lila doesn't move, not even when her mum pops her head around the doorway and whispers, "Goodnight"; gently, carefully, as if anything above a whisper would shatter her fragile daughter. Lila doesn't respond. She can't. The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She doesn't know how to voice what she's feeling, but maybe she could spell it out so that the <span class="highlight">ache</span> in her heart will let her sleep...`,
+        storyText: `<p>Lila sits on her bed in the <span class="highlight">dark</span>, a curtain of hair covering her face. Her soft plushies watch her with <span class="highlight">sad</span> eyes and <span class="highlight">dejected</span> expressions. Lila doesn't move, not even when her mum pops her head around the doorway and whispers, "Goodnight"; gently, carefully, as if anything above a whisper would shatter her fragile daughter.</p> <p>Lila doesn't respond. She can't.</p> <p>The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She doesn't know how to voice what she's feeling, but maybe she could spell it out so that the <span class="highlight">ache</span> in her heart will let her sleep...</p>`,
         storyText2: `Sorrow. <br><br>That's what she's feeling. <br><br>A bone-deep sadness at the piece of her that is now gone forever. She'll never see them again, never hear their voice, no more hugs.
 The feeling hurts, but naming it takes away some of its power and a weariness washes over Lila. All she wants to do is sleep. Sleep, and forget.`,
         choice1: "Go to sleep",
@@ -125,19 +125,21 @@ function startGame() {
     startButton.style.display = "none";
     getPuzzle.style.display = "inline-block";
     getPuzzle.style.visibility = "visible";
+    storyText.scrollIntoView({ behavior: "smooth" });
     loadChapter();
 };
 
-/** Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. storyOuterCol adds a class to the outer text column so that the column background colours can be changed depending on the chapter loaded. The choice buttons are set to not appear here and to not take up any space while they're not needed. */ 
+/** Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden. */ 
 function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
+    // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
             storyOuterCol.classList.remove(cls);
         }
     });
-
+// Removes any chapter classes currently applied to the story image
     storyImage.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
             storyImage.classList.remove(cls);
@@ -150,7 +152,6 @@ function loadChapter() {
     choice2.style.display = "none";
     choice3.style.display = "none";
 }
-
 
 /* Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content. This was added to solve an issue whereby clicking on the getPuzzle button didn't do anything. The timeout gives the DOM time to fully load. */
 setTimeout(() => {
