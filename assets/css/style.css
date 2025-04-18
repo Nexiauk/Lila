@@ -20,28 +20,36 @@ body {
     color: white;
 }
 
-header .navbar {
-    border: solid 1px black;
-    background-color: var(--main-colour);
-}
-
-.navbar-brand,
-.navbar-toggler-icon {
-    color: white;
+header {
+    border-bottom: 2px solid black;
 }
 
 footer {
     border: 1px solid black;
 }
 
-/* Custom CSS */
+/* Navbar styling */
+header .navbar {
+    border: solid 1px black;
+    background-color: var(--main-colour);
+}
+
+.navbar-brand,
+.navbar-toggler-icon,
 .navbar {
-    background-color: aliceblue;
+    color: white;
 }
 
 #story-image {
     height:auto;
     width: 100%;
+}
+
+/* Styling for the main three content elements */
+
+#title {
+    font-weight: bold;
+    text-align: center;
 }
 
 #text-col,
@@ -55,7 +63,12 @@ footer {
 #title-col,
 #word-inventory {
     background-color: var(--main-colour);
-    box-shadow: 3px 3px black;
+}
+
+/* Text styling */
+
+#word-inventory p {
+    font-weight: bold;
 }
 
 #story-text {
@@ -66,6 +79,8 @@ footer {
     font-weight: bold;
     color: black;
 }
+
+/* Colour styling for around the image and text column elements */
 
 #story-image {
     border: 1px solid black;
@@ -129,10 +144,7 @@ footer {
     color: var(--ending-text);
 }
 
-#title {
-    font-weight: bold;
-    text-align: center;
-}
+/* Styling for the elements in the puzzle area */
 #puzzle-question {
     height: 100px;
     display: flex;
@@ -145,44 +157,6 @@ footer {
     display: flex;
     flex-wrap: no-wrap;
     justify-content: center;
-}
-
-#buttons {
-    visibility: hidden;
-}
-
-#start-game {
-    margin-bottom: 10px;
-}
-
-#get-puzzle {
-    border: 1px solid black;
-    color: blue;
-    margin-bottom: 10px;
-    visibility: hidden;
-    display: none;
-}
-
-#check,
-#reset-button {
-    padding-top: 0;
-}
-
-#check:hover {
-    background-color: rgb(0, 128, 0);
-    color: white;
-}
-
-#reset-button:hover {
-    background-color: red;
-    color: white;
-}
-
-#get-puzzle:hover {
-    transform:scale(1.2);
-    background-color:white;
-    box-shadow: 0 0 8px #0ebac5;
-    transition: transform 1s ease;
 }
 
 .slot,
@@ -203,9 +177,48 @@ footer {
     color: white;
 }
 
-#word-inventory p {
-    font-weight: bold;
+/* Button styling */
+
+#buttons {
+    visibility: hidden;
 }
+
+#start-game {
+    margin-bottom: 10px;
+}
+
+#get-puzzle {
+    border: 1px solid black;
+    color: blue;
+    margin-bottom: 10px;
+    visibility: hidden;
+    display: none;
+}
+
+#get-puzzle:hover {
+    transform:scale(1.2);
+    background-color:white;
+    box-shadow: 0 0 8px #0ebac5;
+    transition: transform 1s ease;
+}
+
+#check,
+#reset-button {
+    padding-top: 0;
+}
+
+#check:hover {
+    background-color: rgb(0, 128, 0);
+    color: white;
+}
+
+#reset-button:hover {
+    background-color: red;
+    color: white;
+}
+
+
+/* Styling for the collected words list */
 
 #collected-words {
     padding-left: 0;
