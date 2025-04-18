@@ -1,13 +1,21 @@
 
 /* Google Font Import */
 
-/* variables for website colours 
-root: {
+/* variables for website colours  */
+:root {
+--main-colour: #420f2a;
+--welcome-colour: #420f2a;
+--intro-colour: #1b1f2e;
+--void-colour: #642133;
+--lake-colour: #19406a;
+--forest-colour: #1c5d55;
+--library-colour: #a7130c;
+--ending-colour: #FDD788;
+--chapter-text: white;
+--ending-text: black;
 }
-*/
 
 /* Global styles */
-
 header {
     border: solid 1px black;
 }
@@ -16,6 +24,7 @@ footer {
     border: 1px solid black;
 }
 
+/* Custom CSS */
 .navbar {
     background-color: aliceblue;
 }
@@ -46,11 +55,28 @@ footer {
 
 
 #text-col.chapter-intro {
-    background-color: gray;
+    background-color: var(--intro-colour);
 }
 
 #text-col.chapter-void {
-    background-color: pink;
+    background-color:var(--void-colour);
+}
+
+#text-col.chapter-forest {
+    background-color: var(--forest-colour);
+}
+
+#text-col.chapter-library {
+    background-color: var(--library-colour);
+}
+
+#text-col.chapter-lake {
+    background-color: var(--lake-colour);
+}
+
+#text-col.ending2 {
+    background-color: var(--ending-colour);
+    color: var(--ending-text);
 }
 
 #title {
