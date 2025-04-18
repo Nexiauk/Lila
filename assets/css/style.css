@@ -183,13 +183,20 @@ header .navbar {
     visibility: hidden;
 }
 
+#get-puzzle,
+#start-game,
+#check,
+#reset-button {
+    border: 1px solid var(--main-colour);
+    color: white;
+    color: var(--main-colour);
+}
+
 #start-game {
     margin-bottom: 10px;
 }
 
 #get-puzzle {
-    border: 1px solid black;
-    color: blue;
     margin-bottom: 10px;
     visibility: hidden;
     display: none;
@@ -216,6 +223,8 @@ header .navbar {
     background-color: red;
     color: white;
 }
+
+
 
 
 /* Styling for the collected words list */
