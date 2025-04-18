@@ -20,8 +20,14 @@ body {
     color: white;
 }
 
-header {
+header .navbar {
     border: solid 1px black;
+    background-color: var(--main-colour);
+}
+
+.navbar-brand,
+.navbar-toggler-icon {
+    color: white;
 }
 
 footer {
