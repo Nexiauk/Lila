@@ -19,7 +19,7 @@
 body {
     color: white;
     background-color: #FBF7F0;
-    background-image: url(../images/paper.jpg);
+    background-image: url(../images/paper.avif);
     background-repeat:no-repeat;
     background-size: cover;
 
@@ -98,8 +98,8 @@ header .navbar {
 }
 
 .highlight {
-    font-weight: bold;
-    color: black;
+    font-weight: bolder;
+    color: white;
 }
 
 /* Colour styling for around the image and text column elements */
@@ -194,6 +194,7 @@ header .navbar {
     font-weight: bold;
     box-sizing: border-box;
     cursor: pointer;
+    background-color:#FBF7F0;
 }
 
 .slot {
