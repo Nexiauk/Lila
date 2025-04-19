@@ -298,7 +298,8 @@ function checkAnswer() {
         collectedWords.appendChild(newListItem);
         const wordScore = document.createElement("li");
         wordScore.textContent = "Attempts: " + checkScore;
-        collectedWords.appendChild(wordScore);        
+        collectedWords.appendChild(wordScore);
+        storyImage.scrollIntoView({ behavior: "smooth" });        
         confetti();
         setTimeout(choices, 3000);
 // Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
