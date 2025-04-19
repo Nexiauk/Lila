@@ -51,16 +51,14 @@ header .navbar {
     box-shadow: none;
 }
 
-
-
-#game-title {
-    margin-bottom: 0;
-}
-
 .nav-link {
     color: white;
     display: flex;
     justify-content: center;
+}
+
+#game-title {
+    margin-bottom: 0;
 }
 
 #story-image {
@@ -73,6 +71,8 @@ header .navbar {
 #title {
     font-weight: bold;
     text-align: center;
+    margin-bottom: 0;
+    padding-top: 10px;
 }
 
 #text-col,
@@ -94,7 +94,7 @@ header .navbar {
 }
 
 #story-text {
-    padding: 25px 25px 5px 25px;
+    padding: 5px 15px 5px 15px;
 }
 
 .highlight {

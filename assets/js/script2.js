@@ -42,6 +42,7 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
         storyText2: `Surrender. Lila must give in, not give up. She needs to accept her loss, but she doesn't need to forget. She needs to remember the good things, the happy memories, the light and colour that lives in the world. She needs to remember how to be free of the darkness. The shadows lift from the trees, revealing the riotous colour of their blossoms and leaves, which drift and fall around her like springtime snow. Dappled light drenches Lila, reminding her that warmth still exists after the cold dark, as the trees lend her their strength and show her how to bend, not break. The animal friends she released into the forest have joined her, are with her, like <em>they</em> will always be with her. `,
         choice1: "Visit the Library",
         choice2: "Visit the Lake",
+        endChoice: "Wake Up",
         word: "SURRENDER",
         hint: ""
     },
@@ -54,6 +55,7 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
         storyText2: `Longing. Lila longs to be held in their arms again, safe and loved. She wishes they would come home and sit in the little boat with her, telling her stories about the constellations and what they mean. Lila aches for them to be here, instead of there. Lila climbs into the boat with her wishes, which she sends out into the universe like so many shooting stars and the sky fills with them, twinkling so bright and so beautiful that her eyes shine with wonder. Their light is so brilliant that the mist clears, and the lake  glitters with reflected stardust. The moon comes out from behind the clouds and looks down like a kindly, benevolent face bestowing its warm glow on Lila.`,
         choice1: "Visit the Forest",
         choice2: "Visit the Library",
+        endChoice: "Wake Up",
         word: "LONGING",
         hint: ""
     },
@@ -68,6 +70,7 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
 Lila is furious at the unfairness of it all. She doesn't want to go to the library alone. She doesn't want to be alone full stop. She doesn't want to be without them. The storm dies down as she thinks about the long afternoons they'd spent browsing the shelves, reading quietly in big comfy chairs, simply enjoying stillness and togetherness. She is reminded of the joy she finds in reading books, all because of <em>them</em>.  She finds peace in the quiet library, it is her safe space, her hideaway, full of magic and stories. The fires morph into a beautiful sunset and the books drift round her like fireflies, filling Lila with an untold joy at the gift she has been given. The gift <em>they</em> gave to her.`,
         choice1: "Visit the Forest",
         choice2: "Visit the Lake",
+        endChoice: "Wake Up",
         word: "FURIOUS",
         hint: ""
     },
@@ -77,7 +80,7 @@ Lila is furious at the unfairness of it all. She doesn't want to go to the libra
         storyImage: "",
         storyImage2: "",
         storyText: `Short ending if you choose not to go to sleep`,
-        choice1: "",
+        choice1: "Start Again",
         choice2: "",
         word: "TEMPEST",
         hint: ""
@@ -87,7 +90,7 @@ Lila is furious at the unfairness of it all. She doesn't want to go to the libra
         title: "Congratulations!!",
         storyImage: "./assets/images/bedroom-ending.avif",
         storyText: `Lila wakes up to a room, and a world, that feels different to the one that existed before she slept.The darkness and the loss hasn't gone away, will probably never go away, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through. It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never fully leave her, they will always be with her in memories and in dreams. It has disappeared enough to allow Lila to smile again.`,
-
+        choice1: "Wake Up"
     }
 };
 
@@ -106,6 +109,7 @@ const puzzleAnswer = document.getElementById("puzzle-answer");
 const choice1 = document.getElementById("choice-1");
 const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
+const endChoice = document.getElementById("end-choice");
 const checkArea = document.getElementById("buttons");
 const collectedWords = document.getElementById("collected-words");
 const mainSection = document.getElementById("main-container");
@@ -152,6 +156,7 @@ function loadChapter() {
     choice1.style.display = "none";
     choice2.style.display = "none";
     choice3.style.display = "none";
+    endChoice.style.display = "none";
 }
 
 /* Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content. This was added to solve an issue whereby clicking on the getPuzzle button didn't do anything. The timeout gives the DOM time to fully load. */
@@ -329,19 +334,21 @@ function choices() {
     choice1.style.display = "inline-block";
     choice2.style.display = "inline-block";
     choice3.style.display = "none";
+    endChoice.style.display = "none";
     puzzleQuestion.innerHTML = "";
     puzzleAnswer.innerHTML = "";
     choice1.textContent = story[story.currentChapter].choice1;
     choice2.textContent = story[story.currentChapter].choice2;
     choice3.textContent = story[story.currentChapter].choice3;
+    endChoice.textContent = story[story.currentChapter].endChoice;
 
     //Once all areas are visited, the ending will automatically load//
-    if (forestVisited && lakeVisited && libraryVisited) {
-        story.currentChapter = "ending2";
-        loadChapter();
-        getPuzzle.style.visibility = "hidden";
-        return;
-    };
+    // if (forestVisited && lakeVisited && libraryVisited) {
+    //     story.currentChapter = "ending2";
+    //     loadChapter();
+    //     getPuzzle.style.visibility = "hidden";
+    //     return;
+    // };
 
 /*Adds event listeners to each choice button, that when clicked, will automatically load the specified chapter from the story object. Choices are given depending on what the current chapter is. -Visited variables are set for each area that isn't narratively linear so that once an area has been visited, it won't appear again as a option*/
     if (story.currentChapter == "intro") {
@@ -395,8 +402,6 @@ function choices() {
 
 
     if (story.currentChapter == "forest") {
-        console.log("The forest has been visited")
-
         if (libraryVisited == false) {
             const choice1ClickHandler = () => {
                 story.currentChapter = "library";
@@ -416,7 +421,7 @@ function choices() {
                 lakeVisited = true;
                 loadChapter();
                 getPuzzle.style.visibility = "visible";
-                choice1.removeEventListener("click", choice2ClickHandler);
+                choice2.removeEventListener("click", choice2ClickHandler);
             };
             choice2.addEventListener("click", choice2ClickHandler);
         } else {
@@ -425,8 +430,6 @@ function choices() {
     };
 
     if (story.currentChapter == "library") {
-        console.log("The library has been visited")
-
         if (forestVisited == false) {
             const choice1ClickHandler = () => {
                 story.currentChapter = "forest";
@@ -456,8 +459,6 @@ function choices() {
     };
 
     if (story.currentChapter == "lake") {
-        console.log("The lake has been visited")
-
         if (forestVisited == false) {
             const choice1ClickHandler = () => {
                 story.currentChapter = "forest";
@@ -485,4 +486,23 @@ function choices() {
         };
 
     };
+
+    if (forestVisited && lakeVisited && libraryVisited) {
+        endChoice.style.display = "inline-block";
+        const endChoiceClickHandler = () => {
+            story.currentChapter = "ending2";
+            loadChapter();
+            getPuzzle.style.visibility = "hidden";
+        };
+        endChoice.addEventListener("click", endChoiceClickHandler);
+    };
 };
+
+
+
+    // if (forestVisited && lakeVisited && libraryVisited) {
+    //     story.currentChapter = "ending2";
+    //     loadChapter();
+    //     getPuzzle.style.visibility = "hidden";
+    //     return;
+    // };
