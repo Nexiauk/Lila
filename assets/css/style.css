@@ -99,7 +99,8 @@ header .navbar {
 
 .highlight {
     font-weight: bolder;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 /* Colour styling for around the image and text column elements */
