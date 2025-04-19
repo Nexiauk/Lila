@@ -133,6 +133,7 @@ function startGame() {
 function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
+    storyImage.scrollIntoView({ behavior: "smooth" });
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
