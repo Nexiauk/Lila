@@ -342,14 +342,6 @@ function choices() {
     choice3.textContent = story[story.currentChapter].choice3;
     endChoice.textContent = story[story.currentChapter].endChoice;
 
-    //Once all areas are visited, the ending will automatically load//
-    // if (forestVisited && lakeVisited && libraryVisited) {
-    //     story.currentChapter = "ending2";
-    //     loadChapter();
-    //     getPuzzle.style.visibility = "hidden";
-    //     return;
-    // };
-
 /*Adds event listeners to each choice button, that when clicked, will automatically load the specified chapter from the story object. Choices are given depending on what the current chapter is. -Visited variables are set for each area that isn't narratively linear so that once an area has been visited, it won't appear again as a option*/
     if (story.currentChapter == "intro") {
         const choice1ClickHandler = () => {

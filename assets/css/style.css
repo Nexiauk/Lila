@@ -1,21 +1,20 @@
-
 /* Google Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Fugaz+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* variables for website colours  */
 :root {
---main-colour: #420f2a;
---intro-colour: #1b1f2e;
---void-colour: #642133;
---lake-colour: #19406a;
---forest-colour: #1c5d55;
---library-colour: #a7130c;
---ending-colour: #FDD788;
---chapter-text: white;
---ending-text: black;
---base-colour:  #FBF7F0;
---main-text: 'Josefin Sans';
---sub-headings: 'Alegreya Sans';
+    --main-colour: #420f2a;
+    --intro-colour: #1b1f2e;
+    --void-colour: #642133;
+    --lake-colour: #19406a;
+    --forest-colour: #1c5d55;
+    --library-colour: #a7130c;
+    --ending-colour: #FDD788;
+    --chapter-text: white;
+    --ending-text: black;
+    --base-colour: #FBF7F0;
+    --main-text: 'Josefin Sans';
+    --sub-headings: 'Alegreya Sans';
 }
 
 /* Global styles */
@@ -24,7 +23,7 @@ body {
     color: white;
     background-color: var(--base-colour);
     background-image: url(../images/paper.avif);
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     font-family: var(--main-text), sans-serif;
 
@@ -70,6 +69,15 @@ header .navbar {
     color: white;
     display: flex;
     justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: all ease-in-out 1.2s;
+}
+
+.nav-link:hover {
+    background-color: white;
+    border-radius: 5px;
+    color: var(--main-colour);
 }
 
 /* Navbar brand styling */
@@ -83,20 +91,17 @@ header .navbar {
 /* Styling for the main three content elements */
 
 #story-image {
-    height:auto;
+    height: auto;
     width: 100%;
-}
-
-#title {
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0;
-    padding-top: 10px;
 }
 
 #title,
 #words-title {
-    font-family:var(--sub-headings);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 10px;
+    font-family: var(--sub-headings);
 }
 
 #text-col,
@@ -147,7 +152,7 @@ header .navbar {
 }
 
 #story-image.chapter-forest {
-    box-shadow:8px 8px var(--forest-colour);
+    box-shadow: 8px 8px var(--forest-colour);
 }
 
 #story-image.chapter-library {
@@ -159,7 +164,8 @@ header .navbar {
 }
 
 #story-image.chapter-ending2 {
-    box-shadow: 8px 8px black;;
+    box-shadow: 8px 8px black;
+    ;
 }
 
 /* Chapter specific colours and styling for the text and slots */
@@ -167,6 +173,7 @@ header .navbar {
 #text-col.chapter-welcome {
     background-color: var(--main-colour);
 }
+
 #text-col.chapter-intro,
 .slot.chapter-intro {
     background-color: var(--intro-colour);
@@ -174,7 +181,7 @@ header .navbar {
 
 #text-col.chapter-void,
 .slot.chapter-void {
-    background-color:var(--void-colour);
+    background-color: var(--void-colour);
 }
 
 #text-col.chapter-forest,
@@ -219,13 +226,15 @@ header .navbar {
     font-weight: bold;
     box-sizing: border-box;
     cursor: pointer;
-    background-color:var(--base-colour);
+    background-color: var(--base-colour);
 }
 
 .slot {
     border: 1px solid black;
-    color: white;;
+    color: white;
+    ;
 }
+
 .tile {
     border: 1px solid black;
     color: black;
@@ -261,8 +270,8 @@ header .navbar {
 }
 
 #get-puzzle:hover {
-    transform:scale(1.2);
-    background-color:white;
+    transform: scale(1.2);
+    background-color: white;
     box-shadow: 0 0 8px #0ebac5;
     transition: transform 1s ease;
 }
@@ -300,7 +309,7 @@ header .navbar {
     .navbar-brand {
         justify-content: center;
     }
-    
+
     #story-image,
     #word-inventory,
     #text-col {
@@ -324,7 +333,7 @@ header .navbar {
 
     .tile:hover,
     .slot:hover {
-        transform:scale(1.1);
+        transform: scale(1.1);
         border: 1px solid green;
     }
 
@@ -353,4 +362,3 @@ header .navbar {
         padding-top: 1rem;
     }
 }
-
