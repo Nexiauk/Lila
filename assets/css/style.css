@@ -85,13 +85,24 @@ button {
     color: var(--main-colour);
     font-weight: bold;
     transition: all 1.2s ease-in-out;
+    border: 1px solid white
 }
 
 .navbar .nav-link.active {
-border-radius: 5px;
-border: 1px dotted white;
-color: white;
+    background-color: var(--main-colour);
+    color: white;
+    border: 1px dotted white;
 }
+
+.navbar .nav-link.active:hover {
+    background-color: white;
+    border-radius: 5px;
+    color: var(--main-colour);
+    font-weight: bold;
+    transition: all 1.2s ease-in-out;
+    border: 1px solid white
+}
+
 
 /* Styling for the main three content elements */
 #story-image {
@@ -356,13 +367,13 @@ color: white;
     .navbar-nav {
         width: 80%;
     }
-    
+
     .nav-item {
         flex-basis: 0;
         flex-grow: 1;
         text-align: center;
     }
-    
+
     .navbar-brand h1 {
         padding-left: 20px;
         font-size: 3rem;
@@ -387,9 +398,9 @@ color: white;
 
 /* Responsive media queries for laptops 1440px and above and above */
 @media screen and (min-width:1440px) {
-.navbar-nav {
-    width: 60%;
-}
+    .navbar-nav {
+        width: 60%;
+    }
 
 }
 
