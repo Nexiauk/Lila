@@ -1,5 +1,6 @@
 
 /* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Fugaz+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* variables for website colours  */
 :root {
@@ -13,6 +14,8 @@
 --chapter-text: white;
 --ending-text: black;
 --base-colour:  #FBF7F0;
+--main-text: 'Josefin Sans';
+--sub-headings: 'Alegreya Sans';
 }
 
 /* Global styles */
@@ -23,6 +26,7 @@ body {
     background-image: url(../images/paper.avif);
     background-repeat:no-repeat;
     background-size: cover;
+    font-family: var(--main-text), sans-serif;
 
 }
 
@@ -32,6 +36,12 @@ header {
 
 footer {
     border: 1px solid black;
+}
+
+button {
+    border-radius: 5px;
+    font-weight: bolder;
+    padding: 5px;
 }
 
 /* Navbar styling */
@@ -62,22 +72,31 @@ header .navbar {
     justify-content: center;
 }
 
+/* Navbar brand styling */
+
 #game-title {
     margin-bottom: 0;
+    font-family: 'Fugaz One', sans-serif;
+    font-size: 3rem;
 }
+
+/* Styling for the main three content elements */
 
 #story-image {
     height:auto;
     width: 100%;
 }
 
-/* Styling for the main three content elements */
-
 #title {
     font-weight: bold;
     text-align: center;
     margin-bottom: 0;
     padding-top: 10px;
+}
+
+#title,
+#words-title {
+    font-family:var(--sub-headings);
 }
 
 #text-col,
