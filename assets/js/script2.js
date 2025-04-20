@@ -1,13 +1,6 @@
 // Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html
 const story = {
-    currentChapter: "welcome",
-    welcome: {
-        title: `Welcome`,
-        storyImage: "./assets/images/title-screen.avif",
-        storyText: `Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The loss has been so intense that she has lost her ability to speak.<br>
-            Travel with Lila and help her to find the words she needs to express how she's feeling...`
-    },
-
+    currentChapter: "",
     intro: {
         title: "Introduction",
         storyImage: "./assets/images/bedroom-gloomy.avif",
@@ -118,11 +111,16 @@ let checkScore = 0;
 let forestVisited = false;
 let lakeVisited = false;
 let libraryVisited = false;
+let start = false
 let word = "";
 
 startButton.addEventListener("click", startGame);
 // Immediately loads the first chapter from the story object, which is set to 'welcome' by default
-loadChapter();
+if (start == false) {
+    navBar.scrollIntoView({ behavior: "smooth" });
+
+start = true;
+}
 
 /*This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
 function startGame() {
@@ -137,7 +135,7 @@ function startGame() {
 function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
-    navBar.scrollIntoView({ behavior: "smooth" });
+    storyImage.scrollIntoView({ behavior: "smooth" });
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
