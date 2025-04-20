@@ -44,7 +44,7 @@ button {
 }
 
 /* Navbar styling */
-header .navbar {
+.navbar {
     border: solid 1px white;
     background-color: var(--main-colour);
 }
@@ -59,6 +59,12 @@ header .navbar {
     color: white;
 }
 
+.navbar-brand h1 {
+    margin-bottom: 0;
+    font-family: 'Fugaz One', sans-serif;
+    font-size: 3rem;
+}
+
 .navbar-toggler,
 .navbar-toggler:focus {
     border: none;
@@ -67,29 +73,27 @@ header .navbar {
 
 .nav-link {
     color: white;
-    display: flex;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border-radius: 5px;
-    transition: all ease-in-out 1.2s;
-
+    display: flex;
 }
 
-.nav-link:hover {
+.navbar .nav-link:hover {
     background-color: white;
     border-radius: 5px;
     color: var(--main-colour);
+    font-weight: bold;
+    transition: all 1.2s ease-in-out;
 }
 
-/* Navbar brand styling */
-
-#game-title {
-    margin-bottom: 0;
-    font-family: 'Fugaz One', sans-serif;
+.navbar .nav-link.active {
+border-radius: 5px;
+border: 1px dotted white;
+color: white;
 }
 
 /* Styling for the main three content elements */
-
 #story-image {
     height: auto;
     width: 100%;
@@ -256,7 +260,7 @@ header .navbar {
     border: 1px solid var(--main-colour);
     background-color: white;
     color: var(--main-colour);
-
+    padding: 8px;
 }
 
 #start-game {
@@ -274,11 +278,6 @@ header .navbar {
     background-color: white;
     box-shadow: 0 0 8px #0ebac5;
     transition: transform 1s ease;
-}
-
-#check,
-#reset-button {
-    padding-top: 0;
 }
 
 #check:hover {
@@ -310,8 +309,12 @@ header .navbar {
         justify-content: center;
     }
 
-    #game-title {
-        font-size: 1.6rem;
+    .navbar-brand h1 {
+        font-size: 1.7rem;
+    }
+
+    .navbar-toggler {
+        padding-right: 0;
     }
 
     #story-image,
@@ -350,7 +353,17 @@ header .navbar {
 /* Responsive media queries for tablets 768px and above */
 @media screen and (min-width:768px) {
 
-    #game-title {
+    .navbar-nav {
+        width: 80%;
+    }
+    
+    .nav-item {
+        flex-basis: 0;
+        flex-grow: 1;
+        text-align: center;
+    }
+    
+    .navbar-brand h1 {
         padding-left: 20px;
         font-size: 3rem;
     }
@@ -369,5 +382,19 @@ header .navbar {
         height: 60px;
         width: 60px;
         padding-top: 1rem;
+    }
+}
+
+/* Responsive media queries for laptops 1440px and above and above */
+@media screen and (min-width:1440px) {
+.navbar-nav {
+    width: 60%;
+}
+
+}
+
+@media screen and (min-width:2560px) {
+    .navbar-nav {
+        width: 30%;
     }
 }
