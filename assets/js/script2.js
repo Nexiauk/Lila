@@ -129,7 +129,6 @@ function startGame() {
     startButton.style.display = "none";
     getPuzzle.style.display = "inline-block";
     getPuzzle.style.visibility = "visible";
-    storyImage.scrollIntoView({ behavior: "smooth" });
     loadChapter();
 };
 

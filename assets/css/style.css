@@ -72,6 +72,7 @@ header .navbar {
     font-size: 1.5rem;
     border-radius: 5px;
     transition: all ease-in-out 1.2s;
+
 }
 
 .nav-link:hover {
@@ -85,7 +86,6 @@ header .navbar {
 #game-title {
     margin-bottom: 0;
     font-family: 'Fugaz One', sans-serif;
-    font-size: 3rem;
 }
 
 /* Styling for the main three content elements */
@@ -254,7 +254,7 @@ header .navbar {
 #choice-2,
 #choice-3 {
     border: 1px solid var(--main-colour);
-    color: white;
+    background-color: white;
     color: var(--main-colour);
 
 }
@@ -310,6 +310,10 @@ header .navbar {
         justify-content: center;
     }
 
+    #game-title {
+        font-size: 1.6rem;
+    }
+
     #story-image,
     #word-inventory,
     #text-col {
@@ -345,6 +349,11 @@ header .navbar {
 
 /* Responsive media queries for tablets 768px and above */
 @media screen and (min-width:768px) {
+
+    #game-title {
+        padding-left: 20px;
+        font-size: 3rem;
+    }
 
     #puzzle-question,
     #puzzle-answer {
