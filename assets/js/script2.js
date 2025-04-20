@@ -1,6 +1,3 @@
-//Preloaded images
-// let introImage1 = 
-
 // Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html
 const story = {
     currentChapter: "welcome",
@@ -124,10 +121,8 @@ let libraryVisited = false;
 let word = "";
 
 startButton.addEventListener("click", startGame);
-
 // Immediately loads the first chapter from the story object, which is set to 'welcome' by default
 loadChapter();
-navBar.scrollIntoView({ behavior: "smooth" });
 
 /*This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
 function startGame() {
@@ -142,7 +137,7 @@ function startGame() {
 function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
-    storyImage.scrollIntoView({ behavior: "smooth" });
+    navBar.scrollIntoView({ behavior: "smooth" });
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
@@ -494,12 +489,3 @@ function choices() {
         endChoice.addEventListener("click", endChoiceClickHandler);
     };
 };
-
-
-
-    // if (forestVisited && lakeVisited && libraryVisited) {
-    //     story.currentChapter = "ending2";
-    //     loadChapter();
-    //     getPuzzle.style.visibility = "hidden";
-    //     return;
-    // };
