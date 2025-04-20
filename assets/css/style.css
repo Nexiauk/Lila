@@ -110,6 +110,12 @@ button {
     width: 100%;
 }
 
+#text-col {
+    display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
 #title,
 #words-title {
     font-weight: bold;
@@ -139,6 +145,7 @@ button {
 
 #story-text {
     padding: 5px 15px 5px 15px;
+    margin-bottom: auto;
 }
 
 .highlight {

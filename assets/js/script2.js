@@ -115,12 +115,6 @@ let start = false
 let word = "";
 
 startButton.addEventListener("click", startGame);
-// Immediately loads the first chapter from the story object, which is set to 'welcome' by default
-if (start == false) {
-    navBar.scrollIntoView({ behavior: "smooth" });
-
-start = true;
-}
 
 /*This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
 function startGame() {
