@@ -264,9 +264,9 @@ justify-content: space-between;
 
 /* Button styling */
 
-#buttons {
+/* #buttons {
     visibility: hidden;
-}
+} */
 
 #get-puzzle,
 #start-game,
@@ -280,6 +280,7 @@ justify-content: space-between;
     background-color: white;
     color: var(--main-colour);
     padding: 8px;
+    margin-bottom: 10px;
 }
 
 #get-puzzle,
@@ -289,16 +290,6 @@ justify-content: space-between;
 #choice-2,
 #choice-3,
 #end-choice {
-    display: none;
-}
-
-#start-game {
-    margin-bottom: 10px;
-}
-
-#get-puzzle {
-    margin-bottom: 10px;
-    visibility: hidden;
     display: none;
 }
 

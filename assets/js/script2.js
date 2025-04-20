@@ -121,7 +121,6 @@ function startGame() {
     story.currentChapter = "intro";
     startButton.style.display = "none";
     getPuzzle.style.display = "inline-block";
-    getPuzzle.style.visibility = "visible";
     loadChapter();
 };
 
@@ -167,7 +166,7 @@ function initialisePuzzle() {
     puzzleArea.scrollIntoView({ behavior: "smooth" });
     word = story[story.currentChapter].word;
     checkScore = 0;
-    getPuzzle.style.visibility = "hidden";
+    getPuzzle.style.display = "none";
     checkArea.style.visibility = "visible";
     checkButton.style.display = "inline-block";
     resetButton.style.display = "inline-block";
@@ -339,14 +338,14 @@ function choices() {
         const choice1ClickHandler = () => {
             story.currentChapter = "void";
             loadChapter();
-            getPuzzle.style.visibility = "visible";
+            getPuzzle.style.display = "inline-block";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
 
         const choice2ClickHandler = () => {
             story.currentChapter = "ending1";
             loadChapter();
-            getPuzzle.style.visibility = "hidden";
+            getPuzzle.style.display = "none";
             choice2.removeEventListener("click", choice2ClickHandler);
         };
         choice1.addEventListener("click", choice1ClickHandler);
@@ -361,14 +360,14 @@ function choices() {
             story.currentChapter = "forest";
             forestVisited = true;
             loadChapter();
-            getPuzzle.style.visibility = "visible";
+            getPuzzle.style.display = "inline-block";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
         const choice2ClickHandler = () => {
             story.currentChapter = "lake";
             lakeVisited = true;
             loadChapter();
-            getPuzzle.style.visibility = "visible";
+            getPuzzle.style.display = "inline-block";
             choice2.removeEventListener("click", choice2ClickHandler);
 
         };
@@ -376,7 +375,7 @@ function choices() {
             story.currentChapter = "library";
             libraryVisited = true;
             loadChapter();
-            getPuzzle.style.visibility = "visible";
+            getPuzzle.style.display = "inline-block";
             choice3.removeEventListener("click", choice3ClickHandler);
         };
         choice1.addEventListener("click", choice1ClickHandler);
@@ -391,7 +390,7 @@ function choices() {
                 story.currentChapter = "library";
                 libraryVisited = true;
                 loadChapter();
-                getPuzzle.style.visibility = "visible";
+                getPuzzle.style.display = "inline-block";
                 choice1.removeEventListener("click", choice1ClickHandler);
             };
             choice1.addEventListener("click", choice1ClickHandler);
@@ -404,7 +403,7 @@ function choices() {
                 story.currentChapter = "lake";
                 lakeVisited = true;
                 loadChapter();
-                getPuzzle.style.visibility = "visible";
+                getPuzzle.style.display = "inline-block";
                 choice2.removeEventListener("click", choice2ClickHandler);
             };
             choice2.addEventListener("click", choice2ClickHandler);
@@ -419,7 +418,7 @@ function choices() {
                 story.currentChapter = "forest";
                 forestVisited = true;
                 loadChapter();
-                getPuzzle.style.visibility = "visible";
+                getPuzzle.style.display = "inline-block";
                 choice1.removeEventListener("click", choice1ClickHandler);
             };
             choice1.addEventListener("click", choice1ClickHandler);
@@ -432,7 +431,7 @@ function choices() {
                 story.currentChapter = "lake";
                 lakeVisited = true;
                 loadChapter();
-                getPuzzle.style.visibility = "visible";
+                getPuzzle.style.display = "inline-block";
                 choice2.removeEventListener("click", choice2ClickHandler);
             };
             choice2.addEventListener("click", choice2ClickHandler);
@@ -448,7 +447,7 @@ function choices() {
                 story.currentChapter = "forest";
                 forestVisited = true;
                 loadChapter();
-                getPuzzle.style.visibility = "visible";
+                getPuzzle.style.display = "inline-block";
                 choice1.removeEventListener("click", choice1ClickHandler);
             };
             choice1.addEventListener("click", choice1ClickHandler);
@@ -461,7 +460,7 @@ function choices() {
                 story.currentChapter = "library";
                 libraryVisited = true;
                 loadChapter();
-                getPuzzle.style.visibility = "visible";
+                getPuzzle.style.display = "inline-block";
                 choice2.removeEventListener("click", choice2ClickHandler);
             };
             choice2.addEventListener("click", choice2ClickHandler);
@@ -476,7 +475,7 @@ function choices() {
         const endChoiceClickHandler = () => {
             story.currentChapter = "ending2";
             loadChapter();
-            getPuzzle.style.visibility = "hidden";
+            getPuzzle.style.display = "none";
         };
         endChoice.addEventListener("click", endChoiceClickHandler);
     };
