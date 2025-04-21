@@ -152,7 +152,7 @@ function startGame() {
 function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
-    storyImage.scrollIntoView({ behavior: "smooth" });
+
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
@@ -170,6 +170,7 @@ function loadChapter() {
     storyImage.src = story[story.currentChapter].storyImage;
     storyImageSmall.srcset= story[story.currentChapter].storyImageSmall;
     storyImageLarge.srcset = story[story.currentChapter].storyImageLarge;
+    storyImage.scrollIntoView({ behavior: "smooth" });
     choice1.style.display = "none";
     choice2.style.display = "none";
     choice3.style.display = "none";

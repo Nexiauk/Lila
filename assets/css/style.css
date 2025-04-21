@@ -235,12 +235,26 @@ button {
 }
 
 @keyframes tilt-shaking {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(0eg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0eg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
 
 /* Styling for the elements in the puzzle area */
 #puzzle-question {
@@ -413,6 +427,11 @@ button {
         display: block;
     }
 
+    #collected-words li:nth-child(even) {
+        padding-bottom: 30px;
+    }
+    
+
     .tile,
     .slot {
         height: 60px;
@@ -442,9 +461,9 @@ button {
 
 @media screen and (min-width:2560px) {
     button {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
-    
+
     .navbar-nav {
         width: 30%;
     }
