@@ -4,10 +4,11 @@ const story = {
     intro: {
         title: "Introduction",
         storyImage: "./assets/images/bedroom-gloomy.avif",
-        storyImageSmall: "./assets/images/bedroom-gloomy-small.avif",
         storyImageLarge: "./assets/images/bedroom-gloomy.avif",
+        storyImageSmall: "./assets/images/bedroom-gloomy-small.avif",
         storyImage2: "./assets/images/bedroom-sleep.avif",
-        storyImage2Small: "",
+        storyImage2Large: "./assets/images/bedroom-sleep.avif",
+        storyImage2Small: "./assets/images/bedroom-sleep-small.avif",
         storyText: `<p>Lila sits on her bed in the <span class="highlight">dark</span>, a curtain of hair covering her face. Her soft plushies watch her with <span class="highlight">sad</span> eyes and <span class="highlight">dejected</span> expressions. Lila doesn't move, not even when her mum pops her head around the doorway and whispers, "Goodnight"; gently, carefully, as if anything above a whisper would shatter her fragile daughter.</p> <p>Lila doesn't respond. She can't.</p> <p>The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She doesn't know how to voice what she's feeling, but maybe she could spell it out so that the <span class="highlight">ache</span> in her heart will let her sleep...</p>`,
         storyText2: `Sorrow. <br><br>That's what she's feeling. <br><br>A bone-deep sadness at the piece of her that is now gone forever. She'll never see them again, never hear their voice, no more hugs.
 The feeling hurts, but naming it takes away some of its power and a weariness washes over Lila. All she wants to do is sleep. Sleep, and forget.`,
@@ -20,7 +21,11 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
     void: {
         title: "The Void",
         storyImage: "./assets/images/vortex-gloomy.avif",
+        storyImageLarge: "./assets/images/vortex-gloomy.avif",
+        storyImageSmall: "./assets/images/vortex-gloomy-small.avif",
         storyImage2: "./assets/images/vortex-lovely.avif",
+        storyImage2Large: "./assets/images/vortex-lovely.avif",
+        storyImage2Small: "./assets/images/vortex-lovely-small.avif",
         storyText: `Lila falls into troubled dreams, spinning slowly into a darkness that tries to swallow her whole. The gloom swirls around her in a cloud, trying to get into her eyes, nose, and mouth. She <span class="highlight">shakes her head</span> and closes her eyes, buttons up her mouth, <span class="highlight">refuses</span> to let it in. Lila <span class="highlight">turns from</span> the darkness and all it represents, from the loss that she is feeling, but the more she <span class="highlight">ignores</span> it the deeper it swallows her. She doesn't understand what she's feeling or how to make it stop. Letters coalesce in the void and she grabs them, tries to put them in an order that makes sense...`,
         storyText2: `Denial. Lila has been trying to push away the truth in the hopes her loss will become untrue. That it was all some bad dream she could wake up from, if only she knew how. Where did they go? Will she see them again? As she thinks about these important questions, the void slows down and flashes through with bright, vibrant colours. Despite herself, Lila smiles at the rainbows -  the same rainbows they would look at together out the living room window when the sun began to shine on a rainy day.`,
         choice1: "Visit the Forest",
@@ -33,7 +38,11 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
     forest: {
         title: "The Forest",
         storyImage: "./assets/images/forest-gloomy.avif",
+        storyImageLarge: "./assets/images/forest-gloomy.avif",
+        storyImageSmall: "./assets/images/forest-gloomy-small.avif",
         storyImage2: "./assets/images/forest-lovely.avif",
+        storyImage2Large: "./assets/images/forest-lovely.avif",
+        storyImage2Small: "./assets/images/forest-lovely-small.avif",
         storyText: `The forest is dark, oppressive, stifling. Lila feels trapped in a web she can't get out of. She can't <span class="highlight">accept</span> what has happened - she doesn't want to. She can't <span class="highlight">admit</span> to herself that they have gone, that they are forever gone, that she doesn't feel <span class="highlight">okay</span> and that things will never be the same again. The forest used to be a place she loved to walk with them, underneath the whispering canopy of leaves. They would tell her to <span class="highlight">go ahead</span> and explore the tranquil forest paths, to look for small animals. They would  encourage her to <span class="highlight">release</span> her animal friends back into the wild, where they can run free.Lila wants to feel free. She just needs to... she must... she doesn't know what the word is.The web around her starts to form the letters of a word... `,
         storyText2: `Surrender. Lila must give in, not give up. She needs to accept her loss, but she doesn't need to forget. She needs to remember the good things, the happy memories, the light and colour that lives in the world. She needs to remember how to be free of the darkness. The shadows lift from the trees, revealing the riotous colour of their blossoms and leaves, which drift and fall around her like springtime snow. Dappled light drenches Lila, reminding her that warmth still exists after the cold dark, as the trees lend her their strength and show her how to bend, not break. The animal friends she released into the forest have joined her, are with her, like <em>they</em> will always be with her. `,
         choice1: "Visit the Library",
@@ -46,7 +55,11 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
     lake: {
         title: "The Lake",
         storyImage: "./assets/images/lake-gloomy.avif",
+        storyImageLarge: "./assets/images/lake-gloomy.avif",
+        storyImageSmall: "./assets/images/lake-gloomy-small.avif",
         storyImage2: "./assets/images/lake-lovely.avif",
+        storyImage2Large: "./assets/images/lake-lovely.avif",
+        storyImage2Small: "./assets/images/lake-lovely-small.avif",
         storyText: `Lila drops into the murky waters of a dreary lake. Icy rain falls from the cloudy sky and she shivers, teeth chattering as the grey water drenches through to her skin. The lake seems familiar, but she can't quite place it - everything seems wrong in the dense fog. She <span class="highlight">wishes</span> the mist would clear; she <span class="highlight">yearns</span> to see the sky and the stars. She remembers rowing out on a lake with them, <span class="highlight">hoping</span> to see constellations in the midnight skies. A shooting star had carried her <span class="highlight">heart's desire</span> into the universe, while she wrapped up in warm blankets and drank hot chocolate with them in the swaying, bobbing little boat. Lila's chest fills with an emotion she can't express and as she looks up at the sky, the struggling light of distant stars begin to form the letters of a word...`,
         storyText2: `Longing. Lila longs to be held in their arms again, safe and loved. She wishes they would come home and sit in the little boat with her, telling her stories about the constellations and what they mean. Lila aches for them to be here, instead of there. Lila climbs into the boat with her wishes, which she sends out into the universe like so many shooting stars and the sky fills with them, twinkling so bright and so beautiful that her eyes shine with wonder. Their light is so brilliant that the mist clears, and the lake  glitters with reflected stardust. The moon comes out from behind the clouds and looks down like a kindly, benevolent face bestowing its warm glow on Lila.`,
         choice1: "Visit the Forest",
@@ -59,11 +72,13 @@ The feeling hurts, but naming it takes away some of its power and a weariness wa
     library: {
         title: "The Library",
         storyImage: "./assets/images/library-gloomy.avif",
+        storyImageLarge: "./assets/images/library-gloomy.avif",
+        storyImageSmall: "./assets/images/library-gloomy-small.avif",
         storyImage2: "./assets/images/library-lovely.avif",
+        storyImage2Large: "./assets/images/library-lovely.avif",
+        storyImage2Small: "./assets/images/library-lovely-small.avif",
         storyText: `Lila enters the library in a furious <span class="highlight">storm</span> of emotion. She feels wild with it, as though thunder crashes in her chest and lightning strikes through her heart. The <span class="highlight">raging</span> tempest <span class="highlight">ignites</span> the books around her into flames, as though <span class="highlight">lashing out</span> at the unfairness of it all. Pages flutter through the air, torn out in rebellion and she stomps as loudly as she can, kicking and breaking and doing everything she's not meant to do in a library. She can't use her words, and she may have lost her voice, but Lila tries to express herself through action as she <span class="highlight">destroys</span> the very same place that had been their sanctum. She doesn't want to be quiet now, she wants to be heard. Scraps of paper fall from the torn pages to the floor, spelling out the emotion that she's feeling so she can quell it with the waters of understanding...`,
-        storyText2: `Furious.
-
-Lila is furious at the unfairness of it all. She doesn't want to go to the library alone. She doesn't want to be alone full stop. She doesn't want to be without them. The storm dies down as she thinks about the long afternoons they'd spent browsing the shelves, reading quietly in big comfy chairs, simply enjoying stillness and togetherness. She is reminded of the joy she finds in reading books, all because of <em>them</em>.  She finds peace in the quiet library, it is her safe space, her hideaway, full of magic and stories. The fires morph into a beautiful sunset and the books drift round her like fireflies, filling Lila with an untold joy at the gift she has been given. The gift <em>they</em> gave to her.`,
+        storyText2: `Furious. Lila is furious at the unfairness of it all. She doesn't want to go to the library alone. She doesn't want to be alone full stop. She doesn't want to be without them. The storm dies down as she thinks about the long afternoons they'd spent browsing the shelves, reading quietly in big comfy chairs, simply enjoying stillness and togetherness. She is reminded of the joy she finds in reading books, all because of <em>them</em>.  She finds peace in the quiet library, it is her safe space, her hideaway, full of magic and stories. The fires morph into a beautiful sunset and the books drift round her like fireflies, filling Lila with an untold joy at the gift she has been given. The gift <em>they</em> gave to her.`,
         choice1: "Visit the Forest",
         choice2: "Visit the Lake",
         endChoice: "Wake Up",
@@ -85,7 +100,9 @@ Lila is furious at the unfairness of it all. She doesn't want to go to the libra
     ending2: {
         title: "Congratulations!!",
         storyImage: "./assets/images/bedroom-ending.avif",
-        storyText: `Lila wakes up to a room, and a world, that feels different to the one that existed before she slept.The darkness and the loss hasn't gone away, will probably never go away, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through. It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never fully leave her, they will always be with her in memories and in dreams. It has disappeared enough to allow Lila to smile again.`,
+        storyImageLarge: "./assets/images/bedroom-ending.avif",
+        storyImageSmall: "./assets/images/bedroom-ending-small.avif",
+        storyText: `Lila wakes up to a room, and a world, that feels different to the one that existed before she slept. The darkness and the loss hasn't gone away, will probably never go away, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through. It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never fully leave her, they will always be with her in memories and in dreams. It has disappeared enough to allow Lila to smile again.`,
         choice1: "Wake Up"
     }
 };
@@ -294,7 +311,8 @@ function checkAnswer() {
         });
         /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
         storyImage.src = story[story.currentChapter].storyImage2;
-        storyImage.srcset = story[story.currentChapter].srcset2;
+        storyImageSmall.srcset= story[story.currentChapter].storyImage2Small;
+        storyImageLarge.srcset = story[story.currentChapter].storyImage2Large;
         storyText.innerHTML = story[story.currentChapter].storyText2;
         resetButton.style.display = "none";
         checkButton.style.display = "none";
