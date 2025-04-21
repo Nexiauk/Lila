@@ -430,7 +430,7 @@ button {
     #collected-words li:nth-child(even) {
         padding-bottom: 30px;
     }
-    
+
 
     .tile,
     .slot {
@@ -442,8 +442,25 @@ button {
 
 /* Responsive media queries for laptops 1200px and above */
 @media screen and (min-width:1200px) {
+    #story-title {
+        font-size: 2.2rem;
+    }
+
     #story-text {
         font-size: 1.4rem;
+    }
+
+    #words-title {
+        margin-bottom: 10px;
+        font-size: 2.2rem;
+    }
+
+    #collected-words {
+        font-size: 1.3rem;
+    }
+
+    #collected-words li:nth-child(even) {
+        padding-bottom: 50px;
     }
 }
 
@@ -453,8 +470,21 @@ button {
         width: 60%;
     }
 
+    #words-title {
+        margin-bottom: 5px;
+        font-size: 2.2rem;
+    }
+
     #story-text {
         font-size: 1rem;
+    }
+
+    #collected-words {
+        font-size: 1rem;
+    }
+
+    #collected-words li:nth-child(even) {
+        padding-bottom: 20px;
     }
 
 }
