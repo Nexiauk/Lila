@@ -308,8 +308,9 @@ button {
     display: none;
 }
 
-#get-puzzle:hover {
-    transform: scale(1.2);
+#get-puzzle:hover,
+#start-game:hover {
+    transform: scale(1.1);
     background-color: white;
     box-shadow: 0 0 8px #0ebac5;
     transition: transform 1s ease;
@@ -362,10 +363,6 @@ button {
         display: none;
     }
 
-    #story-text {
-        font-size: 1rem;
-    }
-
     .tile,
     .slot {
         height: 25px;
@@ -403,6 +400,10 @@ button {
         font-size: 3rem;
     }
 
+    #story-text {
+        font-size: 1.2rem;
+    }
+
     #puzzle-question,
     #puzzle-answer {
         height: 100px;
@@ -420,17 +421,35 @@ button {
     }
 }
 
-/* Responsive media queries for laptops 1440px and above and above */
+/* Responsive media queries for laptops 1200px and above */
+@media screen and (min-width:1200px) {
+    #story-text {
+        font-size: 1.4rem;
+    }
+}
+
+/* Responsive media queries for laptops 1440px and above */
 @media screen and (min-width:1440px) {
     .navbar-nav {
         width: 60%;
     }
 
+    #story-text {
+        font-size: 1rem;
+    }
+
 }
 
 @media screen and (min-width:2560px) {
-
+    button {
+        font-size: 2rem;
+    }
+    
     .navbar-nav {
         width: 30%;
+    }
+
+    #story-text {
+        font-size: 2rem;
     }
 }

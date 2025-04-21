@@ -35,10 +35,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#">Play</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Links</a>
+                            <a class="nav-link" href="#">About</a>
                         </li>
                     </ul>
                 </div>
@@ -52,7 +52,7 @@
         </div>
         <!-- Story images that is dynamically pulled through from a Javascript object -->
         <section class="row gx-0 justify-content-between" id="story-area">
-            <div class="col col-12 col-md-9 order-md-1 col-lg-9 order-lg-1 col-xxl-5 mt-2" id="image-div">
+            <div class="col col-12 col-md-9 order-md-1 col-lg-9 col-xxl-5 mt-2" id="image-div">
                 <picture>
                     <source media="(min-width: 501px)" id="large-img" srcset="./assets/images/title-screen.avif">
                     <source media="(max-width: 500px)" id="small-img" srcset="./assets/images/title-screen-small.avif">
@@ -61,7 +61,7 @@
                 </picture>
             </div>
             <!-- Story text that is dynamically pulled through from a Javascript object-->
-            <div class="col col-12 col-md-12 order-md-3 order-lg-3 col-xxl-5 mt-2 chapter-welcome" id="text-col">
+            <div class="col col-12 col-md-12 order-md-3 col-xxl-5 mt-2 chapter-welcome" id="text-col">
                 <h1 id="title">Welcome</h1>
                 <p id="story-text">Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The
                     loss has been so intense that she has lost her ability to speak.<br>
@@ -73,7 +73,7 @@
                 <div class="text-center"><button id="get-puzzle">Get Puzzle</button><button id="start-game">Start
                         Game</button></div>
             </div>
-            <div class="col col-sm-12 col-md-2 order-md-2 col-lg-2 order-lg-2 col-xxl-1 order-xl-3 mt-2 text-center"
+            <div class="col col-sm-12 col-md-2 order-md-2 col-lg-2 col-xxl-1 order-xxl-3 mt-2 text-center"
                 id="word-inventory">
                 <h2 id="words-title">Words</h2>
                 <ul id="collected-words">
@@ -87,10 +87,6 @@
             <div class="col col-12 text-center mb-4" id="buttons">
                 <button id="check">Check Answer</button>
                 <button id="reset-button">Reset</button>
-            </div>
-            <div class="col col-12 text-center mb-4" id="system-text">
-                <p></p>
-                <button id="system-button"></button>
             </div>
         </section>
     </div>

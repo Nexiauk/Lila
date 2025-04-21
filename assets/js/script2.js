@@ -138,6 +138,7 @@ let start = false
 let word = "";
 
 startButton.addEventListener("click", startGame);
+getPuzzle.addEventListener("click", initialisePuzzle)
 
 /*This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
 function startGame() {
@@ -176,14 +177,14 @@ function loadChapter() {
 }
 
 /* Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content. This was added to solve an issue whereby clicking on the getPuzzle button didn't do anything. The timeout gives the DOM time to fully load. */
-setTimeout(() => {
-    const puzzleButton = document.getElementById("get-puzzle");
-    if (puzzleButton) {
-        puzzleButton.addEventListener("click", initialisePuzzle);
-    } else {
-        console.error("Button not found!")
-    }
-}, 0);
+// setTimeout(() => {
+//     const puzzleButton = document.getElementById("get-puzzle");
+//     if (puzzleButton) {
+//         puzzleButton.addEventListener("click", initialisePuzzle);
+//     } else {
+//         console.error("Button not found!")
+//     }
+// }, 0);
 
 
 /** Loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word. It has functionality to automatically scrolldown to the puzzle area so a user doesn't have to use their mouse or keyboard keys. The getPuzzle button is hidden and the check and reset buttons are set to appear, with event listeners added to them that connect to further functions. */
@@ -294,7 +295,12 @@ function checkAnswer() {
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
     // If not all slots are filled, alert the user and exit the function
     if (!allFilled) {
-        alert("Please fill all the slots!");
+        slots.forEach(slot => {
+            if (slot.textContent === "") {
+                slot.classList.remove(`chapter-${story.currentChapter}`);
+                slot.classList.add("wrong-answer");
+            }
+        });
         return;
     }
     // If all slots are filled, the slots are passed into the userAnswer variable in order to form the word the user has spelt with the tiles. This is then compared to the original word passed into the game.
