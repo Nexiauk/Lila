@@ -121,7 +121,7 @@ button {
 #words-title {
     font-weight: bold;
     text-align: center;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     padding-top: 10px;
     margin-bottom: 0;
     font-family: var(--sub-headings);
@@ -228,6 +228,11 @@ button {
     color: var(--ending-text);
 }
 
+.slot.wrong-answer {
+    background-color: red;
+    color: white;
+}
+
 /* Styling for the elements in the puzzle area */
 #puzzle-question {
     height: 100px;
@@ -264,12 +269,11 @@ button {
     color: black;
 }
 
+#system-text {
+    display: none;
+}
+
 /* Button styling */
-
-/* #buttons {
-    visibility: hidden;
-} */
-
 #get-puzzle,
 #start-game,
 #check,

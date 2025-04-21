@@ -24,7 +24,9 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-sm" id="navbar">
             <div class="container-fluid">
-                <div class="navbar-brand"><h1>Lila's Lost Words</h1></div>
+                <div class="navbar-brand">
+                    <h1>Lila's Lost Words</h1>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -54,28 +56,25 @@
                 <picture>
                     <source media="(min-width: 501px)" id="large-img" srcset="./assets/images/title-screen.avif">
                     <source media="(max-width: 500px)" id="small-img" srcset="./assets/images/title-screen-small.avif">
-                    <img
-                      id="story-image"
-                      class="chapter-welcome"
-                      src="./assets/images/title-screen.avif"
-                      alt="Lila's Lost Words title screen image."
-                      width="700"
-                      height="547"
-                    >
-                  </picture>
+                    <img id="story-image" class="chapter-welcome" src="./assets/images/title-screen.avif"
+                        alt="Lila's Lost Words title screen image." width="700" height="547">
+                </picture>
             </div>
             <!-- Story text that is dynamically pulled through from a Javascript object-->
             <div class="col col-12 col-md-12 order-md-3 order-lg-3 col-xxl-5 mt-2 chapter-welcome" id="text-col">
                 <h1 id="title">Welcome</h1>
-                <p id="story-text">Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The loss has been so intense that she has lost her ability to speak.<br>
+                <p id="story-text">Lila is a little girl who has experienced a sudden and heartbreaking loss.<br>The
+                    loss has been so intense that she has lost her ability to speak.<br>
                     Travel with Lila and help her to find the words she needs to express how she's feeling...</p>
                 <div class="text-center"><button id="choice-1">Choice 1</button>
-                    <button id="choice-2">Choice 2</button> <button id="choice-3">Choice 3</button> <button id="end-choice">End-choice</button>
+                    <button id="choice-2">Choice 2</button> <button id="choice-3">Choice 3</button> <button
+                        id="end-choice">End-choice</button>
                 </div>
                 <div class="text-center"><button id="get-puzzle">Get Puzzle</button><button id="start-game">Start
                         Game</button></div>
             </div>
-            <div class="col col-sm-12 col-md-2 order-md-2 col-lg-2 order-lg-2 col-xxl-1 order-xl-3 mt-2 text-center" id="word-inventory">
+            <div class="col col-sm-12 col-md-2 order-md-2 col-lg-2 order-lg-2 col-xxl-1 order-xl-3 mt-2 text-center"
+                id="word-inventory">
                 <h2 id="words-title">Words</h2>
                 <ul id="collected-words">
                 </ul>
@@ -89,9 +88,13 @@
                 <button id="check">Check Answer</button>
                 <button id="reset-button">Reset</button>
             </div>
+            <div class="col col-12 text-center mb-4" id="system-text">
+                <p></p>
+                <button id="system-button"></button>
+            </div>
         </section>
     </div>
-</div>
+    </div>
     <!-- Footer with mt-auto added to push to the bottom -->
     <footer class="mt-auto">
         <div class="container">

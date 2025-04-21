@@ -122,6 +122,7 @@ const storyOuterCol = document.getElementById("text-col");
 const puzzleArea = document.getElementById("puzzle-area");
 const puzzleQuestion = document.getElementById("puzzle-question");
 const puzzleAnswer = document.getElementById("puzzle-answer");
+const systemText = document.getElementById("system-text");
 const choice1 = document.getElementById("choice-1");
 const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
@@ -327,8 +328,15 @@ function checkAnswer() {
         setTimeout(choices, 3000);
 // Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
     } else {
-        alert("That's not correct, try again!");
-        resetPuzzle();
+        slots.forEach(slot => {
+            slot.classList.remove(`chapter-${story.currentChapter}`);
+            slot.classList.add("wrong-answer");
+            slot.removeEventListener("click", clickedSlotHandler);
+        });
+
+        setTimeout(resetPuzzle, 3000);
+
+        
     };
 };
 
@@ -339,6 +347,8 @@ function resetPuzzle() {
     slots.forEach(slot => {
         slot.textContent = "";
         slot.removeAttribute("data-id");
+        slot.classList.remove("wrong-answer");
+        slot.classList.add(`chapter-${story.currentChapter}`);
     });
 
     tiles.forEach(tile => {
