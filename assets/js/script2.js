@@ -331,12 +331,8 @@ function checkAnswer() {
         slots.forEach(slot => {
             slot.classList.remove(`chapter-${story.currentChapter}`);
             slot.classList.add("wrong-answer");
-            slot.removeEventListener("click", clickedSlotHandler);
         });
-
         setTimeout(resetPuzzle, 3000);
-
-        
     };
 };
 
