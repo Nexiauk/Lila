@@ -4,7 +4,10 @@ const story = {
     intro: {
         title: "Introduction",
         storyImage: "./assets/images/bedroom-gloomy.avif",
+        storyImageSmall: "./assets/images/bedroom-gloomy-small.avif",
+        storyImageLarge: "./assets/images/bedroom-gloomy.avif",
         storyImage2: "./assets/images/bedroom-sleep.avif",
+        storyImage2Small: "",
         storyText: `<p>Lila sits on her bed in the <span class="highlight">dark</span>, a curtain of hair covering her face. Her soft plushies watch her with <span class="highlight">sad</span> eyes and <span class="highlight">dejected</span> expressions. Lila doesn't move, not even when her mum pops her head around the doorway and whispers, "Goodnight"; gently, carefully, as if anything above a whisper would shatter her fragile daughter.</p> <p>Lila doesn't respond. She can't.</p> <p>The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She doesn't know how to voice what she's feeling, but maybe she could spell it out so that the <span class="highlight">ache</span> in her heart will let her sleep...</p>`,
         storyText2: `Sorrow. <br><br>That's what she's feeling. <br><br>A bone-deep sadness at the piece of her that is now gone forever. She'll never see them again, never hear their voice, no more hugs.
 The feeling hurts, but naming it takes away some of its power and a weariness washes over Lila. All she wants to do is sleep. Sleep, and forget.`,
@@ -93,6 +96,8 @@ const resetButton = document.getElementById("reset-button");
 const checkButton = document.getElementById("check");
 const startButton = document.getElementById("start-game");
 const storyImage = document.getElementById("story-image");
+const storyImageLarge = document.getElementById("large-img");
+const storyImageSmall = document.getElementById("small-img");
 const navBar = document.getElementById("navbar");
 const storyTitle = document.getElementById("title");
 const storyText = document.getElementById("story-text");
@@ -144,6 +149,8 @@ function loadChapter() {
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.classList.add(`chapter-${story.currentChapter}`);
     storyImage.src = story[story.currentChapter].storyImage;
+    storyImageSmall.srcset= story[story.currentChapter].storyImageSmall;
+    storyImageLarge.srcset = story[story.currentChapter].storyImageLarge;
     choice1.style.display = "none";
     choice2.style.display = "none";
     choice3.style.display = "none";
@@ -287,6 +294,7 @@ function checkAnswer() {
         });
         /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
         storyImage.src = story[story.currentChapter].storyImage2;
+        storyImage.srcset = story[story.currentChapter].srcset2;
         storyText.innerHTML = story[story.currentChapter].storyText2;
         resetButton.style.display = "none";
         checkButton.style.display = "none";

@@ -51,16 +51,33 @@
         <!-- Story images that is dynamically pulled through from a Javascript object -->
         <section class="row gx-0 justify-content-between" id="story-area">
             <div class="col col-12 col-md-9 order-md-1 col-lg-9 order-lg-1 col-xxl-5 mt-2" id="image-div">
-                <img class="chapter-welcome" 
+                <picture>
+                    <source media="(max-width: 600px)" id="small-img" srcset="./assets/images/title-screen-small.avif">
+                    <source media="(min-width: 601px)" id="large-img" srcset="./assets/images/title-screen.avif">
+                    <img
+                      id="story-image"
+                      class="chapter-welcome"
+                      src="./assets/images/title-screen.avif"
+                      alt="Lila's Lost Words title screen image."
+                      width="700"
+                      height="547"
+                    >
+                  </picture>
+
+
+
+
+                <!-- <img class="chapter-welcome" 
                 alt="Lila's Lost Words title screen image."
                     id="story-image" 
-                    width="700px" 
-                    height="547px" 
+                    width="1084px" 
+                    height="723px" 
                     src="./assets/images/title-screen.avif"
                     srcset="
-                    ./assets/images/title-screen-small.avif 600w,
+                    ./assets/images/title-screen-small.avif 300w,
                     ./assets/images/title-screen.avif 1200w"
-                    >
+                    sizes="(max-width:768px) 100vw, (max-width: 1200px) 80vw, 700px"
+                    > -->
             </div>
             <!-- Story text that is dynamically pulled through from a Javascript object-->
             <div class="col col-12 col-md-12 order-md-3 order-lg-3 col-xxl-5 mt-2 chapter-welcome" id="text-col">
