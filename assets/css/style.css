@@ -45,7 +45,7 @@ mark {
     padding: .3rem;
     color: var(--main-colour);
     font-weight: bold;
-  }
+}
 
 button {
     border-radius: 5px;
@@ -527,6 +527,7 @@ button {
 }
 
 @media screen and (min-width:2560px) {
+       
     button {
         font-size: 1.5rem;
     }
@@ -535,7 +536,34 @@ button {
         width: 30%;
     }
 
+    .nav-link {
+        font-size: 1.8rem;
+    }
+
+    #title,
+    #words-title {
+        font-size: 3rem;
+        margin-bottom: 25px;
+        padding-top: 25px
+    }
+
     #story-text {
         font-size: 2rem;
+    }
+
+    #story-text p {
+        margin-bottom: 40px;
+    }
+
+    #collected-words {
+        font-size: 1.6rem;
+    }
+
+    #collected-words li:nth-child(even) {
+        padding-bottom: 50px;
+    }
+
+    #footer-text {
+        font-size: 1.9rem;
     }
 }
