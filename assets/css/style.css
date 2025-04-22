@@ -38,10 +38,14 @@ footer {
     background-color: var(--main-colour);
 }
 
-#footer-text {
-    font-size: 1.3rem;
-    margin-top: 1rem;
-}
+/* Mark styling attributed to https://www.abeautifulsite.net/posts/a-clever-way-to-style-the-mark-element/ */
+mark {
+    background-color: white;
+    border-radius: 1em 0;
+    padding: .5rem;
+    color: var(--main-colour);
+    font-weight: bold;
+  }
 
 button {
     border-radius: 5px;
@@ -157,10 +161,15 @@ button {
     margin-bottom: auto;
 }
 
-.highlight {
+/* .highlight {
     font-weight: bolder;
     background-color: white;
     color: black;
+} */
+
+#footer-text {
+    font-size: 1.3rem;
+    margin-top: 1rem;
 }
 
 /* Colour styling for around the image and text column elements */
