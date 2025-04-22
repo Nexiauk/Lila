@@ -234,6 +234,8 @@ button {
     animation: tilt-shaking 0.35s infinite;
 }
 
+/* Shaking animation attributed to https://unused-css.com/blog/css-shake-animation/ */
+
 @keyframes tilt-shaking {
     0% {
         transform: rotate(0deg);
@@ -292,8 +294,10 @@ button {
     color: black;
 }
 
-#system-text {
-    display: none;
+.tile:hover,
+.slot:hover {
+    transform: scale(1.1);
+    border: 2px solid green;
 }
 
 /* Button styling */
@@ -395,12 +399,6 @@ button {
         height: 25px;
         width: 100%;
         font-size: 1rem;
-    }
-
-    .tile:hover,
-    .slot:hover {
-        transform: scale(1.1);
-        border: 2px solid green;
     }
 
     #puzzle-question,
