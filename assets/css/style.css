@@ -492,14 +492,22 @@ button {
     }
 
     #story-text {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         padding-left: 25px;
         padding-right: 25px;
     }
 
-    /* #collected-words {
-        font-size: 1rem;
-    } */
+    #story-text p {
+        margin-bottom: 10px;
+    }
+
+    #get-puzzle {
+        margin-top: 0;
+    }
+
+    #collected-words {
+        font-size: 1.1rem;
+    }
 
     #collected-words li:nth-child(even) {
         padding-bottom: 30px;
