@@ -319,6 +319,18 @@ button {
     color: white;
 }
 
+#check:hover {
+    background-color: rgb(0, 128, 0);
+    color: white;
+    border: 1px solid black;
+}
+
+#reset-button:hover {
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+}
+
 #get-puzzle,
 #check,
 #reset-button,
@@ -330,23 +342,15 @@ button {
 }
 
 #get-puzzle:hover,
-#start-game:hover {
+#start-game:hover,
+#choice-1:hover,
+#choice-2:hover,
+#choice-3:hover,
+#end-choice:hover {
     transform: scale(1.1);
     background-color: white;
     box-shadow: 0 0 8px #0ebac5;
     transition: transform 1s ease;
-}
-
-#check:hover {
-    background-color: rgb(0, 128, 0);
-    color: white;
-    border: 1px solid black;
-}
-
-#reset-button:hover {
-    background-color: red;
-    color: white;
-    border: 1px solid black;
 }
 
 /* Styling for the collected words list */
@@ -396,7 +400,7 @@ button {
     .tile:hover,
     .slot:hover {
         transform: scale(1.1);
-        border: 1px solid green;
+        border: 2px solid green;
     }
 
     #puzzle-question,
