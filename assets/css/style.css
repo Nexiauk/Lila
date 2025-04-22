@@ -159,13 +159,8 @@ button {
 #story-text {
     padding: 5px 15px 5px 15px;
     margin-bottom: auto;
+    line-height: 1.7
 }
-
-/* .highlight {
-    font-weight: bolder;
-    background-color: white;
-    color: black;
-} */
 
 #footer-text {
     font-size: 1.3rem;
