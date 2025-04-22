@@ -12,7 +12,7 @@ const story = {
         storyText: `<p>Lila sits on her bed in the <span class="highlight">dark</span>, a curtain of hair covering her face. Her soft plushies watch her with <span class="highlight">sad</span> eyes and <span class="highlight">dejected</span> expressions. Lila doesn't move, not even when her mum pops her head around the doorway and whispers, "Goodnight"; gently, carefully, as if anything above a whisper would shatter her fragile daughter.</p> <p>Lila doesn't respond. She can't.</p> <p>The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She doesn't know how to voice what she's feeling, but maybe she could spell it out so that the <span class="highlight">ache</span> in her heart will let her sleep...</p>`,
         storyText2: `Sorrow. <br><br>That's what she's feeling. <br><br>A bone-deep sadness at the piece of her that is now gone forever. She'll never see them again, never hear their voice, no more hugs.
 The feeling hurts, but naming it takes away some of its power and a weariness washes over Lila. All she wants to do is sleep. Sleep, and forget.`,
-        choice1: "Go to sleep",
+        choice1: "Go to Sleep",
         choice2: "Stay Awake",
         word: "SORROW",
         hint: ""
@@ -300,6 +300,11 @@ function checkAnswer() {
             if (slot.textContent === "") {
                 slot.classList.remove(`chapter-${story.currentChapter}`);
                 slot.classList.add("wrong-answer");
+                setTimeout(revert,2000);
+            }
+            function revert() {
+                slot.classList.remove("wrong-answer");
+                slot.classList.add(`chapter-${story.currentChapter}`);
             }
         });
         return;
