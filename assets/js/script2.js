@@ -353,7 +353,7 @@ function choices() {
             story.currentChapter = "void";
             loadChapter();
             getPuzzle.style.display = "inline-block";
-            choice1.removeEventListener("click", choice1ClickHandler);
+
         };
         const choice2ClickHandler = () => {
             story.currentChapter = "ending1";

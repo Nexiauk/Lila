@@ -167,7 +167,6 @@ button {
 }
 
 /* Colour styling for around the image and text column elements */
-
 #story-image {
     border: 1px solid white;
     border-radius: 8px 8px;
@@ -203,7 +202,6 @@ button {
 }
 
 /* Chapter specific colours and styling for the text and slots */
-
 #text-col.chapter-welcome {
     background-color: var(--main-colour);
 }
@@ -245,7 +243,6 @@ button {
 }
 
 /* Shaking animation attributed to https://unused-css.com/blog/css-shake-animation/ */
-
 @keyframes tilt-shaking {
     0% {
         transform: rotate(0deg);
@@ -368,7 +365,6 @@ button {
 }
 
 /* Styling for the collected words list */
-
 #collected-words {
     padding-left: 0;
     font-size: 0.8rem;
@@ -382,7 +378,7 @@ button {
 /* Responsive media queries for phones 320px and above */
 @media screen and (min-width:320px) {
 
-    footer {
+    #footer-text {
         font-size: 1rem;
     }
 
@@ -452,6 +448,11 @@ button {
         height: 100px;
     }
 
+    #title,
+    #words-title {
+        margin-bottom: 12px;
+    }
+
     #word-inventory {
         display: block;
     }
@@ -465,6 +466,26 @@ button {
         height: 60px;
         width: 60px;
         padding-top: 1rem;
+    }
+}
+
+/*Responsive media query for screens 992px and above*/
+@media screen and (min-width:992px) {
+    #title,
+    #words-title {
+        margin-bottom: 18px;
+    }
+
+    #collected-words {
+        font-size: 1.3rem;
+    }
+
+    #collected-words li:nth-child(even) {
+        padding-bottom: 40px;
+    }
+
+    #collected-words li:last-child {
+        padding-bottom: 0;
     }
 }
 
@@ -517,17 +538,21 @@ button {
     }
 
     #collected-words {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     #collected-words li:nth-child(even) {
         padding-bottom: 30px;
     }
 
+    #collected-words li:last-child {
+        padding-bottom: 0;
+    }
+
 }
 
 @media screen and (min-width:2560px) {
-       
+
     button {
         font-size: 1.5rem;
     }
