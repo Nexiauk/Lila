@@ -10,12 +10,10 @@ const story = {
         storyImage2Large: "./assets/images/bedroom-sleep.avif",
         storyImage2Small: "./assets/images/bedroom-sleep-small.avif",
         storyText: `<p>Lila sits on her bed in the <mark>dark</mark>, a curtain of hair covering her face. Her soft plushies watch her with <mark>sad</mark> eyes and <mark>dejected</mark> expressions. Lila's' mum pops her head around the doorway and whispers, "Goodnight."</p> <p>Lila doesn't respond. She can't.</p> <p>The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She doesn't know how to voice what she's feeling, but maybe she could spell it out so that the <mark>ache</mark> in her heart will let her sleep...</p>`,
-        storyText2: `<p>Sorrow. That's what she's feeling.</p> <p>A bone-deep sadness at the piece of her that is now gone forever. She'll never see them again, never hear their voice, no more hugs.</p>
-<p>The feeling hurts, but naming it takes away some of its power and a weariness washes over Lila.</p> <p>All she wants to do is sleep. Sleep, and forget.</p>`,
+        storyText2: `<p>Sorrow. That's what she's feeling.</p> <p>A bone-deep sadness at the piece of her that is now gone forever. She'll never see them again, never hear their voice, no more hugs.</p> <p>The feeling hurts, but naming it takes away some of its power and a weariness washes over Lila.</p> <p>All she wants to do is sleep. Sleep, and forget.</p>`,
         choice1: "Go to Sleep",
         choice2: "Stay Awake",
         word: "SORROW",
-        hint: ""
     },
 
     void: {
@@ -32,7 +30,6 @@ const story = {
         choice2: "Visit the Lake",
         choice3: "Visit the Library",
         word: "DENIAL",
-        hint: ""
     },
 
     forest: {
@@ -49,7 +46,6 @@ const story = {
         choice2: "Visit the Lake",
         endChoice: "Wake Up",
         word: "ACCEPT",
-        hint: ""
     },
 
     lake: {
@@ -66,7 +62,6 @@ const story = {
         choice2: "Visit the Library",
         endChoice: "Wake Up",
         word: "LONGING",
-        hint: ""
     },
 
     library: {
@@ -83,7 +78,6 @@ const story = {
         choice2: "Visit the Lake",
         endChoice: "Wake Up",
         word: "FURIOUS",
-        hint: ""
     },
 
     ending1: {
@@ -92,9 +86,6 @@ const story = {
         storyImage2: "",
         storyText: `Short ending if you choose not to go to sleep`,
         choice1: "Start Again",
-        choice2: "",
-        word: "TEMPEST",
-        hint: ""
     },
 
     ending2: {
@@ -255,7 +246,7 @@ function clickedTileHandler(event) {
         letter: tile.textContent,
         id: tile.dataset.id
     };
-    clickedTile(letter,tile);
+    clickedTile(letter, tile);
 }
 
 /**Function to clear a letter from a slot and make its correlating tile visible again. If there's no current id assigned to a slot because a tile's data hasn't been passed to it, then the function will end. If there is an id, then this function will clear the textcontent from the clicked slot and remove the data-id attribute. The queryselector then finds the tile with with an id that matches the slot's id and makes it visible again.*/
@@ -294,7 +285,7 @@ function checkAnswer() {
         }
         );
         tiles.forEach(tile => {
-                tile.addEventListener("click", clickedTileHandler);
+            tile.addEventListener("click", clickedTileHandler);
 
         });
     }
