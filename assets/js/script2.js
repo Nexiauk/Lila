@@ -278,22 +278,26 @@ function checkAnswer() {
     // arrow function checks if any slots are empty
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
     // Removes event listener from all slots so they aren't clickable while animation is playing
-    slots.forEach(slot => {
-        slot.removeEventListener("click", clickedSlotHandler);
-    });
+    // slots.forEach(slot => {
+    //     slot.removeEventListener("click", clickedSlotHandler);
+    // });
 
-    tiles.forEach(tile => {
-        tile.removeEventListener("click", clickedTileHandler);
-    })
     // If not all slots are filled, alert the user and exit the function
     if (!allFilled) {
+        tiles.forEach(tile => {
+            tile.removeEventListener("click", clickedTileHandler);
+        })
         slots.forEach(slot => {
             if (slot.textContent === "") {
                 slot.classList.remove(`chapter-${story.currentChapter}`);
+                slot.removeEventListener("click", clickedSlotHandler);
                 slot.classList.add("wrong-answer");
                 setTimeout(revert, 2000);
             }
         });
+        return;
+    }
+
         function revert() {
             slots.forEach(slot => {
                 slot.classList.remove("wrong-answer");
@@ -302,11 +306,11 @@ function checkAnswer() {
             }
             )
             tiles.forEach(tile => {
-                tile.addEventListener("click", clickedTileHandler);
+                    tile.addEventListener("click", clickedTileHandler);
+
             })
         }
-        return;
-    }
+
     //If all slots are filled, the slots are passed into the userAnswer variable in order to form the word the user has spelt with the tiles. This is then compared to the original word passed into the game.
     let userAnswer = "";
     slots.forEach(slot => {
