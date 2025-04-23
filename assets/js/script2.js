@@ -220,8 +220,6 @@ function initialisePuzzle() {
         slot.addEventListener("click", clickedSlotHandler);
     });
 
-
-
     /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. Populates with each letter in the shuffled order. Adds the tile class for styling into tiles. Ensures that each tile has an id and content matching the letterArray and then runs the clickedTile function, passing through the letter and the tile.*/
     letterArray.forEach((letter) => {
         let tile = document.createElement("div");
@@ -331,7 +329,6 @@ function resetPuzzle() {
         slot.classList.remove("wrong-answer");
         slot.classList.add(`chapter-${story.currentChapter}`);
     });
-
     tiles.forEach(tile => {
         tile.style.visibility = "visible";
     });
@@ -358,7 +355,6 @@ function choices() {
             getPuzzle.style.display = "inline-block";
             choice1.removeEventListener("click", choice1ClickHandler);
         };
-
         const choice2ClickHandler = () => {
             story.currentChapter = "ending1";
             loadChapter();
@@ -367,7 +363,6 @@ function choices() {
         };
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
-
     }
 
     if (story.currentChapter == "void") {
@@ -386,7 +381,6 @@ function choices() {
             loadChapter();
             getPuzzle.style.display = "inline-block";
             choice2.removeEventListener("click", choice2ClickHandler);
-
         };
         const choice3ClickHandler = () => {
             story.currentChapter = "library";
@@ -399,7 +393,6 @@ function choices() {
         choice2.addEventListener("click", choice2ClickHandler);
         choice3.addEventListener("click", choice3ClickHandler);
     }
-
 
     if (story.currentChapter == "forest") {
         if (libraryVisited == false) {
@@ -454,7 +447,6 @@ function choices() {
             choice2.addEventListener("click", choice2ClickHandler);
         } else {
             choice2.style.display = "none";
-
         }
     }
 
@@ -484,7 +476,6 @@ function choices() {
         } else {
             choice2.style.display = "none";
         }
-
     }
 
     if (forestVisited && lakeVisited && libraryVisited) {
