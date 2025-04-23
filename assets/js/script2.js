@@ -227,23 +227,34 @@ function initialisePuzzle() {
         tile.textContent = letter.letter;
         tile.dataset.id = letter.id;
         puzzleQuestion.appendChild(tile);
-        tile.addEventListener("click", () => clickedTile(letter, tile));
+        tile.addEventListener("click", clickedTileHandler);
     });
 
     /**Function to select the first empty slot and populate it with the letter of the clicked tile. Passes the letter and the tile through to the function and if there's an available slot, it passes the letter id and content to the slot. The tile is then hidden.*/
-    function clickedTile(letter, tile) {
-        let availableSlot = document.querySelector(".slot:empty");
-        if (availableSlot) {
-            availableSlot.dataset.id = letter.id;
-            availableSlot.textContent = letter.letter;
-            tile.style.visibility = "hidden";
-        }
+}
+
+function clickedTile(letter, tile) {
+    console.log("did this work?", letter, "tile", tile);
+    let availableSlot = document.querySelector(".slot:empty");
+    if (availableSlot) {
+        availableSlot.dataset.id = letter.id;
+        availableSlot.textContent = letter.letter;
+        tile.style.visibility = "hidden";
     }
 }
 
 //Named handler function for event listener on clicked slots, so that the event listener can be properly removed at the check answer stage
 function clickedSlotHandler(event) {
     clickedSlot(event.currentTarget);
+}
+
+function clickedTileHandler(event) {
+    const tile = event.currentTarget;
+    const letter = {
+        letter: tile.textContent,
+        id: tile.dataset.id
+    }
+    clickedTile(letter,tile);
 }
 
 /**Function to clear a letter from a slot and make its correlating tile visible again. If there's no current id assigned to a slot because a tile's data hasn't been passed to it, then the function will end. If there is an id, then this function will clear the textcontent from the clicked slot and remove the data-id attribute. The queryselector then finds the tile with with an id that matches the slot's id and makes it visible again.*/
@@ -263,12 +274,17 @@ function checkAnswer() {
     // Everytime check answer button is clicked, it adds 1 to the checkScore variable, which populates into the words list as a number of attempts.
     checkScore = checkScore + 1;
     const slots = document.querySelectorAll(".slot");
+    const tiles = document.querySelectorAll(".tile");
     // arrow function checks if any slots are empty
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
     // Removes event listener from all slots so they aren't clickable while animation is playing
     slots.forEach(slot => {
         slot.removeEventListener("click", clickedSlotHandler);
     });
+
+    tiles.forEach(tile => {
+        tile.removeEventListener("click", clickedTileHandler);
+    })
     // If not all slots are filled, alert the user and exit the function
     if (!allFilled) {
         slots.forEach(slot => {
@@ -280,11 +296,15 @@ function checkAnswer() {
         });
         function revert() {
             slots.forEach(slot => {
-            slot.classList.remove("wrong-answer");
-            slot.classList.add(`chapter-${story.currentChapter}`);
-            slot.addEventListener("click", clickedSlotHandler);
+                slot.classList.remove("wrong-answer");
+                slot.classList.add(`chapter-${story.currentChapter}`);
+                slot.addEventListener("click", clickedSlotHandler);
             }
-            )}
+            )
+            tiles.forEach(tile => {
+                tile.addEventListener("click", clickedTileHandler);
+            })
+        }
         return;
     }
     //If all slots are filled, the slots are passed into the userAnswer variable in order to form the word the user has spelt with the tiles. This is then compared to the original word passed into the game.
