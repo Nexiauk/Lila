@@ -183,6 +183,8 @@ function initialisePuzzle() {
     checkArea.style.visibility = "visible";
     checkButton.style.display = "inline-block";
     resetButton.style.display = "inline-block";
+    checkButton.removeEventListener("click", checkAnswer);
+    resetButton.removeEventListener("click", resetPuzzle);
     checkButton.addEventListener("click", checkAnswer);
     resetButton.addEventListener("click", resetPuzzle);
 
@@ -203,8 +205,8 @@ function initialisePuzzle() {
     shuffle(letterArray);
 
     //Clears the puzzle areas of any existing content to ensure a blank canvas for the current word puzzle.
-    puzzleQuestion.innerHTML = "";
-    puzzleAnswer.innerHTML = "";
+    puzzleQuestion.innerText = "";
+    puzzleAnswer.innerText = "";
 
     /*splits the puzzle word into an array of letters and creates a new slot for each one in the puzzleAnswer div. Adds the slot class for styling into boxes. Eventlistener calls the clickedslot function*/
     word.split("").forEach((letter) => {
@@ -234,7 +236,6 @@ function initialisePuzzle() {
 }
 
 function clickedTile(letter, tile) {
-    console.log("did this work?", letter, "tile", tile);
     let availableSlot = document.querySelector(".slot:empty");
     if (availableSlot) {
         availableSlot.dataset.id = letter.id;
@@ -253,7 +254,7 @@ function clickedTileHandler(event) {
     const letter = {
         letter: tile.textContent,
         id: tile.dataset.id
-    }
+    };
     clickedTile(letter,tile);
 }
 
@@ -278,15 +279,28 @@ function checkAnswer() {
     // arrow function checks if any slots are empty
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
     // Removes event listener from all slots so they aren't clickable while animation is playing
-    // slots.forEach(slot => {
-    //     slot.removeEventListener("click", clickedSlotHandler);
-    // });
+    slots.forEach(slot => {
+        slot.removeEventListener("click", clickedSlotHandler);
+    });
+    tiles.forEach(tile => {
+        tile.removeEventListener("click", clickedTileHandler);
+    });
+
+    function revert() {
+        slots.forEach(slot => {
+            slot.classList.remove("wrong-answer");
+            slot.classList.add(`chapter-${story.currentChapter}`);
+            slot.addEventListener("click", clickedSlotHandler);
+        }
+        );
+        tiles.forEach(tile => {
+                tile.addEventListener("click", clickedTileHandler);
+
+        });
+    }
 
     // If not all slots are filled, alert the user and exit the function
     if (!allFilled) {
-        tiles.forEach(tile => {
-            tile.removeEventListener("click", clickedTileHandler);
-        })
         slots.forEach(slot => {
             if (slot.textContent === "") {
                 slot.classList.remove(`chapter-${story.currentChapter}`);
@@ -297,19 +311,6 @@ function checkAnswer() {
         });
         return;
     }
-
-        function revert() {
-            slots.forEach(slot => {
-                slot.classList.remove("wrong-answer");
-                slot.classList.add(`chapter-${story.currentChapter}`);
-                slot.addEventListener("click", clickedSlotHandler);
-            }
-            )
-            tiles.forEach(tile => {
-                    tile.addEventListener("click", clickedTileHandler);
-
-            })
-        }
 
     //If all slots are filled, the slots are passed into the userAnswer variable in order to form the word the user has spelt with the tiles. This is then compared to the original word passed into the game.
     let userAnswer = "";
@@ -359,9 +360,11 @@ function resetPuzzle() {
         slot.removeAttribute("data-id");
         slot.classList.remove("wrong-answer");
         slot.classList.add(`chapter-${story.currentChapter}`);
+        slot.addEventListener("click", clickedSlotHandler);
     });
     tiles.forEach(tile => {
         tile.style.visibility = "visible";
+        tile.addEventListener("click", clickedTileHandler);
     });
 }
 
