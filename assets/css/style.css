@@ -287,18 +287,17 @@ button {
     font-weight: bold;
     box-sizing: border-box;
     cursor: pointer;
-    background-color: var(--base-colour);
 }
 
 .slot {
     border: 1px solid black;
     color: white;
-    ;
 }
 
 .tile {
     border: 1px solid black;
     color: black;
+    background-color: var(--base-colour);
 }
 
 .tile:hover,
@@ -410,14 +409,18 @@ button {
 
     .tile,
     .slot {
-        height: 25px;
+        height: 30px;
         width: 100%;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     #puzzle-question,
     #puzzle-answer {
         height: 50px;
+    }
+
+    #choice-3 {
+        margin-top: 0px;
     }
 }
 
