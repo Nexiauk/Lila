@@ -102,7 +102,7 @@ const story = {
         storyImage: "./assets/images/bedroom-ending.avif",
         storyImageLarge: "./assets/images/bedroom-ending.avif",
         storyImageSmall: "./assets/images/bedroom-ending-small.avif",
-        storyText: `Lila wakes up to a room, and a world, that feels different to the one that existed before she slept. The darkness and the loss hasn't gone away, will probably never go away, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through. It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never fully leave her, they will always be with her in memories and in dreams. It has disappeared enough to allow Lila to smile again.`,
+        storyText: `<p>Lila wakes up to a room, and a world, that feels different to the one that existed before she slept.</p> <p>The darkness and the loss hasn't gone away, and it probably never will, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through.</p> <p>It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never truly leave her; they will always be with her in memories and in dreams.</p> <p>It has disappeared enough to allow Lila to smile again.</p> <p><strong>Thank you for playing.</strong></p>`,
         choice1: "Wake Up"
     }
 };
