@@ -1,4 +1,4 @@
-// Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html
+/* Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html*/
 const story = {
     currentChapter: "",
     intro: {
@@ -115,14 +115,12 @@ const startButton = document.getElementById("start-game");
 const storyImage = document.getElementById("story-image");
 const storyImageLarge = document.getElementById("large-img");
 const storyImageSmall = document.getElementById("small-img");
-const navBar = document.getElementById("navbar");
 const storyTitle = document.getElementById("title");
 const storyText = document.getElementById("story-text");
 const storyOuterCol = document.getElementById("text-col");
 const puzzleArea = document.getElementById("puzzle-area");
 const puzzleQuestion = document.getElementById("puzzle-question");
 const puzzleAnswer = document.getElementById("puzzle-answer");
-const systemText = document.getElementById("system-text");
 const choice1 = document.getElementById("choice-1");
 const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
@@ -134,11 +132,10 @@ let checkScore = 0;
 let forestVisited = false;
 let lakeVisited = false;
 let libraryVisited = false;
-let start = false
 let word = "";
 
 startButton.addEventListener("click", startGame);
-getPuzzle.addEventListener("click", initialisePuzzle)
+getPuzzle.addEventListener("click", initialisePuzzle);
 
 /*This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
 function startGame() {
@@ -146,9 +143,9 @@ function startGame() {
     startButton.style.display = "none";
     getPuzzle.style.display = "inline-block";
     loadChapter();
-};
+}
 
-/** Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden. */ 
+/**Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden.*/
 function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
@@ -159,7 +156,7 @@ function loadChapter() {
             storyOuterCol.classList.remove(cls);
         }
     });
-// Removes any chapter classes currently applied to the story image
+    // Removes any chapter classes currently applied to the story image
     storyImage.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
             storyImage.classList.remove(cls);
@@ -168,7 +165,7 @@ function loadChapter() {
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.classList.add(`chapter-${story.currentChapter}`);
     storyImage.src = story[story.currentChapter].storyImage;
-    storyImageSmall.srcset= story[story.currentChapter].storyImageSmall;
+    storyImageSmall.srcset = story[story.currentChapter].storyImageSmall;
     storyImageLarge.srcset = story[story.currentChapter].storyImageLarge;
     storyImage.scrollIntoView({ behavior: "smooth" });
     choice1.style.display = "none";
@@ -177,18 +174,7 @@ function loadChapter() {
     endChoice.style.display = "none";
 }
 
-/* Used to delay the passing of this function until the DOM has finished loading. Important as the getPuzzle button is added via dynamically modified DOM content. This was added to solve an issue whereby clicking on the getPuzzle button didn't do anything. The timeout gives the DOM time to fully load. */
-// setTimeout(() => {
-//     const puzzleButton = document.getElementById("get-puzzle");
-//     if (puzzleButton) {
-//         puzzleButton.addEventListener("click", initialisePuzzle);
-//     } else {
-//         console.error("Button not found!")
-//     }
-// }, 0);
-
-
-/** Loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word. It has functionality to automatically scrolldown to the puzzle area so a user doesn't have to use their mouse or keyboard keys. The getPuzzle button is hidden and the check and reset buttons are set to appear, with event listeners added to them that connect to further functions. */
+/**Loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word. It has functionality to automatically scrolldown to the puzzle area so a user doesn't have to use their mouse or keyboard keys. The getPuzzle button is hidden and the check and reset buttons are set to appear, with event listeners added to them that connect to further functions.*/
 function initialisePuzzle() {
     puzzleArea.scrollIntoView({ behavior: "smooth" });
     word = story[story.currentChapter].word;
@@ -200,14 +186,13 @@ function initialisePuzzle() {
     checkButton.addEventListener("click", checkAnswer);
     resetButton.addEventListener("click", resetPuzzle);
 
-    // Arrow function splits the word into an array of letters and then maps an id to each letter that matches the array indexes.
+    //Arrow function splits the word into an array of letters and then maps an id to each letter that matches the array indexes.
     const letterArray = word.split("").map((letter, index) => ({
         letter: letter,
         id: index,
     }));
 
-    /**Function to reverse iterate through the letter array and swap elements i and j. Fisher-Yates shuffle model.
-    This function is used to shuffle the letterarray created by splitting the original word*/
+    /**Function to reverse iterate through the letter array and swap elements i and j. Fisher-Yates shuffle model. This function is used to shuffle the letterarray created by splitting the original word*/
     function shuffle(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
@@ -217,13 +202,11 @@ function initialisePuzzle() {
     }
     shuffle(letterArray);
 
-    // Clears the puzzle areas of any existing content to ensure a blank canvas for the current word puzzle.
+    //Clears the puzzle areas of any existing content to ensure a blank canvas for the current word puzzle.
     puzzleQuestion.innerHTML = "";
     puzzleAnswer.innerHTML = "";
 
-    /* splits the puzzle word into an array of letters and creates a new slot for each one in the puzzleAnswer div.
-    Adds the slot class for styling into boxes.
-    eventlistener calls the clickedslot function*/
+    /*splits the puzzle word into an array of letters and creates a new slot for each one in the puzzleAnswer div. Adds the slot class for styling into boxes. Eventlistener calls the clickedslot function*/
     word.split("").forEach((letter) => {
         let slot = document.createElement("div");
         slot.classList.add("slot");
@@ -239,11 +222,7 @@ function initialisePuzzle() {
 
 
 
-    /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. 
-    Populates with each letter in the shuffled order. 
-    Adds the tile class for styling into tiles.
-    Ensures that each tile has an id and content matching the letterArray and then runs the clickedTile function, passing through the letter and the tile.
-    */
+    /*For every letter stored in letterArray, a new lettered tile is created in the puzzleQuestion div. Populates with each letter in the shuffled order. Adds the tile class for styling into tiles. Ensures that each tile has an id and content matching the letterArray and then runs the clickedTile function, passing through the letter and the tile.*/
     letterArray.forEach((letter) => {
         let tile = document.createElement("div");
         tile.classList.add("tile");
@@ -253,11 +232,9 @@ function initialisePuzzle() {
         tile.addEventListener("click", () => clickedTile(letter, tile));
     });
 
-    /**Function to select the first empty slot and populate it with the letter of the clicked tile. 
-    Passes the letter and the tile through to the function and if there's an available slot, it passes the letter id and content to the slot.
-    The tile is then hidden.*/
+    /**Function to select the first empty slot and populate it with the letter of the clicked tile. Passes the letter and the tile through to the function and if there's an available slot, it passes the letter id and content to the slot. The tile is then hidden.*/
     function clickedTile(letter, tile) {
-        let availableSlot = document.querySelector(".slot:empty")
+        let availableSlot = document.querySelector(".slot:empty");
         if (availableSlot) {
             availableSlot.dataset.id = letter.id;
             availableSlot.textContent = letter.letter;
@@ -266,15 +243,12 @@ function initialisePuzzle() {
     }
 }
 
-    // Named handler function for event listener on clicked slots, so that the event listener can be properly removed at the check answer stage
-    function clickedSlotHandler(event) {
-        clickedSlot(event.currentTarget);
-    }
+//Named handler function for event listener on clicked slots, so that the event listener can be properly removed at the check answer stage
+function clickedSlotHandler(event) {
+    clickedSlot(event.currentTarget);
+}
 
-/**Function to clear a letter from a slot and make its correlating tile visible again.
-If there's no current id assigned to a slot because a tile's data hasn't been passed to it, then the function will end.
-If there is an id, then this function will clear the textcontent from the clicked slot and remove the data-id attribute.
-The queryselector then finds the tile with with an id that matches the slot's id and makes it visible again.*/
+/**Function to clear a letter from a slot and make its correlating tile visible again. If there's no current id assigned to a slot because a tile's data hasn't been passed to it, then the function will end. If there is an id, then this function will clear the textcontent from the clicked slot and remove the data-id attribute. The queryselector then finds the tile with with an id that matches the slot's id and makes it visible again.*/
 function clickedSlot(slot) {
     const id = slot.dataset.id;
     if (!id) return;
@@ -286,8 +260,7 @@ function clickedSlot(slot) {
     }
 }
 
-/**Function to check the user's answer against the original word passed into the initialisegame function. 
-Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
+/**Function to check the user's answer against the original word passed into the initialisegame function. Different messages are returned depending on whether all slots have been filled, and whether they've been filled correctly or not*/
 function checkAnswer() {
     // Everytime check answer button is clicked, it adds 1 to the checkScore variable, which populates into the words list as a number of attempts.
     checkScore = checkScore + 1;
@@ -300,7 +273,7 @@ function checkAnswer() {
             if (slot.textContent === "") {
                 slot.classList.remove(`chapter-${story.currentChapter}`);
                 slot.classList.add("wrong-answer");
-                setTimeout(revert,2000);
+                setTimeout(revert, 2000);
             }
             function revert() {
                 slot.classList.remove("wrong-answer");
@@ -309,12 +282,12 @@ function checkAnswer() {
         });
         return;
     }
-    // If all slots are filled, the slots are passed into the userAnswer variable in order to form the word the user has spelt with the tiles. This is then compared to the original word passed into the game.
+    //If all slots are filled, the slots are passed into the userAnswer variable in order to form the word the user has spelt with the tiles. This is then compared to the original word passed into the game.
     let userAnswer = "";
     slots.forEach(slot => {
         userAnswer += slot.textContent;
     });
-    // Slot colours are changed to a positive green colour and the eventlistener is removed to prevent users removing them from the slots. Auto scrolls back to the main content container.
+    //Slot colours are changed to a positive green colour and the eventlistener is removed to prevent users removing them from the slots. Auto scrolls back to the main content container.
     if (userAnswer == word) {
         mainSection.scrollIntoView({ behavior: "smooth" });
         slots.forEach(slot => {
@@ -324,7 +297,7 @@ function checkAnswer() {
         });
         /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
         storyImage.src = story[story.currentChapter].storyImage2;
-        storyImageSmall.srcset= story[story.currentChapter].storyImage2Small;
+        storyImageSmall.srcset = story[story.currentChapter].storyImage2Small;
         storyImageLarge.srcset = story[story.currentChapter].storyImage2Large;
         storyText.innerHTML = story[story.currentChapter].storyText2;
         resetButton.style.display = "none";
@@ -335,18 +308,18 @@ function checkAnswer() {
         const wordScore = document.createElement("li");
         wordScore.textContent = "Attempts: " + checkScore;
         collectedWords.appendChild(wordScore);
-        storyImage.scrollIntoView({ behavior: "smooth" });        
+        storyImage.scrollIntoView({ behavior: "smooth" });
         confetti();
         setTimeout(choices, 3000);
-// Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
+        //Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
     } else {
         slots.forEach(slot => {
             slot.classList.remove(`chapter-${story.currentChapter}`);
             slot.classList.add("wrong-answer");
         });
         setTimeout(resetPuzzle, 3000);
-    };
-};
+    }
+}
 
 /**function to reset the tiles and the slots to the initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places.*/
 function resetPuzzle() {
@@ -362,9 +335,9 @@ function resetPuzzle() {
     tiles.forEach(tile => {
         tile.style.visibility = "visible";
     });
-};
+}
 
-/**Function automatically runs and displays the choices buttons in the story in the text-col area that contains the storytext. Clears the puzzle area of all current content and populates the choice buttons with the preset text for each choice in the current chapter. */
+/**Function automatically runs and displays the choices buttons in the story in the text-col area that contains the storytext. Clears the puzzle area of all current content and populates the choice buttons with the preset text for each choice in the current chapter.*/
 function choices() {
     choice1.style.display = "inline-block";
     choice2.style.display = "inline-block";
@@ -377,7 +350,7 @@ function choices() {
     choice3.textContent = story[story.currentChapter].choice3;
     endChoice.textContent = story[story.currentChapter].endChoice;
 
-/*Adds event listeners to each choice button, that when clicked, will automatically load the specified chapter from the story object. Choices are given depending on what the current chapter is. -Visited variables are set for each area that isn't narratively linear so that once an area has been visited, it won't appear again as a option*/
+    /*Adds event listeners to each choice button, that when clicked, will automatically load the specified chapter from the story object. Choices are given depending on what the current chapter is. -Visited variables are set for each area that isn't narratively linear so that once an area has been visited, it won't appear again as a option*/
     if (story.currentChapter == "intro") {
         const choice1ClickHandler = () => {
             story.currentChapter = "void";
@@ -395,7 +368,7 @@ function choices() {
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
 
-    };
+    }
 
     if (story.currentChapter == "void") {
         choice3.style.display = "inline-block";
@@ -425,7 +398,7 @@ function choices() {
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
         choice3.addEventListener("click", choice3ClickHandler);
-    };
+    }
 
 
     if (story.currentChapter == "forest") {
@@ -440,7 +413,7 @@ function choices() {
             choice1.addEventListener("click", choice1ClickHandler);
         } else {
             choice1.style.display = "none";
-        };
+        }
 
         if (lakeVisited == false) {
             const choice2ClickHandler = () => {
@@ -454,7 +427,7 @@ function choices() {
         } else {
             choice2.style.display = "none";
         }
-    };
+    }
 
     if (story.currentChapter == "library") {
         if (forestVisited == false) {
@@ -468,7 +441,7 @@ function choices() {
             choice1.addEventListener("click", choice1ClickHandler);
         } else {
             choice1.style.display = "none";
-        };
+        }
 
         if (lakeVisited == false) {
             const choice2ClickHandler = () => {
@@ -482,8 +455,8 @@ function choices() {
         } else {
             choice2.style.display = "none";
 
-        };
-    };
+        }
+    }
 
     if (story.currentChapter == "lake") {
         if (forestVisited == false) {
@@ -497,7 +470,7 @@ function choices() {
             choice1.addEventListener("click", choice1ClickHandler);
         } else {
             choice1.style.display = "none";
-        };
+        }
 
         if (libraryVisited == false) {
             const choice2ClickHandler = () => {
@@ -510,9 +483,9 @@ function choices() {
             choice2.addEventListener("click", choice2ClickHandler);
         } else {
             choice2.style.display = "none";
-        };
+        }
 
-    };
+    }
 
     if (forestVisited && lakeVisited && libraryVisited) {
         endChoice.style.display = "inline-block";
@@ -522,5 +495,5 @@ function choices() {
             getPuzzle.style.display = "none";
         };
         endChoice.addEventListener("click", endChoiceClickHandler);
-    };
-};
+    }
+}
