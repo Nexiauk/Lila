@@ -265,6 +265,10 @@ function checkAnswer() {
     const slots = document.querySelectorAll(".slot");
     // arrow function checks if any slots are empty
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
+    // Removes event listener from all slots so they aren't clickable while animation is playing
+    slots.forEach(slot => {
+        slot.removeEventListener("click", clickedSlotHandler);
+    });
     // If not all slots are filled, alert the user and exit the function
     if (!allFilled) {
         slots.forEach(slot => {
@@ -273,11 +277,14 @@ function checkAnswer() {
                 slot.classList.add("wrong-answer");
                 setTimeout(revert, 2000);
             }
-            function revert() {
-                slot.classList.remove("wrong-answer");
-                slot.classList.add(`chapter-${story.currentChapter}`);
-            }
         });
+        function revert() {
+            slots.forEach(slot => {
+            slot.classList.remove("wrong-answer");
+            slot.classList.add(`chapter-${story.currentChapter}`);
+            slot.addEventListener("click", clickedSlotHandler);
+            }
+            )}
         return;
     }
     //If all slots are filled, the slots are passed into the userAnswer variable in order to form the word the user has spelt with the tiles. This is then compared to the original word passed into the game.
