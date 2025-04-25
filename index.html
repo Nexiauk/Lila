@@ -47,9 +47,9 @@
     </header>
     <!-- Main content container -->
     <div class="container-fluid gx-md-5" id="main-container">
-        <!-- Story images that is dynamically pulled through from a Javascript object -->
-        <section class="row gx-0 justify-content-between mt-2 mt-xxl-3" id="story-area">
-            <div class="col col-12 col-md-9 order-md-1 col-lg-9 col-xxl-9 mt-2" id="image-div">
+        <section class="row gx-0 justify-content-between justify-content-xxl-center mt-2 mt-xxl-3" id="story-area">
+                    <!-- Story images that is dynamically pulled through from a Javascript object -->
+            <div class="col col-12 col-md-9 order-md-1 col-lg-9 col-xxl-8 mt-2" id="image-div">
                 <picture>
                     <source media="(min-width: 501px)" id="large-img" srcset="./assets/images/title-screen.avif">
                     <source media="(max-width: 500px)" id="small-img" srcset="./assets/images/title-screen-small.avif">
@@ -58,8 +58,10 @@
                 </picture>
             </div>
             <!-- Story text that is dynamically pulled through from a Javascript object-->
-            <div class="col col-12 col-md-12 order-md-3 col-xxl-12 mt-2 mt-xxl-3 chapter-welcome" id="text-col">
+            <div class="col col-12 col-md-12 order-md-3 col-xxl-10 mt-2 mt-xxl-3 chapter-welcome" id="text-col">
+                <!-- Story title is also dynamically updated -->
                 <h1 id="title">Welcome</h1>
+                <!-- Story text -->
                 <div id="story-text">
                     <p>Lila is a little girl who has experienced a sudden and heartbreaking loss.</p>
                     <p>The loss has been so intense that she has lost her ability to speak.
@@ -68,6 +70,7 @@
                     <p>During your journey, you will see <mark>clues</mark> that will <mark>help you</mark> figure out what emotions she is experiencing. Don't be afraid to use a thesaurus to help you!</p>
                     <p>Let's meet Lila...</p>
                 </div>
+                <!-- Navigation buttons for the story -->
                 <div class="text-center"><button id="choice-1" class="button-styling">Choice 1</button>
                     <button id="choice-2" class="button-styling">Choice 2</button> <button id="choice-3" class="button-styling">Choice 3</button> <button
                         id="end-choice">End-choice</button>
@@ -75,7 +78,8 @@
                 <div class="text-center"><button id="get-puzzle" class="button-styling">Get Puzzle</button><button id="start-game" class="button-styling">Start
                         Game</button></div>
             </div>
-            <div class="col col-sm-12 col-md-2 order-md-2 col-lg-2 col-xxl-2 order-xxl-2 mt-2 text-center"
+            <!-- Word inventory column -->
+            <div class="col col-md-2 order-md-2 order-xxl-2 mt-2 text-center"
                 id="word-inventory">
                 <h2 id="words-title">Words</h2>
                 <ul id="collected-words">
@@ -84,8 +88,11 @@
         </section>
         <!-- Puzzle area -->
         <section class="row mt-4 justify-content-center" id="puzzle-area">
+            <!-- Div for the slots -->
             <div class="col col-12 text-center" id="puzzle-answer"></div>
+            <!-- Div for the tiles -->
             <div class="col col-12 text-center" id="puzzle-question"></div>
+            <!-- Div for the check and reset buttons -->
             <div class="col col-12 text-center mb-4" id="buttons">
                 <button id="check" class="button-styling">Check Answer</button>
                 <button id="reset-button" class="button-styling">Reset</button>

@@ -473,7 +473,7 @@ button {
 @media screen and (min-width:1024px) {
 
     .container-fluid {
-        padding: 0 40px;
+        padding: 0 80px;
     }
 
     .nav-link {
@@ -533,8 +533,8 @@ button {
 
 /* Responsive media queries for laptops 1400px and above */
 @media screen and (min-width:1400px) {
-    .container-fluid {
-        padding: 0 60px;
+    button {
+        font-size: 1.3rem;
     }
 
     .navbar-brand h1 {
@@ -549,8 +549,8 @@ button {
         font-size: 1.5rem;
     }
 
-    button {
-        font-size: 1.3rem;
+    #story-image {
+        max-width: 800px;
     }
 
     #title,
@@ -604,10 +604,6 @@ button {
 
 /* Media query for screens sized 2650px and up */
 @media screen and (min-width:2560px) {
-    .container-fluid {
-        padding: 0 80px;
-    }
-
     button {
         font-size: 2.4rem;
         margin: 25px 25px;
@@ -629,6 +625,12 @@ button {
 
     .nav-link {
         font-size: 2.5rem;
+    }
+
+    #story-image {
+        height: auto;
+        width: 100%;
+        max-width: 1500px;
     }
 
     #title,
