@@ -40,10 +40,18 @@ footer {
 
 /* Mark styling attributed to https://www.abeautifulsite.net/posts/a-clever-way-to-style-the-mark-element/ */
 mark {
-    background-color: white;
+    background-color: transparent;
+    color: white;
     border-radius: 1em 0;
     padding: .3rem;
+    font-weight: bold;
+}
+
+.mark-on {
+    background-color: white;
     color: var(--main-colour);
+    border-radius: 1em 0;
+    padding: .3rem;
     font-weight: bold;
 }
 
@@ -344,6 +352,7 @@ button {
 }
 
 #get-puzzle,
+#get-hint,
 #check,
 #reset-button,
 #choice-1,

@@ -100,6 +100,7 @@ const story = {
 
 // Global variables
 const getPuzzle = document.getElementById("get-puzzle");
+const getHint = document.getElementById("get-hint");
 const resetButton = document.getElementById("reset-button");
 const checkButton = document.getElementById("check");
 const startButton = document.getElementById("start-game");
@@ -126,6 +127,7 @@ let libraryVisited = false;
 let word = "";
 
 startButton.addEventListener("click", startGame);
+getHint.addEventListener("click", showHint);
 getPuzzle.addEventListener("click", initialisePuzzle);
 
 /*This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
@@ -137,11 +139,26 @@ function startGame() {
 }
 
 /**Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden.*/
-function loadChapter() {
-    storyTitle.innerHTML = story[story.currentChapter].title;
-    storyText.innerHTML = story[story.currentChapter].storyText;
-    Splitting({ target: storyText, by: 'lines' }); 
 
+function showHint() {
+    const marked = document.querySelectorAll("mark");
+    marked.forEach(mark => {
+        mark.classList.add("mark-on");
+    })
+}
+
+function loadChapter() {
+    // Pulls through the current story image, title and text from the current chapter in the story object
+    storyImage.src = story[story.currentChapter].storyImage;
+    storyImageSmall.srcset = story[story.currentChapter].storyImageSmall;
+    storyImageLarge.srcset = story[story.currentChapter].storyImageLarge;
+    // Automatically scrolls the screen back up to the story image so changing graphics don't get missed
+    storyImage.scrollIntoView({ behavior: "smooth" });
+    storyTitle.innerHTML = story[story.currentChapter].title;
+    // Grabs the curren't chapter's story text and utilises spltjs to split and animate lines
+    storyText.innerHTML = story[story.currentChapter].storyText;
+    storyText.removeAttribute("data-splitting");
+    Splitting({ target: storyText, by: 'lines' }); 
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
@@ -154,12 +171,11 @@ function loadChapter() {
             storyImage.classList.remove(cls);
         }
     });
+    // Adds the current chapter's styling via a dynamically inserted class
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.classList.add(`chapter-${story.currentChapter}`);
-    storyImage.src = story[story.currentChapter].storyImage;
-    storyImageSmall.srcset = story[story.currentChapter].storyImageSmall;
-    storyImageLarge.srcset = story[story.currentChapter].storyImageLarge;
-    storyImage.scrollIntoView({ behavior: "smooth" });
+
+    // Sets all the story choice buttons so they can't be seen.
     choice1.style.display = "none";
     choice2.style.display = "none";
     choice3.style.display = "none";
@@ -169,6 +185,7 @@ function loadChapter() {
 /**Loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word. It has functionality to automatically scrolldown to the puzzle area so a user doesn't have to use their mouse or keyboard keys. The getPuzzle button is hidden and the check and reset buttons are set to appear, with event listeners added to them that connect to further functions.*/
 function initialisePuzzle() {
     puzzleArea.scrollIntoView({ behavior: "smooth" });
+    getHint.style.display = "inline-block";
     word = story[story.currentChapter].word;
     checkScore = 0;
     getPuzzle.style.display = "none";
@@ -324,6 +341,7 @@ function checkAnswer() {
         storyText.innerHTML = story[story.currentChapter].storyText2;
         resetButton.style.display = "none";
         checkButton.style.display = "none";
+        getHint.style.display = "none";
         const newListItem = document.createElement("li");
         newListItem.textContent = word;
         collectedWords.appendChild(newListItem);
