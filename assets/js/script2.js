@@ -157,7 +157,6 @@ function loadChapter() {
     storyTitle.innerHTML = story[story.currentChapter].title;
     // Grabs the curren't chapter's story text and utilises spltjs to split and animate lines
     storyText.innerHTML = story[story.currentChapter].storyText;
-    storyText.removeAttribute("data-splitting");
     Splitting({ target: storyText, by: 'lines' }); 
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
@@ -283,6 +282,7 @@ function clickedSlot(slot) {
 function checkAnswer() {
     // Everytime check answer button is clicked, it adds 1 to the checkScore variable, which populates into the words list as a number of attempts.
     checkScore = checkScore + 1;
+    storyText.classList.remove(".splt");
     const slots = document.querySelectorAll(".slot");
     const tiles = document.querySelectorAll(".tile");
     // arrow function checks if any slots are empty
