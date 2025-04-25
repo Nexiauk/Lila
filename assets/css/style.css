@@ -494,13 +494,14 @@ button {
 /* Responsive media query for screens 1024px and above */
 @media screen and (min-width:1024px) {
 
-    .container-fluid {
+    /* #main-container {
         padding: 0 80px;
-    }
+    } */
 
     .nav-link {
         font-size: 1.2rem;
     }
+  
 
     #words-title {
         margin-bottom: 18px;
@@ -618,7 +619,49 @@ button {
     }
 }
 
+/* Responsive media query for screens 1900px and up */
 
+@media screen and (min-width:1900px) {
+    #main-container {
+        max-width: 1550px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+    #story-image {
+        max-width: 940px;
+    }
+
+    #title {
+        margin-bottom: 15px;
+    }
+
+    #title, 
+    #story-title {
+        font-size: 3.rem;
+    }
+
+    #story-text {
+        font-size: 1.8rem;
+        padding: 0 40px;
+    }
+
+    #story-text p {
+        margin-bottom: 15px;
+    }
+
+    #collected-words {
+        font-size: 1.7rem;
+    }
+
+    #collected-words li:nth-child(even) {
+        padding-bottom: 40px;
+    }
+
+    #collected-words li:last-child {
+        padding-bottom: 0;
+    }
+}
 
 /* Media query for screens sized 2650px and up */
 @media screen and (min-width:2560px) {
@@ -631,6 +674,12 @@ button {
     mark {
         padding: 1rem;
     }
+
+    #main-container {
+        max-width: 2400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
     .navbar-nav {
         width: 50%;
@@ -646,8 +695,6 @@ button {
     }
 
     #story-image {
-        height: auto;
-        width: 100%;
         max-width: 1500px;
     }
 
