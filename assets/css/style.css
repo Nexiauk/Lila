@@ -83,6 +83,12 @@ button {
     margin-top: 0;
 }
 
+.nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
 .nav-link {
     color: white;
     justify-content: center;
@@ -266,6 +272,7 @@ button {
 }
 
 /* Styling for the elements in the puzzle area */
+/* Div that contains the tiles */
 #puzzle-question {
     height: 100px;
     display: flex;
@@ -273,6 +280,7 @@ button {
     justify-content: center;
 }
 
+/* Div that contains the empty slots */
 #puzzle-answer {
     height: 100px;
     display: flex;
@@ -280,6 +288,7 @@ button {
     justify-content: center;
 }
 
+/* Slot and tile styling, including hover effects */
 .slot,
 .tile {
     display: inline-block;
@@ -431,12 +440,6 @@ button {
         width: 80%;
     }
 
-    .nav-item {
-        flex-basis: 0;
-        flex-grow: 1;
-        text-align: center;
-    }
-
     .navbar-brand h1 {
         padding-left: 20px;
         font-size: 3rem;
@@ -444,6 +447,7 @@ button {
 
     #story-text {
         font-size: 1.2rem;
+        padding: 0 25px;
     }
 
     #puzzle-question,
@@ -472,16 +476,26 @@ button {
     }
 }
 
-/*Responsive media query for screens 992px and above*/
-@media screen and (min-width:992px) {
+/* Responsive media query for screens 1024px and above */
+@media screen and (min-width:1024px) {
 
+    .nav-link {
+        font-size: 1.2rem;
+    }
+   
     #title,
     #words-title {
         margin-bottom: 18px;
+        font-size: 2.2rem;
+    }
+
+    #story-text {
+       font-size: 1.3rem;
+       padding: 0 30px;
     }
 
     #collected-words {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     #collected-words li:nth-child(even) {
@@ -490,6 +504,10 @@ button {
 
     #collected-words li:last-child {
         padding-bottom: 0;
+    }
+
+    button {
+        font-size: 1.1rem;
     }
 }
 
@@ -505,7 +523,6 @@ button {
 
     #words-title {
         margin-bottom: 10px;
-        font-size: 2.2rem;
     }
 
     #collected-words {
@@ -517,8 +534,11 @@ button {
     }
 }
 
-/* Responsive media queries for laptops 1440px and above */
-@media screen and (min-width:1440px) {
+/* Responsive media queries for laptops 1400px and above */
+@media screen and (min-width:1400px) {
+
+    
+    
     .navbar-nav {
         width: 60%;
     }
