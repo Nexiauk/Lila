@@ -392,6 +392,21 @@ button {
     }
   }
 
+  .words .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);  /* Start with a small downward movement */
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: calc(var(--word-index) * 0.1s); /* Delay each word */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive media queries for phones 320px and above */
 @media screen and (min-width:320px) {
 
