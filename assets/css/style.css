@@ -97,7 +97,6 @@ button {
     font-size: 1.3rem;
     font-weight: bold;
     border-radius: 5px;
-    display: flex;
     border: 1px solid var(--main-colour);
 }
 
@@ -318,12 +317,7 @@ button {
 }
 
 /* Button styling */
-#get-puzzle,
-#start-game,
-#choice-1,
-#choice-2,
-#choice-3,
-#end-choice {
+.button-styling {
     border: 1px solid var(--main-colour);
     background-color: white;
     color: var(--main-colour);
@@ -594,7 +588,7 @@ button {
     }
 
 }
-
+/* Media query for screens sized 2650px and up */
 @media screen and (min-width:2560px) {
     button {
         font-size: 2rem;
@@ -603,20 +597,20 @@ button {
     }
 
     .navbar-nav {
-        width: 30%;
+        width: 50%;
     }
 
     .navbar-brand h1 {
-        font-size: 5rem;
+        font-size: 5.5rem;
     }
 
-    .nav-item {
-        flex-grow: 3;
-    }
 
-    .nav-link {
+ .nav-link {
         font-size: 2.5rem;
-        padding: 5px 0;
+    }
+
+    #story-area {
+        margin-top: 15px;
     }
 
     #title,
