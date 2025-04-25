@@ -52,7 +52,7 @@ mark {
 button {
     border-radius: 5px;
     font-weight: bolder;
-    margin: 10px 0;
+    margin: 10px 10px;
     padding: 8px;
 }
 
@@ -157,10 +157,6 @@ button {
 }
 
 /* Text styling */
-
-#word-inventory p {
-    font-weight: bold;
-}
 
 #story-text {
     padding: 0px 15px 5px 15px;
@@ -575,6 +571,15 @@ button {
         margin-top: 0;
     }
 
+    .slot,
+    .tile {
+        margin: 10px;
+        font-size: 2.2rem;
+        height: 60px;
+        padding: 8px;
+    }
+
+
     #collected-words {
         font-size: 1.4rem;
     }
@@ -588,11 +593,12 @@ button {
     }
 
 }
+
 /* Media query for screens sized 2650px and up */
 @media screen and (min-width:2560px) {
     button {
-        font-size: 2rem;
-        margin: 25px 0;
+        font-size: 2.2rem;
+        margin: 25px 25px;
         padding: 15px;
     }
 
@@ -605,13 +611,24 @@ button {
     }
 
 
- .nav-link {
+    .nav-link {
         font-size: 2.5rem;
     }
 
     #story-area {
         margin-top: 15px;
     }
+
+
+    #puzzle-answer,
+    #puzzle-question {
+        margin-top: 40px;
+    }
+
+    #puzzle-question {
+        margin-bottom: 60px;
+    }
+
 
     #title,
     #words-title {
@@ -630,6 +647,19 @@ button {
 
     #story-text p {
         margin-bottom: 40px;
+    }
+
+    .slot,
+    .tile {
+        margin: 20px;
+        font-size: 3.8rem;
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+    }
+
+    #buttons {
+        padding: 25px;
     }
 
     #collected-words {
