@@ -472,6 +472,10 @@ button {
 /* Responsive media query for screens 1024px and above */
 @media screen and (min-width:1024px) {
 
+    .container-fluid {
+        padding: 0 40px;
+    }
+
     .nav-link {
         font-size: 1.2rem;
     }
@@ -510,7 +514,6 @@ button {
 
 /* Responsive media queries for laptops 1200px and above */
 @media screen and (min-width:1200px) {
-
     #story-text {
         font-size: 1.4rem;
     }
@@ -531,7 +534,7 @@ button {
 /* Responsive media queries for laptops 1400px and above */
 @media screen and (min-width:1400px) {
     .container-fluid {
-        padding: 0 80px;
+        padding: 0 60px;
     }
 
     .navbar-brand h1 {
@@ -601,6 +604,10 @@ button {
 
 /* Media query for screens sized 2650px and up */
 @media screen and (min-width:2560px) {
+    .container-fluid {
+        padding: 0 80px;
+    }
+
     button {
         font-size: 2.4rem;
         margin: 25px 25px;
