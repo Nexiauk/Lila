@@ -130,7 +130,7 @@ startButton.addEventListener("click", startGame);
 getHint.addEventListener("click", showHint);
 getPuzzle.addEventListener("click", initialisePuzzle);
 
-/*This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
+/**This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
 function startGame() {
     story.currentChapter = "intro";
     startButton.style.display = "none";
@@ -138,8 +138,7 @@ function startGame() {
     loadChapter();
 }
 
-/**Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden.*/
-
+/**Grabs all of the words that have been tagged with 'mark' and adds a class that styles them so those words become a hint */
 function showHint() {
     const marked = document.querySelectorAll("mark");
     marked.forEach(mark => {
@@ -147,17 +146,18 @@ function showHint() {
     })
 }
 
+/**Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src and srcset that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden.*/
 function loadChapter() {
-    // Pulls through the current story image, title and text from the current chapter in the story object
     storyImage.src = story[story.currentChapter].storyImage;
+    // Pulls through appropriate image sourcesets from the chapter objects, depending on screen size
     storyImageSmall.srcset = story[story.currentChapter].storyImageSmall;
     storyImageLarge.srcset = story[story.currentChapter].storyImageLarge;
+    storyTitle.innerHTML = story[story.currentChapter].title;
+    storyText.innerHTML = story[story.currentChapter].storyText;
     // Automatically scrolls the screen back up to the story image so changing graphics don't get missed
     storyImage.scrollIntoView({ behavior: "smooth" });
-    storyTitle.innerHTML = story[story.currentChapter].title;
     // Grabs the curren't chapter's story text and utilises spltjs to split and animate lines
-    storyText.innerHTML = story[story.currentChapter].storyText;
-    Splitting({ target: storyText, by: 'lines' }); 
+    Splitting({ target: storyText, by: 'lines' });
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
@@ -181,7 +181,7 @@ function loadChapter() {
     endChoice.style.display = "none";
 }
 
-/**Loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word. It has functionality to automatically scrolldown to the puzzle area so a user doesn't have to use their mouse or keyboard keys. The getPuzzle button is hidden and the check and reset buttons are set to appear, with event listeners added to them that connect to further functions.*/
+/**Loads the word tied to the current chapter, scrambles it and creates tiles and empty slots equal to the letters in the word. It has functionality to automatically scrolldown to the puzzle area so a user doesn't have to use their mouse or keyboard keys. The getPuzzle button is hidden and the check and reset buttons are set to appear, with event listeners added to them that connect to further functions. a Get Hint button appears that will style the marked words in the paragraph test that are hints for the word puzzle.*/
 function initialisePuzzle() {
     puzzleArea.scrollIntoView({ behavior: "smooth" });
     getHint.style.display = "inline-block";
@@ -239,10 +239,9 @@ function initialisePuzzle() {
         puzzleQuestion.appendChild(tile);
         tile.addEventListener("click", clickedTileHandler);
     });
-
-    /**Function to select the first empty slot and populate it with the letter of the clicked tile. Passes the letter and the tile through to the function and if there's an available slot, it passes the letter id and content to the slot. The tile is then hidden.*/
 }
 
+/**Function to select the first empty slot and populate it with the letter of the clicked tile. Passes the letter and the tile through to the function and if there's an available slot, it passes the letter id and content to the slot. The tile is then hidden.*/
 function clickedTile(letter, tile) {
     let availableSlot = document.querySelector(".slot:empty");
     if (availableSlot) {
@@ -252,11 +251,12 @@ function clickedTile(letter, tile) {
     }
 }
 
-//Named handler function for event listener on clicked slots, so that the event listener can be properly removed at the check answer stage
+/**Named handler function for clicked slots, so that the event listener can be properly removed at the check answer stage*/
 function clickedSlotHandler(event) {
     clickedSlot(event.currentTarget);
 }
 
+/**Named handler function for clicked tiles, so that the event listener can be properly removed at the check answer stage*/
 function clickedTileHandler(event) {
     const tile = event.currentTarget;
     const letter = {
@@ -282,7 +282,6 @@ function clickedSlot(slot) {
 function checkAnswer() {
     // Everytime check answer button is clicked, it adds 1 to the checkScore variable, which populates into the words list as a number of attempts.
     checkScore = checkScore + 1;
-    storyText.classList.remove(".splt");
     const slots = document.querySelectorAll(".slot");
     const tiles = document.querySelectorAll(".tile");
     // arrow function checks if any slots are empty
@@ -295,6 +294,7 @@ function checkAnswer() {
         tile.removeEventListener("click", clickedTileHandler);
     });
 
+    /**Function that reverts all slots back to their chapter styling after getting an answer wrong/incomplete. Also re-adds the tile event listeners back on so the puzzle can be re-tried. */
     function revert() {
         slots.forEach(slot => {
             slot.classList.remove("wrong-answer");
@@ -361,7 +361,7 @@ function checkAnswer() {
     }
 }
 
-/**function to reset the tiles and the slots to the initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places.*/
+/**function to reset the tiles and the slots to the initialisepuzzle state, without resetting the entire game and reshuffling the tiles into different places. Also re-adds event listeners to all slots and tiles and ensures that the current chapter styling has been applied*/
 function resetPuzzle() {
     const slots = document.querySelectorAll(".slot");
     const tiles = document.querySelectorAll(".tile");
@@ -391,7 +391,7 @@ function choices() {
     choice3.textContent = story[story.currentChapter].choice3;
     endChoice.textContent = story[story.currentChapter].endChoice;
 
-    /*Adds event listeners to each choice button, that when clicked, will automatically load the specified chapter from the story object. Choices are given depending on what the current chapter is. -Visited variables are set for each area that isn't narratively linear so that once an area has been visited, it won't appear again as a option*/
+    /*Adds event listeners to each choice button, that when clicked, will automatically load the specified chapter from the story object. Choices are given depending on what the current chapter is. -Visited variables are set for each area that isn't narratively linear so that once an area has been visited, it won't appear again as an option*/
     if (story.currentChapter == "intro") {
         const choice1ClickHandler = () => {
             story.currentChapter = "void";
@@ -521,7 +521,7 @@ function choices() {
             choice2.style.display = "none";
         }
     }
-
+// If all locations have been visited, the wake up option appears and takes the player to the end screen
     if (forestVisited && lakeVisited && libraryVisited) {
         endChoice.style.display = "inline-block";
         const endChoiceClickHandler = () => {
