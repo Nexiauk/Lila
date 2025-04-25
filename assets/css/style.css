@@ -612,6 +612,10 @@ button {
         padding: 15px;
     }
 
+    mark {
+        padding: 1rem;
+    }
+
     .navbar-nav {
         width: 50%;
     }
