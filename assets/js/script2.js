@@ -513,3 +513,6 @@ function choices() {
         endChoice.addEventListener("click", endChoiceClickHandler);
     }
 }
+
+
+
