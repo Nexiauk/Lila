@@ -82,10 +82,11 @@ const story = {
 
     ending1: {
         title: "Game Over",
-        storyImage: "",
-        storyImage2: "",
-        storyText: `Short ending if you choose not to go to sleep`,
-        choice1: "Start Again",
+        storyImage: "./assets/images/game-over.avif",
+        storyImageLarge: "./assets/images/game-over.avif",
+        storyImageSmall: "./assets/images/game-over-small.avif",
+        storyText: `Unfortunately, your journey with Lila ends here. Without a good night's sleep, she cannot work through her grief. You can always try again.`,
+        choice1: "Start Again"
     },
 
     ending2: {
@@ -94,7 +95,6 @@ const story = {
         storyImageLarge: "./assets/images/bedroom-ending.avif",
         storyImageSmall: "./assets/images/bedroom-ending-small.avif",
         storyText: `<p>Lila wakes up to a room, and a world, that feels different to the one that existed before she slept.</p> <p>The darkness and the loss hasn't gone away, and it probably never will, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through.</p> <p>It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never truly leave her; they will always be with her in memories and in dreams.</p> <p>It has disappeared enough to allow Lila to smile again.</p> <p><strong>Thank you for playing.</strong></p>`,
-        choice1: "Wake Up"
     }
 };
 
@@ -130,6 +130,10 @@ startButton.addEventListener("click", startGame);
 getHint.addEventListener("click", showHint);
 getPuzzle.addEventListener("click", initialisePuzzle);
 
+function restartGame() {
+    window.location.href="../index.html";
+}
+
 /**This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
 function startGame() {
     story.currentChapter = "intro";
@@ -154,8 +158,10 @@ function loadChapter() {
     storyImageLarge.srcset = story[story.currentChapter].storyImageLarge;
     storyTitle.innerHTML = story[story.currentChapter].title;
     storyText.innerHTML = story[story.currentChapter].storyText;
+
     // Automatically scrolls the screen back up to the story image so changing graphics don't get missed
     storyImage.scrollIntoView({ behavior: "smooth" });
+
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
@@ -405,6 +411,13 @@ function choices() {
         };
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
+    }
+
+    if(story.currentChapter == "ending1") {
+        const choice1ClickHandler = () => {
+            restartGame();
+        }
+        choice1.addEventListener("click", choice1ClickHandler);
     }
 
     if (story.currentChapter == "void") {

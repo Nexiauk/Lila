@@ -209,9 +209,12 @@ button {
     box-shadow: 8px 8px var(--lake-colour);
 }
 
+#story-image.chapter-ending1 {
+    box-shadow: 8px 8px black;
+}
+
 #story-image.chapter-ending2 {
     box-shadow: 8px 8px black;
-    ;
 }
 
 /* Chapter specific colours and styling for the text and slots */
@@ -242,6 +245,11 @@ button {
 #text-col.chapter-lake,
 .slot.chapter-lake {
     background-color: var(--lake-colour);
+}
+
+#text-col.chapter-ending1 {
+    background-color: var(--ending-colour);
+    color: var(--ending-text);
 }
 
 #text-col.chapter-ending2 {
@@ -352,6 +360,7 @@ button {
 #get-hint,
 #check,
 #reset-button,
+#try-again,
 #choice-1,
 #choice-2,
 #choice-3,
