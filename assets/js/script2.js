@@ -156,8 +156,6 @@ function loadChapter() {
     storyText.innerHTML = story[story.currentChapter].storyText;
     // Automatically scrolls the screen back up to the story image so changing graphics don't get missed
     storyImage.scrollIntoView({ behavior: "smooth" });
-    // Grabs the curren't chapter's story text and utilises spltjs to split and animate lines
-    Splitting({ target: storyText, by: 'lines' });
     // Removes any chapter classes currently applied to the story text's outer column
     storyOuterCol.classList.forEach(cls => {
         if (cls.startsWith("chapter-")) {
