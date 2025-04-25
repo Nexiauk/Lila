@@ -47,6 +47,8 @@ mark {
     font-weight: bold;
 }
 
+/* Common styling for all buttons */
+
 button {
     border-radius: 5px;
     font-weight: bolder;
@@ -70,6 +72,7 @@ button {
     color: white;
 }
 
+/* Font styling of the H1 in the nav-brand area */
 .navbar-brand h1 {
     margin-bottom: 0;
     font-family: 'Fugaz One', sans-serif;
@@ -80,7 +83,6 @@ button {
 .navbar-toggler:focus {
     border: none;
     box-shadow: none;
-    margin-top: 0;
 }
 
 .nav-item {
@@ -594,28 +596,42 @@ button {
 }
 
 @media screen and (min-width:2560px) {
-
     button {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        margin: 25px 0;
+        padding: 15px;
     }
 
     .navbar-nav {
         width: 30%;
     }
 
+    .navbar-brand h1 {
+        font-size: 5rem;
+    }
+
+    .nav-item {
+        flex-grow: 3;
+    }
+
     .nav-link {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
+        padding: 5px 0;
     }
 
     #title,
     #words-title {
-        font-size: 3rem;
+        font-size: 4.6rem;
         margin-bottom: 25px;
         padding-top: 25px
     }
 
+    #words-title {
+        margin-bottom: 50px;
+    }
+
     #story-text {
-        font-size: 2rem;
+        font-size: 2.6rem;
     }
 
     #story-text p {
@@ -623,11 +639,15 @@ button {
     }
 
     #collected-words {
-        font-size: 1.6rem;
+        font-size: 2.6rem;
     }
 
     #collected-words li:nth-child(even) {
-        padding-bottom: 50px;
+        padding-bottom: 120px;
+    }
+
+    #collected-words li:last-child {
+        padding-bottom: 0;
     }
 
     #footer-text {
