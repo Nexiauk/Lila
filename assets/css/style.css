@@ -50,8 +50,8 @@ mark {
 button {
     border-radius: 5px;
     font-weight: bolder;
-    padding: 5px;
-    margin-top: 15px;
+    margin: 10px 0;
+    padding: 8px;
 }
 
 /* Navbar styling */
@@ -325,14 +325,10 @@ button {
     border: 1px solid var(--main-colour);
     background-color: white;
     color: var(--main-colour);
-    padding: 8px;
-    margin-bottom: 10px;
 }
 
 #check,
 #reset-button {
-    padding: 8px;
-    margin-bottom: 10px;
     border: 1px solid white;
     background-color: var(--main-colour);
     color: white;
@@ -381,6 +377,10 @@ button {
 
 #collected-words li:nth-child(even) {
     padding-bottom: 10px;
+}
+
+#collected-words li:nth-child(odd) {
+    font-weight: bold;
 }
 
 /* Responsive media queries for phones 320px and above */
@@ -482,7 +482,7 @@ button {
     .nav-link {
         font-size: 1.2rem;
     }
-   
+
     #title,
     #words-title {
         margin-bottom: 18px;
@@ -490,8 +490,8 @@ button {
     }
 
     #story-text {
-       font-size: 1.3rem;
-       padding: 0 30px;
+        font-size: 1.3rem;
+        padding: 0 30px;
     }
 
     #collected-words {
@@ -513,9 +513,6 @@ button {
 
 /* Responsive media queries for laptops 1200px and above */
 @media screen and (min-width:1200px) {
-    #story-title {
-        font-size: 2.2rem;
-    }
 
     #story-text {
         font-size: 1.4rem;
@@ -536,25 +533,42 @@ button {
 
 /* Responsive media queries for laptops 1400px and above */
 @media screen and (min-width:1400px) {
+    .container-fluid {
+        padding: 0 80px;
+    }
 
-    
-    
+    .navbar-brand h1 {
+        font-size: 3.5rem;
+    }
+
     .navbar-nav {
         width: 60%;
     }
 
+    .nav-link {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.3rem;
+    }
+
+    #title,
     #words-title {
-        font-size: 2.2rem;
+        font-size: 3rem;
     }
 
     #title {
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+    }
+
+    #words-title {
+        margin-bottom: 20px;
     }
 
     #story-text {
-        font-size: 1.1rem;
-        padding-left: 25px;
-        padding-right: 25px;
+        font-size: 1.5rem;
+        padding: 0 30px;
     }
 
     #story-text p {
@@ -566,11 +580,11 @@ button {
     }
 
     #collected-words {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
     #collected-words li:nth-child(even) {
-        padding-bottom: 30px;
+        padding-bottom: 60px;
     }
 
     #collected-words li:last-child {
