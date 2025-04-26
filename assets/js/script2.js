@@ -170,6 +170,11 @@ function showHint() {
 
 /**Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src and srcset that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden.*/
 function loadChapter() {
+    if (story.currentChapter == "ending1") {
+        tryAgain.style.display = "inline-block";
+    } else {
+        tryAgain.style.display= "none";
+    }
     storyImage.src = story[story.currentChapter].storyImage;
     storyImage.alt = story[story.currentChapter].altText;
     // Pulls through appropriate image sourcesets from the chapter objects, depending on screen size
@@ -196,9 +201,6 @@ function loadChapter() {
     // Adds the current chapter's styling via a dynamically inserted class
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.classList.add(`chapter-${story.currentChapter}`);
-    if (story.currentChapter == "ending1") {
-        tryAgain.style.display = "inline-block";
-    }
     // Sets all the story choice buttons so they can't be seen.
     choice1.style.display = "none";
     choice2.style.display = "none";
