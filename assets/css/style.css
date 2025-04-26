@@ -419,10 +419,13 @@ button {
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
-    text-align: center;
-    padding: 10px 0;
     margin-bottom: 0;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+}
+
+#socials > li {
+    border-radius: 8px;
+    padding-top: 10px;
 }
 
 .fa-brands {
@@ -430,8 +433,10 @@ button {
 }
 
 .fa-brands:hover {
-    color: var(--misty-yellow);
-    background-color: var(--black-smoke);
+    color: var(--main-colour);
+    background-color: white;
+    border-radius: 8px;
+    transition: all 1.2s ease-in-out;
 }
 
 /* Responsive media queries for phones 320px and above */
