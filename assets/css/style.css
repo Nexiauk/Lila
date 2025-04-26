@@ -421,6 +421,7 @@ button {
     justify-content: space-evenly;
     margin-bottom: 0;
     font-size: 2.5rem;
+    padding-left: 0;
 }
 
 #socials > li {
@@ -574,10 +575,13 @@ button {
         margin-bottom: 10px;
     }
 
-    #story-text,
-    #about-text {
+    #story-text {
         font-size: 1.3rem;
         padding: 0 30px;
+    }
+
+    #about-text {
+        font-size: 1.1rem;
     }
 
     #collected-words li:last-child {
