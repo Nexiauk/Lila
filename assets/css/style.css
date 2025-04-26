@@ -414,6 +414,25 @@ button {
         transform: translateY(0);
     }
 }
+/* Styling for the socials bar on the about page */
+#socials {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 0;
+    font-size: 1.8rem;
+}
+
+.fa-brands {
+    color: white
+}
+
+.fa-brands:hover {
+    color: var(--misty-yellow);
+    background-color: var(--black-smoke);
+}
 
 /* Responsive media queries for phones 320px and above */
 @media screen and (min-width:320px) {
@@ -641,10 +660,17 @@ button {
         margin-bottom: 20px;
     }
 
-    #story-text,
-    #about-text {
+    #about-title {
+        margin-bottom: 10px;
+    }
+
+    #story-text {
         font-size: 1.5rem;
         padding: 0 30px;
+    }
+
+    #about-text {
+        font-size: 1.2rem;
     }
 
     #story-text p {
@@ -706,8 +732,7 @@ button {
         font-size: 3.rem;
     }
 
-    #story-text,
-    #about-text {
+    #story-text {
         font-size: 1.7rem;
         padding: 0 40px;
     }
@@ -776,8 +801,7 @@ button {
         margin-bottom: 50px;
     }
 
-    #story-text,
-    #about-text {
+    #story-text {
         font-size: 2.6rem;
     }
 
