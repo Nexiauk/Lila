@@ -47,8 +47,9 @@
     </header>
     <!-- Main content container -->
     <div class="container-lg gx-md-5" id="main-container">
-        <section class="row gx-0 justify-content-between justify-content-xxl-center mt-2 mt-xxl-3" id="about-area">
-            <div class="col col-12 col-md-9 order-md-1 col-lg-6 col-xxl-8 mt-2" id="image-div">
+        <section class="row gx-0 justify-content-between mt-2 mt-xxl-3" id="story-area">
+                    <!-- Story images that is dynamically pulled through from a Javascript object -->
+            <div class="col col-12 col-md-12 col-lg-5  mt-2" id="image-div">
                 <picture>
                     <source media="(min-width: 501px)" id="large-img" srcset="./assets/images/title-screen.avif">
                     <source media="(max-width: 500px)" id="small-img" srcset="./assets/images/title-screen-small.avif">
@@ -56,22 +57,20 @@
                         alt="Lila's Lost Words title screen image." width="700" height="547">
                 </picture>
             </div>
-            <div class="col col-12 col-md-12 order-md-3 col-lg-6 col-xxl-10 mt-3 mt-xxl-3 chapter-welcome" id="about-col">
-                <h1 id="about-title">Welcome</h1>
+            <!-- Story text that is dynamically pulled through from a Javascript object-->
+            <div class="col col-12 col-md-12 col-lg-6 mt-3 mt-xxl-3 chapter-welcome col-styling" id="about-col">
+                <!-- Story title is also dynamically updated -->
+                <h1 id="about-title" class="title-styling">Welcome</h1>
                 <!-- Story text -->
-                <div id="about-text">
+                <div id="story-text">
                     <p>Lila is a little girl who has experienced a sudden and heartbreaking loss.</p>
                     <p>The loss has been so intense that she has lost her ability to speak.
                     </p>
-                    <p>Travel with Lila through her dreams and help her to find the words she needs to express how she's
-                        feeling.</p>
-                    <p>During your journey, you will see <mark>clues</mark> that will <mark>help you</mark> figure out
-                        what emotions she is experiencing. Don't be afraid to use a thesaurus to help you!</p>
-                    <p>Let's meet Lila...</p>
                 </div>
                 <!-- Navigation buttons for the story -->
 
-            </div>
+
+    </div>
     </div>
     <!-- Footer with mt-auto added to push to the bottom -->
     <footer class="mt-auto text-center">
