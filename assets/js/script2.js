@@ -132,6 +132,7 @@ getHint.addEventListener("click", showHint);
 getPuzzle.addEventListener("click", initialisePuzzle);
 tryAgain.addEventListener("click", restartGame);
 
+/**This function reloads index.html. Fires when the try again button is pressed on the game over ending1 chapter */
 function restartGame() {
     window.location.href="../index.html";
 }
@@ -292,8 +293,10 @@ function checkAnswer() {
     checkScore = checkScore + 1;
     const slots = document.querySelectorAll(".slot");
     const tiles = document.querySelectorAll(".tile");
+
     // arrow function checks if any slots are empty
     const allFilled = Array.from(slots).every(slot => slot.textContent !== "");
+
     // Removes event listener from all slots so they aren't clickable while animation is playing
     slots.forEach(slot => {
         slot.removeEventListener("click", clickedSlotHandler);
@@ -316,7 +319,7 @@ function checkAnswer() {
         });
     }
 
-    // If not all slots are filled, alert the user and exit the function
+    /* If not all slots are filled, the current chapter class is removed and the wrong answer class is applied to each slot, styling and animating the unfilled slots. The revert function runs after 2 seconds automatically.*/
     if (!allFilled) {
         slots.forEach(slot => {
             if (slot.textContent === "") {
@@ -336,13 +339,13 @@ function checkAnswer() {
     });
     //Slot colours are changed to a positive green colour and the eventlistener is removed to prevent users removing them from the slots. Auto scrolls back to the main content container.
     if (userAnswer == word) {
-        mainSection.scrollIntoView({ behavior: "smooth" });
+        // mainSection.scrollIntoView({ behavior: "smooth" });
         slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(0, 128, 0)";
             slot.style.color = "rgb(255,255,255)";
             slot.removeEventListener("click", clickedSlotHandler);
         });
-        /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
+        /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item in the word inventory with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
         storyImage.src = story[story.currentChapter].storyImage2;
         storyImageSmall.srcset = story[story.currentChapter].storyImage2Small;
         storyImageLarge.srcset = story[story.currentChapter].storyImage2Large;
@@ -356,7 +359,9 @@ function checkAnswer() {
         const wordScore = document.createElement("li");
         wordScore.textContent = "Attempts: " + checkScore;
         collectedWords.appendChild(wordScore);
-        storyImage.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+            storyImage.scrollIntoView({ behavior: "smooth" });
+        }, 2000);
         confetti();
         setTimeout(choices, 3000);
         //Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
