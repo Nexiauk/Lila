@@ -100,6 +100,7 @@ const story = {
 
 // Global variables
 const getPuzzle = document.getElementById("get-puzzle");
+const tryAgain = document.getElementById("try-again");
 const getHint = document.getElementById("get-hint");
 const resetButton = document.getElementById("reset-button");
 const checkButton = document.getElementById("check");
@@ -129,6 +130,7 @@ let word = "";
 startButton.addEventListener("click", startGame);
 getHint.addEventListener("click", showHint);
 getPuzzle.addEventListener("click", initialisePuzzle);
+tryAgain.addEventListener("click", restartGame);
 
 function restartGame() {
     window.location.href="../index.html";
@@ -177,7 +179,9 @@ function loadChapter() {
     // Adds the current chapter's styling via a dynamically inserted class
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.classList.add(`chapter-${story.currentChapter}`);
-
+if(story.currentChapter == "ending1") {
+    tryAgain.style.display = "inline-block";
+}
     // Sets all the story choice buttons so they can't be seen.
     choice1.style.display = "none";
     choice2.style.display = "none";
@@ -411,13 +415,6 @@ function choices() {
         };
         choice1.addEventListener("click", choice1ClickHandler);
         choice2.addEventListener("click", choice2ClickHandler);
-    }
-
-    if(story.currentChapter == "ending1") {
-        const choice1ClickHandler = () => {
-            restartGame();
-        }
-        choice1.addEventListener("click", choice1ClickHandler);
     }
 
     if (story.currentChapter == "void") {
