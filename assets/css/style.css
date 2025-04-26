@@ -409,7 +409,7 @@ a:hover {
     justify-content: space-evenly;
     margin-bottom: 0;
     font-size: 2.5rem;
-    padding-left: 0;
+    padding: 0;
 }
 
 #socials > li {
@@ -418,14 +418,12 @@ a:hover {
 }
 
 .fa-brands {
-    color: white
+    color: white;
 }
 
 .fa-brands:hover {
     color: var(--main-colour);
     background-color: white;
-    border-radius: 8px;
-    transition: all 1.2s ease-in-out;
 }
 
 /* Responsive media queries for phones 320px and above */
