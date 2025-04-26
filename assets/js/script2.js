@@ -146,7 +146,11 @@ tryAgain.addEventListener("click", restartGame);
 
 /**This function reloads index.html. Fires when the try again button is pressed on the game over ending1 chapter */
 function restartGame() {
-    window.location.href="../index.html";
+    story.currentChapter = "intro";
+    tryAgain.style.display="none";
+    getPuzzle.style.display="inline-block";
+    collectedWords.innerHTML="";
+    loadChapter()
 }
 
 /**This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content*/
