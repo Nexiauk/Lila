@@ -469,6 +469,10 @@ button {
         margin-bottom: 10px;
     }
 
+    #story-text {
+        font-size: 1.1rem;
+    }
+
     #word-inventory-col {
         display: none;
     }

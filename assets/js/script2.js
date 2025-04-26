@@ -97,7 +97,6 @@ const story = {
         storyImageLarge: "./assets/images/game-over.avif",
         storyImageSmall: "./assets/images/game-over-small.avif",
         storyText: `Unfortunately, your journey with Lila ends here. Without a good night's sleep, she cannot work through her grief. You can always try again.`,
-        choice1: "Start Again"
     },
 
     ending2: {
@@ -147,9 +146,9 @@ tryAgain.addEventListener("click", restartGame);
 /**This function reloads index.html. Fires when the try again button is pressed on the game over ending1 chapter */
 function restartGame() {
     story.currentChapter = "intro";
-    tryAgain.style.display="none";
-    getPuzzle.style.display="inline-block";
-    collectedWords.innerHTML="";
+    tryAgain.style.display = "none";
+    getPuzzle.style.display = "inline-block";
+    collectedWords.innerHTML = "";
     loadChapter()
 }
 
@@ -165,7 +164,7 @@ function startGame() {
 function showHint() {
     const marked = document.querySelectorAll("mark");
     marked.forEach(mark => {
-        mark.classList.add("mark-on");
+        mark.classList.toggle("mark-on");
     })
 }
 
@@ -197,9 +196,9 @@ function loadChapter() {
     // Adds the current chapter's styling via a dynamically inserted class
     storyOuterCol.classList.add(`chapter-${story.currentChapter}`);
     storyImage.classList.add(`chapter-${story.currentChapter}`);
-if(story.currentChapter == "ending1") {
-    tryAgain.style.display = "inline-block";
-}
+    if (story.currentChapter == "ending1") {
+        tryAgain.style.display = "inline-block";
+    }
     // Sets all the story choice buttons so they can't be seen.
     choice1.style.display = "none";
     choice2.style.display = "none";
@@ -552,7 +551,7 @@ function choices() {
             choice2.style.display = "none";
         }
     }
-// If all locations have been visited, the wake up option appears and takes the player to the end screen
+    // If all locations have been visited, the wake up option appears and takes the player to the end screen
     if (forestVisited && lakeVisited && libraryVisited) {
         endChoice.style.display = "inline-block";
         const endChoiceClickHandler = () => {
