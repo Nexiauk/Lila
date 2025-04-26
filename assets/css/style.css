@@ -128,9 +128,10 @@ button {
 }
 
 /* Styling for the main three content elements */
-#story-image {
-    height: auto;
-    width: 100%;
+
+
+#about-image {
+    box-shadow: 8px 8px var(--main-colour);
 }
 
 .title-styling {
@@ -167,10 +168,14 @@ button {
 }
 
 /* Colour styling for around the image and text column elements */
-#story-image {
+#story-image,
+#about-image {
     border: 1px solid white;
     border-radius: 8px 8px;
+    height: auto;
+    width: 100%;
 }
+
 
 #story-image.chapter-welcome {
     box-shadow: 8px 8px var(--main-colour);
