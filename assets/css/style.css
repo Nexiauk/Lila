@@ -56,7 +56,7 @@ mark {
 
 
 /* Inverted hover colours for link */
-a:hover {
+#about-text a:hover {
     background-color: white;
     color: var(--main-colour);
 }
@@ -409,7 +409,6 @@ a:hover {
     justify-content: space-evenly;
     margin-bottom: 0;
     font-size: 2.5rem;
-    padding: 0;
 }
 
 #socials > li {
@@ -419,11 +418,16 @@ a:hover {
 
 .fa-brands {
     color: white;
+    border-radius: 8px;
+    padding: 5px;
 }
 
 .fa-brands:hover {
     color: var(--main-colour);
     background-color: white;
+    border-radius: 8px;
+    transition: all 1.2s ease-in-out;
+    padding: 5px;
 }
 
 /* Responsive media queries for phones 320px and above */
