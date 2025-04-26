@@ -439,12 +439,12 @@ button {
     }
 
     #story-image,
-    #word-inventory,
+    #word-inventory-col,
     #text-col {
         margin-bottom: 10px;
     }
 
-    #word-inventory {
+    #word-inventory-col {
         display: none;
     }
 
@@ -492,7 +492,7 @@ button {
         margin-bottom: 16px;
     }
 
-    #word-inventory {
+    #word-inventory-col {
         display: block;
     }
 
@@ -512,7 +512,7 @@ button {
     }
 }
 
-/* Responsive media query for screens 900pz and above */
+/* Responsive media query for screens 900px and above */
 @media screen and (min-width:900px) {
     #collected-words {
         font-size: 1.1rem;
