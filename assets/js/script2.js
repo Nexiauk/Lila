@@ -4,9 +4,11 @@ const story = {
     intro: {
         title: "Introduction",
         storyImage: "./assets/images/bedroom-gloomy.avif",
+        altText: "An image of Lila in her bedroom looking sad",
         storyImageLarge: "./assets/images/bedroom-gloomy.avif",
         storyImageSmall: "./assets/images/bedroom-gloomy-small.avif",
         storyImage2: "./assets/images/bedroom-sleep.avif",
+        altText2: "An image of Lila in her bedroom looking sleepy",
         storyImage2Large: "./assets/images/bedroom-sleep.avif",
         storyImage2Small: "./assets/images/bedroom-sleep-small.avif",
         storyText: `<p>Lila sits on her bed in the <mark>dark</mark>, a curtain of hair covering her face. Her soft plushies watch her with <mark>sad</mark> eyes and <mark>dejected</mark> expressions. Lila's' mum pops her head around the doorway and whispers, "Goodnight."</p> <p>Lila doesn't respond. She can't.</p> <p>The door clicks softly shut and Lila stares at the magnetic board on the wall above her bed. She doesn't know how to voice what she's feeling, but maybe she could spell it out so that the <mark>ache</mark> in her heart will let her sleep...</p>`,
@@ -19,9 +21,11 @@ const story = {
     void: {
         title: "The Void",
         storyImage: "./assets/images/vortex-gloomy.avif",
+        altText: "An image of Lila spinning in the void between wakefulness and sleep.",
         storyImageLarge: "./assets/images/vortex-gloomy.avif",
         storyImageSmall: "./assets/images/vortex-gloomy-small.avif",
         storyImage2: "./assets/images/vortex-lovely.avif",
+        altText2: "An image of Lila spinning through rainbows",
         storyImage2Large: "./assets/images/vortex-lovely.avif",
         storyImage2Small: "./assets/images/vortex-lovely-small.avif",
         storyText: `<p>Lila falls into troubled dreams, spinning slowly into a darkness that tries to swallow her whole.</p> <p>The gloom swirls around her in a cloud, trying to get into her eyes, nose, and mouth. She <mark>shakes her head</mark> and closes her eyes, buttons up her mouth, <mark>refuses</mark> to let it in.</p> <p>Lila <mark>turns from</mark> the darkness and all it represents, but the more she <mark>ignores</mark> it the worse it gets. She doesn't know how to make it stop.</p> <p>Letters coalesce in the void and she grabs them, tries to put them in an order that makes sense...</p>`,
@@ -35,9 +39,11 @@ const story = {
     forest: {
         title: "The Forest",
         storyImage: "./assets/images/forest-gloomy.avif",
+        altText: "An image of Lila in a dream forest looking sad",
         storyImageLarge: "./assets/images/forest-gloomy.avif",
         storyImageSmall: "./assets/images/forest-gloomy-small.avif",
         storyImage2: "./assets/images/forest-lovely.avif",
+        altText2: "An image of Lila looking happy in a forest surrounded by animals and falling leaves.",
         storyImage2Large: "./assets/images/forest-lovely.avif",
         storyImage2Small: "./assets/images/forest-lovely-small.avif",
         storyText: `<p>The forest is dark and oppressive; Lila feels trapped in a web she can't get out of.</p> <p>She can't <mark>accept</mark> what has happened or <mark>admit</mark> to herself that she doesn't feel <mark>okay</mark>. That things will never be the same again.</p> <p>She loved to walk with them in the forest; they would tell her to <mark>go ahead</mark> and look for wildlife, and encourage her to <mark>release</mark> any animals she caught so they could run free.</p> <p>Lila wants to feel free. The web around her starts to form the letters of a word... </p>`,
@@ -51,9 +57,11 @@ const story = {
     lake: {
         title: "The Lake",
         storyImage: "./assets/images/lake-gloomy.avif",
+        altText: "An image of Lila in a dream lake looking sad",
         storyImageLarge: "./assets/images/lake-gloomy.avif",
         storyImageSmall: "./assets/images/lake-gloomy-small.avif",
         storyImage2: "./assets/images/lake-lovely.avif",
+        altText2: "An image of Lila in a beautiful dream lake looking starry-eyed",
         storyImage2Large: "./assets/images/lake-lovely.avif",
         storyImage2Small: "./assets/images/lake-lovely-small.avif",
         storyText: `<p>Lila drops into the murky waters of a dreary lake, icy rain falling from the cloudy sky. She <mark>wishes</mark> the mist would clear; she <mark>yearns</mark> to see the sky and the stars.</p> <p>She remembers rowing out on a lake with them, <mark>hoping</mark> to see constellations in the midnight skies. A shooting star had carried her <mark>heart's desire</mark> into the universe, while she wrapped up in warm blankets and drank hot chocolate.</p> <p>Lila's chest fills with an emotion she can't express and as she looks up at the sky, the struggling light of distant stars begin to form the letters of a word...</p>`,
@@ -67,9 +75,11 @@ const story = {
     library: {
         title: "The Library",
         storyImage: "./assets/images/library-gloomy.avif",
+        altText: "An image of Lila looking angry in a dream library",
         storyImageLarge: "./assets/images/library-gloomy.avif",
         storyImageSmall: "./assets/images/library-gloomy-small.avif",
         storyImage2: "./assets/images/library-lovely.avif",
+        altText: "An image of Lila looking happy in the library",
         storyImage2Large: "./assets/images/library-lovely.avif",
         storyImage2Small: "./assets/images/library-lovely-small.avif",
         storyText: `<p>Lila enters the library in a furious <mark>storm</mark> of emotion.</p> <p>The <mark>raging</mark> tempest <mark>ignites</mark></span> the books around her into flames, as though <mark>lashing out</mark> at the unfairness of it all. Pages flutter through the air as she stomps and kicks and breaks things.</p> <p>She can't use her words, and she may have lost her voice, but Lila tries to express herself as she <mark>destroys</mark> the place that had been their sanctum.</p> <p>Scraps of paper fall from the torn pages to the floor, spelling out the emotion that she's feeling...</p>`,
@@ -83,6 +93,7 @@ const story = {
     ending1: {
         title: "Game Over",
         storyImage: "./assets/images/game-over.avif",
+        altText: "Game over animation",
         storyImageLarge: "./assets/images/game-over.avif",
         storyImageSmall: "./assets/images/game-over-small.avif",
         storyText: `Unfortunately, your journey with Lila ends here. Without a good night's sleep, she cannot work through her grief. You can always try again.`,
@@ -92,6 +103,7 @@ const story = {
     ending2: {
         title: "Congratulations!!",
         storyImage: "./assets/images/bedroom-ending.avif",
+        altText: "An image of Lila in her bedroom looking happy",
         storyImageLarge: "./assets/images/bedroom-ending.avif",
         storyImageSmall: "./assets/images/bedroom-ending-small.avif",
         storyText: `<p>Lila wakes up to a room, and a world, that feels different to the one that existed before she slept.</p> <p>The darkness and the loss hasn't gone away, and it probably never will, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through.</p> <p>It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never truly leave her; they will always be with her in memories and in dreams.</p> <p>It has disappeared enough to allow Lila to smile again.</p> <p><strong>Thank you for playing.</strong></p>`,
@@ -156,6 +168,7 @@ function showHint() {
 /**Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src and srcset that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden.*/
 function loadChapter() {
     storyImage.src = story[story.currentChapter].storyImage;
+    storyImage.alt = story[story.currentChapter].altText;
     // Pulls through appropriate image sourcesets from the chapter objects, depending on screen size
     storyImageSmall.srcset = story[story.currentChapter].storyImageSmall;
     storyImageLarge.srcset = story[story.currentChapter].storyImageLarge;
@@ -347,6 +360,7 @@ function checkAnswer() {
         });
         /*Loads the secondary image for the chapter and the secondary text. Hides the puzzle buttons and creates a new list item in the word inventory with this puzzle's original word and the number of attempts to correctly spell it. Runs the confetti function from the canvas confetti external JS library and sets a small timeout before the choice buttons appear to navigate to other chapters*/
         storyImage.src = story[story.currentChapter].storyImage2;
+        storyImage.alt = story[story.currentChapter].altText2;
         storyImageSmall.srcset = story[story.currentChapter].storyImage2Small;
         storyImageLarge.srcset = story[story.currentChapter].storyImage2Large;
         storyText.innerHTML = story[story.currentChapter].storyText2;
