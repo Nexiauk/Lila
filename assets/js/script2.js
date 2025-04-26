@@ -361,9 +361,9 @@ function checkAnswer() {
         collectedWords.appendChild(wordScore);
         setTimeout(() => {
             storyImage.scrollIntoView({ behavior: "smooth" });
-        }, 2000);
+        }, 3000);
         confetti();
-        setTimeout(choices, 3000);
+        setTimeout(choices, 4000);
         //Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
     } else {
         slots.forEach(slot => {
