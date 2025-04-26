@@ -409,6 +409,7 @@ mark {
     justify-content: space-evenly;
     margin-bottom: 0;
     font-size: 2.5rem;
+    padding-left: 0;
 }
 
 #socials > li {
