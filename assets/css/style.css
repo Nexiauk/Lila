@@ -656,6 +656,10 @@ button {
         max-width: 800px;
     }
 
+    #about-image {
+        max-width: 900px;
+    }
+
     #title,
     #words-title {
         font-size: 3rem;
@@ -794,7 +798,8 @@ button {
         font-size: 2.5rem;
     }
 
-    #story-image {
+    #story-image,
+    #about-image {
         max-width: 1500px;
     }
 
@@ -820,6 +825,10 @@ button {
 
     #story-text p:last-child {
         margin-bottom: 30px;
+    }
+
+    #about-text {
+        font-size: 2.2rem;
     }
 
     #puzzle-answer,
@@ -854,6 +863,10 @@ button {
 
     #collected-words li:last-child {
         padding-bottom: 0;
+    }
+
+    #socials {
+        font-size: 3.7rem;
     }
 
     #footer-text {
