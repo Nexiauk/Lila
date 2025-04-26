@@ -129,11 +129,6 @@ button {
 
 /* Styling for the main three content elements */
 
-
-#about-image {
-    box-shadow: 8px 8px var(--main-colour);
-}
-
 .title-styling {
     font-weight: bold;
     text-align: center;
@@ -151,7 +146,8 @@ button {
 
 /* Text styling */
 
-#story-text {
+#story-text,
+#about-text {
     padding: 0px 15px 5px 15px;
     margin-bottom: auto;
     line-height: 1.7
@@ -176,6 +172,9 @@ button {
     width: 100%;
 }
 
+#about-image {
+    box-shadow: 8px 8px var(--main-colour);
+}
 
 #story-image.chapter-welcome {
     box-shadow: 8px 8px var(--main-colour);
@@ -474,7 +473,8 @@ button {
         font-size: 3rem;
     }
 
-    #story-text {
+    #story-text,
+    #about-text {
         font-size: 1.2rem;
         padding: 0 25px;
     }
@@ -550,7 +550,8 @@ button {
         margin-bottom: 10px;
     }
 
-    #story-text {
+    #story-text,
+    #about-text {
         font-size: 1.3rem;
         padding: 0 30px;
     }
@@ -576,7 +577,8 @@ button {
         margin-right: auto;
     }
 
-    #story-text {
+    #story-text,
+    #about-text {
         font-size: 1.4rem;
     }
 
@@ -639,7 +641,8 @@ button {
         margin-bottom: 20px;
     }
 
-    #story-text {
+    #story-text,
+    #about-text {
         font-size: 1.5rem;
         padding: 0 30px;
     }
@@ -703,7 +706,8 @@ button {
         font-size: 3.rem;
     }
 
-    #story-text {
+    #story-text,
+    #about-text {
         font-size: 1.7rem;
         padding: 0 40px;
     }
@@ -761,7 +765,8 @@ button {
     }
 
     #title,
-    #words-title {
+    #words-title,
+    #about-title {
         font-size: 4.6rem;
         margin-bottom: 25px;
         padding-top: 25px
@@ -771,7 +776,8 @@ button {
         margin-bottom: 50px;
     }
 
-    #story-text {
+    #story-text,
+    #about-text {
         font-size: 2.6rem;
     }
 
