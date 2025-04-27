@@ -831,6 +831,14 @@ mark {
         padding: 15px;
     }
 
+    mark {
+        padding: 0.6rem;
+    }
+
+    .mark-on {
+        padding: 0.6rem;
+    }
+
     #main-container {
         max-width: 2400px;
         margin-left: auto;
