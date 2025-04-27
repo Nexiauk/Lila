@@ -824,6 +824,10 @@ mark {
     #socials {
         font-size: 2.5rem;
     }
+
+    #footer-text {
+        font-size: 1.6rem;
+    }
 }
 
 /* Media query for screens sized 2650px and up */
