@@ -52,6 +52,7 @@ a {
 mark {
     background-color: transparent;
     color: white;
+    padding: .3rem;
 }
 
 
@@ -72,7 +73,7 @@ mark {
     color: var(--main-colour);
     border-radius: 1em 0;
     padding: .3rem;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 /* Navbar styling */
