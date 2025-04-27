@@ -388,6 +388,7 @@ function checkAnswer() {
         //Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
     } else {
         checkButton.removeEventListener("click", checkAnswer);
+        resetButton.removeEventListener("click", resetPuzzle);
         slots.forEach(slot => {
             slot.classList.remove(`chapter-${story.currentChapter}`);
             slot.classList.add("wrong-answer");
@@ -401,6 +402,7 @@ function resetPuzzle() {
     const slots = document.querySelectorAll(".slot");
     const tiles = document.querySelectorAll(".tile");
     checkButton.addEventListener("click", checkAnswer);
+    resetButton.addEventListener("click", resetPuzzle);
     slots.forEach(slot => {
         slot.textContent = "";
         slot.removeAttribute("data-id");
