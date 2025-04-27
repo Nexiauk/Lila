@@ -97,6 +97,10 @@ mark {
     font-size: 3rem;
 }
 
+.navbar-brand a {
+    text-decoration: none;
+}
+
 .navbar-toggler,
 .navbar-toggler:focus {
     border: none;
