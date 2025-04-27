@@ -359,7 +359,6 @@ function checkAnswer() {
     });
     //Slot colours are changed to a positive green colour and the eventlistener is removed to prevent users removing them from the slots. Auto scrolls back to the main content container.
     if (userAnswer == word) {
-        // mainSection.scrollIntoView({ behavior: "smooth" });
         slots.forEach(slot => {
             slot.style.backgroundColor = "rgb(0, 128, 0)";
             slot.style.color = "rgb(255,255,255)";
