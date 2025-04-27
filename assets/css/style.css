@@ -483,6 +483,10 @@ mark {
     #puzzle-answer {
         height: 50px;
     }
+
+    #socials {
+        font-size: 1.8rem;
+    }
 }
 
 /* Responsive media queries for tablets 768px and above */
@@ -533,6 +537,10 @@ mark {
         height: 60px;
         width: 60px;
         padding-top: 1rem;
+    }
+
+    #socials {
+        font-size: 2rem;
     }
 }
 
@@ -658,7 +666,7 @@ mark {
     }
 
     #about-container {
-        max-width: 1200px;
+        max-width: 900px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -710,7 +718,7 @@ mark {
     }
 
     #about-text {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     #story-text p {
@@ -738,6 +746,10 @@ mark {
 
     #collected-words li:last-child {
         padding-bottom: 0;
+    }
+
+    #socials {
+        font-size: 2.2rem;
     }
 }
 
@@ -769,7 +781,7 @@ mark {
 
     #title,
     #story-title {
-        font-size: 3.rem;
+        font-size: 3rem;
     }
 
     #story-text {
@@ -813,7 +825,7 @@ mark {
     }
 
     #about-container {
-        max-width: 2100px;
+        max-width: 1500px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -861,7 +873,7 @@ mark {
     }
 
     #about-text {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     #puzzle-answer,
@@ -899,7 +911,11 @@ mark {
     }
 
     #socials {
-        font-size: 3.7rem;
+        font-size: 3.9rem;
+    }
+
+    #socials li {
+        padding-top: 20px;
     }
 
     #footer-text {

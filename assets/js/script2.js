@@ -51,7 +51,7 @@ const story = {
         choice1: "Visit the Library",
         choice2: "Visit the Lake",
         endChoice: "Wake Up",
-        word: "ACCEPT",
+        word: "YIELD",
     },
 
     lake: {
