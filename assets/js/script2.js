@@ -325,6 +325,7 @@ function checkAnswer() {
 
     /**Function that reverts all slots back to their chapter styling after getting an answer wrong/incomplete. Also re-adds the tile event listeners back on so the puzzle can be re-tried. */
     function revert() {
+        checkButton.addEventListener("click",  checkAnswer);
         slots.forEach(slot => {
             slot.classList.remove("wrong-answer");
             slot.classList.add(`chapter-${story.currentChapter}`);
@@ -341,6 +342,7 @@ function checkAnswer() {
     if (!allFilled) {
         slots.forEach(slot => {
             if (slot.textContent === "") {
+                checkButton.removeEventListener("click", checkAnswer);
                 slot.classList.remove(`chapter-${story.currentChapter}`);
                 slot.removeEventListener("click", clickedSlotHandler);
                 slot.classList.add("wrong-answer");
@@ -385,6 +387,7 @@ function checkAnswer() {
         setTimeout(choices, 4000);
         //Gives an alert to try again and runs the resetpuzzle function to make all tiles visible and empty all slots.
     } else {
+        checkButton.removeEventListener("click", checkAnswer);
         slots.forEach(slot => {
             slot.classList.remove(`chapter-${story.currentChapter}`);
             slot.classList.add("wrong-answer");
@@ -397,6 +400,7 @@ function checkAnswer() {
 function resetPuzzle() {
     const slots = document.querySelectorAll(".slot");
     const tiles = document.querySelectorAll(".tile");
+    checkButton.addEventListener("click", checkAnswer);
     slots.forEach(slot => {
         slot.textContent = "";
         slot.removeAttribute("data-id");
