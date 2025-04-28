@@ -1,3 +1,17 @@
+this.addEventListener("DOMContentLoaded", preloadImages, true);
+
+/**Function to preload all images into the cache after the DOM has loaded - this should ensure that they will be immediately to available to use in advance. */
+function preloadImages(e) {
+    var imageArray = new Array("./assets/images/bedroom-gloomy.avif", "./assets/images/bedroom-gloomy-small.avif", "./assets/images/bedroom-sleep.avif", "./assets/images/bedroom-sleep-small.avif", "./assets/images/vortex-gloomy.avif", "./assets/images/vortex-gloomy-small.avif", "./assets/images/vortex-lovely.avif", "./assets/images/vortex-lovely-small.avif", "./assets/images/forest-gloomy.avif", "./assets/images/forest-gloomy-small.avif", "./assets/images/forest-lovely.avif", "./assets/images/forest-lovely-small.avif", "./assets/images/lake-gloomy.avif", "./assets/images/lake-gloomy-small.avif", "./assets/images/lake-lovely.avif", "./assets/images/lake-lovely-small.avif", "./assets/images/library-gloomy.avif", "./assets/images/library-gloomy-small.avif", "./assets/images/library-lovely.avif", "./assets/images/library-lovely-small.avif", "./assets/images/game-over.avif", "./assets/images/game-over-small.avif", "./assets/images/bedroom-ending.avif", "./assets/images/bedroom-ending-small.avif");
+
+    for (var i = 0; i < imageArray.length; i++) {
+        var tempImage = new Image();
+
+        tempImage.addEventListener("load", trackProgress, true);
+        tempImage.src = imageArray[i];
+    }
+}
+
 /* Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html*/
 const story = {
     currentChapter: "",
@@ -173,7 +187,7 @@ function loadChapter() {
     if (story.currentChapter == "ending1") {
         tryAgain.style.display = "inline-block";
     } else {
-        tryAgain.style.display= "none";
+        tryAgain.style.display = "none";
     }
     storyImage.src = story[story.currentChapter].storyImage;
     storyImage.alt = story[story.currentChapter].altText;
@@ -325,7 +339,7 @@ function checkAnswer() {
 
     /**Function that reverts all slots back to their chapter styling after getting an answer wrong/incomplete. Also re-adds the tile event listeners back on so the puzzle can be re-tried. */
     function revert() {
-        checkButton.addEventListener("click",  checkAnswer);
+        checkButton.addEventListener("click", checkAnswer);
         slots.forEach(slot => {
             slot.classList.remove("wrong-answer");
             slot.classList.add(`chapter-${story.currentChapter}`);
