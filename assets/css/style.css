@@ -18,6 +18,8 @@
 }
 
 /* Global styles */
+
+/* Background image applied to the body, with a fallback colour in case it doesn't load */
 body {
     color: white;
     background-color: var(--base-colour);
@@ -36,7 +38,7 @@ footer {
     background-color: var(--main-colour);
 }
 
-/* Common styling for all buttons */
+/* Common styling for all buttons so they match the overall graphical scheme */
 button {
     border-radius: 8px;
     font-weight: bolder;
@@ -44,6 +46,7 @@ button {
     padding: 8px;
 }
 
+/* Colour applied to links so they meet accessibility guidelines on colour */
 a {
     color: white;
 }
