@@ -1,4 +1,4 @@
-this.addEventListener("DOMContentLoaded", preloadImages, true);
+window.addEventListener("DOMContentLoaded", preloadImages, true);
 
 /**Function to preload all images into the cache after the DOM has loaded - this should ensure that they will be immediately to available to use in advance. */
 function preloadImages(e) {
@@ -10,6 +10,10 @@ function preloadImages(e) {
         tempImage.addEventListener("load", trackProgress, true);
         tempImage.src = imageArray[i];
     }
+}
+
+function trackProgress(event) {
+    console.log(event.target.src + " loaded!");
 }
 
 /* Story object to dynamically insert Story titles and chapters into pre-defined sections in index.html*/
