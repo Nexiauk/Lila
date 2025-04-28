@@ -1,9 +1,13 @@
+// Event listener to check whether the DOM content has loaded - when it has, it runs the preloadImages function
 window.addEventListener("DOMContentLoaded", preloadImages, true);
 
 /**Function to preload all images into the cache after the DOM has loaded - this should ensure that they will be immediately to available to use in advance and stop the small delay in the changeover of chapter images. */
 function preloadImages(e) {
+
+    // Creates an array using all image sources
     var imageArray = new Array("./assets/images/bedroom-gloomy.avif", "./assets/images/bedroom-gloomy-small.avif", "./assets/images/bedroom-sleep.avif", "./assets/images/bedroom-sleep-small.avif", "./assets/images/vortex-gloomy.avif", "./assets/images/vortex-gloomy-small.avif", "./assets/images/vortex-lovely.avif", "./assets/images/vortex-lovely-small.avif", "./assets/images/forest-gloomy.avif", "./assets/images/forest-gloomy-small.avif", "./assets/images/forest-lovely.avif", "./assets/images/forest-lovely-small.avif", "./assets/images/lake-gloomy.avif", "./assets/images/lake-gloomy-small.avif", "./assets/images/lake-lovely.avif", "./assets/images/lake-lovely-small.avif", "./assets/images/library-gloomy.avif", "./assets/images/library-gloomy-small.avif", "./assets/images/library-lovely.avif", "./assets/images/library-lovely-small.avif", "./assets/images/game-over.avif", "./assets/images/game-over-small.avif", "./assets/images/bedroom-ending.avif", "./assets/images/bedroom-ending-small.avif");
 
+// Loops through the image array and creates a new tempimage for each one. Setting the source property on each temp image means the browser begisn to download the images referenced and they will be cached for later use.
     for (var i = 0; i < imageArray.length; i++) {
         var tempImage = new Image();
 
@@ -12,12 +16,9 @@ function preloadImages(e) {
     }
 }
 
-function trackProgress(event) {
-    console.log(event.target.src + " loaded!");
-}
-
 /* Story object to dynamically insert story components into pre-defined sections in index.html. Contains a title, a story image with extra srcsets for small and large, and story text. Also has a second image with srcsets for small and large, and storytext2 - the second set of story content is used post-puzzle completion. The choices directly populate the choices buttons that allow navigation to different story areas. tThe word in each chapter directly populates the word puzzle.*/
 const story = {
+    // currentChapter is set throughout the JS functions to refrence the object key/value pairs to use when dynamically inserting content into index.html
     currentChapter: "",
     intro: {
         title: "Introduction",
@@ -509,6 +510,8 @@ function choices() {
             story.currentChapter = "void";
             loadChapter();
             getPuzzle.style.display = "inline-block";
+            // Removes the event listener to stop them from stacking up
+            choice1.removeEventListener("click", choice1ClickHandler);
 
         };
         const choice2ClickHandler = () => {
@@ -522,8 +525,10 @@ function choices() {
     }
 
     if (story.currentChapter == "void") {
+        // This chapter has 3 choices so the choice3 button is added here
         choice3.style.display = "inline-block";
 
+        // The forest, the lake, and the library all have variables set to false. Once they've been visited their variable is set to true to ensure logic handles whether or not they appear again
         const choice1ClickHandler = () => {
             story.currentChapter = "forest";
             forestVisited = true;
@@ -551,6 +556,7 @@ function choices() {
     }
 
     if (story.currentChapter == "forest") {
+        // If statements handle what appears depending on visited variables being true or not for each chapter
         if (libraryVisited == false) {
             const choice1ClickHandler = () => {
                 story.currentChapter = "library";
@@ -633,8 +639,9 @@ function choices() {
             choice2.style.display = "none";
         }
     }
-    // If all locations have been visited, the wake up option appears and takes the player to the end screen
+    // If all locations have been visited, the wake up option appears, which will take the player to the end game screen.
     if (forestVisited && lakeVisited && libraryVisited) {
+        // the endchoice button appears Headers, and only here, no matter which chapter you finish on.
         endChoice.style.display = "inline-block";
         const endChoiceClickHandler = () => {
             story.currentChapter = "ending2";
