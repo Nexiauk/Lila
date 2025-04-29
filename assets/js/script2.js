@@ -255,8 +255,8 @@ function initialisePuzzle() {
     // Hides and shows appropriate buttons
     getPuzzle.style.display = "none";
     checkArea.style.visibility = "visible";
-    checkButton.style.display = "inline-block";
-    resetButton.style.display = "inline-block";
+    checkButton.style.visibility = "visible";
+    resetButton.style.visibility = "visible";
 
     // Removes any previously added event listeners to the check and reset buttons, to stop event listeners stacking up.
     checkButton.removeEventListener("click", checkAnswer);
@@ -427,8 +427,8 @@ function checkAnswer() {
         storyText.innerHTML = story[story.currentChapter].storyText2;
 
         // Buttons are hidden as they aren't needed until another puzzle is initialised
-        resetButton.style.display = "none";
-        checkButton.style.display = "none";
+        resetButton.style.visibility = "hidden";
+        checkButton.style.visibility = "hidden";
         getHint.style.display = "none";
 
         // creates a new list item in the word inventory with the current puzzle's original word and the number of attempts to correctly spell it.

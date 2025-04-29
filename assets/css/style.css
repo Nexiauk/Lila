@@ -373,13 +373,16 @@ mark {
 #get-puzzle,
 #try-again,
 #get-hint,
-#check,
-#reset-button,
 #choice-1,
 #choice-2,
 #choice-3,
 #end-choice {
     display: none;
+}
+
+#check,
+#reset-button {
+    visibility: hidden;
 }
 
 #get-puzzle:hover,
