@@ -16,9 +16,9 @@ function preloadImages(e) {
     }
 }
 
-function trackProgress(event) {
-    console.log(event.target.src + " loaded!");
-}
+// function trackProgress(event) {
+//     console.log(event.target.src + " loaded!");
+// }
 
 /* Story object to dynamically insert story components into pre-defined sections in index.html. Contains a title, a story image with extra srcsets for small and large, and story text. Also has a second image with srcsets for small and large, and storytext2 - the second set of story content is used post-puzzle completion. The choices directly populate the choices buttons that allow navigation to different story areas. tThe word in each chapter directly populates the word puzzle.*/
 const story = {
