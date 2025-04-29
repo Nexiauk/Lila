@@ -1,19 +1,23 @@
 // Event listener to check whether the DOM content has loaded - when it has, it runs the preloadImages function
-window.addEventListener("DOMContentLoaded", preloadImages, true);
+window.addEventListener("DOMContentLoaded", preloadImages);
 
 /**Function to preload all images into the cache after the DOM has loaded - this should ensure that they will be immediately to available to use in advance and stop the small delay in the changeover of chapter images. */
 function preloadImages(e) {
 
     // Creates an array using all image sources
-    var imageArray = new Array("./assets/images/bedroom-gloomy.avif", "./assets/images/bedroom-gloomy-small.avif", "./assets/images/bedroom-sleep.avif", "./assets/images/bedroom-sleep-small.avif", "./assets/images/vortex-gloomy.avif", "./assets/images/vortex-gloomy-small.avif", "./assets/images/vortex-lovely.avif", "./assets/images/vortex-lovely-small.avif", "./assets/images/forest-gloomy.avif", "./assets/images/forest-gloomy-small.avif", "./assets/images/forest-lovely.avif", "./assets/images/forest-lovely-small.avif", "./assets/images/lake-gloomy.avif", "./assets/images/lake-gloomy-small.avif", "./assets/images/lake-lovely.avif", "./assets/images/lake-lovely-small.avif", "./assets/images/library-gloomy.avif", "./assets/images/library-gloomy-small.avif", "./assets/images/library-lovely.avif", "./assets/images/library-lovely-small.avif", "./assets/images/game-over.avif", "./assets/images/game-over-small.avif", "./assets/images/bedroom-ending.avif", "./assets/images/bedroom-ending-small.avif");
+    const imageArray = new Array("./assets/images/bedroom-gloomy.avif", "./assets/images/bedroom-gloomy-small.avif", "./assets/images/bedroom-sleep.avif", "./assets/images/bedroom-sleep-small.avif", "./assets/images/vortex-gloomy.avif", "./assets/images/vortex-gloomy-small.avif", "./assets/images/vortex-lovely.avif", "./assets/images/vortex-lovely-small.avif", "./assets/images/forest-gloomy.avif", "./assets/images/forest-gloomy-small.avif", "./assets/images/forest-lovely.avif", "./assets/images/forest-lovely-small.avif", "./assets/images/lake-gloomy.avif", "./assets/images/lake-gloomy-small.avif", "./assets/images/lake-lovely.avif", "./assets/images/lake-lovely-small.avif", "./assets/images/library-gloomy.avif", "./assets/images/library-gloomy-small.avif", "./assets/images/library-lovely.avif", "./assets/images/library-lovely-small.avif", "./assets/images/game-over.avif", "./assets/images/game-over-small.avif", "./assets/images/bedroom-ending.avif", "./assets/images/bedroom-ending-small.avif");
 
-// Loops through the image array and creates a new tempimage for each one. Setting the source property on each temp image means the browser begisn to download the images referenced and they will be cached for later use.
-    for (var i = 0; i < imageArray.length; i++) {
-        var tempImage = new Image();
+// Loops through the image array and creates a new tempimage for each one. Setting the source property on each temp image means the browser begins to download the images referenced and they will be cached for later use.
+    for (let i = 0; i < imageArray.length; i++) {
+        const tempImage = new Image();
 
         tempImage.addEventListener("load", trackProgress, true);
         tempImage.src = imageArray[i];
     }
+}
+
+function trackProgress(event) {
+    console.log(event.target.src + " loaded!");
 }
 
 /* Story object to dynamically insert story components into pre-defined sections in index.html. Contains a title, a story image with extra srcsets for small and large, and story text. Also has a second image with srcsets for small and large, and storytext2 - the second set of story content is used post-puzzle completion. The choices directly populate the choices buttons that allow navigation to different story areas. tThe word in each chapter directly populates the word puzzle.*/
