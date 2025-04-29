@@ -128,7 +128,7 @@ const story = {
         altText: "An image of Lila in her bedroom looking happy",
         storyImageLarge: "./assets/images/bedroom-ending.avif",
         storyImageSmall: "./assets/images/bedroom-ending-small.avif",
-        storyText: `<p>Lila wakes up to a room, and a world, that feels different to the one that existed before she slept.</p> <p>The darkness and the loss hasn't gone away, and it probably never will, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through.</p> <p>It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never truly leave her; they will always be with her in memories and in dreams.</p> <p>It has disappeared enough to allow Lila to smile again.</p> <p><strong>Thank you for playing.</strong></p>`,
+        storyText: `<p>Lila wakes up to a room, and a world, that feels different to the one that existed before she slept.</p> <p>The darkness and the loss hasn't gone away, and it probably never will, but it has faded enough to let the sunshine in. To let the starlight and the rainbows through.</p> <p>It has dispersed enough for Lila to see that she has loved and been loved by someone very special, to see that they will never truly leave her; they will always be with her in memories and in dreams.</p> <p>It has disappeared enough to allow Lila to smile again. To allow her to speak again and she whispers quietly, "I miss you... I love you."</p> <p><strong>Thank you for playing.</strong></p>`,
     }
 };
 
