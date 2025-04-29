@@ -11,7 +11,7 @@ function preloadImages(e) {
     for (let i = 0; i < imageArray.length; i++) {
         const tempImage = new Image();
 
-        tempImage.addEventListener("load", trackProgress, true);
+        // tempImage.addEventListener("load", trackProgress, true);
         tempImage.src = imageArray[i];
     }
 }
