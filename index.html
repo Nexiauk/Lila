@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Lila's Lost Words: a choose-your-own-adventure game that explores narratives of grief through word puzzles">
+        content="Lila's Lost Words: a, interactive, choose-your-own-adventure game that explores narratives of grief through word puzzles">
     <meta name="keywords" content="CYOA, game, grief, words, puzzles, literacy">
     <meta name="author" content="Lucy Sears">
-    <title>Lila's Lost Words</title>
+    <title>Lila's Lost Words - story-driven puzzle game</title>
     <!-- Bootstrap stylesheet
       -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,7 +22,6 @@
 
 </head>
 <!-- Classes set on body to work with mt-auto on footer to ensure it stays at the bottom -->
-
 <body class="d-flex flex-column min-vh-100">
     <header>
         <!-- Navbar -->
@@ -50,49 +49,55 @@
         </nav>
     </header>
     <!-- Main content container -->
-    <div class="container-lg gx-md-5" id="main-container">
+    <main class="container-lg gx-md-5" id="main-container">
         <section class="row gx-0 justify-content-between justify-content-xxl-center mt-2 mt-xxl-3" id="story-area">
-            <!-- Story images that is dynamically pulled through from a Javascript object -->
+            <!-- Story images that are dynamically pulled through from a Javascript object -->
             <div class="col col-12 col-md-9 col-lg-9 col-xxl-8 mt-2" id="image-div">
                 <picture>
+                    <!-- Desktop images -->
                     <source media="(min-width: 501px)" id="large-img" srcset="./assets/images/title-screen.avif">
+                    <!-- Mobile images -->
                     <source media="(max-width: 500px)" id="small-img" srcset="./assets/images/title-screen-small.avif">
+                    <!-- Fallback images and also the element grabbed by JS for dynamic insertion of content and to apply styling -->
                     <img id="story-image" class="chapter-welcome" src="./assets/images/title-screen.avif"
                         alt="Lila's Lost Words title screen image." width="700" height="547">
                 </picture>
             </div>
             <!-- Word inventory column -->
-            <div class="col col-md-2 mt-2 text-center col-styling" id="word-inventory-col">
+            <section class="col col-md-2 mt-2 text-center col-styling" id="word-inventory-col">
                 <h2 id="words-title" class="title-styling">Words</h2>
+                <!-- Collected words unordered list that is populated with the guessed words and the attempts made -->
                 <ul id="collected-words">
                 </ul>
-            </div>
-            <!-- Story text that is dynamically pulled through from a Javascript object-->
-            <div class="col col-12 col-md-12 col-xxl-10 mt-3 mt-xxl-3 chapter-welcome col-styling" id="text-col">
-                <!-- Story title is also dynamically updated -->
-                <h1 id="title" class="title-styling">Welcome</h1>
-                <!-- Story text -->
+            </section>
+            <!-- Story Text column with an id for styling -->
+            <section class="col col-12 col-md-12 col-xxl-10 mt-3 mt-xxl-3 chapter-welcome col-styling" id="text-col">
+                <!-- Story title is dynamically updated from the story object -->
+                <h2 id="title" class="title-styling">Welcome</h2>
+                <!-- Story text that is dynamically pulled through from the story object-->
                 <div id="story-text">
                     <p>Lila is a little girl who has experienced a sudden and heartbreaking loss.</p>
                     <p>The loss has been so intense that she has lost her ability to speak.
                     </p>
                     <p>Travel with Lila through her dreams and help her to find the words she needs to express how she's
                         feeling.</p>
-                    <p>During your journey, you will see <span class="mark-on">clues</span> that will <span class="mark-on">help you</span> figure out
+                    <p>During your journey, you will see <span class="mark-on">clues</span> that will <span
+                            class="mark-on">help you</span> figure out
                         what emotions she is experiencing. Don't be afraid to use a thesaurus to help you!</p>
                     <p>Let's meet Lila...</p>
                 </div>
-                <!-- Navigation buttons for the story -->
+                <!-- Div that contains the navigation buttons for the story choices -->
                 <div class="text-center"><button id="choice-1" class="button-styling">Choice 1</button>
                     <button id="choice-2" class="button-styling">Choice 2</button> <button id="choice-3"
                         class="button-styling">Choice 3</button> <button id="end-choice"
                         class="button-styling">End-choice</button>
                 </div>
+                <!-- Div to contain the Start Game, Get Puzzle, Try Again and Hint buttons -->
                 <div class="text-center"><button id="get-puzzle" class="button-styling">Get Puzzle</button><button
                         id="try-again" class="button-styling">Try Again</button> <button id="get-hint"
                         class="button-styling">Get Hint</button><button id="start-game" class="button-styling">Start
                         Game</button></div>
-            </div>
+            </section>
         </section>
         <!-- Puzzle area -->
         <section class="row mt-4 justify-content-center" id="puzzle-area">
@@ -106,7 +111,7 @@
                 <button id="reset-button" class="button-styling">Reset</button>
             </div>
         </section>
-    </div>
+    </main>
     </div>
     <!-- Footer with mt-auto added to push to the bottom -->
     <footer class="mt-auto text-center">
