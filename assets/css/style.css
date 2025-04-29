@@ -51,38 +51,24 @@ a {
     color: white;
 }
 
-/* Styling to make the mark transparent around clues - used just to compile marked words into a nodelist */
+/* Styling to make the mark transparent around clues - used just to compile marked words into a nodelist. Padding added to stop text from moving around when padding is added via the mark-on class */
 mark {
     background-color: transparent;
     color: white;
     padding: .3rem;
 }
 
-
-/* Inverted hover colours for link */
-#about-text a:hover {
-    background-color: white;
-    color: var(--main-colour);
-}
-
-/* Styling for the external link icon next to hyperlinks */
-.fa-external-link {
-    font-size: 0.8rem;
-}
-
-/* Class that's toggled on and off by the Get Hint button */
-.mark-on {
-    background-color: white;
-    color: var(--main-colour);
-    border-radius: 1em 0;
-    padding: .3rem;
-    /* font-weight: bold; */
-}
-
 /* Navbar styling */
 .navbar {
     border: solid 1px white;
     background-color: var(--main-colour);
+}
+
+/* Font styling of the H1 in the nav-brand area */
+.navbar-brand h1 {
+    margin-bottom: 0;
+    font-family: 'Fugaz One', sans-serif;
+    font-size: 3rem;
 }
 
 .navbar-toggler-icon {
@@ -93,17 +79,6 @@ mark {
 .navbar-toggler-icon,
 .navbar {
     color: white;
-}
-
-/* Font styling of the H1 in the nav-brand area */
-.navbar-brand h1 {
-    margin-bottom: 0;
-    font-family: 'Fugaz One', sans-serif;
-    font-size: 3rem;
-}
-
-.navbar-brand a {
-    text-decoration: none;
 }
 
 .navbar-toggler,
@@ -174,6 +149,7 @@ mark {
     line-height: 1.7
 }
 
+/* Removes an unwanted space after the last paragraph in the story-text div */
 #story-text p:last-child {
     margin-bottom: 20px;
 }
@@ -185,7 +161,6 @@ mark {
 }
 
 /* Image styling */
-
 #story-image,
 #about-image {
     border: 1px solid white;
@@ -194,7 +169,7 @@ mark {
     width: 100%;
 }
 
-/* Colour styling for around the image and text column elements */
+/* Chapter-specific colours and styling around the image elements */
 #about-image {
     box-shadow: 8px 8px var(--main-colour);
 }
@@ -231,7 +206,7 @@ mark {
     box-shadow: 8px 8px black;
 }
 
-/* Chapter specific colours and styling for the text and slots */
+/* Chapter specific colours and styling for the story-text's outer column and matches up the puzzle slots */
 #text-col.chapter-welcome {
     background-color: var(--main-colour);
 }
@@ -271,6 +246,7 @@ mark {
     color: var(--ending-text);
 }
 
+/* Class added to slots when either the answer is wrong, or all slots haven't been filled. Applies an animation too. */
 .slot.wrong-answer {
     background-color: red;
     color: white;
@@ -298,6 +274,14 @@ mark {
     100% {
         transform: rotate(0deg);
     }
+}
+
+/* Class that's toggled on and off by the Get Hint button */
+.mark-on {
+    background-color: white;
+    color: var(--main-colour);
+    border-radius: 1em 0;
+    padding: .3rem;
 }
 
 /* Styling for the elements in the puzzle area */
@@ -370,6 +354,7 @@ mark {
     border: 1px solid black;
 }
 
+/* Hides all the listed buttons at the start of the game. Display dynamically changed using JS */
 #get-puzzle,
 #try-again,
 #get-hint,
@@ -380,11 +365,13 @@ mark {
     display: none;
 }
 
+/* Visibility toggled on these buttons to stop layout shifts on mobile */
 #check,
 #reset-button {
     visibility: hidden;
 }
 
+/* Hover effects applied to all buttons except for check and reset */
 #get-puzzle:hover,
 #try-again:hover,
 #get-hint:hover,
@@ -406,10 +393,12 @@ mark {
     list-style: none;
 }
 
+/* Padding applied to every even list item, so that each word and its number of attempts are grouped together, with space between each set */
 #collected-words li:nth-child(even) {
     padding-bottom: 10px;
 }
 
+/* Font-weight applied to every odd item, as every odd list item is the actual word itself */
 #collected-words li:nth-child(odd) {
     font-weight: bold;
 }
@@ -441,6 +430,17 @@ mark {
     border-radius: 8px;
     transition: all 1.2s ease-in-out;
     padding: 5px;
+}
+
+/* Styling for the external link icon next to hyperlinks */
+.fa-external-link {
+    font-size: 0.8rem;
+}
+
+/* Inverted hover colours for link on the about page */
+#about-text a:hover {
+    background-color: white;
+    color: var(--main-colour);
 }
 
 /* Responsive media queries for phones 320px and above */
@@ -499,7 +499,6 @@ mark {
 
 /* Responsive media queries for tablets 768px and above */
 @media screen and (min-width:768px) {
-
     .navbar-nav {
         width: 80%;
     }
@@ -536,6 +535,7 @@ mark {
         padding-bottom: 32px;
     }
 
+    /* Padding removed from the bottom of the last list item in the collected-words list, for better spacing */
     #collected-words li:last-child {
         padding-bottom: 0;
     }
@@ -554,7 +554,7 @@ mark {
 
 /* Responsive media query for screens 900px and above */
 @media screen and (min-width:900px) {
-
+    /* Max-width applied to the container for a better layout */
     #about-container {
         max-width: 600px;
         margin-left: auto;
@@ -576,7 +576,6 @@ mark {
 
 /* Responsive media query for screens 1024px and above */
 @media screen and (min-width:1024px) {
-
     #main-container {
         max-width: 900px;
         margin-left: auto;
@@ -623,6 +622,7 @@ mark {
 
 /* Responsive media queries for laptops 1200px and above */
 @media screen and (min-width:1200px) {
+    /* Max width applied to the main game story container for a better layout */
     #main-container {
         max-width: 1050px;
         margin-left: auto;
@@ -662,7 +662,6 @@ mark {
 
 /* Responsive media queries for laptops 1400px and above */
 @media screen and (min-width:1400px) {
-
     #main-container {
         max-width: 1350px;
         margin-left: auto;
@@ -690,11 +689,12 @@ mark {
     .nav-link {
         font-size: 1.5rem;
     }
-
+    
+    /* Max width applied to the story-image to stop it looking huge */
     #story-image {
         max-width: 800px;
     }
-
+ /* Max width applied to the about-image to stop it looking huge */
     #about-image {
         max-width: 900px;
     }
@@ -759,7 +759,6 @@ mark {
 }
 
 /* Responsive media query for screens 1900px and up */
-
 @media screen and (min-width:1900px) {
     button {
         font-size: 1.4rem;
@@ -776,7 +775,6 @@ mark {
         margin-left: auto;
         margin-right: auto;
     }
-
 
     #story-image {
         max-width: 940px;
@@ -837,10 +835,11 @@ mark {
         padding: 15px;
     }
 
+    /* Mark padding adjusted for the larger text */
     mark {
         padding: 0.6rem;
     }
-
+/* mark-on padding adjusted for the larger text */
     .mark-on {
         padding: 0.6rem;
     }
@@ -941,6 +940,7 @@ mark {
         font-size: 3.9rem;
     }
 
+    /* Padding added to center the socials list */
     #socials li {
         padding-top: 20px;
     }
