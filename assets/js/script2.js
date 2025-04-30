@@ -147,7 +147,6 @@ const choice3 = document.getElementById("choice-3");
 const endChoice = document.getElementById("end-choice");
 const checkArea = document.getElementById("buttons");
 const collectedWords = document.getElementById("collected-words");
-const mainSection = document.getElementById("main-container");
 let checkScore = 0;
 let forestVisited = false;
 let lakeVisited = false;
@@ -166,7 +165,7 @@ function restartGame() {
     tryAgain.style.display = "none";
     getPuzzle.style.display = "inline-block";
     collectedWords.innerHTML = "";
-    loadChapter()
+    loadChapter();
 }
 
 /**This function loads when the start game button is pressed. It hides the start button and displays the getpuzzle button. The story object chapter is changed and it automatically loads that chapter and all its relevant content via the loadchapter function*/
@@ -182,7 +181,7 @@ function showHint() {
     const marked = document.querySelectorAll("mark");
     marked.forEach(mark => {
         mark.classList.toggle("mark-on");
-    })
+    });
 }
 
 /**Function to grab all the content needed to load a new chapter from the story object's current chapter. Each chapter has a title, storytext, and an image src and srcset that goes with it. Content is dynamically fed through to the specified element IDs in Index.html. Existing chapter and image classes are removed and then re-added with the new current chapter's styling. Choice buttons for story navigation are hidden.*/
