@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Google Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Fugaz+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
@@ -84,18 +91,24 @@ mark {
 .navbar-toggler,
 .navbar-toggler:focus {
     border: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 .nav-item {
-    flex-basis: 0;
-    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     text-align: center;
 }
 
 .nav-link {
     color: white;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 1.3rem;
     font-weight: bold;
     border-radius: 8px;
@@ -107,6 +120,8 @@ mark {
     background-color: white;
     border-radius: 8px;
     color: var(--main-colour);
+    -webkit-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
     transition: all 1.2s ease-in-out;
 }
 
@@ -121,6 +136,8 @@ mark {
     border-radius: 8px;
     color: var(--main-colour);
     font-weight: bold;
+    -webkit-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
     transition: all 1.2s ease-in-out;
 }
 
@@ -136,7 +153,8 @@ mark {
 .col-styling {
     border: 1px solid white;
     border-radius: 8px;
-    box-shadow: 8px 8px black;
+    -webkit-box-shadow: 8px 8px black;
+            box-shadow: 8px 8px black;
     background-color: var(--main-colour);
 }
 
@@ -170,39 +188,48 @@ mark {
 
 /* Chapter-specific colours and styling around the image elements */
 #about-image {
-    box-shadow: 8px 8px var(--main-colour);
+    -webkit-box-shadow: 8px 8px var(--main-colour);
+            box-shadow: 8px 8px var(--main-colour);
 }
 
 #story-image.chapter-welcome {
-    box-shadow: 8px 8px var(--main-colour);
+    -webkit-box-shadow: 8px 8px var(--main-colour);
+            box-shadow: 8px 8px var(--main-colour);
 }
 
 #story-image.chapter-intro {
-    box-shadow: 8px 8px var(--intro-colour);
+    -webkit-box-shadow: 8px 8px var(--intro-colour);
+            box-shadow: 8px 8px var(--intro-colour);
 }
 
 #story-image.chapter-void {
-    box-shadow: 8px 8px var(--void-colour);
+    -webkit-box-shadow: 8px 8px var(--void-colour);
+            box-shadow: 8px 8px var(--void-colour);
 }
 
 #story-image.chapter-forest {
-    box-shadow: 8px 8px var(--forest-colour);
+    -webkit-box-shadow: 8px 8px var(--forest-colour);
+            box-shadow: 8px 8px var(--forest-colour);
 }
 
 #story-image.chapter-library {
-    box-shadow: 8px 8px var(--library-colour);
+    -webkit-box-shadow: 8px 8px var(--library-colour);
+            box-shadow: 8px 8px var(--library-colour);
 }
 
 #story-image.chapter-lake {
-    box-shadow: 8px 8px var(--lake-colour);
+    -webkit-box-shadow: 8px 8px var(--lake-colour);
+            box-shadow: 8px 8px var(--lake-colour);
 }
 
 #story-image.chapter-ending1 {
-    box-shadow: 8px 8px black;
+    -webkit-box-shadow: 8px 8px black;
+            box-shadow: 8px 8px black;
 }
 
 #story-image.chapter-ending2 {
-    box-shadow: 8px 8px black;
+    -webkit-box-shadow: 8px 8px black;
+            box-shadow: 8px 8px black;
 }
 
 /* Chapter specific colours and styling for the story-text's outer column and matches up the puzzle slots */
@@ -249,29 +276,61 @@ mark {
 .slot.wrong-answer {
     background-color: red;
     color: white;
-    animation: tilt-shaking 0.35s infinite;
+    -webkit-animation: tilt-shaking 0.35s infinite;
+            animation: tilt-shaking 0.35s infinite;
 }
 
 /* Shaking animation attributed to https://unused-css.com/blog/css-shake-animation/ */
-@keyframes tilt-shaking {
+@-webkit-keyframes tilt-shaking {
     0% {
-        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
     }
 
     25% {
-        transform: rotate(5deg);
+        -webkit-transform: rotate(5deg);
+                transform: rotate(5deg);
     }
 
     50% {
-        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
     }
 
     75% {
-        transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
     }
 
     100% {
-        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+}
+@keyframes tilt-shaking {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+
+    25% {
+        -webkit-transform: rotate(5deg);
+                transform: rotate(5deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
     }
 }
 
@@ -287,16 +346,26 @@ mark {
 /* Div that contains the tiles */
 #puzzle-question {
     height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 /* Div that contains the empty slots */
 #puzzle-answer {
     height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
-    justify-content: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
 }
 
 /* Slot and tile styling, including hover effects */
@@ -305,7 +374,8 @@ mark {
     display: inline-block;
     margin: 5px;
     font-weight: bold;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     cursor: pointer;
 }
 
@@ -322,7 +392,9 @@ mark {
 
 .tile:hover,
 .slot:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
     border: 2px solid green;
 }
 
@@ -378,10 +450,17 @@ mark {
 #choice-2:hover,
 #choice-3:hover,
 #end-choice:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
     background-color: white;
-    box-shadow: 0 0 8px #0ebac5;
+    -webkit-box-shadow: 0 0 8px #0ebac5;
+            box-shadow: 0 0 8px #0ebac5;
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
     transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
 }
 
 /* Styling for the collected words list */
@@ -404,8 +483,12 @@ mark {
 /* Styling for the socials bar on the about page */
 #socials {
     list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     margin-bottom: 0;
     font-size: 2.5rem;
     padding-left: 0;
@@ -426,6 +509,8 @@ mark {
     color: var(--main-colour);
     background-color: white;
     border-radius: 8px;
+    -webkit-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
     transition: all 1.2s ease-in-out;
     padding: 5px;
 }
@@ -449,7 +534,9 @@ mark {
     }
 
     .navbar-brand {
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     .navbar-brand h1 {
