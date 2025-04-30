@@ -122,7 +122,6 @@ mark {
     color: var(--main-colour);
     font-weight: bold;
     transition: all 1.2s ease-in-out;
-    border: 1px solid white
 }
 
 /* Styling for titles and columns */
@@ -264,7 +263,7 @@ mark {
     }
 
     50% {
-        transform: rotate(0eg);
+        transform: rotate(0deg);
     }
 
     75% {
@@ -289,7 +288,6 @@ mark {
 #puzzle-question {
     height: 100px;
     display: flex;
-    flex-wrap: no-wrap;
     justify-content: center;
 }
 
@@ -297,7 +295,7 @@ mark {
 #puzzle-answer {
     height: 100px;
     display: flex;
-    flex-wrap: no-wrap;
+
     justify-content: center;
 }
 
