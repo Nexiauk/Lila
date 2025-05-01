@@ -477,7 +477,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
   * All images display/disappear as expected across different screen sizes  
   * The layout reflows and changes as expected across different screen sizes  
   * The background image appears as it should on different screen sizes  
-  * Hover colours work as expected on laptops and desktops  
+  * Hover colours and animations work as expected on laptops and desktops  
   * The burger icon expands and collapses the nav list as expected on mobile screens.
 
 
@@ -490,7 +490,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
   * All images display/disappear as expected across different screen sizes  
   * The layout reflows and changes as expected across different screen sizes  
   * The background image appears as it should on different screen sizes  
-  * Hover colours work as expected on laptops and desktops  
+  * Hover colours and animations work as expected on laptops and desktops  
   * The burger icon expands and collapses the nav list as expected on mobile screens.  
       
 * **FireFox**   
@@ -501,26 +501,33 @@ I tested my site on Chrome, Edge, FireFox and Safari.
   * All images display/disappear as expected across different screen sizes  
   * The layout reflows and changes as expected across different screen sizes  
   * The background image appears as it should on different screen sizes  
-  * Hover colours work as expected on laptops and desktops  
+  * Hover colours and animations work as expected on laptops and desktops  
   * The burger icon expands and collapses the nav list as expected on mobile screens.  
       
 * **Safari**   
   Tested on an iPhone SE 2023  
     
-  * The burger nav dropdown works as expected on all pages, expanding, collapsing and disappearing as it should  
+  * The burger nav dropdown works as expected on all pages, expanding and collapsing 
   * All nav links work on all pages  
   * All active nav-links display in the appropriate colour on the appropriate page
+  * All external links open in a new browser window 
 
 ### Bugs/Interesting problems 
 
 [Navigate to Acknowledgements](#acknowledgements) for links.
 
 * Had to look at different animated filetypes for game images, as gifs affect lighthouse performance very negatively. Lighthouse suggested using MP4 files, but I wanted the animations on the images to loop forever, so went with animated AVIF in the end.  
-* Interesting issue with event handlers being triggered multiple times when using the reset function in its original form (it initialised the entire puzzle again). Readjusted the reset function to only return the tiles to their original places instead of reinitialising the whole puzzle. Had to do a lot of research on event listeners to stop them stacking up, and how they need to be removed in the exact same way they were added, so you have to be careful using anonymous functions to add event listeners. I ended up creating two handler functions to assist with this issue which resolved it entirely. ChatGPT kindly suggested this to me.  
+
+* Interesting issue with event handlers being triggered multiple times when using the reset function in its original form (it initialised the entire puzzle again). Readjusted the reset function to only return the tiles to their original places instead of reinitialising the whole puzzle. Had to do a lot of research on event listeners to stop them stacking up, and how they need to be removed in the exact same way they were added, so you have to be careful using anonymous functions to add event listeners. I ended up creating two handler functions to assist with this issue which resolved it entirely. ChatGPT kindly suggested this to me. 
+
 * Interesting issue with ensuring the correct tiles are made visible again after clicking on slots to remove their letters. I started off using indexes but realised that wouldn't work and that I needed to attach id datasets to each tile and ensure that the same id passed through to the slots.  
+
 * Got very fed up adding span and mark to already existing paragraph text, so went and figured out how to set a shortcut in VS Code for Emmett abbreviation to make it easier to highlight certain words in the story text and enclose them in a span class/mark.  
+
 * Wanted the puzzle button to auto scroll to the puzzle section without changing it into a link styled as a button that would scroll to a section puzzleArea.scrollIntoView({ behavior: "smooth" }); - [see credits section](#credits)  
+
 * Issue with being a delay on the next dynamically inserted image loading. Had to research how to preload images into the cache so they could be almost instantaneously used - [see credits section](#credits)  
+
 * Ended up in a rabbit hole of which javascript way to randomise the word shuffling. Lots of debate on the internet for this one, but the general consensus was that the Fisher Yates model was the fairest way of all - [see credits section](#credits)
 
 [Back to Table of Contents](#table-of-contents)
@@ -537,23 +544,23 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 
 ### Frameworks, Libraries & Programs
 
-1. [Adobe Color](https://color.adobe.com/) \- was used to generate an accessible colour palette  
-2. [Adobe Firefly](https://www.adobe.com/products/firefly.html) \- for generating each chapter’s scene in two different moods.  
-3. [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) \- For putting together the Lila character  
-4. [Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/) \- was used to build a mobile-first, responsive grid layout  
-5. [Canva](https://www.canva.com/) \- was used for the wireframe designs and for adding animations to images  
-6. [ChatGPT](https://openai.com/index/chatgpt/) \- for help with story ideas and names, as well as coding troubleshooting  
-7. [EZGIF](https://ezgif.com/) \- For resizing GIFs and converting into animated AVIF files  
-8. [Favicon.io](https://favicon.io/) \- was used to create a custom favicon  
-9. [Font Awesome](https://fontawesome.com/) \- was used for the social media and external-link icons  
-10. [Font Joy](https://fontjoy.com/) \- was used to generate font combinations  
-11. [Git](https://git-scm.com/) \- was used as version control software  
-12. [GitHub Desktop](https://desktop.github.com/download/) \- was used to simplify the development workflow between VSCode and github  
-13. [Google Fonts](https://fonts.google.com/) \- was the source of the fonts used  
-14. [Paint.Net](http://Paint.Net) \- for layering Lila onto the background images  
-15. [Twine 2](https://twinery.org/2/) \- mapping out plotline and story  
-16. [Visual Code Studio](https://code.visualstudio.com/) \- was the code editor used for this project  
-17. [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) \- was used to check contrast of colours for accessibility
+1. [Adobe Color](https://color.adobe.com/)- was used to generate an accessible colour palette 
+2. [Adobe Contrast Analyzer](https://color.adobe.com/create/color-contrast-analyzer) - was used to check background and foreground colour contrast for accessibility
+3. [Adobe Firefly](https://www.adobe.com/products/firefly.html) \- for generating each chapter’s scene in two different moods.  
+4. [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) \- For putting together the Lila character  
+5. [Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/) \- was used to build a mobile-first, responsive grid layout  
+6. [Canva](https://www.canva.com/) \- was used for the wireframe designs and for adding animations to images  
+7. [ChatGPT](https://openai.com/index/chatgpt/) \- for help with story ideas and names, as well as coding troubleshooting  
+8. [EZGIF](https://ezgif.com/) \- For resizing GIFs and converting into animated AVIF files  
+9. [Favicon.io](https://favicon.io/) \- was used to create a custom favicon  
+10. [Font Awesome](https://fontawesome.com/) \- was used for the social media and external-link icons  
+11. [Font Joy](https://fontjoy.com/) \- was used to generate font combinations  
+12. [Git](https://git-scm.com/) \- was used as version control software  
+13. [GitHub Desktop](https://desktop.github.com/download/) \- was used to simplify the development workflow between VSCode and github  
+14. [Google Fonts](https://fonts.google.com/) \- was the source of the fonts used  
+15. [Paint.Net](http://Paint.Net) \- for layering Lila onto the background images  
+16. [Twine 2](https://twinery.org/2/) \- mapping out plotline and story  
+17. [Visual Code Studio](https://code.visualstudio.com/) \- was the code editor used for this project  
 
 [Back to Table of Contents](#table-of-contents)
 
