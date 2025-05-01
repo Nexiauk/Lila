@@ -633,3 +633,13 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 ---
 
 ### Creator Comments
+I'd never used JavaScript before starting this project and I'd heard scary stories about it, so I was very nervous to begin. In the end I had an absolute blast with JavaScript, which I think was down to the way I chose to use it - for a project containing elements that sit close to my heart:
+* Story 
+* Literacy
+* Emotion 
+* Colour
+* Gaming
+* Accessibility 
+
+All of these concepts inform a lot of the work I do both with students, and for students where I work. Gaming (in all its forms), stories, and equity of access in particular form a core part of who I am as a person, and so JavaScript became a challenge that I happily wrangled with and came to understand.
+I'm very pleased with my end project and can absolutely see myself creating more games using Lila as a template - hopefully it will become a series. Hopefully you will enjoy playing it as much as I enjoyed creating it.
