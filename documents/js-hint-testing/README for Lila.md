@@ -105,7 +105,7 @@ Lila and the Lost Words has been designed hugely with accessibility in mind, as 
 
 ### User Stories
 
-### **🎮 Student Users**
+#### **🎮 Student Users**
 
 **As a disengaged learner**
 
@@ -130,7 +130,7 @@ Lila and the Lost Words has been designed hugely with accessibility in mind, as 
 
 * I want the game’s interface to respond smoothly on a small screen, with large, easy-to-tap buttons and clear navigation, so that I can enjoy the full experience without needing a computer.
 
-### 🌟 General Audience
+#### **🌟 General Audience**
 
 **As someone who enjoys emotional, story-rich games**
 
@@ -197,7 +197,7 @@ The Lila character was created in an art style referred to as Chibi. Chibi refer
 
 Chibi art style falls under a concept called ‘Kawaii’ \-  a Japanese phenomenon which means cute or adorable, which Lila is, but also has a deeper meaning \- it can imply something powerless, delicate, or in need of care. A concept which links to Lila in this difficult time she is experiencing. Kawaii is used to express positive feelings and emotions, and is seen as a way to escape the stresses of everyday life. Each chapter portrays a positive outcome with beautiful art and good feelings. The confetti when a puzzle is guessed correctly gives a sense of achievement and enjoyment, as well as whimsy. The entire game is a momentary respite from the stresses of life and a cathartic experience to connect with.
 
-* The image of Lila the character is a free to use game asset. She can be customised with different hair colours and styles, expressions, accessories and clothes. It was important that she had a range of expressions to depict her feelings in the before and after scenes of each chapter to convey the emotions she is experiencing but also to portray positive outcomes. \- [see credits section](#credits)  
+* The image of Lila the character is a free to use game asset. She can be customised with different hair colours and styles, expressions, accessories and clothes. It was important that she had a range of expressions to depict her feelings in the before and after scenes of each chapter to convey the emotions she is experiencing but also to portray positive outcomes - [see credits section](#credits)  
 * The chibi image of myself in the About page was created by uploading a profile image into ChatGPT and asking it to create a chibi version. I wanted to match the style of Lila and keep the theme of the imagery consistent.  
 
 ![A chibi-style image of the game creator, Lucy Sears](/assets/images/lucy-chibi-small.avif)
@@ -271,10 +271,14 @@ Buttons increase in size when hovered over and gain a box-shadow effect.
 ![An image of the start button in hover mode with added effects.](/assets/images/readme-images/button-hover-effect.png)
 
 The slots and tiles also increase in size and gain a coloured border when hovered over.  
+
+![An image of a highlighted tile which has grown in size and gained a green border](/assets/images/readme-images/puzzle-effects.png)
+![An image of a highlighted slot, which has increased in size and gained a green border](/assets/images/readme-images/puzzle-effects2.png)
+
 The hover effects for the check and reset buttons are slightly different to everywhere else, to give immediate visual clues as to the effect they apply while in the puzzle state.
 
-![][image10]  
-![][image11]
+![An image of the highlighted check button, which has turned green and gained a black border](/assets/images/readme-images/check-answer.png)
+![An image of the highlighted reset button, which has turned red and gained a black border.](/assets/images/readme-images/reset.png)
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -295,9 +299,9 @@ In the future I would like to implement the following features:
 
 ### User Story Testing
 
-### **🎮 Student Users**
+#### **🎮 Student Users**
 
-**As a disengaged learner,**  
+**As a disengaged learner**  
  I want to explore a story world through simple button clicks and intuitive choices, so that I can improve my reading skills without feeling overwhelmed.
 
 * *Lila and the Lost Words* offers a gentle, immersive alternative learning experience through storytelling and puzzle-solving, helping to build literacy and comprehension skills in a low-pressure environment.  
@@ -350,7 +354,7 @@ I want to be able to track my progress and see how well I’m doing at the puzzl
 * Buttons sizes have been considered to ensure that they aren’t too small or difficult to press.  
 * Navigation is simple and intuitive through dynamically inserted buttons at appropriate times, and via the navigation bar.
 
-### 🌟 General Audience
+#### **🌟 General Audience**
 
 **As someone who enjoys emotional, story-rich games,**  
  I want to be gently led through a journey using beautiful visuals, smooth transitions, and clear interactive elements, so that I can connect with the story, reflect on the themes, and enjoy the experience in a meaningful way
@@ -369,53 +373,54 @@ I want to be able to track my progress and see how well I’m doing at the puzzl
 
 Html validation testing results on 30/4/25
 
-1. **Warning: Section lacks heading. Consider using** `h2`**\-**`h6` **elements to [add identifying headings to all sections](https://www.w3.org/wiki/HTML/Usage/Headings/Missing), or else use a** `div` **element instead for any cases where no heading is needed.**  
-   [From line 55, column 13; to line 55, column 88](https://validator.w3.org/nu/#l55c88)  
-             `<section class="col col-12 col-md-9 col-lg-9 col-xxl-8 mt-2" id="image-div">↩`      
-2. **Warning: Section lacks heading. Consider using** `h2`**\-**`h6` **elements to [add identifying headings to all sections](https://www.w3.org/wiki/HTML/Usage/Headings/Missing), or else use a** `div` **element instead for any cases where no heading is needed.**  
-   [From line 53, column 9; to line 53, column 115](https://validator.w3.org/nu/#l53c115)  
-   `>↩        <section class="row gx-0 justify-content-between justify-content-xxl-center mt-2 mt-xxl-3" id="story-area">↩`      
-3. **Warning: Section lacks heading. Consider using** `h2`**\-**`h6` **elements to [add identifying headings to all sections](https://www.w3.org/wiki/HTML/Usage/Headings/Missing), or else use a** `div` **element instead for any cases where no heading is needed.**  
-   [From line 103, column 9; to line 103, column 74](https://validator.w3.org/nu/#l103c74)  
-   `>↩        <section class="row mt-4 justify-content-center" id="puzzle-area">↩`      
-4. **Error: Stray end tag** `div`**.**  
-   [From line 115, column 5; to line 115, column 10](https://validator.w3.org/nu/#l115c10)  
-   `main>↩    </div>↩    <`  
-   All issues listed above were resolved \- sections without titles were changed into div elements and the stray end tag was removed. HTML validation now passes without warnings or errors.
+1.      Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections or else use a div element instead for any cases where no heading is needed.
+        From line 55, column 13; to line 55, column 88
+        <section class="col col-12 col-md-9 col-lg-9 col-xxl-8 mt-2" id="image-div">      
+2.      Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections or else use a div element instead for any cases where no heading is needed. 
+        From line 53, column 9; to line 53, column 115  
+        <section class="row gx-0 justify-content-between justify-content-xxl-center mt-2 mt-xxl-3" id="story-area">     
+3.      Warning: Section lacks heading. Consider using h2 - h6 elements to add identifying headings to all sections or else use a div element instead for any cases where no heading is needed.
+        From line 103, column 9; to line 103, column 74<section class="row mt-4 justify-content-center" id="puzzle-area">     
+4.      Error: Stray end tag: div 
+        From line 115, column 5; to line 115, column 10
+        
+        
+All issues listed above were resolved \- sections without titles were changed into div elements and the stray end tag was removed. HTML validation now passes without warnings or errors.
+
+![An image of the W3C Markup Validation Service check on index.html, showing no errors](/assets/images/readme-images/html-validation.png)
 
 #### [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
 I used the file upload section to directly input my CSS file into the checker. The results are listed below: 
 
-CSS validation 30/04/25  
-Sorry\! We found the following errors (4)  
-URI : style.css
+*     CSS validation 30/04/25  Sorry! We found the following errors (4)  
+      URL : style.css 
+      | 267 |  | Unknown dimension 0eg |
+      | 267 |  | too few values for the property `transform` : rotate() |
+      | 292 | #puzzle-question | `no-wrap` is not a `flex-wrap` value : no-wrap |
+      | 300 | #puzzle-answer | `no-wrap` is not a `flex-wrap` value : no-wrap |
 
-| 267 |  | Unknown dimension 0eg |
-| ----: | :---- | :---- |
-| 267 |  | too few values for the property `transform` : rotate() |
-| 292 | \#puzzle-question | `no-wrap` is not a `flex-wrap` value : no-wrap |
-| 300 | \#puzzle-answer | `no-wrap` is not a `flex-wrap` value : no-wrap |
+*     Warnings (6)
+      | 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-top-color` 
+      | 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-right-color` |
+      | 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-bottom-color` |
+      | 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-left-color` |
+      | 268 |  | No declarations in the rule |
 
-Warnings (6)
-
-#### 
-
-| 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-top-color` |
-| ----: | :---- | :---- |
-| 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-right-color` |
-| 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-bottom-color` |
-| 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-left-color` |
-| 268 |  | No declarations in the rule |
-
-All issues were addressed and resolved. Flex-wrap value was removed where it wasn’t being applied. Removed the unnecessary border colour on the nav-link hover effect.Corrected the mistake on the animation that was meant to say 0deg.  
+All issues were addressed and resolved. Flex-wrap value was removed where it wasn’t being applied. Removed the unnecessary border colour on the nav-link hover effect. Corrected the mistake on the animation that was meant to say 0deg.  
 CSS validation now passes with no errors or warnings.
+
+![An image of the W3C CSS Validation Service check on style.css, showing no errors](/assets/images/readme-images/css-validator.png)
 
 #### [The JSHint validator](https://jshint.com/)
 
 I copied the contents of my JS file directly into JSHint.  
 It came back with only missing semicolons on a couple of lines and an unused variable.  
-Added the semi-colons and removed the unused variable. I ran JS hint on a couple of occasions during the development process to ensure that I wasn’t making silly mistakes as I went along. Click here to see those files.
+Added the semi-colons and removed the unused variable. I ran JS hint on a couple of occasions during the development process to ensure that I wasn’t making silly mistakes as I went along. 
+
+* [JS Hint Testing 22-4-25](/documents/js-hint-testing/jshint-testing-22-4.txt)
+* [JS Hint Testing 23-4-25](/documents/js-hint-testing/jshint-testing-23-4.txt)
+* [HS Hint Testing 30-4-25](/documents/js-hint-testing/jshint-testing-30-4.txt)
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -501,15 +506,13 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 * Interesting issue with event handlers being triggered multiple times when using the reset function in its original form (it initialised the entire puzzle again). Readjusted the reset function to only return the tiles to their original places instead of reinitialising the whole puzzle. Had to do a lot of research on event listeners to stop them stacking up, and how they need to be removed in the exact same way they were added, so you have to be careful using anonymous functions to add event listeners. I ended up creating two handler functions to assist with this issue which resolved it entirely. ChatGPT kindly suggested this to me.  
 * Interesting issue with ensuring the correct tiles are made visible again after clicking on slots to remove their letters. I started off using indexes but realised that wouldn't work and that I needed to attach id datasets to each tile and ensure that the same id passed through to the slots.  
 * Got very fed up adding span and mark to already existing paragraph text, so went and figured out how to set a shortcut in VS Code for Emmett abbreviation to make it easier to highlight certain words in the story text and enclose them in a span class/mark.  
-* Wanted the puzzle button to auto scroll to the puzzle section without changing it into a link styled as a button that would scroll to a section puzzleArea.scrollIntoView({ behavior: "smooth" }); \- [see credits section](#credits)  
-* Issue with being a delay on the next dynamically inserted image loading. Had to research how to preload images into the cache so they could be almost instantaneously used. \- [see credits section](#credits)  
-* Ended up in a rabbit hole of which javascript way to randomise the word shuffling. Lots of debate on the internet for this one, but the general consensus was that the Fisher Yates model was the fairest way of all. \- [see credits section](#credits)
+* Wanted the puzzle button to auto scroll to the puzzle section without changing it into a link styled as a button that would scroll to a section puzzleArea.scrollIntoView({ behavior: "smooth" }); - [see credits section](#credits)  
+* Issue with being a delay on the next dynamically inserted image loading. Had to research how to preload images into the cache so they could be almost instantaneously used - [see credits section](#credits)  
+* Ended up in a rabbit hole of which javascript way to randomise the word shuffling. Lots of debate on the internet for this one, but the general consensus was that the Fisher Yates model was the fairest way of all - [see credits section](#credits)
 
 [Back to Table of Contents](#table-of-contents)
 
 ---
-
-## 
 
 ## **Technologies and Languages**
 
@@ -574,7 +577,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 
 ---
 
-## **Credits** {#credits}
+## **Credits**
 
 ### Media
 
