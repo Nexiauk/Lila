@@ -574,7 +574,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 
 ## **Deployment**
 
-1. Navigate to the [repository](https://github.com/Nexiauk/Gameracy).  
+1. Navigate to the [repository](https://github.com/Nexiauk/Lila).  
 2. Click on **Settings** at the top.  
 3. Click on **Pages** in the left-hand sidebar (under **Code and automation**)  
 4. In the **Source** dropwdown, select \*\*Deploy from a branch.  
@@ -584,7 +584,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 
 ### Creating a Fork
 
-1. Navigate to the [repository](https://github.com/Nexiauk/Gameracy).  
+1. Navigate to the [repository](https://github.com/Nexiauk/Lila).  
 2. In the top-right corner of the page click on the down arrow next to the **Fork** button and select **Create a new fork**.  
 3. You can change the name of the fork in **Repository name** and add an optional description.  
 4. Tick **Copy the main branch only**.  
@@ -593,7 +593,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 
 ### Cloning a Repository
 
-1. Navigate to the [repository](https://github.com/Nexiauk/Gameracy).  
+1. Navigate to the [repository](https://github.com/Nexiauk/Lila).  
 2. Click on the **Code** button on top of the repository and copy the link.  
 3. Open Git Bash and change the working directory to the location where you want the cloned directory.  
 4. Type git clone and then paste the link.  
