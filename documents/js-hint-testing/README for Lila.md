@@ -414,6 +414,7 @@ I used the file upload section to directly input my CSS file into the checker. T
       | 268 |  | No declarations in the rule |
 
 All issues were addressed and resolved. Flex-wrap value was removed where it wasn’t being applied. Removed the unnecessary border colour on the nav-link hover effect. Corrected the mistake on the animation that was meant to say 0deg.  
+
 CSS validation now passes with no errors or warnings.
 
 ![An image of the W3C CSS Validation Service check on style.css, showing no errors](/assets/images/readme-images/css-validator.png)
@@ -432,9 +433,11 @@ Added the semi-colons and removed the unused variable. I ran JS hint on a couple
 
 #### [The WAVE Webb Accessibility Evaluation Tool](https://wave.webaim.org/)
 
-* The WAVE Webb test results came back with 0 errors and 0 contrast errors. It contained 1 warning for an element that it thinks should be a header, but it really shouldn’t be as it’s just the bottom of the story text. The reason this got flagged is because the particular paragraph contains less than 50 characters, which could indicate that it’s a heading but in this case is just a short sentence.. See screenshots below. 
+* The WAVE Webb test results came back with 0 errors and 0 contrast errors. It contained 1 warning for an element that it thinks should be a header, but it really shouldn’t be as it’s just the bottom of the story text. 
 
 ![Screenshot of the WAVE accessibility testing results showing 0 errors and 1 warning](/assets/images/readme-images/wave-testing-results.png)
+
+The reason this text was flagged is because the paragraph in question contains less than 50 characters, which could indicate that it’s a heading but in this case is just a short sentence.
 
 ![An image of the text it thinks should be a header, but doesn't need to be.](/assets/images/readme-images/wave-alert.png)
   
@@ -444,16 +447,21 @@ Added the semi-colons and removed the unused variable. I ran JS hint on a couple
 
 #### Chrome Lighthouse
 
-* Mobile results  
+* Index.html mobile results  
 The performance on mobile sits at 97 due to the preloading of all the game’s images when the site loads. This is a calculated measure designed to improve the performance of the images loading as the chapters and images dynamically update throughout the game. There had been noticeable lag on the animated images uploading even with their small sizes, so I implemented a function that would preload ALL images once the DOM had finished loading. I think the trade-off on an initial slight performance drop is worth it.  
+![An image showing the chrome lighthouse results for a mobile test, with 100 for Accessibility, Best Practices and SEO, but 97 for performance](/assets/images/readme-images/mobile-lighthouse.png)
+![An image showing the warning about avoiding enormous network payloads due to the preloading images](/assets/images/readme-images/mobile-lighthouse2.png)
 
-![An image of the W3C CSS Validation Service check on style.css, showing no errors](/assets/images/readme-images/mobile-lighthouse.png)
-![An image of the W3C CSS Validation Service check on style.css, showing no errors](/assets/images/readme-images/mobile-lighthouse2.png)
-
-* Desktop results  
+* Index.html desktop results  
 ![][image16]  
 Desktop performance was one point off 100 due to an oversized image. Resized down and the score is now 100 across all areas and pretty confetti animation played.  
 ![][image17]
+
+* About.html mobile results
+![An image showing the chrome lighthouse results for a mobile test, with 100 for Accessibility, Best Practices and SEO, but 98 for performance](/assets/images/readme-images/about-mobile-lighthouse.png)
+
+* About.html desktop results
+![An image showing the chrome lighthouse results for a desktop test, with 100 for Performance, Accessibility, Best Practices and SEO](/assets/images/readme-images/about-desktop-lighthouse.png)
 
 [Back to Table of Contents](#table-of-contents)
 
