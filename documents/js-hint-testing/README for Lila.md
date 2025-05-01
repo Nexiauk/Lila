@@ -1,6 +1,6 @@
 # **Lila and the Lost Words**
 
-![][image1]
+![Game displaying on various different screen sizes](/assets/images/readme-images/responsive.png)
 
 [View the live project here](https://nexiauk.github.io/Lila/)
 
@@ -155,6 +155,8 @@ Lila and the Lost Words has been designed hugely with accessibility in mind, as 
 *     --ending-text: black;  
 *     --base-colour: #FBF7F0; Colour name: Silver Bird
 
+![Image showing a palette of all the colours](/assets/images/readme-images/colour-palette.png)
+
 
 I created variables for the colour scheme so that it was easier to apply them to elements as the story dynamically updated and changed.   
 All the colours were sampled directly from the chapter images and tweaked until they fully passed and complied with WCAG regulations pertaining to contrast ratios.  
@@ -163,9 +165,8 @@ The chapter colours are used on the image border, as the background colour for t
 
 The base colour is the fallback colour for the game’s background image. It is sampled directly from the paper image.
 
-[Adobe Colour](https://color.adobe.com/create/color-contrast-analyzer%20)’s contrast checker was used to check the contrast ratio of the text colour against each background
+[Adobe Colour](https://color.adobe.com/create/color-contrast-analyzer)’s contrast checker was used to check the contrast ratio of the text colour against each background
 
-### 
 
 ### Typography
 
@@ -177,10 +178,12 @@ The base colour is the fallback colour for the game’s background image. It is 
     * Child-like  
     * Playful  
     * Sans serif  
+
   * Fontjoy suggested Alegreya Sans for headings. Feelings:  
     * Vintage  
     * Calm  
     * Sans serif  
+
   * Josefin Sans was chosen for the paragraph and nav-link text. Feelings:  
     * Vintage  
     * Artistic  
@@ -190,15 +193,20 @@ The base colour is the fallback colour for the game’s background image. It is 
 
 The Lila character was created in an art style referred to as Chibi. Chibi refers to a super-deformation (SD), caricature art style originating in Japan, often used in anime and manga. It features characters with exaggerated features like large heads, large eyes, and small bodies, often described as cute or childlike.
 
+![An image of the Lila character, dressed in a coat with long, black hair. She looks sad](/assets/images/readme-images/lila-sad.png)
+
 Chibi art style falls under a concept called ‘Kawaii’ \-  a Japanese phenomenon which means cute or adorable, which Lila is, but also has a deeper meaning \- it can imply something powerless, delicate, or in need of care. A concept which links to Lila in this difficult time she is experiencing. Kawaii is used to express positive feelings and emotions, and is seen as a way to escape the stresses of everyday life. Each chapter portrays a positive outcome with beautiful art and good feelings. The confetti when a puzzle is guessed correctly gives a sense of achievement and enjoyment, as well as whimsy. The entire game is a momentary respite from the stresses of life and a cathartic experience to connect with.
 
 * The image of Lila the character is a free to use game asset. She can be customised with different hair colours and styles, expressions, accessories and clothes. It was important that she had a range of expressions to depict her feelings in the before and after scenes of each chapter to convey the emotions she is experiencing but also to portray positive outcomes. \- [see credits section](#credits)  
 * The chibi image of myself in the About page was created by uploading a profile image into ChatGPT and asking it to create a chibi version. I wanted to match the style of Lila and keep the theme of the imagery consistent.  
+
+![A chibi-style image of the game creator, Lucy Sears](/assets/images/lucy-chibi-small.avif)
+
 * To create each scene, I used [Adobe Firefly](https://www.adobe.com/products/firefly.html) and asked it to use the chibi Lila as a frame of reference for the artistic style. I then generated each scene using a range of prompts pertaining to the environment, the atmosphere and the contents of each chapter.  
 * Generative AI editing in [Photoshop](https://www.adobe.com/uk/products/photoshop.html) allowed me to add and remove elements based on the scene and its emotive feel. Once I was happy I was then able to plug it back into Adobe Firefly as a composition reference and adjust the prompts to match a new mood for the post-puzzle scene. This process allowed me to create a full matching set of images that were similar to each other in style and composition.  
 * Each scene has a pre-puzzle ‘gloom’ where Lila is portrayed as either sad, angry, or frustrated. The atmosphere and her surroundings match how she is feeling.  
 * Each post-puzzle scene is light and happy, displaying gorgeous animations and lush colours to paint the scene of bringing colour and light and magic back into the world as Lila deals with the 5 stages of grief in her dream-world.  
-* I used [Paint.Net](http://Paint.Net) to layer Lila into the scenes; Paint.Net is a programme that I have extensive experience with so I was able to not only layer Lila onto the images, but also, as in the lake scene, incorporate her properly into the depth of the image and make her seem a real part of it.  
+* I used [Paint.Net](http://getpaint.net) to layer Lila into the scenes; Paint.Net is a programme that I have extensive experience with so I was able to not only layer Lila onto the images, but also, as in the lake scene, incorporate her properly into the depth of the image and make her seem a real part of it.  
 * I uploaded the finished images into [Canva](https://www.canva.com/) and used Canva pro to add animations to each chapter image. I could have stuck with simple static images, but I wanted to really enhance the visuals in the game for those students and players who might struggle with the text. A lot of our students in the Gameracy programme read word-by-word and sometimes struggle to ascertain context from what they’ve read. The animated visuals give a striking and immediately noticeable effect that complements the story scene and conveys a sense of achievement through the changing of the chapter’s mood.  
 * I downloaded these animated visuals as GIFS, but GIFS perform poorly on Lighthouse tests so I used [Ez Gif](https://ezgif.com/) to first resize each one, and then convert them into animated AVIF images, which use a codec to compress the images without sacrificing quality.   
 * I was inspired by this [Codepen](https://codepen.io/janoamaral/pen/wvBrPzd)’s old book layout and decided that an old paper background image would be a good match for Lila and the Lost Words, due to the storybook feel.
@@ -220,8 +228,6 @@ I created my wireframes using [Canva](https://www.canva.com/) to map out the lay
 
 ---
 
-## 
-
 ## **Features**
 
 ### Responsiveness
@@ -236,15 +242,15 @@ Lila’s Lost Words has been designed mobile-first, built initially to look good
 * Each nav-link (font: Josefin Sans) has a hover colour and an active state; the text changes color accordingly to keep the contrast ratio accessible.
 
 
-![][image2]
+![An image of the main nav-bar in full screen mode](/assets/images/readme-images/navbar-large.png)
 
-![][image3]
+![An image of the main nav-bar in collapsed mobile mode](/assets/images/readme-images/navbar-small.png)
 
 ### Footer
 
 The footer (color: \#420f2a. Font-colour: white) only contains a copyright notice, as all the social media links are on the About Page \- this is intentional so that my personal information doesn’t distract or detract from the game itself.
 
-![][image4]
+![An image of the site footer](/assets/images/readme-images/footer.png)
 
 ### 
 
@@ -252,17 +258,21 @@ The footer (color: \#420f2a. Font-colour: white) only contains a copyright notic
 
 The socials bar sits on the about page and contains links to my Github profile, my Facebook page and my LinkedIn bio. Font Awesome icons were used and styled to match the game site’s overall theme. Hover effects were applied to give feedback on which icon you are hovering over.The hover effect inverts the site colours to keep it consistent and accessible. Each link opens in a new tab and takes you to my actual live profiles. The socials bar resizes across different screens and the padding adjusts to keep all the icons centered.  
 The image shows the facebook icon highlighted on hover.  
-![][image5]
+
+![An image of the socials bar on the about page, with links to Facebook, LinkedIn and GitHub. The facebook icon's styling is different as it's on hover mode.](/assets/images/readme-images/socials-bar.png)
 
 ### Interactive Elements
 
 Interactivity has been achieved by ensuring that effects and animations are applied when certain elements are hovered over, such as the nav links, the social media icons, and any buttons that appear. I ensured that the hover effect colours were in keeping with the overall colour scheme of the site and that text colour changed to keep the contrast ratios accessible.
 
+Buttons increase in size when hovered over and gain a box-shadow effect.
+
+![An image of the start button](/assets/images/readme-images/button-before.png)
+![An image of the start button in hover mode with added effects.](/assets/images/readme-images/button-hover-effect.png)
+
 The slots and tiles also increase in size and gain a coloured border when hovered over.  
 The hover effects for the check and reset buttons are slightly different to everywhere else, to give immediate visual clues as to the effect they apply while in the puzzle state.
 
-![][image6]![][image7]  
-![][image8]![][image9]  
 ![][image10]  
 ![][image11]
 
