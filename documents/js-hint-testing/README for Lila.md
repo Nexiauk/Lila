@@ -371,7 +371,7 @@ I want to be able to track my progress and see how well I’m doing at the puzzl
 
 #### [The W3C Markup Validation Service](https://validator.w3.org/)
 
-Html validation testing results on 30/4/25
+Html validation testing results on 30/4/25 for index.html
 
 1.      Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections or else use a div element instead for any cases where no heading is needed.
         From line 55, column 13; to line 55, column 88
@@ -384,10 +384,16 @@ Html validation testing results on 30/4/25
 4.      Error: Stray end tag: div 
         From line 115, column 5; to line 115, column 10
         
-        
-All issues listed above were resolved \- sections without titles were changed into div elements and the stray end tag was removed. HTML validation now passes without warnings or errors.
+All issues listed above were resolved - sections without titles were changed into div elements and the stray end tag was removed. HTML validation now passes without warnings or errors.
 
 ![An image of the W3C Markup Validation Service check on index.html, showing no errors](/assets/images/readme-images/html-validation.png)
+
+HTML validation testing results on 1/5/25 for about.html
+![An image of the W3C Markup Validation Service check on about.html, showing some errors](/assets/images/readme-images/html-validator-about.png)
+
+All issues listed above were resolved by correcting the incorrect my' tag. HMTL validation now passes without warnings or errors.
+
+![An image of the W3C Markup Validation Service check on about.html, showing no errors](/assets/images/readme-images/html-validation-about-success.png)
 
 #### [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
@@ -426,26 +432,25 @@ Added the semi-colons and removed the unused variable. I ran JS hint on a couple
 
 #### [The WAVE Webb Accessibility Evaluation Tool](https://wave.webaim.org/)
 
-* The WAVE Webb test results came back with 0 errors and 0 contrast errors. It contained 1 warning for an element that it thinks should be a header, but it really shouldn’t be as it’s just the bottom of the story text. The reason this got flagged is because the particular paragraph contains less than 50 characters, which could indicate that it’s a heading but in this case is just a short sentence.. See screenshots below.  
-  ![][image12]  
-  ![][image13]  
-    
-  \!\[Screenshot of the WAVE test results for index.html\](../assets/images/readme-images/index-html-accessibility.png)  
-  
+* The WAVE Webb test results came back with 0 errors and 0 contrast errors. It contained 1 warning for an element that it thinks should be a header, but it really shouldn’t be as it’s just the bottom of the story text. The reason this got flagged is because the particular paragraph contains less than 50 characters, which could indicate that it’s a heading but in this case is just a short sentence.. See screenshots below. 
 
+![Screenshot of the WAVE accessibility testing results showing 0 errors and 1 warning](/assets/images/readme-images/wave-testing-results.png)
 
+![An image of the text it thinks should be a header, but doesn't need to be.](/assets/images/readme-images/wave-alert.png)
   
 [Back to Table of Contents](#table-of-contents)
 
-#### 
+
 
 #### Chrome Lighthouse
 
-Mobile results  
-![][image14]  
-![][image15]  
+* Mobile results  
 The performance on mobile sits at 97 due to the preloading of all the game’s images when the site loads. This is a calculated measure designed to improve the performance of the images loading as the chapters and images dynamically update throughout the game. There had been noticeable lag on the animated images uploading even with their small sizes, so I implemented a function that would preload ALL images once the DOM had finished loading. I think the trade-off on an initial slight performance drop is worth it.  
-Desktop results  
+
+![An image of the W3C CSS Validation Service check on style.css, showing no errors](/assets/images/readme-images/mobile-lighthouse.png)
+![An image of the W3C CSS Validation Service check on style.css, showing no errors](/assets/images/readme-images/mobile-lighthouse2.png)
+
+* Desktop results  
 ![][image16]  
 Desktop performance was one point off 100 due to an oversized image. Resized down and the score is now 100 across all areas and pretty confetti animation played.  
 ![][image17]
