@@ -20,6 +20,7 @@ This game has been created as a project during my [Code Institute](https://codei
   * [Typography](#typography)  
   * [Imagery](#imagery)  
   * [Wireframes](#wireframes)  
+  * [Story Plotting](#story-plotting)
   * [End Product Design Changes](#end-product-design-changes)  
 * [Features](#features)  
   * [Responsiveness](#responsiveness)  
@@ -217,6 +218,11 @@ I created my wireframes using [Canva](https://www.canva.com/) to map out the lay
 
 * [Website design on bigger screens](https://www.canva.com/design/DAGkzujaEFk/jFyWB-p0SsHOVN9jWxXRTQ/view?utm_content=DAGkzujaEFk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9fffcd8018) (8 pages)  
 * [Website design on mobile screens](https://www.canva.com/design/DAGmC1MdloA/YAt0NNjOWDZ6teQDJzfL3w/view?utm_content=DAGmC1MdloA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h057f405cb1) (3 pages)
+
+### Story Plotting
+I plotted out my storyline using [Twine 2](https://twinery.org/2/#/) simply as a navigation map for how the text should flow before and after the puzzles, and as the player visits each game area. You can use Twine to build CYOA games with HTML frameworks, CSS and JavaScript, but it's a wonderful plotter and mapper due to how it renders the different game areas as passage blocks. Using Twine allowed me to access the file online and edit the story text as I became inspired. it also kept all the story ideas in place and stopped them going off piste.
+
+![An image of the main nav-bar in collapsed mobile mode](/assets/images/readme-images/twine-story-mapping.png)
 
 ### End Product Design Changes
 
@@ -558,7 +564,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 12. [Git](https://git-scm.com/) \- was used as version control software  
 13. [GitHub Desktop](https://desktop.github.com/download/) \- was used to simplify the development workflow between VSCode and github  
 14. [Google Fonts](https://fonts.google.com/) \- was the source of the fonts used  
-15. [Paint.Net](http://Paint.Net) \- for layering Lila onto the background images  
+15. [Paint.Net](http://getpaint.net) \- for layering Lila onto the background images  
 16. [Twine 2](https://twinery.org/2/) \- mapping out plotline and story  
 17. [Visual Code Studio](https://code.visualstudio.com/) \- was the code editor used for this project  
 
