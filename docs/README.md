@@ -458,16 +458,20 @@ The performance on mobile sits at 97 due to the preloading of all the game’s i
 ![An image showing the chrome lighthouse results for a mobile test, with 100 for Accessibility, Best Practices and SEO, but 97 for performance](/assets/images/readme-images/mobile-lighthouse.png)
 ![An image showing the warning about avoiding enormous network payloads due to the preloading images](/assets/images/readme-images/mobile-lighthouse2.png)
 
-* Index.html desktop results  
+* Index.html desktop results
+  
  ![An image showing the chrome lighthouse results for a desktop test, with 100 for Accessibility, Best Practices and SEO, but 99 for performance](/assets/images/readme-images/desktop-lighthouse.png)
 
-Desktop performance was one point off 100 due to an oversized image. Resized down and the score is now 100 across all areas and pretty confetti animation played.  
+* Desktop performance was one point off 100 due to an oversized image. Resized down and the score is now 100 across all areas and pretty confetti animation played.
+  
  ![An image showing the chrome lighthouse results for a desktop test, with 100 for Performance, Accessibility, Best Practices and SEO](/assets/images/readme-images/desktop-lighthouse2.png)
 
 * About.html mobile results
+  
 ![An image showing the chrome lighthouse results for a mobile test, with 100 for Accessibility, Best Practices and SEO, but 98 for performance](/assets/images/readme-images/about-mobile-lighthouse.png)
 
 * About.html desktop results
+  
 ![An image showing the chrome lighthouse results for a desktop test, with 100 for Performance, Accessibility, Best Practices and SEO](/assets/images/readme-images/about-desktop-lighthouse.png)
 
 [Back to Table of Contents](#table-of-contents)
