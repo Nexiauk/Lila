@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +14,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
-
 </head>
 <!-- Classes set on body to work with mt-auto on footer to ensure it stays at the bottom -->
-
 <body class="d-flex flex-column min-vh-100">
     <header>
         <!-- Navbar -->
@@ -40,7 +37,7 @@
                             <a class="nav-link" href="index.html">Play</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                            <a class="nav-link active" aria-current="page" href="about.html">About</a>
                         </li>
                     </ul>
                 </div>
@@ -49,9 +46,9 @@
     </header>
     <!-- Main content container -->
     <div class="container-lg gx-md-5" id="about-container">
-        <section class="row gx-0 justify-content-between mt-2 mt-xxl-3" id="story-area">
+        <section class="row gx-0 justify-content-between mt-2 mt-xxl-3">
             <!-- Image for the about page -->
-            <div class="col col-12 mt-2 mb-3 mt-xxl-3" id="image-div">
+            <div class="col col-12 mt-2 mb-3 mt-xxl-3">
                 <picture>
                     <source media="(min-width: 501px)" id="large-img" srcset="./assets/images/lucy-chibi.avif">
                     <source media="(max-width: 500px)" id="small-img" srcset="./assets/images/lucy-chibi-small.avif">
@@ -65,26 +62,38 @@
                 <div id="about-text">
                     <p>Hi, my name is Lucy and I like to create gamified and game-based-learning experiences.
                     </p>
-                    <p>Lila's Lost Words is my first ever project using JavaScript and was inspired by the Choose Your Own
-                        Adventure games that we create as part of my <a href="https://nexiauk.github.io/Gameracy/" target="_blank">Gameracy programme. <i class="fa fa-external-link"></i></a></p>
-                        <p>The theme of grief and the use of colour was inspired by a beautifully artistic video game called <a href="https://en.wikipedia.org/wiki/Gris" target="_blank">Gris. <i class="fa fa-external-link"></i></a></p>
+                    <p>Lila's Lost Words is my first ever project using JavaScript and was inspired by the Choose Your
+                        Own
+                        Adventure games that we create as part of my <a href="https://nexiauk.github.io/Gameracy/"
+                            target="_blank">Gameracy programme. <i class="fa fa-external-link"></i></a></p>
+                    <p>The theme of grief and the use of colour was inspired by a beautifully artistic video game called
+                        <a href="https://en.wikipedia.org/wiki/Gris" target="_blank">Gris. <i
+                                class="fa fa-external-link"></i></a></p>
                 </div>
             </div>
             <!-- Socials list and links -->
-            <div class="col col-12 mb-3 mt-xxl-3 col-styling" id="socials-contacts"><ul id="socials">
-                <li><a href="https://www.facebook.com/lucy.sears.5/" target="_blank" aria-label="Link to myFacebook page.">
-                        <i class="fa-brands fa-facebook"></i></a></li>
+            <div class="col col-12 mb-3 mt-xxl-3 col-styling" id="socials-contacts">
+                <ul id="socials">
+                    <li><a href="https://www.facebook.com/lucy.sears.5/" target="_blank"
+                            aria-label="Link to myFacebook page.">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
 
-                <li><a href="https://www.linkedin.com/in/lucy-sears-b3b714246/" target="_blank"
-                        aria-label="Link to my Linkedin page.">
-                        <i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/lucy-sears-b3b714246/" target="_blank"
+                            aria-label="Link to my Linkedin page.">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
 
-                <li><a href="https://github.com/Nexiauk" target="_blank" aria-label="Link to my Github.">
-                    <i class="fa-brands fa-github"></i></a></li>
-            </ul></div>
+                    <li><a href="https://github.com/Nexiauk" target="_blank" aria-label="Link to my Github.">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </div>
-
     <!-- Footer with mt-auto added to push to the bottom -->
     <footer class="mt-auto text-center mt-xxl-3">
         <p id="footer-text"><i class="fa-solid fa-copyright"></i> Copyright Lucy Sears 2025</p>
@@ -96,5 +105,4 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0b96933893.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

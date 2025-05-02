@@ -397,7 +397,7 @@ All issues listed above were resolved - sections without titles were changed int
 HTML validation testing results on 1/5/25 for about.html
 ![An image of the W3C Markup Validation Service check on about.html, showing some errors](/assets/images/readme-images/html-validator-about.png)
 
-All issues listed above were resolved by correcting the incorrect my' tag. HMTL validation now passes without warnings or errors.
+All issues listed above were resolved by correcting the incorrect 'my' tag. HMTL validation now passes without warnings or errors.
 
 ![An image of the W3C Markup Validation Service check on about.html, showing no errors](/assets/images/readme-images/html-validation-about-success.png)
 
