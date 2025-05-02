@@ -459,19 +459,15 @@ The performance on mobile sits at 97 due to the preloading of all the game’s i
 ![An image showing the warning about avoiding enormous network payloads due to the preloading images](/assets/images/readme-images/mobile-lighthouse2.png)
 
 * Index.html desktop results
-  
  ![An image showing the chrome lighthouse results for a desktop test, with 100 for Accessibility, Best Practices and SEO, but 99 for performance](/assets/images/readme-images/desktop-lighthouse.png)
 
 * Desktop performance was one point off 100 due to an oversized image. Resized down and the score is now 100 across all areas and pretty confetti animation played.
-  
  ![An image showing the chrome lighthouse results for a desktop test, with 100 for Performance, Accessibility, Best Practices and SEO](/assets/images/readme-images/desktop-lighthouse2.png)
 
 * About.html mobile results
-  
 ![An image showing the chrome lighthouse results for a mobile test, with 100 for Accessibility, Best Practices and SEO, but 98 for performance](/assets/images/readme-images/about-mobile-lighthouse.png)
 
 * About.html desktop results
-  
 ![An image showing the chrome lighthouse results for a desktop test, with 100 for Performance, Accessibility, Best Practices and SEO](/assets/images/readme-images/about-desktop-lighthouse.png)
 
 [Back to Table of Contents](#table-of-contents)
@@ -481,8 +477,9 @@ The performance on mobile sits at 97 due to the preloading of all the game’s i
 I tested my site on Chrome, Edge, FireFox and Safari.
 
 * **Chrome**   
-    
+
   Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.  
+
   * All nav links work on all pages  
   * All external links open in a new browser window  
   * All images display/disappear as expected across different screen sizes  
@@ -505,6 +502,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
   * The burger icon expands and collapses the nav list as expected on mobile screens.  
       
 * **FireFox**   
+
   Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.  
     
   * All nav links work on all pages  
@@ -516,6 +514,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
   * The burger icon expands and collapses the nav list as expected on mobile screens.  
       
 * **Safari**   
+
   Tested on an iPhone SE 2023  
     
   * The burger nav dropdown works as expected on all pages, expanding and collapsing 
