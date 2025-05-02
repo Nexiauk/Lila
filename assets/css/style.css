@@ -8,7 +8,7 @@
 /* Google Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Fugaz+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-/* variables for website colours  */
+/* variables for website colours and fonts  */
 :root {
     --main-colour: #420f2a;
     --intro-colour: #1b1f2e;
@@ -53,7 +53,7 @@ button {
     padding: 8px;
 }
 
-/* Colour applied to links so they meet accessibility guidelines on colour */
+/* Colour applied to links so they meet accessibility guidelines */
 a {
     color: white;
 }
@@ -92,23 +92,23 @@ mark {
 .navbar-toggler:focus {
     border: none;
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
 }
 
 .nav-item {
     -ms-flex-preferred-size: 0;
-        flex-basis: 0;
+    flex-basis: 0;
     -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     text-align: center;
 }
 
 .nav-link {
     color: white;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     font-size: 1.3rem;
     font-weight: bold;
     border-radius: 8px;
@@ -116,7 +116,8 @@ mark {
 }
 
 /* Nav link hover and active effects and styles */
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+.navbar .nav-link.active:hover {
     background-color: white;
     border-radius: 8px;
     color: var(--main-colour);
@@ -129,16 +130,6 @@ mark {
     background-color: var(--main-colour);
     color: white;
     border: 1px dotted white;
-}
-
-.navbar .nav-link.active:hover {
-    background-color: white;
-    border-radius: 8px;
-    color: var(--main-colour);
-    font-weight: bold;
-    -webkit-transition: all 1.2s ease-in-out;
-    -o-transition: all 1.2s ease-in-out;
-    transition: all 1.2s ease-in-out;
 }
 
 /* Styling for titles and columns */
@@ -154,7 +145,7 @@ mark {
     border: 1px solid white;
     border-radius: 8px;
     -webkit-box-shadow: 8px 8px black;
-            box-shadow: 8px 8px black;
+    box-shadow: 8px 8px black;
     background-color: var(--main-colour);
 }
 
@@ -171,7 +162,6 @@ mark {
     margin-bottom: 20px;
 }
 
-
 #footer-text {
     font-size: 1.3rem;
     margin-top: 1rem;
@@ -186,56 +176,44 @@ mark {
     width: 100%;
 }
 
-/* Chapter-specific colours and styling around the image elements */
+#story-image.chapter-welcome,
 #about-image {
     -webkit-box-shadow: 8px 8px var(--main-colour);
-            box-shadow: 8px 8px var(--main-colour);
-}
-
-#story-image.chapter-welcome {
-    -webkit-box-shadow: 8px 8px var(--main-colour);
-            box-shadow: 8px 8px var(--main-colour);
+    box-shadow: 8px 8px var(--main-colour);
 }
 
 #story-image.chapter-intro {
     -webkit-box-shadow: 8px 8px var(--intro-colour);
-            box-shadow: 8px 8px var(--intro-colour);
+    box-shadow: 8px 8px var(--intro-colour);
 }
 
 #story-image.chapter-void {
     -webkit-box-shadow: 8px 8px var(--void-colour);
-            box-shadow: 8px 8px var(--void-colour);
+    box-shadow: 8px 8px var(--void-colour);
 }
 
 #story-image.chapter-forest {
     -webkit-box-shadow: 8px 8px var(--forest-colour);
-            box-shadow: 8px 8px var(--forest-colour);
+    box-shadow: 8px 8px var(--forest-colour);
 }
 
 #story-image.chapter-library {
     -webkit-box-shadow: 8px 8px var(--library-colour);
-            box-shadow: 8px 8px var(--library-colour);
+    box-shadow: 8px 8px var(--library-colour);
 }
 
 #story-image.chapter-lake {
     -webkit-box-shadow: 8px 8px var(--lake-colour);
-            box-shadow: 8px 8px var(--lake-colour);
+    box-shadow: 8px 8px var(--lake-colour);
 }
 
-#story-image.chapter-ending1 {
-    -webkit-box-shadow: 8px 8px black;
-            box-shadow: 8px 8px black;
-}
-
+#story-image.chapter-ending1,
 #story-image.chapter-ending2 {
     -webkit-box-shadow: 8px 8px black;
-            box-shadow: 8px 8px black;
+    box-shadow: 8px 8px black;
 }
 
 /* Chapter specific colours and styling for the story-text's outer column and matches up the puzzle slots */
-#text-col.chapter-welcome {
-    background-color: var(--main-colour);
-}
 
 #text-col.chapter-intro,
 .slot.chapter-intro {
@@ -277,60 +255,61 @@ mark {
     background-color: red;
     color: white;
     -webkit-animation: tilt-shaking 0.35s infinite;
-            animation: tilt-shaking 0.35s infinite;
+    animation: tilt-shaking 0.35s infinite;
 }
 
 /* Shaking animation attributed to https://unused-css.com/blog/css-shake-animation/ */
 @-webkit-keyframes tilt-shaking {
     0% {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 
     25% {
         -webkit-transform: rotate(5deg);
-                transform: rotate(5deg);
+        transform: rotate(5deg);
     }
 
     50% {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 
     75% {
         -webkit-transform: rotate(-5deg);
-                transform: rotate(-5deg);
+        transform: rotate(-5deg);
     }
 
     100% {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 }
+
 @keyframes tilt-shaking {
     0% {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 
     25% {
         -webkit-transform: rotate(5deg);
-                transform: rotate(5deg);
+        transform: rotate(5deg);
     }
 
     50% {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 
     75% {
         -webkit-transform: rotate(-5deg);
-                transform: rotate(-5deg);
+        transform: rotate(-5deg);
     }
 
     100% {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 }
 
@@ -350,8 +329,8 @@ mark {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 /* Div that contains the empty slots */
@@ -363,9 +342,9 @@ mark {
 
     -webkit-box-pack: center;
 
-        -ms-flex-pack: center;
+    -ms-flex-pack: center;
 
-            justify-content: center;
+    justify-content: center;
 }
 
 /* Slot and tile styling, including hover effects */
@@ -375,17 +354,16 @@ mark {
     margin: 5px;
     font-weight: bold;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     cursor: pointer;
+    border: 1px solid black;
 }
 
 .slot {
-    border: 1px solid black;
     color: white;
 }
 
 .tile {
-    border: 1px solid black;
     color: black;
     background-color: var(--base-colour);
 }
@@ -393,8 +371,8 @@ mark {
 .tile:hover,
 .slot:hover {
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
     border: 2px solid green;
 }
 
@@ -451,11 +429,11 @@ mark {
 #choice-3:hover,
 #end-choice:hover {
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
     background-color: white;
     -webkit-box-shadow: 0 0 8px #0ebac5;
-            box-shadow: 0 0 8px #0ebac5;
+    box-shadow: 0 0 8px #0ebac5;
     -webkit-transition: -webkit-transform 1s ease;
     transition: -webkit-transform 1s ease;
     -o-transition: transform 1s ease;
@@ -487,8 +465,8 @@ mark {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
     margin-bottom: 0;
     font-size: 2.5rem;
     padding-left: 0;
@@ -535,8 +513,8 @@ mark {
 
     .navbar-brand {
         -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
     }
 
     .navbar-brand h1 {
@@ -639,6 +617,7 @@ mark {
 
 /* Responsive media query for screens 900px and above */
 @media screen and (min-width:900px) {
+
     /* Max-width applied to the container for a better layout */
     #about-container {
         max-width: 600px;
@@ -707,6 +686,7 @@ mark {
 
 /* Responsive media queries for laptops 1200px and above */
 @media screen and (min-width:1200px) {
+
     /* Max width applied to the main game story container for a better layout */
     #main-container {
         max-width: 1050px;
@@ -774,12 +754,13 @@ mark {
     .nav-link {
         font-size: 1.5rem;
     }
-    
+
     /* Max width applied to the story-image to stop it looking huge */
     #story-image {
         max-width: 800px;
     }
- /* Max width applied to the about-image to stop it looking huge */
+
+    /* Max width applied to the about-image to stop it looking huge */
     #about-image {
         max-width: 900px;
     }
@@ -924,7 +905,8 @@ mark {
     mark {
         padding: 0.6rem;
     }
-/* mark-on padding adjusted for the larger text */
+
+    /* mark-on padding adjusted for the larger text */
     .mark-on {
         padding: 0.6rem;
     }
