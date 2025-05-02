@@ -49,14 +49,14 @@
     <main class="container-lg gx-md-5" id="main-container">
         <div class="row gx-0 justify-content-between justify-content-xxl-center mt-2 mt-xxl-3" id="story-area">
             <!-- Story images that are dynamically pulled through from a Javascript object -->
-            <div class="col col-12 col-md-9 col-lg-9 col-xxl-8 mt-2" id="image-div">
+            <div class="col col-12 col-md-9 col-xxl-8 mt-2">
                 <picture>
                     <!-- Desktop images -->
                     <source media="(min-width: 501px)" id="large-img" srcset="./assets/images/title-screen.avif">
                     <!-- Mobile images -->
                     <source media="(max-width: 500px)" id="small-img" srcset="./assets/images/title-screen-small.avif">
                     <!-- Fallback images and also the element grabbed by JS for dynamic insertion of content and to apply styling -->
-                    <img id="story-image" class="chapter-welcome" src="./assets/images/title-screen.avif"
+                    <img id="story-image" src="./assets/images/title-screen.avif"
                         alt="Lila's Lost Words title screen image." width="700" height="547">
                 </picture>
             </div>
@@ -68,7 +68,7 @@
                 </ul>
             </section>
             <!-- Story Text column with an id for styling -->
-            <section class="col col-12 col-md-12 col-xxl-10 mt-3 mt-xxl-3 chapter-welcome col-styling" id="text-col">
+            <section class="col col-12 col-xxl-10 mt-3 col-styling" id="text-col">
                 <!-- Story title is dynamically updated from the story object -->
                 <h2 id="title" class="title-styling">Welcome</h2>
                 <!-- Story text that is dynamically pulled through from the story object-->
