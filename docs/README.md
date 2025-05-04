@@ -464,6 +464,10 @@ The reason this text was flagged is because the paragraph in question contains l
 * The WAVE Webb test results for about.html came back with 0 errors and 0 contrast errors.
 
 ![Screenshot of the WAVE accessibility testing results for about.html showing 0 errors and 0 warnings](/assets/images/readme-images/wave-testing-index.png)
+
+* The WAVE Webb test results for 404.html came back with 0 errors and 0 contrast errors.
+
+![Screenshot of the WAVE accessibility testing results for 404.html showing 0 errors and 0 warnings](/assets/images/readme-images/wave-testing-404.png)
   
 [Back to Table of Contents](#table-of-contents)
 
