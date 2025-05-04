@@ -412,6 +412,9 @@ All issues listed above were resolved by correcting the incorrect 'my' tag. **HM
 
 ![An image of the W3C Markup Validation Service check on about.html, showing no errors](/assets/images/readme-images/html-validation-about-success.png)
 
+HTML Validation testing results on 4/5/25 for 404.html
+![An image of the W3C Markup Validation Service check on 404.html, showing no errors](/assets/images/readme-images/404-html-check.png)
+
 #### [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
 I used the file upload section to directly input my CSS file into the checker. The results are listed below: 
@@ -488,6 +491,16 @@ The performance on mobile sits at 97 due to the preloading of all the game’s i
 * **About.html desktop results**
 
 ![An image showing the chrome lighthouse results for a desktop test, with 100 for Performance, Accessibility, Best Practices and SEO](/assets/images/readme-images/about-desktop-lighthouse.png)
+
+* **404.html mobile results**
+
+![An image showing the chrome lighthouse results for a mobile test, with 98 for performance, 100 for Accessibility, 96 for Best Practices and 91 for SEO](/assets/images/readme-images/404-mobile-lighthouse.png)
+
+* **404.html desktop results**
+
+![An image showing the chrome lighthouse results for a desktop test, with 100 for performance, 100 for Accessibility, 96 for Best Practices and 91 for SEO](/assets/images/readme-images/404-desktop-lighthouse.png)
+
+(Note: Best Practice and SEO results are adversely affected by dint of this being a 404 error page. This is a known issue with Chrome Lighthouse, however I'm pleased with my performance and accessibility scores, which are accurate)
 
 [Back to Table of Contents](#table-of-contents)
 
