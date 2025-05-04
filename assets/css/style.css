@@ -25,7 +25,6 @@
 }
 
 /* Global styles */
-
 /* Background image applied to the body, with a fallback colour in case it doesn't load */
 body {
     color: white;
@@ -71,15 +70,16 @@ mark {
     background-color: var(--main-colour);
 }
 
-.navbar-brand h1:hover {
-    color: black;
-}
 
-/* Font styling of the H1 in the nav-brand area */
+/* Styling of the H1 in the nav-brand area */
 .navbar-brand h1 {
     margin-bottom: 0;
     font-family: 'Fugaz One', sans-serif;
     font-size: 3rem;
+}
+
+.navbar-brand h1:hover {
+    color: black;
 }
 
 .navbar-brand a {
@@ -222,7 +222,6 @@ mark {
 }
 
 /* Chapter specific colours and styling for the story-text's outer column and matches up the puzzle slots */
-
 #text-col.chapter-intro,
 .slot.chapter-intro {
     background-color: var(--intro-colour);
@@ -510,7 +509,6 @@ mark {
 
 /* Responsive media queries for phones 320px and above */
 @media screen and (min-width:320px) {
-
     #footer-text {
         font-size: 1rem;
     }
@@ -621,7 +619,6 @@ mark {
 
 /* Responsive media query for screens 900px and above */
 @media screen and (min-width:900px) {
-
     /* Max-width applied to the container for a better layout */
     #about-container {
         max-width: 600px;
