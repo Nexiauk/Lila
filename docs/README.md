@@ -316,7 +316,10 @@ In the future I would like to implement the following features:
 
 **I want to be challenged by the puzzles but also have a system in place to help me if I get stuck**
 
-* A hint system has been put in place that is clearly outlined at the start of the game. All the words highlighted as hints lead back to the puzzle answer when looked up in a thesaurus.  
+* A hint system has been put in place that is clearly outlined at the start of the game. All the words highlighted as hints lead back to the puzzle answer when looked up in a thesaurus. 
+
+![Screenshot of the story text with hints highlighted and a hint button](../assets/images/readme-images/hint-system.png)
+
 * All puzzles relate directly to the story text and the emotional theme of the current chapter, and can be solved without the hint system if a player wants them to be more challenging.
 <br><br>
 
@@ -326,13 +329,18 @@ In the future I would like to implement the following features:
 
 * Designed with accessibility in mind, the game is suitable for students with specific learning difficulties, or learning differences. Visual storytelling, simplified interaction, and responsive design help reduce barriers to entry.  
 * The game avoids overly cluttered screens, using visual hierarchy and gentle animations to guide attention and maintain focus.  
-* The story text has been kept to a minimum length for each chapter, with obvious headings and titles for each section.  
+* The story text has been kept to a minimum length for each chapter, with obvious headings and titles for each section. 
+
 * Simple sentence structures and carefully chosen vocabulary make the story accessible without oversimplifying its emotional depth.
+
+![Screenshot snipped of the game screen, showing visible titles, line height spacing in the story text and the stacked visual hierarchy](../assets/images/readme-images/game-screen.png)
 
 **I want the fonts, line spacing and colours to be accessible**
 
 * Sans Serif with good line spacing are used throughout the game to reduce visual strain  
 * High-contrast text and backgrounds help support players with visual processing difficulties or dyslexia. These have been validated using [Adobe Colour Checker](https://color.adobe.com/Contrast-Checker-2-color-theme-19812400/) and the [WAVE accessibility checker](https://wave.webaim.org/).
+
+![Close-up view of the text-box showcasing the story font, line spacing, and high contrast foreground text colour/background-colour](../assets/images/readme-images/text-box.png)
 <br><br>
 
 ***As a creative student who enjoys storytelling***  
@@ -342,6 +350,8 @@ In the future I would like to implement the following features:
 * A lot of thought and care has gone into the creation of the storyline and each chapter scene that has been written.   
 * There is pre and post puzzle story text, giving a satisfactory conclusion to completing each word puzzle and to each emotion explored during the chapters.   
 * Personal details have been woven into the narrative that relate to Lila’s memories and dreams of the person she has lost, thus giving the player an immediate connection to the main character.
+
+![Sample text highlighting a memory in the story and the choices of locations to visit](../assets/images/readme-images/sample-text.png)
 <br><br>
 
 ***As a creative student who enjoys games***  
@@ -352,6 +362,9 @@ In the future I would like to implement the following features:
 * Solving these puzzles requires a degree of investigation and the possible use of a thesaurus.   
 * The hints are synonyms of each puzzle’s word, expanding the student’s vocabulary almost immediately.  
 * Solving anagrams promotes lateral thinking, vocabulary enhancement, and problem-solving skills.
+
+![Picture of the anagram word puzzle in its scrambled up state](../assets/images/readme-images/anagram-puzzle-before.png)
+![Picture of the anagram word puzzle after a correct guess](../assets/images/readme-images/anagram-puzzle-after.png)
 
 **I want to be able to track my progress and see how well I’m doing at the puzzles**
 
@@ -368,6 +381,8 @@ In the future I would like to implement the following features:
 * Buttons sizes have been considered to ensure that they aren’t too small or difficult to press.  
 * Navigation is simple and intuitive through dynamically inserted buttons at appropriate times, and via the navigation bar.
 * Auto-scrolling has been implemented to minimise the 'searching' the student will need to do on the screen for the unfolding story and to locate the puzzles when they appear.
+
+![Screesnhot showing the game in mobile view](../assets/images/readme-images/mobile-view.png)
 <br><br>
 
 #### **🌟 General Audience**
@@ -381,6 +396,9 @@ In the future I would like to implement the following features:
 * A matching set of carefully-crafted images lends itself to the visual aspect of the game, illustrating the beginning and ending of each scene with gorgeous animations and an appealing main character who has been designed with an easily recognisable art style.  
 * Smooth transitions and automatic scrolling help to keep the flow of the game without any awkward UI interaction, allowing full immersion into the story.  
 * Interactive elements are highlighted using hover effects and gentle transformations/transitions.
+
+![Story chapter before image in a gloomy style](../assets/images/readme-images/story-image-gloomy.png)
+![Story chapter aftere in a lovely style](../assets/images/readme-images/story-image-lovely.png)
 
 [Back to Table of Contents](#table-of-contents)
 
