@@ -71,6 +71,10 @@ mark {
     background-color: var(--main-colour);
 }
 
+.navbar-brand h1:hover {
+    color: black;
+}
+
 /* Font styling of the H1 in the nav-brand area */
 .navbar-brand h1 {
     margin-bottom: 0;
