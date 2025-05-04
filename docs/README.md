@@ -496,13 +496,11 @@ The performance on mobile sits at 97 due to the preloading of all the game’s i
 
 * **404.html mobile results**
 
-![An image showing the chrome lighthouse results for a mobile test, with 98 for performance, 100 for Accessibility, 96 for Best Practices and 91 for SEO](/assets/images/readme-images/404-mobile-lighthouse.png)
+![An image showing the chrome lighthouse results for a mobile test, with 98 for performance, 100 for Accessibility, Best Practices and SEO](/assets/images/readme-images/404-mobile-lighthouse.png)
 
 * **404.html desktop results**
 
-![An image showing the chrome lighthouse results for a desktop test, with 100 for performance, 100 for Accessibility, 96 for Best Practices and 91 for SEO](/assets/images/readme-images/404-desktop-lighthouse.png)
-
-(Note: Best Practice and SEO results are adversely affected by dint of this being a 404 error page. This is a known issue with Chrome Lighthouse, however I'm pleased with my performance and accessibility scores, which are accurate)
+![An image showing the chrome lighthouse results for a desktop test, with 100 for performance, 100 for Accessibility, Best Practices and SEO](/assets/images/readme-images/404-desktop-lighthouse.png)
 
 [Back to Table of Contents](#table-of-contents)
 
