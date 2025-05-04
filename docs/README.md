@@ -453,15 +453,17 @@ Added the semi-colons and removed the unused variable. I ran JS hint on a couple
 
 #### [The WAVE Webb Accessibility Evaluation Tool](https://wave.webaim.org/)
 
-* The WAVE Webb test results came back with 0 errors and 0 contrast errors. It contained 1 warning for an element that it thinks should be a header, but it really shouldn’t be as it’s just the bottom of the story text. 
+* The WAVE Webb test results for index.html came back with 0 errors and 0 contrast errors. It contained 1 warning for an element that it thinks should be a header, but it really shouldn’t be as it’s just the bottom of the story text. 
 
-![Screenshot of the WAVE accessibility testing results showing 0 errors and 1 warning](/assets/images/readme-images/wave-testing-results.png)
+![Screenshot of the WAVE accessibility testing results for index.html showing 0 errors and 1 warning](/assets/images/readme-images/wave-testing-index.png)
 
 The reason this text was flagged is because the paragraph in question contains less than 50 characters, which could indicate that it’s a heading but in this case is just a short sentence.
 
 ![An image of the text it thinks should be a header, but doesn't need to be.](/assets/images/readme-images/wave-alert.png)
 
-**Accessibility testing passes without errors and only 1 unnecessary warning**
+* The WAVE Webb test results for about.html came back with 0 errors and 0 contrast errors.
+
+![Screenshot of the WAVE accessibility testing results for about.html showing 0 errors and 0 warnings](/assets/images/readme-images/wave-testing-index.png)
   
 [Back to Table of Contents](#table-of-contents)
 
