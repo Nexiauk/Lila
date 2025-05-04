@@ -262,7 +262,7 @@ The footer (color: \#420f2a. Font-colour: white) only contains a copyright notic
 
 ### Socials bar
 
-The socials bar sits on the about page and contains links to my Github profile, my Facebook page and my LinkedIn bio. Font Awesome icons were used and styled to match the game site’s overall theme. Hover effects were applied to give feedback on which icon you are hovering over.The hover effect inverts the site colours to keep it consistent and accessible. Each link opens in a new tab and takes you to my actual live profiles. The socials bar resizes across different screens and the padding adjusts to keep all the icons centered.  
+The socials bar sits on the about page and contains links to my Github profile, my Facebook page and my LinkedIn bio. [Font Awesome](https://fontawesome.com/) icons were used and styled to match the game site’s overall theme. Hover effects are applied to give feedback on which icon you are hovering over. The hover effect inverts the site colours to keep it consistent and accessible. Each link opens in a new tab and takes you to my actual live profiles. The socials bar resizes across different screens and the padding adjusts to keep all the icons centered.  
 The image shows the facebook icon highlighted on hover.  
 
 ![An image of the socials bar on the about page, with links to Facebook, LinkedIn and GitHub. The facebook icon's styling is different as it's on hover mode.](/assets/images/readme-images/socials-bar.png)
@@ -273,7 +273,6 @@ Interactivity has been achieved by ensuring that effects and animations are appl
 
 Buttons increase in size when hovered over and gain a box-shadow effect.
 
-![An image of the start button](/assets/images/readme-images/button-before.png)
 ![An image of the start button in hover mode with added effects.](/assets/images/readme-images/button-hover-effect.png)
 
 The slots and tiles also increase in size and gain a coloured border when hovered over.  
@@ -368,6 +367,7 @@ In the future I would like to implement the following features:
 * The words for the puzzles have been kept to a minimum length to ensure that the tiles and slots are easy to press on a mobile phone and don’t shrink too small.  
 * Buttons sizes have been considered to ensure that they aren’t too small or difficult to press.  
 * Navigation is simple and intuitive through dynamically inserted buttons at appropriate times, and via the navigation bar.
+* Auto-scrolling has been implemented to minimise the 'searching' the student will need to do on the screen for the unfolding story and to locate the puzzles when they appear.
 <br><br>
 
 #### **🌟 General Audience**
@@ -401,14 +401,14 @@ Html validation testing results on 30/4/25 for index.html
 4.      Error: Stray end tag: div 
         From line 115, column 5; to line 115, column 10
         
-All issues listed above were resolved - sections without titles were changed into div elements and the stray end tag was removed. HTML validation now passes without warnings or errors.
+All issues listed above were resolved - sections without titles were changed into div elements and the stray end tag was removed. **HTML validation now passes without warnings or errors**.
 
 ![An image of the W3C Markup Validation Service check on index.html, showing no errors](/assets/images/readme-images/html-validation.png)
 
 HTML validation testing results on 1/5/25 for about.html
 ![An image of the W3C Markup Validation Service check on about.html, showing some errors](/assets/images/readme-images/html-validator-about.png)
 
-All issues listed above were resolved by correcting the incorrect 'my' tag. HMTL validation now passes without warnings or errors.
+All issues listed above were resolved by correcting the incorrect 'my' tag. **HMTL validation now passes without warnings or errors**.
 
 ![An image of the W3C Markup Validation Service check on about.html, showing no errors](/assets/images/readme-images/html-validation-about-success.png)
 
@@ -430,9 +430,7 @@ I used the file upload section to directly input my CSS file into the checker. T
       | 120 | .navbar .nav-link.active:hover | Same color for `background-color` and `border-left-color` |
       | 268 |  | No declarations in the rule |
 
-All issues were addressed and resolved. Flex-wrap value was removed where it wasn’t being applied. Removed the unnecessary border colour on the nav-link hover effect. Corrected the mistake on the animation that was meant to say 0deg.  
-
-CSS validation now passes with no errors or warnings.
+All issues were addressed and resolved. Flex-wrap value was removed where it wasn’t being applied. Removed the unnecessary border colour on the nav-link hover effect. Corrected the mistake on the animation that was meant to say 0deg.  **CSS validation now passes with no errors or warnings.**
 
 ![An image of the W3C CSS Validation Service check on style.css, showing no errors](/assets/images/readme-images/css-validator.png)
 
@@ -446,6 +444,8 @@ Added the semi-colons and removed the unused variable. I ran JS hint on a couple
 * [JS Hint Testing 23-4-25](/docs/js-hint-testing/jshint-testing-23-4.txt)
 * [HS Hint Testing 30-4-25](/docs/js-hint-testing/jshint-testing-30-4.txt)
 
+**JS validation passes without warnings or errors**.
+
 [Back to Table of Contents](#table-of-contents)
 
 #### [The WAVE Webb Accessibility Evaluation Tool](https://wave.webaim.org/)
@@ -457,6 +457,8 @@ Added the semi-colons and removed the unused variable. I ran JS hint on a couple
 The reason this text was flagged is because the paragraph in question contains less than 50 characters, which could indicate that it’s a heading but in this case is just a short sentence.
 
 ![An image of the text it thinks should be a header, but doesn't need to be.](/assets/images/readme-images/wave-alert.png)
+
+**Accessibility testing passes without errors and only 1 unnecessary warning**
   
 [Back to Table of Contents](#table-of-contents)
 
