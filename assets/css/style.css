@@ -78,6 +78,10 @@ mark {
     font-size: 3rem;
 }
 
+.navbar-brand a {
+    text-decoration: none;
+}
+
 .navbar-toggler-icon {
     border-radius: 5px;
 }
